@@ -27,7 +27,7 @@ a:hover{text-decoration:none;background-color:#ff7f00 !important; color:#fff;}
 /* end clearing floats */
 
 img{border:none;}
-#content{float:left;width:68.6%; overflow:hidden;}
+#content{float:left;width:68.6%; overflow:hidden; margin-bottom:3em;}
 #sidepanel{float:right;width:26.9%;}
 .loginbox{margin:0 auto;}
 .loginbox td{padding:3px;}
