@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>oliver</author>
+  <title>Autofac: NullReferenceException in Autofac. Component. Activation. ReflectionActivator. ConstructInstance</title>
+  <description />
+  <content>&lt;p&gt;Oder: Wie ich Autofac so nutze, dass ich eine hilfreichere Fehlermeldung erhalte.&lt;/p&gt;  &lt;p&gt;Wir nutzen Autofac und Autofac.Integration.Web mit PropertyInjection in einer BasePage-Klasse für Dependency Injection. Gestern bin ich (mind. schon zum zweiten Mal) über folgenden Fehler gestolpert (siehe auch Titel):&lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=Autofac-NullRef.png"&gt;&lt;img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="Autofac-NullRef" border="0" alt="Autofac-NullRef" src="http://shades-of-orange.com/image.axd?picture=Autofac-NullRef_thumb.png" width="867" height="481" /&gt;&lt;/a&gt; &lt;/p&gt;  &lt;p&gt;Der Fehler rührte – wie ich nach einigem Debuggen herausfand – von einer NullReferenceException in einem Constructor einer bei im Autofac-Container registrierten Klasse her. Leider verschwieg mir die Exception aber, um welche Klasse es sich hierbei handelte. Problematisch, wenn man mehrere Zig oder gar Hundert Klassen registriert hat.&lt;/p&gt;  &lt;p&gt;Meine erste Idee, dieses Problem in Zukunft zu umgehen und direkt an die tatsächliche ursächliche Exception zu gelangen, war jeglichen Code aus dem Konstruktor in eine Init()-Methode zu verfrachten, die dann im Stack-Trace als Fehlerquelle auftreten sollte. Leider klappte das nicht – der Stack-Trace sah genauso aus wie vorher.#&lt;/p&gt;  &lt;p&gt;Glücklicherweise zeigt der Stack-Trace in unseren NUnit-Tests sowohl den Constructor als auch die Init()-Methode als Fehlerquelle an. Nur hatte mein Test das Fehlerszenario leider nicht berücksichtigt. Jetzt tut er es.&lt;/p&gt;  &lt;p&gt;Vielleicht hilft die Info ja jemandem weiter.&lt;/p&gt;  &lt;p&gt;Gruß, Oliver&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2010-06-23 15:10:06</pubDate>
+  <lastModified>2010-10-05 21:44:57</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Autofac-NullReferenceException-in-AutofacComponentActivationReflectionActivatorConstructInstance</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

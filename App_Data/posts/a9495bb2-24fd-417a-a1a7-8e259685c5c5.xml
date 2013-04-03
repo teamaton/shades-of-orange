@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>Oliver</author>
+  <title>Vorsicht bei String als Lock-Objekt</title>
+  <description />
+  <content>&lt;p&gt;Wenn man denn unbedingt einen String als Lock-Objekt nutzen will und man sich davon &amp;uuml;berzeugt hat, nicht den &lt;strong&gt;&lt;span style="font-family: Courier New;"&gt;Type&lt;/span&gt;&lt;/strong&gt; eines gerade durch die Methode schwirrenden Objektes zu nutzen (das k&amp;ouml;nnte ja jeder machen ;-)), dann sollte man auf jeden Fall an &lt;strong&gt;&lt;span style="font-family: Courier New;"&gt;String.Intern(myLockString)&lt;/span&gt;&lt;/strong&gt; denken!&lt;/p&gt;
+&lt;p&gt;Wo man kann, sollte man also weiterhin einen einfachen object-Lock nutzen:&lt;/p&gt;
+&lt;div id="codeSnippetWrapper" style="border: 1px solid silver; text-align: left; padding: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; width: 97.5%; font-family: 'Courier New',courier,monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; cursor: text;"&gt;
+&lt;div id="codeSnippet" style="border-style: none; text-align: left; padding: 0px; line-height: 12pt; background-color: #f4f4f4; width: 100%; font-family: 'Courier New',courier,monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible;"&gt;
+&lt;pre style="border-style: none; text-align: left; padding: 0px; line-height: 12pt; background-color: white; margin: 0em; width: 100%; font-family: 'Courier New',courier,monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible;"&gt;&lt;span id="lnum1" style="color: #606060"&gt;   1:&lt;/span&gt; &lt;span style="color: #0000ff"&gt;private&lt;/span&gt; &lt;span style="color: #0000ff"&gt;static&lt;/span&gt; &lt;span style="color: #0000ff"&gt;readonly&lt;/span&gt; &lt;span style="color: #0000ff"&gt;object&lt;/span&gt; _lock = &lt;span style="color: #0000ff"&gt;new&lt;/span&gt; &lt;span style="color: #0000ff"&gt;object&lt;/span&gt;();&lt;/pre&gt;
+&lt;!--CRLF--&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Aber man darf dann nicht vergessen, dass alle Threads, die auf den Code im Lock zugreifen von einem &lt;strong&gt;einzigen Lock&lt;/strong&gt; bedient werden. Wenn man die Threads aber in Gruppen aufteilen kann, die unabh&amp;auml;ngig voneinander arbeiten k&amp;ouml;nnen, ist diese Beschr&amp;auml;nkung zu scharf. Ich suchte also einen Weg, einen eindeutigen Lock f&amp;uuml;r jede dieser Gruppen (hier: TranslationGroup) zu generieren, der von allen Instanzen geteilt wird. Der Gruppenidentifikator hei&amp;szlig;t hier &lt;strong&gt;&lt;span style="font-family: Courier New;"&gt;_pageNameKey&lt;/span&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Beispiel:&lt;/p&gt;
+&lt;div id="codeSnippetWrapper" style="border: 1px solid silver; text-align: left; padding: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; width: 97.5%; font-family: 'Courier New',courier,monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; cursor: text;"&gt;
+&lt;div id="codeSnippet" style="border-style: none; text-align: left; padding: 0px; line-height: 12pt; background-color: #f4f4f4; width: 100%; font-family: 'Courier New',courier,monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible;"&gt;
+&lt;pre style="border-style: none; text-align: left; padding: 0px; line-height: 12pt; background-color: white; margin: 0em; width: 100%; font-family: 'Courier New',courier,monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible;"&gt;&lt;span id="lnum1" style="color: #606060"&gt;   1:&lt;/span&gt; &lt;span style="color: #0000ff"&gt;private&lt;/span&gt; &lt;span style="color: #0000ff"&gt;const&lt;/span&gt; &lt;span style="color: #0000ff"&gt;string&lt;/span&gt; _migrateLock = &lt;span style="color: #006080"&gt;"9B90360AAF4342798A739DA2D85AF5AF"&lt;/span&gt;; &lt;span style="color: #008000"&gt;// guid&lt;/span&gt;&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+&lt;pre style="border-style: none; text-align: left; padding: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; width: 100%; font-family: 'Courier New',courier,monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible;"&gt;&lt;span id="lnum2" style="color: #606060"&gt;   2:&lt;/span&gt;&amp;nbsp; &lt;/pre&gt;
+&lt;!--CRLF--&gt;
+&lt;pre style="border-style: none; text-align: left; padding: 0px; line-height: 12pt; background-color: white; margin: 0em; width: 100%; font-family: 'Courier New',courier,monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible;"&gt;&lt;span id="lnum3" style="color: #606060"&gt;   3:&lt;/span&gt; &lt;span style="color: #0000ff"&gt;private&lt;/span&gt; &lt;span style="color: #0000ff"&gt;string&lt;/span&gt; _pageNameKey = ...; &lt;span style="color: #008000"&gt;// can be the same in multiple parallel threads&lt;/span&gt;&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+&lt;pre style="border-style: none; text-align: left; padding: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; width: 100%; font-family: 'Courier New',courier,monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible;"&gt;&lt;span id="lnum4" style="color: #606060"&gt;   4:&lt;/span&gt;&amp;nbsp; &lt;/pre&gt;
+&lt;!--CRLF--&gt;
+&lt;pre style="border-style: none; text-align: left; padding: 0px; line-height: 12pt; background-color: white; margin: 0em; width: 100%; font-family: 'Courier New',courier,monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible;"&gt;&lt;span id="lnum5" style="color: #606060"&gt;   5:&lt;/span&gt; &lt;span style="color: #0000ff"&gt;public&lt;/span&gt; &lt;span style="color: #0000ff"&gt;void&lt;/span&gt; Migrate(&lt;span style="color: #0000ff"&gt;string&lt;/span&gt; oldGroupName, Dictionary&amp;lt;&lt;span style="color: #0000ff"&gt;string&lt;/span&gt;, &lt;span style="color: #0000ff"&gt;string&lt;/span&gt;&amp;gt; controlIdsOldToNew)&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+&lt;pre style="border-style: none; text-align: left; padding: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; width: 100%; font-family: 'Courier New',courier,monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible;"&gt;&lt;span id="lnum6" style="color: #606060"&gt;   6:&lt;/span&gt; {&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+&lt;pre style="border-style: none; text-align: left; padding: 0px; line-height: 12pt; background-color: white; margin: 0em; width: 100%; font-family: 'Courier New',courier,monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible;"&gt;&lt;span id="lnum7" style="color: #606060"&gt;   7:&lt;/span&gt;     &lt;span style="color: #0000ff"&gt;lock&lt;/span&gt; (&lt;span style="color: #0000ff"&gt;string&lt;/span&gt;.Intern(_migrateLock + _pageNameKey))&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+&lt;pre style="border-style: none; text-align: left; padding: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; width: 100%; font-family: 'Courier New',courier,monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible;"&gt;&lt;span id="lnum8" style="color: #606060"&gt;   8:&lt;/span&gt;     {&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+&lt;pre style="border-style: none; text-align: left; padding: 0px; line-height: 12pt; background-color: white; margin: 0em; width: 100%; font-family: 'Courier New',courier,monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible;"&gt;&lt;span id="lnum9" style="color: #606060"&gt;   9:&lt;/span&gt;         &lt;span style="color: #008000"&gt;// do something not here that should not be done in parallel&lt;/span&gt;&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+&lt;pre style="border-style: none; text-align: left; padding: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; width: 100%; font-family: 'Courier New',courier,monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible;"&gt;&lt;span id="lnum10" style="color: #606060"&gt;  10:&lt;/span&gt;     }&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+&lt;pre style="border-style: none; text-align: left; padding: 0px; line-height: 12pt; background-color: white; margin: 0em; width: 100%; font-family: 'Courier New',courier,monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible;"&gt;&lt;span id="lnum11" style="color: #606060"&gt;  11:&lt;/span&gt; }&lt;/pre&gt;
+&lt;!--CRLF--&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Lie&amp;szlig;e man in Zeile 7 das String.Intern(&amp;hellip;) weg, w&amp;uuml;rde bei jedem Aufruf der Methode ein neues String-Objekt generiert &amp;ndash; was f&amp;uuml;r dem Lock seine Existenzberechtigung raubt.&lt;/p&gt;
+&lt;p&gt;Gru&amp;szlig;, Oliver&lt;/p&gt;
+&lt;div id="scid:0767317B-992E-4b12-91E0-4F059A8CECA8:a35adfcb-9fcc-4743-8e47-baeb799a6801" class="wlWriterEditableSmartContent" style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px"&gt;Technorati-Tags: &lt;a rel="tag" href="http://technorati.com/tags/Multithreading"&gt;Multithreading&lt;/a&gt;,&lt;a rel="tag" href="http://technorati.com/tags/Lock"&gt;Lock&lt;/a&gt;,&lt;a rel="tag" href="http://technorati.com/tags/String"&gt;String&lt;/a&gt;,&lt;a rel="tag" href="http://technorati.com/tags/Intern"&gt;Intern&lt;/a&gt;&lt;/div&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2010-03-20 14:59:00</pubDate>
+  <lastModified>2010-03-20 16:45:02</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Vorsicht-bei-String-als-Lock-Objekt</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>6cb56168-2015-4599-a1c1-8db9c9fae433</category>
+    <category>bc3db496-f484-41a0-860c-c2e57e829fa0</category>
+    <category>678a9d57-c1ea-487a-8fd3-4d08dc0be9c4</category>
+  </categories>
+  <notifications />
+</post>

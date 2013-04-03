@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>Oliver</author>
+  <title>Frustrating development – non-deterministic behavior</title>
+  <description />
+  <content>&lt;p&gt;Generally, when I execute Action A and get result B, then change Action A to A2 receiving a different result R2 and then change Action A2 back to A, I would expect to get result R once again.&lt;/p&gt;
+&lt;p&gt;Well, today this logic &lt;strong&gt;twice &lt;/strong&gt;failed me during development.&lt;/p&gt;
+&lt;h2&gt;Trying to use the PreApplicationStartMethodAttribute of .NET 4.0&lt;/h2&gt;
+&lt;p&gt;Recently, I was developing a small module to track some performance metrics in our new &lt;a title="The Orchard Project" href="http://www.orchardproject.net/" target="_blank"&gt;Orchard&lt;/a&gt; based portal &lt;a href="http://www.marinas.info"&gt;&lt;/a&gt;&lt;a href="http://www.marinas.info"&gt;marina finder&lt;/a&gt;, when I just could not get this wonderful new attribute working. The idea behind it is, that you can decorate any assembly with it and call some custom code from that assembly very early in the Application life time (read more in &lt;a href="http://haacked.com/archive/2010/05/16/three-hidden-extensibility-gems-in-asp-net-4.aspx" target="_blank"&gt;Phil Haack&amp;rsquo;s post&lt;/a&gt;), e.g. register some HttpModule that I don&amp;rsquo;t want to register using the application&amp;rsquo;s web.config file. This is especially important when developing with Orchard because during an update to a new version any change to their original source code would either be lost or would need to be somehow manually reapplied. So it&amp;rsquo;s preferable not to touch the web.config.&lt;/p&gt;
+&lt;p&gt;Well, this great attribute simply did not work on my local development application instance. To get the functionality done anyways, I chose to add that module registration to the web.config despite my bad feeling about it. It worked as expected so the next step was to deploy this new feature to our staging system.&lt;/p&gt;
+&lt;p&gt;That&amp;rsquo;s where it made &amp;ldquo;Bang!&amp;rdquo;. The exception was &amp;ldquo;&lt;span style="font-size: medium;"&gt;&lt;em&gt;Item has already been added&lt;/em&gt;&lt;/span&gt;&amp;rdquo;. The offending code looked like this:&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=image_30.png"&gt;&lt;img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="image" src="http://shades-of-orange.com/image.axd?picture=image_thumb_30.png" border="0" alt="image" width="560" height="152" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;How was that possible? I registered this event handler exactly once for the Application.BeginRequest event &amp;ndash; so I really didn&amp;rsquo;t grasp how that code could execute more than once for any given request. Wait, there is one scenario where this could happen &amp;ndash; if the module has been registered twice! A little debugging led me that exact conclusion, so how could the module be registered twice? Well, obviously on our staging server the registration inside the PreApplicationStartMethod worked just as well as the registration in the web.config &amp;ndash; once I removed the module registration from the web.config the module code was called only once.&lt;/p&gt;
+&lt;p&gt;So why did this not work on my machine? I set up another web site in IIS with &amp;ndash; as it turns out, &lt;em&gt;almost&lt;/em&gt; &amp;ndash; the same, identical application code and it worked just fine, just like on our server. So I grabbed &lt;a href="http://winmerge.org/" target="_blank"&gt;WinMerge&lt;/a&gt; (an indispensible tool in my toolbox, by the way), compared the folder hierarchy and found a difference in the web.configs:&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=image_31.png"&gt;&lt;img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="image" src="http://shades-of-orange.com/image.axd?picture=image_thumb_31.png" border="0" alt="image" width="1046" height="91" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;As weird as it seemed to me that this difference might cause the .dll with my HttpModule not to load as expected &amp;ndash; after changing the &amp;ldquo;debug&amp;rdquo; attribute to &amp;ldquo;false&amp;rdquo; the module would finally load! Heureka! So now, can anybody explain, why? Well, I tried to dig deeper into this problem, but changing the value back to &amp;ldquo;true&amp;rdquo; would not change a thing!!! Now I was completely baffled. Well, I still am. That&amp;rsquo;s what I was talking about in the introduction. It works as expected &amp;ndash; but somehow I&amp;rsquo;m not happy with &lt;strong&gt;how&lt;/strong&gt; it did.&lt;/p&gt;
+&lt;h2&gt;An HttpModule and a database connection error&lt;/h2&gt;
+&lt;p&gt;The second thing happened on the way of fixing the above error. When I started fixing the &amp;ldquo;&lt;span style="font-size: medium;"&gt;&lt;em&gt;Item has already been added&lt;/em&gt;&lt;/span&gt;&amp;rdquo; exception by adding some debugging code, my local application instance would suddenly return a database connectivity error most ASP.NET know all too well:&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=image_32.png"&gt;&lt;img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="image" src="http://shades-of-orange.com/image.axd?picture=image_thumb_32.png" border="0" alt="image" width="581" height="322" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I spent more than half an hour trying to find the cause &amp;ndash; checked my network connection (as our dev DB sits on one of our servers), tried to log into the DB using SSMS (which worked, surprisingly), got a copy of the DB and threw it into my local SQL server instance trying to connect to the DB there &amp;ndash; all to no avail. Finally it hit me. &amp;ldquo;Just revert the new code you wrote, maybe it&amp;rsquo;s that!&amp;rdquo; Well, as improbable as that seemed, it worked. Trying to find out which line contained the offending piece of code, I reinserted all of what I&amp;rsquo;d changed before, this time line by line. The error would not reappear! Can you believe it? This feels like some black magic or a really bad joke to me.&lt;/p&gt;
+&lt;h2&gt;Lesson learned&lt;/h2&gt;
+&lt;p&gt;I&amp;rsquo;m not sure yet. I dare to assume that there might have been a problem with some old cached code/dlls somewhere but it&amp;rsquo;s a vague assumption. I&amp;rsquo;m not sure what to make of all of this. Do you, dear reader?&lt;/p&gt;
+&lt;p&gt;Happy coding!&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2011-11-24 00:39:00</pubDate>
+  <lastModified>2012-03-19 13:56:40</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Frustrating-development-non-deterministic-behavior</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

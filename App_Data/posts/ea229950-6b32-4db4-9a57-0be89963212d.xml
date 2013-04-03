@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>admin</author>
+  <title>Dependency Injection &amp; IoC Container</title>
+  <description />
+  <content>&lt;p&gt;Guter Einblick in Dependency Injection. Ist zwar für &lt;a href="http://code.google.com/p/google-guice/"&gt;Juice&lt;/a&gt;, einem Java Framework aber das Prinzip bleibt das Gleiche. Und ist nicht C# das bessere Java? :-)&lt;/p&gt;
+&lt;p&gt;[Video:] &lt;/p&gt;
+&lt;p&gt;&lt;embed id="VideoPlayback" style="width: 400px; height: 326px" src="http://video.google.com/googleplayer.swf?docId=6068447410873108038&amp;amp;hl=en" type="application/x-shockwave-flash" flashvars=""&gt; &lt;/embed&gt;&lt;/p&gt; &lt;p&gt;Was ich spannend finde ist, das je klarer die Konzepte werden desto mehr Spass macht es sich damit zu weiter beschäftigen. Die Fragen werden interessanter: Wo sind Gemeinsamkeiten  und Unterschiede zwischen "Service Locator Pattern" u. "Dependency Injection"? &lt;a href="http://www.martinfowler.com/articles/injection.html#ServiceLocatorVsDependencyInjection"&gt;Welche Vor und Nachteile habe die jeweiligen Muster?&lt;/a&gt; Wo ist der Unterschied zwischen Dependency Injection und Inversion of Control. Und wie kann mir das bei meiner Arbeit &lt;a href="http://msdn2.microsoft.com/en-us/library/aa973811.aspx"&gt;helfen&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;Inversion of Control Container für .NET&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;&lt;a href="http://www.castleproject.org/container/index.html"&gt;Castle&lt;/a&gt; (Microkernel &amp;amp; Windsor)  &lt;/li&gt;
+    &lt;li&gt;&lt;a href="http://www.springframework.net/"&gt;Spring.NET&lt;/a&gt;  &lt;/li&gt;
+    &lt;li&gt;&lt;a href="http://www.picocontainer.org/"&gt;PicoContainer&lt;/a&gt;  &lt;/li&gt;
+    &lt;li&gt;&lt;a href="http://www.codeplex.com/Wiki/View.aspx?ProjectName=ObjectBuilder"&gt;Object Builder (MS)&lt;/a&gt;  &lt;/li&gt;
+    &lt;li&gt;&lt;a href="http://structuremap.sourceforge.net/Default.htm"&gt;Structure Map&lt;/a&gt;  &lt;/li&gt;
+    &lt;li&gt;&lt;a href="http://ninject.org/"&gt;Ninject&lt;/a&gt; &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Unbedingt lesenswert ist der MSDN &lt;a href="http://msdn2.microsoft.com/en-us/library/aa973811.aspx"&gt;Artikel&lt;/a&gt; von Oren Eini über IoC und Windsor Container.&lt;/p&gt;
+&lt;ul&gt;
+    &lt;p&gt; &lt;/p&gt;
+&lt;/ul&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2007-09-07 02:52:31</pubDate>
+  <lastModified>0001-01-01 06:00:00</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Dependency-Injection-IoC-Container</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>6cb56168-2015-4599-a1c1-8db9c9fae433</category>
+    <category>678a9d57-c1ea-487a-8fd3-4d08dc0be9c4</category>
+  </categories>
+  <notifications />
+</post>

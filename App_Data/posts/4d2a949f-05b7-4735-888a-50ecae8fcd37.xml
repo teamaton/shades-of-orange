@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>robert</author>
+  <title>Abnahme von Web-Formularen</title>
+  <description />
+  <content>&lt;p&gt;Gesucht sind leichtgewichtige Kriterien für das Testen und Abnehmen von Formularen &lt;em&gt;unabhängig&lt;/em&gt; von der eigentlichen Funktionalität (Speichern von Ratings, Verschicken von Emails). &lt;/p&gt;  &lt;h3&gt;Upload-Formular (Datei, Bild, ..) (sollten getestet werden mit)&lt;/h3&gt;  &lt;ul&gt;   &lt;li&gt;eigenwillige Dateinamen, mit Sonderzeichen, mit Punkten, ohne Endung&lt;/li&gt;    &lt;li&gt;zu große Dateien&lt;/li&gt;    &lt;li&gt;nicht unterstützte Dateitypen&lt;/li&gt; &lt;/ul&gt;  &lt;h3&gt;Texteingabefelder (sollten getestet werden auf)&lt;/h3&gt;  &lt;ul&gt;   &lt;li&gt;keine Eingabe&lt;/li&gt;    &lt;li&gt;sehr große Eingabe&lt;/li&gt;    &lt;li&gt;komischer Inhalt: Am besten mit chinesisch und türkisch Testen&lt;/li&gt;    &lt;li&gt;Script-Injektion&lt;/li&gt; &lt;/ul&gt;  &lt;h3&gt;DropDownlisten/Radios/Checkboxen (sollten getestet werden auf)&lt;/h3&gt;  &lt;ul&gt;   &lt;li&gt;verhalten wenn keine Auswahl getroffen wurde&lt;/li&gt; &lt;/ul&gt;  &lt;h2&gt;Allgemeine Kriterien: &lt;/h2&gt;  &lt;ul&gt;   &lt;li&gt;Sinnhaftigkeit von Benutzer-Feedback (Fehlermeldung, Aufforderungen, etc.).&lt;/li&gt;    &lt;li&gt;Vorhanden sein von Benutzer-Feedback&lt;/li&gt;    &lt;li&gt;Ist das Feedback auch in kleine Auflösungen auf dem Bildschirm sichtbar?&lt;/li&gt; &lt;/ul&gt;  &lt;h3&gt;Verschiedene Browser&lt;/h3&gt;  &lt;ul&gt;   &lt;li&gt;Feedback sollten in den von der Anwendung unterstützten Browsern getestet werden.&lt;/li&gt;    &lt;li&gt;Interaktivitäte/dynamische Formularelemente sollten getestet werden.&lt;/li&gt; &lt;/ul&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2009-11-24 19:03:16</pubDate>
+  <lastModified>2009-11-24 19:03:16</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Abnahme-von-Web-Formularen</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>da405bb3-bccc-4d29-bd8c-cbbcb36a4bc7</category>
+  </categories>
+  <notifications />
+</post>

@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>oliver</author>
+  <title>Automatic deployment of an ASP.NET Web Application Project with TeamCity and MSBuild</title>
+  <description />
+  <content>&lt;p&gt;We recently updated one our largest project to use ASP.NET 4.0, and for this matter the new Package/Publish feature including sub-&lt;font face="Courier New"&gt;web.config&lt;/font&gt;s which is meant to supersede the Web Deployment Project. For a manual deployment there’s a good write-up on the msdn library titled &lt;a title="go to MSDN library page" href="http://msdn.microsoft.com/en-us/library/dd394698.aspx" target="_blank"&gt;ASP.NET Web Application Project Deployment Overview&lt;/a&gt; which shows how and where to set this up.&lt;/p&gt;  &lt;p&gt;In our case this was not satisfactory because our deployment process is a bit more complicated. We push our changes to a central repository and use JetBrains’ continuous integration server (CIS) &lt;a href="http://www.jetbrains.com/teamcity/" target="_blank"&gt;TeamCity Professional&lt;/a&gt;, which is totally free for our project size, for a continuous integration process. Once TeamCity has pulled and tested the current version, it is supposed to deploy this version to our staging server where we further test the complete site.&lt;/p&gt;  &lt;p&gt;The key point in an automatic deployment was the management of the different web.config files for the different environments our project is running on. Unfortunately, until yesterday every deployment that included changes to the web.config file – even to the staging server - required a manual step of editing the web.config that live on our staging system (outside of source control!). What we used to do: after a successful build on our CIS we simply copied the web application (files) to our staging server! But as Scott Hanselman wrote: &lt;a href="http://www.hanselman.com/blog/WebDeploymentMadeAwesomeIfYoureUsingXCopyYoureDoingItWrong.aspx" target="_blank"&gt;If You're Using XCopy, You're Doing It Wrong&lt;/a&gt;! This post inspired us to move along and take advantage of the new possibilities that we were given. &lt;/p&gt;  &lt;p&gt;In the meanwhile, before switching to .NET 4.0 actually, we also took a shot at the &lt;a href="http://blogs.msdn.com/b/webdevtools/archive/2010/05/26/visual-studio-2010-web-deployment-projects-rtw-available-now.aspx" target="_blank"&gt;Web Deployment Project&lt;/a&gt; way of doing things but never actually got that far as to fully automate the deployment – somehow the setup was not as easy as we hoped. Anyway, we wanted &lt;a href="http://msdn.microsoft.com/en-us/library/dd465326.aspx" target="_blank"&gt;web.config Transforms&lt;/a&gt;!&lt;/p&gt;  &lt;p&gt;So what does our setup look like and what did we want to do?&lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=setup.png"&gt;&lt;img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="setup" border="0" alt="setup" src="http://shades-of-orange.com/image.axd?picture=setup_thumb.png" width="768" height="208" /&gt;&lt;/a&gt;&amp;#160;&lt;/p&gt;  &lt;p&gt;During local development and testing I use a web.config file that talks to a local DB instance and has some more specific settings. To run the web application on our staging server we need to replace certain values or whole sections in the web.config. For this transformation we use the sub-web.config files, one for each build configuration:&lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=web-configs.png"&gt;&lt;img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="web-configs" border="0" alt="web-configs" src="http://shades-of-orange.com/image.axd?picture=web-configs_thumb.png" width="254" height="180" /&gt;&lt;/a&gt; &lt;/p&gt;  &lt;p&gt;Now, with all of these web.config files the simple XCOPY deployment we used to use does not work any longer. We need to trigger the web.config transformation on the build server and then deploy the whole application. As easy as this looks using the built-in menus and dialogs in Visual Studio – it took me quite a while to find how to do this in an automated build, more concretely from the command line.&lt;/p&gt;  &lt;p&gt;After unsuccessfulle skimming &lt;a href="http://stackoverflow.com" target="_blank"&gt;stackoverflow.com&lt;/a&gt; for a solution I finally tripped over this very informative blog post on &lt;a title="Publishing a VS2010 ASP.NET web application using MSBuild" href="http://www.digitallycreated.net/Blog/59/locally-publishing-a-vs2010-asp.net-web-application-using-msbuild" target="_blank"&gt;publishing a VS2010 ASP.NET web application using MSBuild&lt;/a&gt;. Admittedly, the author focuses on how to publish on the local machine as it’s yet a different process but towards the end he posts the solution I was looking for:&lt;/p&gt;  &lt;p&gt;&lt;/p&gt;  &lt;p&gt;&lt;/p&gt;  &lt;div style="border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 69.82%; padding-right: 4px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; height: 37px; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px" id="codeSnippetWrapper"&gt;   &lt;div style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px" id="codeSnippet"&gt;     &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum1"&gt;   1:&lt;/span&gt; msbuild Website.csproj &lt;span style="color: #006080"&gt;&amp;quot;/p:Platform=AnyCPU;Configuration=Release;DesktopBuildPackageLocation=c:\_Publish\stage\Website.zip&amp;quot;&lt;/span&gt; /t:Package&lt;/pre&gt;
+&lt;!--CRLF--&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This was it! After running this on my machine with my own settings I looked into the folder with the zip file and found the following 5 files:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=package-folder.png"&gt;&lt;img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="package-folder" border="0" alt="package-folder" src="http://shades-of-orange.com/image.axd?picture=package-folder_thumb.png" width="203" height="244" /&gt;&lt;/a&gt; &lt;/p&gt;
+
+&lt;p&gt;At first I just wanted to take the zip file, copy it to the staging server, unpack it – done! But then I peaked into it… and deeper… and deeper… and… still deeper… until I finally saw our application files underneath this directory:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=zip-path.png"&gt;&lt;img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="zip-path" border="0" alt="zip-path" src="http://shades-of-orange.com/image.axd?picture=zip-path_thumb.png" width="1018" height="46" /&gt;&lt;/a&gt; &lt;/p&gt;
+
+&lt;p&gt;This has got to be one of the longest paths I’ve ever seen and used! How would I automate the extraction of web application files from the zip with such a path? I was already seeing myself hacking away on the command line…&lt;/p&gt;
+
+&lt;p&gt;But wait: what about those files that appeared next to the zip file? A &lt;font face="Courier New"&gt;ci-stage.deploy.cmd&lt;/font&gt; and a &lt;font face="Courier New"&gt;readme.txt&lt;/font&gt; caught my attention – of course, I opened the cmd file first :-D&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=deploy-cmd.png"&gt;&lt;img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="deploy-cmd" border="0" alt="deploy-cmd" src="http://shades-of-orange.com/image.axd?picture=deploy-cmd_thumb.png" width="907" height="407" /&gt;&lt;/a&gt; &lt;/p&gt;
+
+&lt;p&gt;Well… maybe the readme file gives me a shortcut to understanding this and the rest of the 190 lines:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=readme.png"&gt;&lt;img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="readme" border="0" alt="readme" src="http://shades-of-orange.com/image.axd?picture=readme_thumb.png" width="908" height="477" /&gt;&lt;/a&gt; &lt;/p&gt;
+
+&lt;p&gt;Looks promising! I convinced myself to give it a shot. So we set up a new configuration in TeamCity with the following settings:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=tc-config.png"&gt;&lt;img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="tc-config" border="0" alt="tc-config" src="http://shades-of-orange.com/image.axd?picture=tc-config_thumb.png" width="719" height="463" /&gt;&lt;/a&gt; &lt;/p&gt;
+
+&lt;p&gt;These settings reflect the command line from above with a few minor changes (removed the &lt;font face="Courier New"&gt;DesktopBuildPackageLocation&lt;/font&gt; and set the /v[erbose] switch to m[inimal]):&lt;/p&gt;
+
+&lt;p&gt;&lt;font face="Courier New"&gt;msbuild Website.csproj &lt;font color="#000000"&gt;&lt;span style="color: #006080"&gt;&amp;quot;/p:Platform=AnyCPU;Configuration=Release&amp;quot;&lt;/span&gt; /t:Package /v:m&lt;/font&gt;&lt;/font&gt;&lt;/p&gt;
+
+&lt;p&gt;The second step is to use the generated script, ci-stage.deploy.cmd. I recommend to run the script by hand once using the /T switch just to make sure everything looks alright. In our case we found out that the deployment of the package would have deleted a lot of files, most of all images, from our website. This was not what we wanted! After a quick search I found this question on &lt;a href="http://stackoverflow.com" target="_blank"&gt;stackoverflow.com&lt;/a&gt;: &lt;a href="http://stackoverflow.com/questions/3909779/msdeploy-leave-extra-files-on-destination-from-command-line"&gt;MSDeploy: “Leave extra files on destination” from command line?&lt;/a&gt; So I added this switch to the parameters list in the build step configuration as follows:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=web-deploy.png"&gt;&lt;img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="web-deploy" border="0" alt="web-deploy" src="http://shades-of-orange.com/image.axd?picture=web-deploy_thumb.png" width="614" height="289" /&gt;&lt;/a&gt; &lt;/p&gt;
+
+&lt;p&gt;That’s it! This is all we need on the command line to generate a package that is ready for deployment on the staging server. There are a few more necessary settings, including the &lt;font face="Courier New"&gt;DesktopBuildPackageLocation&lt;/font&gt;, that can be found in the Package settings window inside the project properties of the web application project:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;the &lt;font face="Courier New"&gt;DesktopBuildPackageLocation&lt;/font&gt; can be set here instead of on the command line &lt;/li&gt;
+
+  &lt;li&gt;the website and application name on the destination IIS server that this package should be installed to &lt;/li&gt;
+
+  &lt;li&gt;some more options like excluding debug symbols etc. &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=package-settings.png"&gt;&lt;img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="package-settings" border="0" alt="package-settings" src="http://shades-of-orange.com/image.axd?picture=package-settings_thumb.png" width="664" height="560" /&gt;&lt;/a&gt; &lt;/p&gt;
+
+&lt;p&gt;These settings are saved in the project file and will be used during generation and deployment of the package.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;That’s all I have to say right now.&lt;/p&gt;
+
+&lt;p&gt;Happy Coding, Oliver&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2011-01-21 20:19:11</pubDate>
+  <lastModified>2011-01-26 22:55:21</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Automatic-deployment-of-an-ASPNET-Web-Application-Project-with-TeamCity-and-MSBuild</slug>
+  <tags>
+    <tag>deployment msbuild teamcity</tag>
+  </tags>
+  <comments />
+  <categories>
+    <category>bc3db496-f484-41a0-860c-c2e57e829fa0</category>
+    <category>5fef49e2-2727-46c7-94a7-9816011a72c2</category>
+    <category>4a6eca6b-10d9-4a5f-ab67-40144ba581d9</category>
+    <category>678a9d57-c1ea-487a-8fd3-4d08dc0be9c4</category>
+    <category>3b5447eb-ff3b-4481-9287-0508fce6262b</category>
+  </categories>
+  <notifications />
+</post>

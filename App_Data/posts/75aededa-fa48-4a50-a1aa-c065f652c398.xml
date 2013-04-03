@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>admin</author>
+  <title>Single Responsibility Principal vs. Code Duplication</title>
+  <description />
+  <content>&lt;p&gt;Code Duplication ist einer der populären &lt;a href="http://c2.com/xp/CodeSmell.html"&gt;Code Smells&lt;/a&gt;. Um so interessanter ist die Frage, wann Code Duplication sinnvoll ist. Ein lesenswerter Blog-Eintrag von &lt;a href="http://ayende.com/Blog/Default.aspx"&gt;Ayende Rahien&lt;/a&gt;: &lt;a href="http://ayende.com/Blog/archive/2007/06/11/When-should-you-encourage-code-duplication.aspx"&gt;When-should-you-encourage-code-duplication&lt;/a&gt;. &lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2007-06-12 14:05:36</pubDate>
+  <lastModified>0001-01-01 06:00:00</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Single-Responsibility-Principal-vs-Code-Duplication</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>678a9d57-c1ea-487a-8fd3-4d08dc0be9c4</category>
+  </categories>
+  <notifications />
+</post>

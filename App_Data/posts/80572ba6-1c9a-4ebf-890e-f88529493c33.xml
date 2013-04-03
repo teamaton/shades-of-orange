@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>Oliver</author>
+  <title>Running a multi-lingual web application: System.IO.PathTooLongException</title>
+  <description />
+  <content>&lt;p&gt;We definitely have long paths on our client’s platform &lt;a href="http://www.camping.info" target="_blank"&gt;www.camping.info&lt;/a&gt;, for example for a concrete rating on the detail page of a campsite with a long name in a state with a long name - &lt;a title="http://www.camping.info/deutschland/schleswig-holstein-und-hamburg/campingplatz-ferien-und-campinganlage-schuldt-19573/bewertung/r23989" href="http://www.camping.info/deutschland/schleswig-holstein-und-hamburg/campingplatz-ferien-und-campinganlage-schuldt-19573/bewertung/r23989" target="_blank"&gt;http://www.camping.info/deutschland/schleswig-holstein-und-hamburg/campingplatz-ferien-und-campinganlage-schuldt-19573/bewertung/r23989&lt;/a&gt; - but the path (everything after the .info including the ‘/’) is still only 112 characters long which is still a long way from the 260 character barrier that’s the default in ASP.NET (&lt;a href="http://msdn.microsoft.com/en-us/library/system.web.configuration.httpruntimesection.maxurllength.aspx"&gt;see the MSDN&lt;/a&gt;).&lt;/p&gt;  &lt;h2&gt;The problem&lt;/h2&gt;  &lt;p&gt;Well, the same page in Greek for example has the following URL: &lt;a title="http://el.camping.info/γερμανία/σλέσβιχ-χολστάιν-αμβούργο/campingplatz-ferien-und-campinganlage-schuldt-19573/αξιολόγηση" href="http://el.camping.info/&amp;gamma;&amp;epsilon;&amp;rho;&amp;mu;&amp;alpha;&amp;nu;ί&amp;alpha;/&amp;sigma;&amp;lambda;έ&amp;sigma;&amp;beta;&amp;iota;&amp;chi;-&amp;chi;&amp;omicron;&amp;lambda;&amp;sigma;&amp;tau;ά&amp;iota;&amp;nu;-&amp;alpha;&amp;mu;&amp;beta;&amp;omicron;ύ&amp;rho;&amp;gamma;&amp;omicron;/campingplatz-ferien-und-campinganlage-schuldt-19573/&amp;alpha;&amp;xi;&amp;iota;&amp;omicron;&amp;lambda;ό&amp;gamma;&amp;eta;&amp;sigma;&amp;eta;/r23989" target="_blank"&gt;http://el.camping.info/γερμανία/σλέσβιχ-χολστάιν-αμβούργο/campingplatz-ferien-und-campinganlage-schuldt-19573/αξιολόγηση/r23989&lt;/a&gt;, at least that is what we see in the browser bar. Essentially, this URL will be encoded when requesting the page from the server so it becomes a gigantic &lt;a title="http://el.camping.info/%CE%B3%CE%B5%CF%81%CE%BC%CE%B1%CE%BD%CE%AF%CE%B1/%CF%83%CE%BB%CE%AD%CF%83%CE%B2%CE%B9%CF%87-%CF%87%CE%BF%CE%BB%CF%83%CF%84%CE%AC%CE%B9%CE%BD-%CE%B1%CE%BC%CE%B2%CE%BF%CF%8D%CF%81%CE%B3%CE%BF/campingplatz-ferien-und-campinganlage-schuldt-19573/%CE%B1%CE%BE%CE%B9%CE%BF%CE%BB%CF%8C%CE%B3%CE%B7%CF%83%CE%B7/r23989" href="http://el.camping.info/%CE%B3%CE%B5%CF%81%CE%BC%CE%B1%CE%BD%CE%AF%CE%B1/%CF%83%CE%BB%CE%AD%CF%83%CE%B2%CE%B9%CF%87-%CF%87%CE%BF%CE%BB%CF%83%CF%84%CE%AC%CE%B9%CE%BD-%CE%B1%CE%BC%CE%B2%CE%BF%CF%8D%CF%81%CE%B3%CE%BF/campingplatz-ferien-und-campinganlage-schuldt-19573/%CE%B1%CE%BE%CE%B9%CE%BF%CE%BB%CF%8C%CE%B3%CE%B7%CF%83%CE%B7/r23989" target="_blank"&gt;http://el.camping.info/%CE%B3%CE%B5%CF%81%CE%BC%CE%B1%CE%BD%CE%AF%CE%B1/%CF%83%CE%BB%CE%AD%CF%83%CE%B2%CE%B9%CF%87-%CF%87%CE%BF%CE%BB%CF%83%CF%84%CE%AC%CE%B9%CE%BD-%CE%B1%CE%BC%CE%B2%CE%BF%CF%8D%CF%81%CE%B3%CE%BF/campingplatz-ferien-und-campinganlage-schuldt-19573/%CE%B1%CE%BE%CE%B9%CE%BF%CE%BB%CF%8C%CE%B3%CE%B7%CF%83%CE%B7/r23989&lt;/a&gt;! Now the path of the URL is a whopping 310 characters long! That’s quite a bit over the limit - but even for shorter URLs the cyrillic or greek equivalents surpass the limit not as rarely as one would think once they are URL encoded.&lt;/p&gt;  &lt;p&gt;The exception you get when exceeding the default of 260 chars is:&lt;/p&gt;  &lt;pre&gt;&lt;pre style="background-color: #ffffff; margin: 0em; width: 89.14%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; height: 69px; font-size: 12px"&gt;&lt;p&gt;System.IO.PathTooLongException: The specified path, file name, or both are too long. The fully qualified file name must be less&lt;/p&gt;&lt;p&gt;than 260 characters, and the directory name must be less than 248 characters.&lt;/p&gt;&lt;/pre&gt;&lt;/pre&gt;
+
+&lt;p&gt;And this is what the error looks like in &lt;a href="http://code.google.com/p/elmah/" target="_blank"&gt;Elmah&lt;/a&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=PathTooLong.png"&gt;&lt;img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="PathTooLong" border="0" alt="PathTooLong" src="http://shades-of-orange.com/image.axd?picture=PathTooLong_thumb.png" width="820" height="361" /&gt;&lt;/a&gt; &lt;/p&gt;
+
+&lt;h2&gt;The solution&lt;/h2&gt;
+
+&lt;p&gt;You don’t have to search long to find a solution to this problem on the web: &lt;a href="http://forums.asp.net/t/1553460.aspx/2/10" target="_blank"&gt;http://forums.asp.net/t/1553460.aspx/2/10&lt;/a&gt;. Just make sure the &lt;font face="Courier New"&gt;httpRuntime&lt;/font&gt; node contains the properties &lt;font face="Courier New"&gt;maxUrlLength&lt;/font&gt; AND &lt;font face="Courier New"&gt;relaxedUrlToFileSystemMapping&lt;/font&gt; like so:&lt;/p&gt;
+
+&lt;pre&gt;&lt;pre style="background-color: #ffffff; margin: 0em; width: 90.26%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; height: 19px; font-size: 12px"&gt;&lt;span style="color: #0000ff"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #800000"&gt;httpRuntime&lt;/span&gt; &lt;span style="color: #ff0000"&gt;maxUrlLength&lt;/span&gt;=&lt;span style="color: #0000ff"&gt;&amp;quot;500&amp;quot;&lt;/span&gt; &lt;span style="color: #ff0000"&gt;relaxedUrlToFileSystemMapping&lt;/span&gt;=&lt;span style="color: #0000ff"&gt;&amp;quot;true&amp;quot;&lt;/span&gt; &lt;span style="color: #0000ff"&gt;/&amp;gt;&lt;/span&gt;&lt;/pre&gt;&lt;/pre&gt;
+
+&lt;p&gt;You might wonder what the &lt;font face="Courier New"&gt;relaxedUrlToFileSystemMapping&lt;/font&gt; property really does: you can &lt;a href="http://msdn.microsoft.com/en-us/library/system.web.configuration.httpruntimesection.relaxedurltofilesystemmapping.aspx" target="_blank"&gt;read more on MSDN&lt;/a&gt;. In short, if set to true “the URL does not have to comply with Windows path rules” (MSDN).&lt;/p&gt;
+
+&lt;p&gt;Happy coding,&lt;/p&gt;
+
+&lt;p&gt;Oliver&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2011-03-04 15:18:44</pubDate>
+  <lastModified>2011-03-04 18:46:25</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Running-a-multi-lingual-web-application-SystemIOPathTooLongException</slug>
+  <tags>
+    <tag>maxUrlLength</tag>
+    <tag>PathTooLongException</tag>
+  </tags>
+  <comments />
+  <categories>
+    <category>bc3db496-f484-41a0-860c-c2e57e829fa0</category>
+    <category>127092f2-44aa-4021-a268-49fce3fc0aa1</category>
+    <category>ca0b8243-9da6-4e51-a0a5-4e603e68bbc9</category>
+    <category>3b5447eb-ff3b-4481-9287-0508fce6262b</category>
+    <category>e7922560-6aa6-4393-9597-1b8507bb6379</category>
+  </categories>
+  <notifications />
+</post>

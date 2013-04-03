@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>admin</author>
+  <title>Projektstruktur, Thirdparty .dlls</title>
+  <description />
+  <content>&lt;p&gt;Ich kann mich nicht erinnern an einem Projekt gerabeitet zu haben das nicht Komponenten Dritter verwendet hat.&lt;/p&gt;  &lt;p&gt;Bei uns sind Zurzeit eigentlich immer dabei: NUnit, NHibernate, Log4Net, gelegentlich kommen Charting Komponenten, das AJAX Toolkit, PDF Werkzeuge und andere dazu.&lt;/p&gt;  &lt;p&gt;Damit eine Anwendung sich nach dem Ausschecken auch direkt bauen lässt, müssen diese dlls nun irgendwo abgelegt werden. Hier nun eine Reihe von Vorschlägen für den Ordnernamen, in dem sich dlls dritter finden lassen könnten. &lt;/p&gt;  &lt;ul&gt;   &lt;li&gt;_libs (MojoPortal)&lt;/li&gt;    &lt;li&gt;lib (u.a. NHibernate, StoryVerse, NetBpm, Flex-Wiki, Cuyahoga)&lt;/li&gt;    &lt;li&gt;3rdParty (Watin, dotNetKicks)&lt;/li&gt;    &lt;li&gt;Dependencies (Subtext, EComerce Web 2.0.1)&lt;/li&gt;    &lt;li&gt;Bin (SharForge)&lt;/li&gt;    &lt;li&gt;References (Screwturn)&lt;/li&gt;    &lt;li&gt;SharedLibs (RhinoMcoks)&lt;/li&gt; &lt;/ul&gt;  &lt;p&gt;(in Klammern stehen OSS Projekte, die diesen Ordernamen verwenden).&lt;/p&gt;  &lt;p&gt;Bei Gelegenheit wird es auch noch eine kurzen Vergleich der Projektstrukturen geben :-)&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2008-04-24 12:07:05</pubDate>
+  <lastModified>0001-01-01 06:00:00</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Projektstruktur-Thirdparty-dlls</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>678a9d57-c1ea-487a-8fd3-4d08dc0be9c4</category>
+  </categories>
+  <notifications />
+</post>

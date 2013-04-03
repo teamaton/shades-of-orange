@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>robert</author>
+  <title>SQL Server “Auto-Close” führt zu Time Outs &amp; I/O Stress</title>
+  <description />
+  <content>&lt;p&gt;Gerade erreichte uns eine Monitoring SMS weil eine Kundenseiten Down war. Ein kurze Überprüfung konnte das nicht bestätigen, jedoch der Event-Log: &lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=Event-Log.png"&gt;&lt;img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="Event-Log" border="0" alt="Event-Log" src="http://shades-of-orange.com/image.axd?picture=Event-Log_thumb.png" width="433" height="321" /&gt;&lt;/a&gt; &lt;/p&gt;  &lt;p&gt;Die ASP.NET Fehlerdetails sagen: &lt;/p&gt;  &lt;blockquote&gt;   &lt;p&gt;Exception information:      &lt;br /&gt;&amp;#160;&amp;#160;&amp;#160; Exception type: SqlException       &lt;br /&gt;&amp;#160;&amp;#160;&amp;#160; Exception message: Timeout expired.&amp;#160; The timeout period elapsed prior to completion of the operation or the server is not responding. &lt;/p&gt;    &lt;p&gt;Doch wie kann das sein? Auch wenn eine Vielzahl von Seiten auf dem Server eingerichtet sind, ist der Dual-Quadcore mit 8 Gigabyte RAM kaum unter Last. Aufschluss aus welcher Richtung das Problem kommt, geben die Vielzahl von MSSQL$EXPRESS Events: “Starting up database 'XY'.”&lt;/p&gt;    &lt;p&gt;Der Grund für das häufige Neustarten der Datenbank ist so erklären: Einige Kundeninstallation werden selten verwendet. Die Einstellung “Auto-Close” …&lt;/p&gt;    &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=image_1.png"&gt;&lt;img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="image" border="0" alt="image" src="http://shades-of-orange.com/image.axd?picture=image_thumb_1.png" width="510" height="367" /&gt;&lt;/a&gt; &lt;/p&gt;    &lt;p&gt;(Zeigt: “Database Properties”, rechte Maustaste auf die DB)&lt;/p&gt;    &lt;p&gt;… wird der SQL-Server dazu veranlasst die Datenbank “herunterzufahren” und Resourcen frei zu geben. Das geschieht wenn der letzte Benutzer sich vom SQL Server abmeldet, in diesem Fall also wenn der Connection-Pool geschlossen wird, was geschieht wenn die Webseite herunterfährt, also der Worker-Process für einen Web-Application-Pool beendet wird, &lt;/p&gt; &lt;/blockquote&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=IIS-Timout.png"&gt;&lt;img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="IIS-Timout" border="0" alt="IIS-Timout" src="http://shades-of-orange.com/image.axd?picture=IIS-Timout_thumb.png" width="443" height="189" /&gt;&lt;/a&gt;&amp;#160;&lt;/p&gt;  &lt;p&gt;(IIS Connection-Pool Properties)&lt;/p&gt;  &lt;p&gt;per Default nach 20 Minuten. &lt;/p&gt;  &lt;p&gt;Durch unser Monitoring&amp;#160; werden jedoch in einem wiederkehrendem Intervall (@Mark, in welchem genau?) viele Seiten relativ zeitgleich aufgerufen und dadurch “neu gestartet” was dazu führt, dass viele Application-Pools und Datenbanken wieder “hochfahren” müssen. Die aktuelle Theorie ist, das dass I/O Stress verusacht und zum obigen Fehler führt. Selten (weniger als einmal im Monat) kommt es dann zu dieser Fehlermeldung: “SQL Server has encountered 1 occurrence(s) of I/O requests taking longer than 15 seconds to complete on file”, die eine Fehler SMS zur Folge hat und die nicht mehr auftreten sollte wenn der “Idel Time-out verlängert” wird und das SQL Server Close abgestellt ist. &lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2010-03-23 17:14:02</pubDate>
+  <lastModified>2010-03-23 17:18:35</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>SQL-Server-e2809cAuto-Closee2809d-fuhrt-zu-Time-Outs-IO-Stress</slug>
+  <tags>
+    <tag>iis</tag>
+    <tag>sql-server</tag>
+  </tags>
+  <comments />
+  <categories>
+    <category>4c741f81-0ac2-4ab0-9a49-bd8ecbbff502</category>
+  </categories>
+  <notifications />
+</post>

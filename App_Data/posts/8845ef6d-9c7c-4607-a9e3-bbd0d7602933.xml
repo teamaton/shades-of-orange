@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>oliver</author>
+  <title>Orchard Code Snippets</title>
+  <description />
+  <content>&lt;p&gt;This is just a small reminder to myself, so I won’t forget about those solutions once I’ll need them.&lt;/p&gt;  &lt;ul&gt;   &lt;li&gt;Add stuff/meta tags to HTML head: &lt;a href="http://orchard.codeplex.com/discussions/352358#post824379"&gt;http://orchard.codeplex.com/discussions/352358#post824379&lt;/a&gt;       &lt;div style="border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 51.86%; padding-right: 4px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; height: 82px; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px" id="codeSnippetWrapper"&gt;       &lt;div style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px" id="codeSnippet"&gt;         &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;@using (Script.Head())&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+        &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;{ &lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+        &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;    &lt;span style="color: #0000ff"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #800000"&gt;meta&lt;/span&gt; &lt;span style="color: #ff0000"&gt;name&lt;/span&gt;&lt;span style="color: #0000ff"&gt;=&amp;quot;description&amp;quot;&lt;/span&gt; &lt;span style="color: #ff0000"&gt;content&lt;/span&gt;=&amp;quot;&amp;amp;&lt;span style="color: #ff0000"&gt;lt&lt;/span&gt;;&lt;span style="color: #ff0000"&gt;MY&lt;/span&gt; &lt;span style="color: #ff0000"&gt;DESCRIPTION&lt;/span&gt; &lt;span style="color: #ff0000"&gt;HERE&lt;/span&gt;&lt;span style="color: #0000ff"&gt;&amp;gt;&lt;/span&gt;&amp;quot; &lt;span style="color: #0000ff"&gt;/&amp;gt;&lt;/span&gt;&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+        &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;    &lt;span style="color: #0000ff"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #800000"&gt;meta&lt;/span&gt; &lt;span style="color: #ff0000"&gt;name&lt;/span&gt;&lt;span style="color: #0000ff"&gt;=&amp;quot;keywords&amp;quot;&lt;/span&gt; &lt;span style="color: #ff0000"&gt;content&lt;/span&gt;=&amp;quot;&amp;amp;&lt;span style="color: #ff0000"&gt;lt&lt;/span&gt;;&lt;span style="color: #ff0000"&gt;MY&lt;/span&gt; &lt;span style="color: #ff0000"&gt;KEYWORDS&lt;/span&gt; &lt;span style="color: #ff0000"&gt;HERE&lt;/span&gt;&lt;span style="color: #0000ff"&gt;&amp;gt;&lt;/span&gt;&amp;quot; &lt;span style="color: #0000ff"&gt;/&amp;gt;&lt;/span&gt;&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+        &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;}&lt;/pre&gt;
+&lt;!--CRLF--&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+
+  &lt;li&gt;…&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Happy harvesting!&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2012-08-31 14:09:19</pubDate>
+  <lastModified>2012-08-31 14:09:19</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Orchard-Code-Snippets</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

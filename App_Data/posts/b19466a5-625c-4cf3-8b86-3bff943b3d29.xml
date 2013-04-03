@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>admin</author>
+  <title>Interface naming convention</title>
+  <description />
+  <content>&lt;p&gt;"I" als Praefix - das ist Geschmacksfrage und soll nicht Thema sein. Folgendes hat mich schmunzeln lassen: &lt;/p&gt;  &lt;blockquote&gt;   &lt;p&gt;A couple of programmers on our team learned that interface names should begin with "I", but didn't pick up on the rest of the guidelines. So they treated "I" as a personal pronoun, not as an acronym. We now have interface names like "IAmAChildObject", "INeedMyDataRow", "IAmDependentAndWantMyParentCollection", and "ICanDeleteMyself".&lt;/p&gt; &lt;/blockquote&gt;  &lt;p&gt;&lt;a href="http://blogs.msdn.com/brada/archive/2004/02/03/67033.aspx"&gt;[via Brad Abrams (in den Kommentaren)]&lt;/a&gt;&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2008-06-05 23:31:39</pubDate>
+  <lastModified>0001-01-01 06:00:00</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Interface-naming-convention</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>6cb56168-2015-4599-a1c1-8db9c9fae433</category>
+  </categories>
+  <notifications />
+</post>

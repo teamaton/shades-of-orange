@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>admin</author>
+  <title>Von der Idee zur Webseite in 2:20h</title>
+  <description />
+  <content>&lt;p&gt;Es lebe die Informationsrevolution. Tausende von wunderbaren OpenSouce Webanwendungen aus allen nur erdenklichen Segmenten warten darauf verwendet  zu werden. Ob ein &lt;a href="http://www.dotnetnuke.com/"&gt;Content Management System&lt;/a&gt; mit hunderten von Komponenten, eine &lt;a href="http://www.dashcommerce.org/"&gt;Enterprise fähige Shop-Lösung&lt;/a&gt; oder eine &lt;a href="http://sharpforge.org/"&gt;Project Management Werkzeug für Entwickler&lt;/a&gt; inklusive Versionskontrolsystem Zugriff alles ist verfügbar.  &lt;/p&gt;
+&lt;p&gt;&lt;a href="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/VonderIdeezurWebseitein220h_22FB/Fast-and-Furious.jpg" atomicselection="true"&gt;&lt;img width="183" height="129" border="0" align="left" style="border: 0px none ; margin: 0px 5px 5px 0px;" alt="Fast-and-Furious" src="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/VonderIdeezurWebseitein220h_22FB/Fast-and-Furious_thumb.jpg" /&gt;&lt;/a&gt;Doch wie lange dauert es von der Idee, bis zur Umsetzung? Hier ein einfaches Beispiel. Wir benötigen eine Domain, 2 Email-Accounts, eine Präsentationseite mit CMS Eigenschaften, einen Blog und wir wollen alle Inhalte editieren können. Hier die Zeiten:  &lt;/p&gt;
+&lt;p&gt;  &lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Domain registrieren 10min. &lt;/li&gt;
+    &lt;li&gt;Emails einrichten 10min.&lt;/li&gt;
+    &lt;li&gt;Domain auf Server einrichten 5min&lt;/li&gt;
+    &lt;li&gt;OSS Lösung auf Server installieren 30min&lt;/li&gt;
+    &lt;li&gt;Anpassung der Lösung: Strukur und Skin anpassen, Übersetzungen pflegen. 1h&lt;/li&gt;
+    &lt;li&gt;Benachrichtigungsemail verfassen 25min &lt;/li&gt;
+    &lt;li&gt;Fertig :-)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Von der Anforderung bis hin zur fertigen Lösung in 2:20h.  &lt;/p&gt;
+&lt;p&gt;Na klar, das Scenario ist deutlich das einfachste was ich je erlebt habe. Alles funktionierte „Out-Of-The-Box“. Der Server war schon vorbereitet. Die Datenbanken schon da. Die Backuplösung schnurrt von allein. Firewall und IP-Filter sind eingerichtet. Das OSS Produkt kann alles, was gebraucht wurde und war schon bekannt. Eines der Templates hat für den Zweck vollkommen ausgereicht. Das Logo hat gepasst. Und noch war keine Zeit für Support anfragen :-)  &lt;/p&gt;
+&lt;p&gt;Achso und natürlich hat es 2 1/2 Stunden gedauert bis die Domain verfügbar war, aber ich zähle das jetzt mal nicht als Arbeitszeit.  &lt;/p&gt;
+&lt;p&gt;Insgesamt eine schöne Erfahrung. &lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2007-10-19 01:29:11</pubDate>
+  <lastModified>0001-01-01 06:00:00</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Von-der-Idee-zur-Webseite-in-220h</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>4a6eca6b-10d9-4a5f-ab67-40144ba581d9</category>
+    <category>bc3db496-f484-41a0-860c-c2e57e829fa0</category>
+  </categories>
+  <notifications />
+</post>

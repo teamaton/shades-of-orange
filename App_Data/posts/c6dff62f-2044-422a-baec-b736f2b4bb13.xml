@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>admin</author>
+  <title>Geschmacksrichtungen (Iteration vs Closure)</title>
+  <description />
+  <content>&lt;p&gt;Was ist schöner? Das klassische Iterieren durch die Collection oder die &lt;a href="http://msdn2.microsoft.com/en-us/library/bfcke1bz.aspx"&gt;Predicate&lt;/a&gt;, Closure Kombination. Performance spielt erst mal keine Rolle, wobei ich wetten würde, dass der IL Code für Beide Varianten sehr ähnlich ist und es keinen Messbaren Performance Unterschiede ausser beim Build Prozess gibt. &lt;/p&gt; &lt;p&gt;&lt;a href="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/Geschmack_14B13/CropperCapture%5B1%5D.jpg" atomicselection="true"&gt;&lt;img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" height="255" alt="CropperCapture[1]" src="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/Geschmack_14B13/CropperCapture%5B1%5D_thumb.jpg" width="480" border="0" /&gt;&lt;/a&gt; &lt;/p&gt; &lt;p&gt;Eindeutig ist der Fall natürlich, wenn die Find Methode nicht innerhalb einer Klasse gekapselt wäre. Aber dann läge die Arbeit beim Verwender der Klasse und das wäre gleich auf mehrere Arten gegen den guten Geschmack (Single Point of Change, Encapsulation, Information hiding).&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2007-08-27 22:44:57</pubDate>
+  <lastModified>0001-01-01 06:00:00</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Geschmacksrichtungen-(Iteration-vs-Closure)</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>oliver</author>
+  <title>Rendering problem with flot 0.7 and excanvas in IE8</title>
+  <description />
+  <content>&lt;p&gt;On &lt;a href="http://www.camping.info" target="_blank"&gt;Camping.info&lt;/a&gt;, we use flot 0.7 with jQuery and asynchronous updates for internal click statistics visualization. Unfortunately, we’ve been having some trouble with our &lt;a href="http://code.google.com/p/flot/" target="_blank"&gt;flot&lt;/a&gt; graph – but only in &lt;strong&gt;IE8&lt;/strong&gt; and only &lt;strong&gt;sometimes&lt;/strong&gt;! This has been really annoying, especially since we’re expecting a usage growth of this graph and IE8 has a user share of &lt;strong&gt;25%&lt;/strong&gt;. The problem is that after fetching the graph data from the server the graph sometime won’t appear on the canvas, although it seems to be there as the yellow tooltip suggests when hovering over the graph line. The graph looks like this (broken vs. intact):&lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=image_15.png"&gt;&lt;img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://shades-of-orange.com/image.axd?picture=image_thumb_15.png" width="464" height="276" /&gt;&lt;/a&gt;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; &lt;a href="http://shades-of-orange.com/image.axd?picture=image_16.png"&gt;&lt;img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://shades-of-orange.com/image.axd?picture=image_thumb_16.png" width="492" height="275" /&gt;&lt;/a&gt;&lt;/p&gt;  &lt;p&gt;We were (are?) having a hard time reproducing this bug on our staging system but it would appear from time to time. On our live system we would get it quite often, although a page refresh often helped.&lt;/p&gt;  &lt;p&gt;Searching the web for &lt;a href="http://www.google.com/search?q=flot+ie8" target="_blank"&gt;flot+IE8&lt;/a&gt; you’ll get a few results most of which point to the &lt;a href="https://groups.google.com/forum/#!forum/flot-graphs" target="_blank"&gt;“flot-graphs” Google Group&lt;/a&gt;. A search on &lt;a href="http://stackoverflow.com" target="_blank"&gt;stackoverflow.com&lt;/a&gt; led me to an interesting post called &lt;a title="http://stackoverflow.com/questions/4825677/please-help-ie8-is-sometimes-displaying-my-page-correctly-sometimes-not" href="http://stackoverflow.com/questions/4825677/please-help-ie8-is-sometimes-displaying-my-page-correctly-sometimes-not" target="_blank"&gt;IE8 is sometimes displaying my page correctly, sometimes not&lt;/a&gt;, which seemed interesting enough to check out. There, they talk about a problem with the&amp;#160; &lt;font face="Courier New"&gt;display:inline-block&lt;/font&gt;&amp;#160; CSS rule and that it is error-prone in IE&amp;lt;=8. So I checked the source of &lt;a href="http://code.google.com/p/explorercanvas/" target="_blank"&gt;excanvas.min.js&lt;/a&gt; which is responsible for providing a canvas element to flot in IE browsers below version 9, and sure enough I found this:&lt;/p&gt;  &lt;div style="border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px" id="codeSnippetWrapper"&gt;   &lt;div style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px" id="codeSnippet"&gt;     &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum1"&gt;   1:&lt;/span&gt; a.cssText=&amp;quot;canvas{display:&lt;font color="#ff0000"&gt;inline-block&lt;/font&gt;;overflow:hidden;text-align:left;width:300px;height:150px}&lt;/pre&gt;
+&lt;!--CRLF--&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The fix proposed in this answer was to use &lt;font face="Courier New"&gt;zoom:1&lt;/font&gt; to force elements with &lt;font face="Courier New"&gt;display:inline-block&lt;/font&gt;&amp;#160; to have a layout in IE (if you really want to know what that means, here’s &lt;a href="http://msdn.microsoft.com/en-us/library/bb250481%28v=vs.85%29.aspx"&gt;more background info&lt;/a&gt;). Well, I tried that – to no avail.&lt;/p&gt;
+
+&lt;p&gt;The next hint came from a post in the flot-graphs Google Group and proposed using &lt;a href="http://flashcanvas.net/" target="_blank"&gt;flashcanvas&lt;/a&gt; instead of &lt;a href="http://code.google.com/p/explorercanvas/" target="_blank"&gt;excanvas&lt;/a&gt; as the canvas provider for &lt;a href="http://code.google.com/p/flot/" target="_blank"&gt;flot&lt;/a&gt;. Oh well, we haven’t got anything to lose, right? I replaced the script include and saw – exactly the same thing as before: nothing! (Check out the IE developer toolbar on the right – the you can see the Flash object inside the canvas element that was generated by flashcanvas.)&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=ie8-flot-flashcanvas.png"&gt;&lt;img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="ie8-flot-flashcanvas" border="0" alt="ie8-flot-flashcanvas" src="http://shades-of-orange.com/image.axd?picture=ie8-flot-flashcanvas_thumb.png" width="949" height="268" /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;What was left? Oh, I hadn’t tried to check for an updated version of excanvas yet – so I went and did that.&lt;/p&gt;
+
+&lt;p&gt;The latest download version dates back to March 2009 but there has been some activity since then so I decide to go for the &lt;a href="http://code.google.com/p/explorercanvas/source/list" target="_blank"&gt;latest source&lt;/a&gt; which is also already a year and a half old but still by a whole year younger that the last official download &lt;img style="border-bottom-style: none; border-left-style: none; border-top-style: none; border-right-style: none" class="wlEmoticon wlEmoticon-smile" alt="Smile" src="http://shades-of-orange.com/image.axd?picture=wlEmoticon-smile.png" /&gt; I replaced the file and haven’t had any problem so far!&lt;/p&gt;
+
+&lt;p&gt;We will be keeping an eye on this, but for now my hopes are high that this update might have finally helped.&lt;/p&gt;
+
+&lt;p&gt;Happy coding!&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2011-09-08 02:41:14</pubDate>
+  <lastModified>2011-09-08 02:41:14</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Rendering-problem-with-flot-07-and-excanvas-in-IE8</slug>
+  <tags>
+    <tag>flot</tag>
+    <tag>excanvas</tag>
+  </tags>
+  <comments />
+  <categories>
+    <category>127092f2-44aa-4021-a268-49fce3fc0aa1</category>
+    <category>05acb92b-a993-4f87-b93a-56ee3089918d</category>
+    <category>3b5447eb-ff3b-4481-9287-0508fce6262b</category>
+    <category>dfbab2d9-ff53-4483-87b6-621bf30d65f0</category>
+    <category>5887fc9f-4863-444a-8597-435a21657166</category>
+  </categories>
+  <notifications />
+</post>

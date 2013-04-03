@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>oliver</author>
+  <title>Learning how to program and teaching someone else how to program</title>
+  <description />
+  <content>&lt;p&gt;I will be taking on teaching my brother-in-law how to program soon and while thinking about how to go about it I thought of putting together some essential information in one place for him and myself to check while we move along. &lt;/p&gt;  &lt;p&gt;My first suggestions are:&lt;img style="margin: 10px 0px 10px 20px; display: inline; float: right" align="right" src="http://www.webestigate.com/wp-content/uploads/2010/12/Pair-Programming.jpg" width="386" height="290" /&gt;&lt;/p&gt;  &lt;ol&gt;   &lt;li&gt;Get to know your keyboard – really well. For everything you do on your PC, find shortcuts and use them. Treat your mouse as poison to your programming skills. It will keep you from being fast on your keyboard which will keep you from coding quickly which in turn will keep you from learning quickly. I’ve put this at the top of the list because it is THAT important. &lt;/li&gt;    &lt;li&gt;Use git and specifically &lt;a href="http://github.com" target="_blank"&gt;GitHub&lt;/a&gt; to version your code. It’s free and offers great ways to browse and share code, to do code reviews and a bunch of other stuff. On your windows machine, use &lt;a href="http://code.google.com/p/gitextensions/" target="_blank"&gt;GitExtensions&lt;/a&gt; to work with GIT. &lt;/li&gt;    &lt;li&gt;Setup your own blog. From the very beginning, write about what you’ve learned. Trying to put your newly acquired knowledge into words and maybe images is one of the best ways to ensure you really understood what you’re doing. &lt;/li&gt;    &lt;li&gt;Get involved in &lt;a href="http://stackoverflow.com" target="_blank"&gt;stackoverflow.com&lt;/a&gt; or something similar. This goes along the same lines as 2. Reading questions and their answers, posting new questions yourself will help just as much as writing about your own code. Check out &lt;a href="http://programmers.stackexchange.com/"&gt;http://programmers.stackexchange.com/&lt;/a&gt; as well. I contains lot of questions and discussion on ways to become a (better) programmer. &lt;/li&gt;    &lt;li&gt;Finally: code, code, code. Use the development tool of your choice and get to know it really well, so that it won’t be in your way once you have a good idea what to write. &lt;/li&gt; &lt;/ol&gt;  &lt;p&gt;Enjoy!&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2011-12-29 03:02:31</pubDate>
+  <lastModified>2011-12-29 03:48:28</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Learning-how-to-program-and-teaching-someone-else-how-to-program</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

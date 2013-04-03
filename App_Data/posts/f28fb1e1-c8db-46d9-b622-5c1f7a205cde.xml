@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>oliver</author>
+  <title>Automatic Deployment of a New Discoverize Portal</title>
+  <description />
+  <content>&lt;p&gt;This is a technical post about how we automatically deploy new portals that will be run by our own portal software &lt;a href="http://www.discoverize.com" target="_blank"&gt;discoverize&lt;/a&gt;.&lt;/p&gt;  &lt;p&gt;After filling in and submitting our portal creation form we do the following:&lt;/p&gt;  &lt;ol&gt;   &lt;li&gt;Save the entered information into &lt;font face="Courier New"&gt;/App_Data/&amp;lt;PortalName&amp;gt;/portal.xml&lt;/font&gt;&lt;/li&gt;    &lt;li&gt;Trigger the &lt;a href="http://www.jetbrains.com/teamcity/" target="_blank"&gt;TeamCity&lt;/a&gt; build through a web request to a specific URL&lt;/li&gt;    &lt;li&gt;Send an email with the request status or any errors that occurred&lt;/li&gt;    &lt;li&gt;Display a Thank You page.&lt;/li&gt; &lt;/ol&gt;  &lt;p&gt;Now, the TeamCity build configuration that was triggered under 2. does the following:&lt;/p&gt;  &lt;ol&gt;   &lt;li&gt;Execute the Powershell script &lt;font face="Courier New"&gt;create-portal.ps1&lt;/font&gt; in c:\projects\discoverize&lt;/li&gt;    &lt;ul&gt;     &lt;li&gt;create the AppPool &lt;font face="Courier New"&gt;Discoverize-Portals&lt;/font&gt; if it doesn't exist yet (all our portals run within it)&lt;/li&gt;      &lt;li&gt;iterate over all folders inside &lt;font face="Courier New"&gt;wwwroot\discoverize.com\App_Data&lt;/font&gt;&lt;/li&gt;      &lt;li&gt;if a folder with the same name exists under &lt;font face="Courier New"&gt;wwwroot\discoverize-portals&lt;/font&gt;, skip it&lt;/li&gt;      &lt;li&gt;else move the current folder from &lt;font face="Courier New"&gt;wwwroot\discoverize.com\App_Data&lt;font face="Calibri"&gt; to &lt;/font&gt;&lt;font face="Courier New"&gt;wwwroot\discoverize-portals&lt;/font&gt;&lt;/font&gt;&lt;/li&gt;      &lt;li&gt;add a line with the full path to the new portal folder to &lt;font face="Courier New"&gt;newportals.txt&lt;/font&gt;&lt;font face="Calibri"&gt; (e.g. &lt;font face="Courier New"&gt;C:\inetpub\wwwroot\discoverize-portals\&amp;lt;PortalName&amp;gt;&lt;/font&gt;)&lt;/font&gt;&lt;/li&gt;      &lt;li&gt;add a new site to IIS and set its AppPool to &lt;font face="Courier New"&gt;Discoverize-Portals&lt;/font&gt;&lt;/li&gt;      &lt;li&gt;start the new site in IIS (needs Admin privileges, that's why we use a parameterized task scheduler task for that)&lt;/li&gt;   &lt;/ul&gt;    &lt;li&gt;Build the source code from the repository&lt;/li&gt;    &lt;li&gt;Execute the Deploy-NewPortals target from deploy.proj using MSBuild in c:\projects\discoverize&lt;/li&gt;    &lt;ul&gt;     &lt;li&gt;Iterate over the entries in &lt;font face="Courier New"&gt;newportals.txt&lt;/font&gt;&lt;font face="Calibri"&gt;, for each entry do:&lt;/font&gt;&lt;/li&gt;      &lt;li&gt;Copy the build output from step 2. to &lt;font face="Courier New"&gt;wwwroot\discoverize-portals\&amp;lt;PortalName&amp;gt;&lt;/font&gt;&lt;/li&gt;      &lt;li&gt;Run the site setup (this uses &lt;a title="The Orchard Project" href="http://www.orchardproject.net/" target="_blank"&gt;Orchard&lt;/a&gt;'s setup method) with our own recipe (using Orchard.exe)&lt;/li&gt;      &lt;li&gt;Create new user &amp;quot;portal-owner&amp;quot; for content management by portal owner(using Orchard.exe)&lt;/li&gt;      &lt;li&gt;Create a default entry so there's something to look at (using Orchard.exe)&lt;/li&gt;      &lt;li&gt;Call an action (&lt;font face="Courier New"&gt;SetupComplete&lt;/font&gt;) on the new site to mark deployment as done&lt;/li&gt;   &lt;/ul&gt;    &lt;li&gt;The SetupComplete action then finishes doing this:&lt;/li&gt;    &lt;ul&gt;     &lt;li&gt;save the information of the portal.xml into an application specific configuration file&lt;/li&gt;      &lt;li&gt;send an email about the successful installation of the new portal&lt;/li&gt;   &lt;/ul&gt; &lt;/ol&gt;  &lt;p&gt;Quite complex, if I look at it now, but it works!&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2013-03-11 15:02:29</pubDate>
+  <lastModified>2013-03-11 17:21:12</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Automatic-Deployment-of-a-New-Discoverize-Portal</slug>
+  <tags>
+    <tag>deployment msbuild teamcity</tag>
+  </tags>
+  <comments />
+  <categories>
+    <category>e4b1e92f-27c2-450e-9253-fdb0e36875c3</category>
+    <category>6cb56168-2015-4599-a1c1-8db9c9fae433</category>
+    <category>5fef49e2-2727-46c7-94a7-9816011a72c2</category>
+    <category>2a71a125-24e3-4583-806c-7c8bead507be</category>
+    <category>678a9d57-c1ea-487a-8fd3-4d08dc0be9c4</category>
+  </categories>
+  <notifications />
+</post>

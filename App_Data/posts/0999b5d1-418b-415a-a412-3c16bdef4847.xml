@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>admin</author>
+  <title>Moonlight Hackathon</title>
+  <description />
+  <content>&lt;p&gt;&lt;img width="100" height="120" border="0" align="left" style="border: 0px none ; margin: 0px 10px 0px 0px;" alt="Mono-gorilla-aqua.100px" src="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/MoonlightHackathon_D43D/Mono-gorilla-aqua.100px_1.png" /&gt; Miguel de Icaza beschreibt sehr detailiert wie ein kleines Team &lt;a href="http://silverlight.net/"&gt;Silverlight&lt;/a&gt; innerhalb von 21 Tagen für Linux portierten. Beeindruckend ist der Arbeits , Schlaf- und Wachrhythmus über die Kontinente verteilt. Schichtarbeit getrieben durch Enthusiasmus:-) Die Problemstellung (Grafik-Engine mit einer Unmenge von Möglichkeiten, viele drum herum z.B. Installer) war mehr als komplex. Für mich als .NET Entwickler ist es eine gute Nachricht wenn ein Team von Alpha-Geeks eine neue Technologie derartig schnell und begeistert aufnimmt. Es schaft Vertrauen, wenn .NET und begleitende Technologien wie &lt;a href="http://en.wikipedia.org/wiki/Windows_Presentation_Foundation"&gt;WPF&lt;/a&gt; aktiv für und auf anderen Platformen, wie Mac, Linux, Mobile Devices entwickelt und gefördert werden.&lt;/p&gt;
+&lt;p&gt;Der Artikel ist hier zu lesen: &lt;a href="http://tirania.org/blog/archive/2007/Jun-21.html"&gt;Implementing Silverlight in 21 Days&lt;/a&gt;.&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2007-06-21 14:05:35</pubDate>
+  <lastModified>0001-01-01 06:00:00</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Moonlight-Hackathon</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>6cb56168-2015-4599-a1c1-8db9c9fae433</category>
+    <category>678a9d57-c1ea-487a-8fd3-4d08dc0be9c4</category>
+  </categories>
+  <notifications />
+</post>

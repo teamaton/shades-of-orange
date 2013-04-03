@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>admin</author>
+  <title>Group By + alle Felder</title>
+  <description />
+  <content>&lt;p&gt;Meist wollen ja immer die selben Probleme gelöst werden. Mein Standard für ein SELECT auf alle Felder einer Tabelle, abhängig von einer Aggregatfunktionen (min, max, avg. etc.) einer zweiten sieht so aus: &lt;/p&gt;
+&lt;p&gt;&lt;a href="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/GroupByalleFelder_403E/CropperCapture%5B10%5D.jpg" atomicselection="true"&gt;&lt;img width="387" height="205" border="0" style="border: 0px none ;" alt="CropperCapture[10]" src="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/GroupByalleFelder_403E/CropperCapture%5B10%5D_thumb.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Ich möchte gerne für alle Requests, das jeweils höchste Gebot (Bid) haben. Das ganze funktioniert, aber ich Suche nach einem einfacheren Weg. &lt;/p&gt;
+&lt;p&gt;Das gleiche nochmal als subselect, wobei wenn ich mich recht erinnere kann z.B mysql keine subselects. Und ich möchte möglichst Datenbankhersteller agnostisch bleiben. &lt;/p&gt;
+&lt;p&gt;&lt;a href="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/GroupByalleFelder_403E/CropperCapture%5B11%5D.jpg" atomicselection="true"&gt;&lt;img width="387" height="135" border="0" style="border: 0px none ;" alt="CropperCapture[11]" src="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/GroupByalleFelder_403E/CropperCapture%5B11%5D_thumb.jpg" /&gt;&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;Hier nochmal der Execution Plan für beide Abfragen, wobei die Indizies noch nicht optimiert sind. Auf den ersten Blick verwirrend, ist das umschliessende select für die erste Abfrage. Bleibt die Ergebnismenge aber klein, ist das zu vernachlässigen. Und "&lt;a href="http://en.wikipedia.org/wiki/Optimization_(computer_science)"&gt;premature optimization&lt;/a&gt;" ist eh der Feind aller Entwickler :-)&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/GroupByalleFelder_403E/CropperCapture%5B12%5D.jpg" atomicselection="true"&gt;&lt;img width="441" height="206" border="0" style="border: 0px none ;" alt="CropperCapture[12]" src="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/GroupByalleFelder_403E/CropperCapture%5B12%5D_thumb.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2007-09-05 03:40:47</pubDate>
+  <lastModified>0001-01-01 06:00:00</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Group-By-2b-alle-Felder</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>678a9d57-c1ea-487a-8fd3-4d08dc0be9c4</category>
+    <category>4c741f81-0ac2-4ab0-9a49-bd8ecbbff502</category>
+  </categories>
+  <notifications />
+</post>

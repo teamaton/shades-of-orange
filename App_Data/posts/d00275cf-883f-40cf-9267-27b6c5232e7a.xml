@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>robert</author>
+  <title>Benamungs-Strategien</title>
+  <description />
+  <content>&lt;ul&gt;   &lt;li&gt;SettingsApp&lt;/li&gt;    &lt;li&gt;SettingsUser&lt;/li&gt;    &lt;li&gt;SettingsSubSystemX&lt;/li&gt; &lt;/ul&gt;  &lt;p&gt;vs. &lt;/p&gt;  &lt;ul&gt;   &lt;li&gt;AppSettings&lt;/li&gt;    &lt;li&gt;UserSettings&lt;/li&gt;    &lt;li&gt;SubSystemXSettings&lt;/li&gt; &lt;/ul&gt;  &lt;p&gt;beides hat seine für und wider. Variante 1 ist IntelliSense freundlicher und Variante 2 ist näher an der Grammatik. &lt;/p&gt;  &lt;p&gt;Ich bin ich ganz klar - soweit die Wortgebilde nicht total obskur werden - meist für Variante 1. &lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2009-11-15 19:57:19</pubDate>
+  <lastModified>2009-11-15 19:57:19</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Benamungs-Strategien</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>678a9d57-c1ea-487a-8fd3-4d08dc0be9c4</category>
+  </categories>
+  <notifications />
+</post>

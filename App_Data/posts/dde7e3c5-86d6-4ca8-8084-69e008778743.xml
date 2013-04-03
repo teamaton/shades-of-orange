@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>Anton</author>
+  <title>Short Review: GitHub for Windows</title>
+  <description />
+  <content>&lt;p&gt;Not long ago github released &lt;a href="http://windows.github.com/" target="_blank"&gt;GitHub for Windows&lt;/a&gt;. They announced it on their &lt;a href="https://github.com/blog/1127-github-for-windows" target="_blank"&gt;blog&lt;/a&gt;, and during the past view weeks I tried it out.&lt;/p&gt;  &lt;h2&gt;Design / Usability&lt;/h2&gt;  &lt;p&gt;It sure looks good, and and you can use it intuitively. If you are not tech savvy, you will certainly like the user interface, compared to &lt;a href="http://code.google.com/p/gitextensions/" target="_blank"&gt;Git Extensions&lt;/a&gt; or the git bash. The branching / merge dialog seems better than in any other tool I have seen. Merging branches is always one big issue for starters to wrap their head around. One drawback is that the software just freezes when it is executing tough work, for instance like reading a lot of changes made to the repository.&lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=2012-07-15_23h59_02.png"&gt;&lt;img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="2012-07-15_23h59_02" border="0" alt="2012-07-15_23h59_02" src="http://shades-of-orange.com/image.axd?picture=2012-07-15_23h59_02_thumb.png" width="856" height="331" /&gt;&lt;/a&gt;&lt;/p&gt;  &lt;h2&gt;Functionality&lt;/h2&gt;  &lt;p&gt;GitHub for Windows lacks many features which git offers. You usually can only execute the standard command. For instance you cannot make a hard reset of the branch to a former commit. The functionality is trimmed down to the essentials. That way GitHub for Windows is not overloaded with options and settings.&lt;/p&gt;  &lt;p&gt;Furthermore GitHub for Windows does not need the rsa keys. You just login with our github identity, which is nice. You could even switch the account.&lt;/p&gt;  &lt;h2&gt;Summary&lt;/h2&gt;  &lt;p&gt;GitHub for Windows is good for first time users of git and github (of course only if you are on Windows). If you already use Git Extensions or even git bash or git console, and have your rsa keys, do not bother to try out GitHub for Windows. You will miss the functionality. I am going back to Git Extensions, which may not be designed really well, but I got used to it.&lt;/p&gt;  &lt;p&gt;Happy merging, Anton.&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2012-07-16 00:12:00</pubDate>
+  <lastModified>2012-07-16 00:14:40</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Short-Review-GitHub-for-Windows</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

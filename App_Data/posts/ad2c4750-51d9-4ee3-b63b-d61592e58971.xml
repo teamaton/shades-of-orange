@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>Oliver</author>
+  <title>Cache + NHibernate.HibernateException: Illegal attempt to associate a collection with two open sessions + NUnit</title>
+  <description />
+  <content>&lt;p&gt;
+In unserem Projekt verwenden wir einen Cache zum Vorhalten von oft benutzten Daten, u.a. f&amp;uuml;r L&amp;auml;nder und Bundesl&amp;auml;nder. F&amp;uuml;r die &amp;Uuml;bersetzungen derselben in viele Sprachen habe ich einfach je eine einfache Tabelle angelegt mit einer Referenz auf das jeweilige (Bundes-)Land, dem Sprachen-Isocode und dem Namen in der entsprechenden Sprache. Per NHibernate-Mapping dann die &amp;Uuml;bersetzungen als &amp;lt;bag&amp;gt; an das (Bundes-)Land angeheftet - fertig.
+&lt;/p&gt;
+&lt;p&gt;
+Beim NUnit-Testen bekam ich nach dem Einbau der &amp;Uuml;bersetzungen beim Update von (Bundes-)L&amp;auml;ndern allerdings diesen Fehler:
+&lt;/p&gt;
+&lt;p&gt;
+&lt;strong&gt;NHibernate.HibernateException: Illegal attempt to associate a collection with two open sessions.&lt;/strong&gt;
+&lt;/p&gt;
+&lt;p&gt;
+Offensichtlich waren die neuen Collections an den Domainobjekten Schuld. Was war passiert? Beim Aufrufen der Frontend-Seiten kam dieser Fehler nicht...
+&lt;/p&gt;
+&lt;p&gt;
+Nun, die Exception gibt uns einen guten Tipp: Wir haben zwei offene Session, mit denen die Collection von &amp;Uuml;bersetzungen assoziiert werden soll. Aber warum nur in den Tests und warum dort &amp;uuml;berhaupt?
+&lt;/p&gt;
+&lt;p&gt;
+Eine erste Erkl&amp;auml;rung: Im Frontend benutzen wir f&amp;uuml;r die NHibernate-Sessions das &lt;strong&gt;One-Session-Per-Request&lt;/strong&gt;-Pattern, so dass alle Manipulationen an den Session-Objekten (inkl. Update) innerhalb derselben Session passieren. Au&amp;szlig;erdem funktionierte dort das Dispose der Session zuverl&amp;auml;ssig. In unseren Tests war das ja leider nicht der Fall, so dass wir also &lt;strong&gt;irgendwie&lt;/strong&gt; eine ge&amp;ouml;ffnete Session nicht schlie&amp;szlig;en. Durch die Benutzung eines Caches kamen wir in die Verlegenheit, L&amp;auml;nderobjekte in einem Testcase in den Cache zu schreiben und diese in einem folgenden Testcase wiederzuverwenden. Als an dieser zweiten Stelle ein Update passieren sollte, knallte es, denn das Objekt im Cache hielt eine Referenz auf NHibernate-Collection, die noch mit einer vergangenen Session assoziiert war. Beim Update versucht NHibernate aber, dieselbe Collection an die aktuelle Session zu binden, was eine Exception wirft. 
+&lt;/p&gt;
+&lt;p&gt;
+Der Cache war also Schuld. Oder zumindest war das mein erster Gedanke. Und tats&amp;auml;chlich: Wenn ich im [SetUp] der NUnit-TestFixture ein Cache.Clear() aufrufe, verschwindet der Fehler! Keine &amp;Uuml;berraschung, denn jetzt benutzen wir ja keine Objekte aus &amp;quot;alten&amp;quot; Sessions mehr. Aber Moment mal, im Frontend benutzen wir doch denselben Cache?! Und da gibt es diesen Fehler nicht.
+&lt;/p&gt;
+&lt;p&gt;
+Nach ein wenig Haareraufen, kam ich dann zur&amp;uuml;ck zu der Feststellung, dass es ja ein Problem mit einer offenen Session gab. Also setzte ich da nochmal an.
+&lt;/p&gt;
+&lt;p&gt;
+F&amp;uuml;r das Lifecycle-Management unserer Serviceklassen benutzen einen Autofac-IoC-Container. Dieser stellt auch die NHibernat-Session bereit. Zum Benutzen der Services haben wir eine ServiceLocator-Klasse, die uns die vom Container generierten Serviceinstanzen auf Anfrage zur&amp;uuml;ckgibt. Um diese Architektur in den NUnit-Tests zu nutzen, schrieben wir flugs eine Basisklasse BaseTest, von der alle Testklassen ableiten und fortan Zugriff auf alle Services haben. Das Lifecycle-Management des Containers wird dort ebenfalls verwaltet.
+&lt;/p&gt;
+&lt;p&gt;
+&lt;font face="courier new,courier"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; public BaseTest()&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; {&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; InitializeContainer();&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; }&lt;br /&gt;
+&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; ~BaseTest()&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; {&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; DisposeContainer();&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; }&lt;/font&gt; 
+&lt;/p&gt;
+&lt;p&gt;
+Wie sich nun herausstellt, eine &lt;strong&gt;dumme Idee&lt;/strong&gt;! Beim Debuggen stellte ich fest, dass der &lt;strong&gt;Konstruktor &lt;/strong&gt;zwar von jeder TestFixture (also jeder Testklasse, die selbst mehrere Tests enth&amp;auml;lt) in Reihenfolge aufgerufen wird, dass aber der &lt;strong&gt;Destruktor &lt;/strong&gt;einer Testklasse keineswegs zuverl&amp;auml;ssig vor dem Konstruktor der n&amp;auml;chsten Testklasse ausgef&amp;uuml;hrt wird! Damit wird der Container der ersten Testklasse nicht &lt;strong&gt;Dispose&lt;/strong&gt;&amp;#39;d und in Folge die NHibernate-Session nicht geschlossen, so dass wir den o.g. Fehler bekommen.
+&lt;/p&gt;
+&lt;p&gt;
+Wahrscheinlich ist das Ausf&amp;uuml;hren von Businesslogik in einem NUnit-TestFixture-Konstruktor bzw. viel schlimmer im Destruktor ein absolutes &lt;strong&gt;NoNo&lt;/strong&gt;. Daf&amp;uuml;r gibt es schlie&amp;szlig;lich die Attribute &lt;strong&gt;[TestFixtureSetUp] &lt;/strong&gt;und &lt;strong&gt;[TestFixtureTearDown]&lt;/strong&gt;. Mit dem folgenden Code funktioniert denn auch alles wie gewollt:
+&lt;/p&gt;
+&lt;p&gt;
+&lt;font face="courier new,courier"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; [TestFixtureSetUp]&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; public virtual void TestFixtureSetUp()&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; {&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; InitializeContainer();&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; }&lt;br /&gt;
+&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; [TestFixtureTearDown]&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; public virtual void TestFixtureTearDown()&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; {&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; DisposeContainer();&lt;br /&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; }&lt;/font&gt; 
+&lt;/p&gt;
+&lt;p&gt;
+Ein kleiner Wehrmutstropfen bei dieser L&amp;ouml;sung ist, dass man beim Testklassen-Schreiben jetzt daran denken muss, diese Methoden zu &amp;uuml;berschreiben, wenn man weitere Funktionalit&amp;auml;t in [TestFixtureSetUp] und/oder [TestFixtureTearDown] ben&amp;ouml;tigt...
+&lt;/p&gt;
+&lt;p&gt;
+Alles Gute, Oliver
+&lt;/p&gt;
+</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2009-04-07 18:55:00</pubDate>
+  <lastModified>2009-04-07 22:24:13</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Cache-2b-NHibernateHibernateException-Illegal-attempt-to-associate-a-collection-with-two-open-sessions</slug>
+  <tags>
+    <tag>nunit</tag>
+  </tags>
+  <comments />
+  <categories>
+    <category>bc3db496-f484-41a0-860c-c2e57e829fa0</category>
+    <category>f8bafae5-b874-4cd1-bc83-6b822e1c2e83</category>
+  </categories>
+  <notifications />
+</post>

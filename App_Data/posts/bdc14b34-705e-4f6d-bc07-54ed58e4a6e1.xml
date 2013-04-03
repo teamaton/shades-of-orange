@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>robert</author>
+  <title>GEN0 und GEN2 Heap gegenläufig?</title>
+  <description />
+  <content>&lt;p&gt;Gen2 und Gen0 sind deutlich gegenläufig, versteh ich nicht, hat jemand ein Erklärungsmuster? Fängt der Garbarge-Collector an in Gen2 aufzuräumen weil viel neuer Speicher allokiert werden muß?&lt;/p&gt;  &lt;p&gt;Bild: Speicher für &lt;a href="http://camping.info"&gt;Camping.Info&lt;/a&gt; Server: (8 GIG RAM, 2x Quadcore, ca.: 1000 aktive Sessions, Requests per Second: Avg.: 50, Peak: 120) &lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=Memory-Gen1-Gen2_2.png"&gt;&lt;img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="Memory-Gen1-Gen2" border="0" alt="Memory-Gen1-Gen2" src="http://shades-of-orange.com/image.axd?picture=Memory-Gen1-Gen2_thumb_2.png" width="727" height="594" /&gt;&lt;/a&gt;&lt;/p&gt;  &lt;p&gt;Das 10x mehr Speicher in Gen2 liegt bedeutet natürlich, dass wir unser Memory-Leak immer noch nicht aufgespürt haben. Normal müsste Gen 2 kleiner sein als Gen 0? Viele Fragen :-) &lt;/p&gt;  &lt;p&gt;(Robert)&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2010-06-03 19:48:06</pubDate>
+  <lastModified>2010-06-03 19:49:15</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>GEN0-und-GEN2-Heap-gegenlaufig</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>127092f2-44aa-4021-a268-49fce3fc0aa1</category>
+    <category>678a9d57-c1ea-487a-8fd3-4d08dc0be9c4</category>
+  </categories>
+  <notifications />
+</post>

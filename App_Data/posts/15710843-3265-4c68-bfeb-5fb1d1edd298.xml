@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>Oliver</author>
+  <title>NHibernate:  Fetch Join + EntityCache</title>
+  <description />
+  <content>&lt;p&gt;
+In unserer Test-basierten Entwicklung hat sich die Verwendung von Setup-Klassen f&amp;uuml;r unsere Entities etabliert. Unsere Tests sehen folgendem sehr &amp;auml;hnlich:
+&lt;/p&gt;
+&lt;!-- code formatted by http://manoli.net/csharpformat/ --&gt;
+&lt;style type="text/css"&gt;
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: Consolas, "Courier New", Courier, Monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+
+.csharpcode pre { margin: 0em; }
+
+.csharpcode .rem { color: #008000; }
+
+.csharpcode .kwrd { color: #0000ff; }
+
+.csharpcode .str { color: #006080; }
+
+.csharpcode .op { color: #0000c0; }
+
+.csharpcode .preproc { color: #cc6633; }
+
+.csharpcode .asp { background-color: #ffff00; }
+
+.csharpcode .html { color: #800000; }
+
+.csharpcode .attr { color: #ff0000; }
+
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+
+.csharpcode .lnum { color: #606060; }
+&lt;/style&gt;
+&lt;div class="csharpcode"&gt;
+&lt;pre class="alt"&gt;[Test]&lt;/pre&gt;
+&lt;pre&gt;&lt;span class="kwrd"&gt;public&lt;/span&gt; &lt;span class="kwrd"&gt;void&lt;/span&gt; FetchJoinTest()&lt;/pre&gt;
+&lt;pre class="alt"&gt;{&lt;/pre&gt;
+&lt;pre&gt;    var cat = _categorySetup.GetPersisted();&lt;/pre&gt;
+&lt;pre class="alt"&gt;    var pitch = _pitchSetup.GetPersisted(p =&amp;gt; { p.Categories.Add(cat); &lt;span class="kwrd"&gt;return&lt;/span&gt; p; });&lt;/pre&gt;
+&lt;pre&gt;    var reserv1 = _reservationSetup.GetPersisted(r =&amp;gt;&lt;/pre&gt;
+&lt;pre class="alt"&gt;                                                     {&lt;/pre&gt;
+&lt;pre&gt;                                                         r.Pitch = pitch;&lt;/pre&gt;
+&lt;pre class="alt"&gt;                                                         r.DateFrom = &lt;span class="kwrd"&gt;new&lt;/span&gt; DateTime(2009, 10, 31);&lt;/pre&gt;
+&lt;pre&gt;                                                         r.DateTo = &lt;span class="kwrd"&gt;new&lt;/span&gt; DateTime(2009, 11, 13);&lt;/pre&gt;
+&lt;pre class="alt"&gt;                                                         &lt;span class="kwrd"&gt;return&lt;/span&gt; r;&lt;/pre&gt;
+&lt;pre&gt;                                                     });&lt;/pre&gt;
+&lt;pre class="alt"&gt;&amp;nbsp;&lt;/pre&gt;
+&lt;pre&gt;    pitch = _pitchService.GetById(pitch.Id);&lt;/pre&gt;
+&lt;pre class="alt"&gt;    Assert.That(pitch.Reservations.Count, EqualTo(2));&lt;/pre&gt;
+&lt;pre&gt;}&lt;/pre&gt;
+&lt;pre class="alt"&gt;&amp;nbsp;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;
+Leider funktioniert der Test so nicht - er schmei&amp;szlig;t eine AssertionException, da &lt;code&gt;pitch.Reservations&lt;/code&gt; keine Elemente enth&amp;auml;lt.
+&lt;/p&gt;
+&lt;p&gt;
+Warum nicht???
+&lt;/p&gt;
+&lt;p&gt;
+Nach langem hin und her, bin ich mir endlich sicher, es verstanden zu haben: es liegt an NHibernate&amp;#39;s Entity-Cache! Da das Pitch-Objekt ja zum Zeitpunkt der Abfrage 
+&lt;/p&gt;
+&lt;div class="csharpcode"&gt;
+&lt;pre class="alt"&gt;
+&amp;nbsp;
+&lt;/pre&gt;
+&lt;pre&gt;
+    pitch = _pitchService.GetById(pitch.Id);
+&lt;/pre&gt;
+&lt;pre class="alt"&gt;
+&amp;nbsp;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;
+noch in der aktuellen Session geladen ist (was NHibernate meines Wissens nach anhand der ID feststellt), wird kein neues Objekt vom Typ Pitch instanziiert, sondern das schon existierende, &lt;code&gt;pitch&lt;/code&gt;, zur&amp;uuml;ckgegeben. Dieses enthielt aber noch keine Reservierungen zum Zeitpunkt der Persistierung - und so, wie es aussieht, werden diese auch nicht nachtr&amp;auml;glich geladen (f&amp;uuml;r ein Objekt, das schon in der Session lebt).
+&lt;/p&gt;
+&lt;p&gt;
+Die L&amp;ouml;sung ist jetzt gar nicht mehr so schwer: wir schmei&amp;szlig;en das vorhandene Objekt einfach weg! Daf&amp;uuml;r gibt es &lt;code&gt;Session.Evict()&lt;/code&gt;:
+&lt;/p&gt;
+&lt;div class="csharpcode"&gt;
+&lt;pre class="alt"&gt;[Test]&lt;/pre&gt;
+&lt;pre&gt;&lt;span class="kwrd"&gt;public&lt;/span&gt; &lt;span class="kwrd"&gt;void&lt;/span&gt; FetchJoinTest()&lt;/pre&gt;
+&lt;pre class="alt"&gt;{&lt;/pre&gt;
+&lt;pre&gt;    var cat = _categorySetup.GetPersisted();&lt;/pre&gt;
+&lt;pre class="alt"&gt;    var pitch = _pitchSetup.GetPersisted(p =&amp;gt; { p.Categories.Add(cat); &lt;span class="kwrd"&gt;return&lt;/span&gt; p; });&lt;/pre&gt;
+&lt;pre&gt;    var reserv1 = _reservationSetup.GetPersisted(r =&amp;gt;&lt;/pre&gt;
+&lt;pre class="alt"&gt;                                                     {&lt;/pre&gt;
+&lt;pre&gt;                                                         r.Pitch = pitch;&lt;/pre&gt;
+&lt;pre class="alt"&gt;                                                         r.DateFrom = &lt;span class="kwrd"&gt;new&lt;/span&gt; DateTime(2009, 10, 31);&lt;/pre&gt;
+&lt;pre&gt;                                                         r.DateTo = &lt;span class="kwrd"&gt;new&lt;/span&gt; DateTime(2009, 11, 13);&lt;/pre&gt;
+&lt;pre class="alt"&gt;                                                         &lt;span class="kwrd"&gt;return&lt;/span&gt; r;&lt;/pre&gt;
+&lt;pre&gt;                                                     });&lt;/pre&gt;
+&lt;pre class="alt"&gt;&amp;nbsp;&lt;/pre&gt;
+&lt;pre&gt;
+    &lt;strong&gt;_nHibernateHelper.Session.Flush();&lt;/strong&gt;
+&lt;/pre&gt;
+&lt;pre class="alt"&gt;
+    &lt;strong&gt;_nHibernateHelper.Session.Evict(pitch);&lt;/strong&gt;
+&lt;/pre&gt;
+&lt;pre&gt;&amp;nbsp;&lt;/pre&gt;
+&lt;pre class="alt"&gt;
+    pitch = _pitchService.GetById(pitch.Id);
+&lt;/pre&gt;
+&lt;pre&gt;
+    Assert.That(pitch.Reservations.Count, EqualTo(2));
+&lt;/pre&gt;
+&lt;pre class="alt"&gt;
+}
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;
+Jetzt l&amp;auml;uft der Test mit Erfolg durch. Happy Coding!
+&lt;/p&gt;
+</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2009-10-16 13:28:00</pubDate>
+  <lastModified>2009-10-16 15:07:06</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>NHibernate-Fetch-Join-2b-EntityCache</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>f8bafae5-b874-4cd1-bc83-6b822e1c2e83</category>
+    <category>cb82911b-137b-402e-be57-2fe9fe9fae2e</category>
+  </categories>
+  <notifications />
+</post>

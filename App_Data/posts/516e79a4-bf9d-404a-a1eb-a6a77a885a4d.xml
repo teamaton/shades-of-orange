@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>Oliver</author>
+  <title>Ids verketten mit CHAR-Delimiter</title>
+  <description />
+  <content>&lt;pre&gt;
+Ein kleiner Fallstrick im allt&amp;auml;glichen Programmierleben: Wir ben&amp;ouml;tigen eine Liste von Int&amp;#39;s als String, um flexibel zu sein mit ver&amp;auml;nderbarem Trennzeichen, bevorzugt ein char. Das Ergebnis &amp;uuml;berrascht:
+&lt;/pre&gt;
+&lt;pre&gt;
+&amp;nbsp;
+&lt;/pre&gt;
+&lt;p&gt;
+&lt;img src="/image.axd?picture=2009%2f4%2fIds_als_String2.png" alt="" /&gt;&lt;br /&gt;
+Nat&amp;uuml;rlich muss es wie folgt hei&amp;szlig;en:
+&lt;/p&gt;
+&lt;p&gt;
+&amp;nbsp;
+&lt;/p&gt;
+&lt;p&gt;
+&lt;img src="/image.axd?picture=2009%2f4%2fIds_als_String_ok2.png" alt="" /&gt;&lt;br /&gt;
+&lt;br /&gt;
+Gru&amp;szlig;, Oliver
+&lt;/p&gt;
+&lt;p&gt;
+P.S. Screenshots made by &lt;strong&gt;Greenshot &lt;/strong&gt;(ein funktionsreiches Open-Source-Screenshot-Tool: http://sourceforge.net/projects/greenshot/).
+&lt;/p&gt;
+&lt;p&gt;
+&lt;strong&gt;UPDATE:&lt;/strong&gt; Nat&amp;uuml;rlich das noch&amp;nbsp; d e u t l i c h&amp;nbsp; einfacher:
+&lt;/p&gt;
+&lt;p&gt;
+&amp;nbsp; &lt;img src="/image.axd?picture=2009%2f4%2fIds_als_String_neu.png" alt="" /&gt;
+&lt;/p&gt;
+&lt;p&gt;
+Danke, .NET :-) 
+&lt;/p&gt;
+</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2009-04-10 18:55:00</pubDate>
+  <lastModified>2009-04-17 18:07:52</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Ids-verketten-mit-CHAR-Delimiter</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>6cb56168-2015-4599-a1c1-8db9c9fae433</category>
+    <category>678a9d57-c1ea-487a-8fd3-4d08dc0be9c4</category>
+  </categories>
+  <notifications />
+</post>

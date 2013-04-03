@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>admin</author>
+  <title>PHP vs. Resharper</title>
+  <description />
+  <content>&lt;p&gt;Wir machen gerade ein kleines PHP Projekt (&amp;lt;40h). Es handelt sich um eine Synchronisationslösung zwischen einer Desktop Applikation in .NET mit MSDE und eine Front Office PHP Lösung.  &lt;/p&gt;
+&lt;p&gt;Dynamische Sprachen sind von der Sache erst einmal was sehr schönes. Für vieles sicher einfacher und schneller (Buildtasks, DSLs, Konfiguration). Nicht nur aus technischer Spielerei gibt es Dinge wie die &lt;a href="http://blogs.msdn.com/hugunin/archive/2007/04/30/a-dynamic-language-runtime-dlr.aspx"&gt;DLR&lt;/a&gt;, &lt;a href="http://boo.codehaus.org/"&gt;Boo&lt;/a&gt; oder &lt;a href="http://www.codeplex.com/Wiki/View.aspx?ProjectName=IronPython"&gt;IronPython&lt;/a&gt;. Doch für echte Anwendungslogik fühlt sich das arbeiten mit PHP deutlich langsamer an.  &lt;/p&gt;
+&lt;p&gt; &lt;a atomicselection="true" href="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/PHPvs.Resharper_131/CropperCapture%5B7%5D.png"&gt;&lt;img width="462" height="138" border="0" src="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/PHPvs.Resharper_131/CropperCapture%5B7%5D_thumb.png" alt="CropperCapture[7]" style="border: 0px none ;" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Am schmerzlichsten vermisse und ich &lt;a href="http://www.jetbrains.com/resharper/"&gt;Resharper&lt;/a&gt;. Mir war gar nicht bewusst, wie oft ich kleinere Refaktorisierungen durchführe. Meist &lt;a href="http://www.refactoring.com/catalog/extractMethod.html"&gt;"Methode Extrahieren"&lt;/a&gt; und Umbenennen. Aber auch die Navigation im Code ist mit a href="http://www.zend.com/products/zend_studio"&amp;gt;Zend Studio schmerzhaft. Permanent suche ich im Projekt nach irgendwelchen Strings. In Resharper dauert es 5sec alle Zuweisungen einer Variablen zu finden und dabei die Verwendungen auszublenden. Mit Zend ist es immer wieder ein Browsen, durch viele, viele Suchtreffer. &lt;/p&gt;
+&lt;p&gt;Ich vermisse auch NHibernate, meinen TestRunner und all die Bibliotheken, die mir sonst den Alltag versüßen. (Wobei wer Tag ein Tag aus mit PHP arbeitet, hat sicher verlgeichbares) &lt;/p&gt;
+&lt;p&gt;Schon nach 20h, .NET I miss you :-) &lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2007-11-12 00:05:08</pubDate>
+  <lastModified>0001-01-01 06:00:00</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>PHP-vs-Resharper</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>6cb56168-2015-4599-a1c1-8db9c9fae433</category>
+  </categories>
+  <notifications />
+</post>

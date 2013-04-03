@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>oliver</author>
+  <title>Application development with Orchard</title>
+  <description />
+  <content>&lt;p&gt;A while ago, we decided to build &lt;strong&gt;&lt;em&gt;discoverize&lt;/em&gt;&lt;/strong&gt; – our generic portal software inspired by &lt;a href="http://www.camping.info"&gt;www.camping.info&lt;/a&gt; – using &lt;a title="The Orchard Project" href="http://www.orchardproject.net/" target="_blank"&gt;Orchard&lt;/a&gt;, “a &lt;strong&gt;free, open source, community-focused&lt;/strong&gt; project aimed at delivering applications and reusable components on the ASP.NET platform.”&lt;/p&gt;  &lt;p&gt;We will write about our experience with Orchard development using this post as a starting point and reference for all posts concerning Orchard.&lt;/p&gt;  &lt;h2&gt;Module development&lt;/h2&gt;  &lt;ol&gt;   &lt;li&gt;Data Access in Orchard Module development&lt;/li&gt;    &lt;li&gt;…&lt;/li&gt; &lt;/ol&gt;  &lt;p&gt;&amp;#160;&lt;/p&gt;  &lt;p&gt;To be continued.&lt;/p&gt;  &lt;p&gt;Oliver&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2011-09-07 01:02:18</pubDate>
+  <lastModified>2011-09-07 01:02:18</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Application-development-with-Orchard</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

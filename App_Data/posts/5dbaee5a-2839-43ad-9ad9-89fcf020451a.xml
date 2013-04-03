@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>oliver</author>
+  <title>PowerCommands for Visual Studio 2010</title>
+  <description />
+  <content>&lt;p&gt;Nach dem Umstieg von VS 2008 habe ich sie etwas vermisst, jetzt sind sie mittlerweile in Version 1.0.1 da: die &lt;a href="http://visualstudiogallery.msdn.microsoft.com/en-us/e5f41ad9-4edc-4912-bca3-91147db95b99" target="_blank"&gt;PowerCommands for Visual Studio 2010&lt;/a&gt;!&lt;/p&gt;  &lt;p&gt;Für alle, die VS als Administrator nutzen, sei noch darauf hingewiesen, dass eine entsprechende Option gesetzt werden muss (der Hinweis dazu kommt von &lt;a href="http://freetodev.spaces.live.com/blog/cns!EC3C8F2028D842D5!1239.entry" target="_blank"&gt;hier&lt;/a&gt;):&lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=ext-mgr.png"&gt;&lt;img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="ext-mgr" border="0" alt="ext-mgr" src="http://shades-of-orange.com/image.axd?picture=ext-mgr_thumb.png" width="708" height="262" /&gt;&lt;/a&gt; &lt;/p&gt;  &lt;p&gt;Definitiv mein Lieblings-Command ist “Open Containing Folder” beim Klick auf eine beliebige Datei:&lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=open-containing-folder.png"&gt;&lt;img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="open-containing-folder" border="0" alt="open-containing-folder" src="http://shades-of-orange.com/image.axd?picture=open-containing-folder_thumb.png" width="419" height="411" /&gt;&lt;/a&gt; &lt;/p&gt;  &lt;p&gt;Viel Spaß, Oliver&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2010-05-29 13:38:10</pubDate>
+  <lastModified>2010-05-29 13:38:10</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>PowerCommands-for-Visual-Studio-2010</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

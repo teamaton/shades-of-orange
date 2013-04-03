@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>admin</author>
+  <title>NHibernate Intellisense für Mapping Files</title>
+  <description />
+  <content>&lt;p&gt;Zum x-ten Mal vergessen. Jetzt weiß ich ja wo ich es finde:&lt;/p&gt; &lt;p&gt;&lt;a title="http://www.hibernate.org/366.html" href="http://www.hibernate.org/366.html"&gt;http://www.hibernate.org/366.html&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Achso das XSD File ist im &lt;a href="http://sourceforge.net/project/showfiles.php?group_id=73818&amp;amp;package_id=138561"&gt;NHibernate-Contrib&lt;/a&gt; Projekt zu finden und dann /src/NHibernate.Mapping.Attributes/nhibernate-mapping-2.0.xsd&lt;/p&gt; &lt;p&gt;&lt;a href="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/NHibernateIntellisensefrMappingFiles_20B7/CropperCapture%5B32%5D%5B1%5D.jpg" atomicselection="true"&gt;&lt;img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" height="128" src="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/NHibernateIntellisensefrMappingFiles_20B7/CropperCapture%5B32%5D.jpg" width="240" border="0" /&gt;&lt;/a&gt; &lt;/p&gt; &lt;p&gt;Nach dem kopieren steht die Intellisense bzw. Syntaxvervollständigung sofort zu Verfügung.&lt;/p&gt; &lt;p&gt;(robert)&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2007-04-23 01:19:18</pubDate>
+  <lastModified>0001-01-01 06:00:00</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>NHibernate-Intellisense-fur-Mapping-Files</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>f8bafae5-b874-4cd1-bc83-6b822e1c2e83</category>
+    <category>678a9d57-c1ea-487a-8fd3-4d08dc0be9c4</category>
+  </categories>
+  <notifications />
+</post>

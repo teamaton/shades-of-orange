@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>admin</author>
+  <title>UnitTesting: Mocking vs. Datenerzeugung</title>
+  <description />
+  <content>&lt;p&gt;Eines der größten Themen wenn es um Unit-Testing geht, ist das Mocken von Objekten. Die Grundidee beim Mocken ist fein granuliertes Testen zu ermöglichen, in dem Stellvertreter Objekte erzeugt werden, die die Bedürfnisse des Testfalls befriedigen. Hierfür gibt es in der .NET Welt eine Reihe von Frameworks die dies ermöglichen. Die bekanntesten sind wohl &lt;a href="http://nmock.org/"&gt;NMock&lt;/a&gt;, &lt;a href="http://www.codeproject.com/useritems/Rhino_Mocks_Version_20.asp"&gt;RhinoMocks&lt;/a&gt; und das Mächtige &lt;a href="http://www.typemock.com/"&gt;TypeMock.NET&lt;/a&gt;.  &lt;/p&gt;
+&lt;p&gt;Seit mehreren Jahren bin ich nun &lt;a href="http://c2.com/cgi/wiki?TestInfected"&gt;Test Infected&lt;/a&gt;, was mein Entwicklerleben deutlich einfacher macht. Im Schnitt liegt mein &lt;a href="http://ncover.org/"&gt;Test-Coverage&lt;/a&gt; für die Businessschicht bei über 80%. Trotz dessen sind Mocking Frameworks noch nicht wirklich in meinem Toolset gelandet. Stattdessen arbeite ich mit Setup Erzeuger Klassen, die die Businessschicht verwenden um einen definierten Zustand zu erzeugen:  &lt;/p&gt;
+&lt;p&gt;&lt;a atomicselection="true" href="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/UnitTestingMockingvs.Datenerzeugung_F55/CropperCapture%5B61%5D.jpg"&gt;&lt;img width="511" height="240" border="0" src="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/UnitTestingMockingvs.Datenerzeugung_F55/CropperCapture%5B61%5D_thumb.jpg" alt="CropperCapture[61]" style="border: 0px none ;" /&gt;&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;Ein Nebenprodukt dieser Erzeuger Klassen ist, dass sie bei der Entwicklung verwendet werden können um Testdaten zu erzeugen, wieder und wieder. Ein weiterer Pluspunkt ist, dass die API von Businessobjekten durch vermehrte Verwendung „Benutzerfreundlicher“ wird. &lt;/p&gt;
+&lt;p&gt;Natürlich hat dieser Ansatz Grenzen. Testfälle müssen schnell sein, sonst werden sie nicht regelmäßig aufgerufen. (Nicht nur) Entwickler warten nicht gerne. Die Verwendung von externen Ressourcen für Testfälle fällt also flach. (Es sei denn die Unit-Test Umgebung soll auch für Integrationstest herhalten). Da externe Resourcen sowieso mit einem Proxy versehen gehören, ist das Erzeugen von Mocks (auch wieder ohne MockFramework) leicht. Hier sind &lt;a href="http://csharp-source.net/open-source/containers"&gt;IoC Container&lt;/a&gt; großartige Helfer.  &lt;/p&gt;
+&lt;p&gt;Der Gebrauch von Datenbanken sollte für das Erzeugen eines definierten Zustands unbedenklich sein. Eine Entwicklerdatenbank sollte mehr als 1000 CRUD Operation in der Sekunde verdauen können, was auch das Erstellen von komplizierten Testfällen nicht behindern sollte. Und wenn die Laufzeit der Test auf über 3sec ansteigt, kann man diese auch gruppieren und nur eine Teilmenge der Tests ausführen. Was aber frühestens bei 100 Tests, eher deutlich später eintreffen sollte. &lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2007-10-22 00:05:27</pubDate>
+  <lastModified>0001-01-01 06:00:00</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>UnitTesting-Mocking-vs-Datenerzeugung</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>6cb56168-2015-4599-a1c1-8db9c9fae433</category>
+    <category>678a9d57-c1ea-487a-8fd3-4d08dc0be9c4</category>
+  </categories>
+  <notifications />
+</post>

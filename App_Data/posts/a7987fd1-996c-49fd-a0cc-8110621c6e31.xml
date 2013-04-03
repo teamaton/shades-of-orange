@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>Anton</author>
+  <title>Sport frei – Spartakiade 2013</title>
+  <description />
+  <content>&lt;p&gt;Letzten Samstag fand in Berlin-Kreuzberg die zweite &lt;a href="http://spartakiade.org/2013/" target="_blank"&gt;Spartakiade&lt;/a&gt; statt. Es kamen 30 bis 40 Interessierte zusammen, die an den Workshops teilnehmen wollten.&lt;/p&gt;  &lt;h2&gt;Domain-Driven Design (DDD)&lt;/h2&gt;  &lt;p&gt;Da der Architekturworkshop erst am Nachmittag anfing, schaute ich am Vormittag in DDD rein. Es dauerte eine Weile bis an jedem Tisch die Beispielanwendung (brownfield) zum Laufen gebracht wurde. Es war ein Fahrrad-Online-Shop, den wir zunächst begutachteten. Wir arbeiteten die Bestandteile der bestehenden Software heraus. Danach definierten wir die Domäne und die Subdomänen (Aspekte) der Anwendung. Dabei sollte uns klar werden, was die Kernkompetenz des Programms sein würde, also worauf wir uns konzentrieren würden. Das war der Shop an sich (samt Warenkorb). Dinge wie Bezahlung und Versand würden Nebenaspekte bleiben, da wir sie möglicherweise auch auslagern könnten, oder bestehende gute Lösungen finden würden.&lt;/p&gt;  &lt;h2&gt;Architektur&lt;/h2&gt;  &lt;p&gt;Nach dem Baguette zum Mittag ging ich dann zum Architekturworkshop bei Sergey Shishkin. Ich weiß also nicht, wie der DDD-Workshop ausging, aber sie wollten sich am Nachmittag mehr um die Umsetzung konkreter Patterns in Zweierteams kümmern.&lt;/p&gt;  &lt;p&gt;Sergey erzählte zunächst ein wenig darüber, wie er sich Architektur vorstellt. Dann sollten wir eine Grafik für eine Anwendung erstellen. Das war eine Vermisste-Tiere-Anwendung, in der man auch Sichtungen melden könnte. Innerhalb von 30 Minuten stellten wir etwas fertig, was die Funktionalitäten und Datenflüsse beinhaltete. Wir waren uns sehr unsicher, ob dies das Richtige sei. Immerhin sollten wir aus dieser Grafik ableiten, was für Kosten (insbesondere laufende) auf den Kunden zukämen.&lt;/p&gt;  &lt;p&gt;Nach der Besprechung des ersten Fallbeispiels, gab uns Sergey ein komplexeres Problem, welches ich jetzt hier im Einzelnen nicht besprechen werde. Auch hier zeigten alle Gruppen unterschiedliche Ergebnisse, wobei wir kaum über die strukturierte Erfassung der Usecases hinauskamen. &lt;/p&gt;  &lt;p&gt;Als letztes zeigte uns Sergey, wie man am besten mit solchen komplexen Anforderungen umgeht: indem man iterativ vorgeht. Man nimmt erst einen Usecase und modelliert ihn, und fügt dann nach und nach die weiteren Usecases hinzu. Dadurch muss man nicht die Gesamtanwendung auf ein Mal verstehen.&lt;/p&gt;  &lt;h2&gt;Fazit&lt;/h2&gt;  &lt;p&gt;Insgesamt hat sich die Teilnahme gelohnt. Ich hätte mir gewünscht, dass Sergeys Workshop den ganzen Tag gedauert hätte, so wie es eigentlich auch gedacht war. Die Workshopplanung könnte die Organisation ein wenig verbessern. Die Räumlichkeiten waren gut, das Catering auch. Die Stimmung war auch sehr angenehm, wie beim &lt;a href="http://devopenspace.de/2012/" target="_blank"&gt;Developer Open Space&lt;/a&gt;.&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2013-03-25 15:56:18</pubDate>
+  <lastModified>2013-03-25 15:56:18</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Sport-frei-Spartakiade-2013</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

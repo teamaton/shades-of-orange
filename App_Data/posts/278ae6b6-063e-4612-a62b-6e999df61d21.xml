@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>robert</author>
+  <title>Synergien und Testpläne</title>
+  <description />
+  <content>&lt;p&gt;Die Qualtität unserer Abläufe wird besser und besser :-) Folgendes Bild, zeigt wie Test-Läufe nach jedem Deployment von &lt;a href="http://www.camping.Info"&gt;www.camping.Info&lt;/a&gt; dokumentiert werden. (&lt;a href="http://www.speak-friend.com/projekte.aspx"&gt;In anderen Projekten&lt;/a&gt; haben wir ähnliche Abläufe. )&lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=Test-Plan-Runs.png"&gt;&lt;img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="Test-Plan-Runs" border="0" alt="Test-Plan-Runs" src="http://shades-of-orange.com/image.axd?picture=Test-Plan-Runs_thumb.png" width="1115" height="525" /&gt;&lt;/a&gt;&amp;#160;&lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=Camping-Info-Build-Nummer.png"&gt;&lt;img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="Camping-Info-Build-Nummer" border="0" alt="Camping-Info-Build-Nummer" src="http://shades-of-orange.com/image.axd?picture=Camping-Info-Build-Nummer_thumb.png" width="227" height="62" /&gt;&lt;/a&gt; &lt;/p&gt;  &lt;p&gt;Wir haben noch viele ambitionierte Ziele für die Verbesserung der Deployment-Prozesse, zum Beispiel das Einbinden von Selenium-Tests oder das vollautomatische Deployment mit automatischen Rollback im Fehlerfall, so dass bei einer Auslieferung überhaupt keine manuellen Schritte mehr notwendig sind und &lt;strike&gt;Arbeit&lt;/strike&gt;Lebenszeit nur für einfache Kontrolle aufgewendet wird. &lt;/p&gt;  &lt;p&gt;Was ein Entwickler (Oliver) in Vollzeit und ein Tester/Admin (Mark), der mit wenigen Stunden unterstützt hier leisten und geleistet haben finde ich beachtlich! Hut ab an Euch Beide! Sehr positiv finde ich auch die Synergien für die Entwicklungen von &lt;a href="http://www.e-commerce-connector.de/"&gt;E-Commerce-Connector&lt;/a&gt;, aber auch für Beratungsleistungen. Teamwork-Helps!&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2010-06-11 09:56:24</pubDate>
+  <lastModified>2010-06-11 10:02:03</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Synergien-und-Testplane</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>da405bb3-bccc-4d29-bd8c-cbbcb36a4bc7</category>
+  </categories>
+  <notifications />
+</post>

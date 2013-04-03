@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>admin</author>
+  <title>DSL (Domain Specific Language) und Fluent-Interface</title>
+  <description />
+  <content>&lt;p&gt;Ich arbeite gerade an Testmethoden und habe mich über folgenden Code gefreut, weil er ein relativ komplexes Thema ziemlich lesbar gestaltet. Der Test ist natürlich grün :-)&lt;/p&gt;
+&lt;p&gt; &lt;img width="479" height="430" border="0" src="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/DSLDomainSpecificLanguageundFluidInterfa_34B5/CropperCapture%5B93%5D_thumb.jpg" alt="CropperCapture[93]" style="border: 0px none ;" /&gt; &lt;/p&gt;
+&lt;p&gt;(Clicken für Originalgrösse)&lt;/p&gt;
+&lt;p&gt;Das Setup für die Tests ist mir immer noch einen Tick zu lang und ich werde wohl noch refaktorisieren. Auch werde ich gleich noch ein paar mehr Asserts hinzufügen. &lt;/p&gt;
+&lt;p&gt;Erzeugt werden 8 Angebote mit jeweils 4 und 3 Eigenschaften. Sticker haben hier keinen Preis, sind also kein echtes Angebot aber für den Test reicht das komplett. Die Angebote lassen sich mit einem Einzeiler persistieren. &lt;/p&gt;
+&lt;p&gt;Die Flyer und Sticker Klassen Definition und Helper Klassen werden via XML Configurationsfiles generiert, was auch den Sprach-Mix erklärt. Ursprünglich war das nur gedacht um schnell und einfach Tests schreiben zu können, nun ergeben sich aber noch ein paar andere Vorteile. Das Endprodukt läst sich so relativ flexibel befüllen. Für ein paar 10 000 Produkte braucht es nur wenige Zeilen...&lt;/p&gt;
+&lt;p&gt;Komisch, in den letzten 4 1/2 Wochen habe ich 7100 Zeilen Code (oben sieht man 30 Zeilen ;) fürs das Backend unserers Produktes geschrieben. Nach dem ich die letzten Tage ein wenig panisch geworden bin, vor allen Dingen wegen vager Anforderungen und  Unwissenheit über Zielgruppen und Märkte, scheint sich doch noch alles zusammen zu fügen. Trotzdem steht jetzt erstmal &lt;a href="http://en.wikipedia.org/wiki/Crunch_time_(expression)"&gt;Crunch-Time&lt;/a&gt; an. &lt;/p&gt;
+&lt;p&gt;Lets Rock'n Roll :-)&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2007-08-18 02:44:59</pubDate>
+  <lastModified>0001-01-01 06:00:00</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>DSL-(Domain-Specific-Language)-und-Fluent-Interface</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>6cb56168-2015-4599-a1c1-8db9c9fae433</category>
+    <category>678a9d57-c1ea-487a-8fd3-4d08dc0be9c4</category>
+  </categories>
+  <notifications />
+</post>

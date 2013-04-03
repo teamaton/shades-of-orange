@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>admin</author>
+  <title>Old news is as well news</title>
+  <description />
+  <content>&lt;p&gt;&lt;a href="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/Oldnewsisaswellnews_3B77/CropperCapture%5B69%5D.jpg" atomicselection="true"&gt;&lt;img style="border-right: 0px; border-top: 0px; margin: 0px 10px 0px 0px; border-left: 0px; border-bottom: 0px" height="42" alt="CropperCapture[69]" src="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/Oldnewsisaswellnews_3B77/CropperCapture%5B69%5D_thumb.jpg" width="240" align="left" border="0" /&gt;&lt;/a&gt; Alle Webseiten von "&lt;a href="http://www.microsoft.com"&gt;microsoft.com&lt;/a&gt;" laufen nun auf Windows 2008 Server und IIS 7 (beide noch Beta). Microsoft hosted auf 80 Servern 500 Virtual Roots, 350+ Webapplikationen. Es werden 10 000 Anfragen pro Sekunde und 300 000 Parallel Verbindungen verarbeitet. Nachzulesen via &lt;a href="http://blogs.iis.net/bills/archive/2007/06/15/www-microsoft-com-is-live-on-iis7-beta-3-are-you.aspx"&gt;IIS Blogs&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;Ob alte Neuigkeiten Neuigkeiten bleiben sei dahin gestellt. Ich freue mich jedenfalls schon auf das nächste  Jahr. Orcas und IIS 7 sind sehr vielversprechend auch für ASP.NET 2.0 Anwendungen. Die Migration von 2.0 auf 3.0 scheint nicht annähernd so schmerzlich zu werden, wie es die Migration von 1.1 auf 2.0 war. Orcas wird ASP.NET 2.0 als &lt;a href="http://weblogs.asp.net/scottgu/archive/2007/06/20/vs-2008-multi-targeting-support.aspx"&gt;Entwicklungsumgebung nativ unterstützen&lt;/a&gt;, was die meisten Probleme wohl aus der Welt schafft. Von "breaking changes" war bisher nichts zu hören. &lt;/p&gt; &lt;p&gt;Offen ist noch das Release Date des eigentlich für die zweite Jahreshälfte 2007 angekündigten neuen Windows Servers. Nun sprechen &lt;a href="http://4sysops.com/archives/new-rumors-about-the-windows-server-2008-release-date/"&gt;Gerüchte&lt;/a&gt; von Beginn 2008. Interessant wird wohl auch, mit welcher Geschwindigkeit deutsche Hoster Windows 2008 in Ihr Angebot aufnehmen. Schade. IIS 7 wird nicht auf alten Windows 2003 Servern zu installieren sein. &lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2007-07-10 03:13:42</pubDate>
+  <lastModified>0001-01-01 06:00:00</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Old-news-is-as-well-news</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>6cb56168-2015-4599-a1c1-8db9c9fae433</category>
+    <category>3b5447eb-ff3b-4481-9287-0508fce6262b</category>
+  </categories>
+  <notifications />
+</post>

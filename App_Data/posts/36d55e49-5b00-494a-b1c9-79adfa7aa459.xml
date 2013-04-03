@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>oliver</author>
+  <title>Visual Studio 2008: Absturz ohne Vorwarnung - Fatal Execution Engine Error</title>
+  <description />
+  <content>&lt;p&gt;Was ich nicht mag, ist wenn mir Visual Studio mitten in der Arbeit abschmiert… einfach so… bumm, weg! Das Event-Log sagt dann immer:&lt;/p&gt;  &lt;p&gt;&lt;strong&gt;&lt;font size="3" face="Courier New"&gt;.NET Runtime version 2.0.50727.4927 - Fatal Execution Engine Error (6E61851A) (80131506)&lt;/font&gt;&lt;/strong&gt;&lt;/p&gt;  &lt;p&gt;Die Speicheradressen (in den Klammern hinten) variieren, der Effekt ist immer derselbe: ungespeicherte Arbeit geht verloren, wobei das Nervendste ist, dass VS sich die geöffneten Dateien nicht merkt. Änderungen gibt es selten so viele, dass ich mich groß ärgern müsste – dafür habe ich einen zu starken Reflex auf Strg+S zu drücken. Leider habe ich für diese Fehler noch keine Lösung gefunden.&lt;/p&gt;  &lt;p&gt;Oliver&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2010-03-29 21:15:51</pubDate>
+  <lastModified>2010-03-29 21:15:51</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Visual-Studio-2008-Absturz-ohne-Vorwarnung-Fatal-Execution-Engine-Error</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

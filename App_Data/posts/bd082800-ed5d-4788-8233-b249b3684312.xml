@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>robert</author>
+  <title>Deployment mit Powershell – Schritt 3: Werte in der Web.Config über Variablen setzen.</title>
+  <description />
+  <content>&lt;p&gt;Beim Einrichten einer neuen Webseite geht es immer auch darum ein paar Konfigurationswerte anzupassen. In unserem konkreten Fall benötigen wir lediglich: &lt;/p&gt;  &lt;ul&gt;   &lt;li&gt;ApplicationPath&lt;/li&gt;    &lt;li&gt;ConnectionString&lt;/li&gt; &lt;/ul&gt;  &lt;p&gt;&lt;font size="2"&gt;Hier hilft der klassische &lt;a href="http://en.wikipedia.org/wiki/Template_processor"&gt;Template Processor&lt;/a&gt;: &lt;/font&gt;&lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=webconfigtemplateengine.png"&gt;&lt;img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="web-config template engine" border="0" alt="web-config template engine" src="http://shades-of-orange.com/image.axd?picture=webconfigtemplateengine_thumb.png" width="401" height="283" /&gt;&lt;/a&gt; &lt;/p&gt;  &lt;p&gt;&lt;font size="2"&gt;Wobei “Deployment.ps1” die “Template-Engine” ist &lt;/font&gt;&lt;/p&gt;  &lt;div style="border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px" id="codeSnippetWrapper"&gt;   &lt;div style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px" id="codeSnippet"&gt;     &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum1"&gt;   1:&lt;/span&gt; &lt;span style="color: #0000ff"&gt;function&lt;/span&gt; CopyAndChangeWebConfig&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum2"&gt;   2:&lt;/span&gt; {&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum3"&gt;   3:&lt;/span&gt;     $webConfigTemplate = Get-Content -Path $path_sourceConfigTemplate -Encoding UTF8;&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum4"&gt;   4:&lt;/span&gt;     $webConfigTemplate = $webConfigTemplate -replace(&lt;span style="color: #006080"&gt;&amp;quot;#ApplicationPath#&amp;quot;&lt;/span&gt;, $path_targetDeployment );&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum5"&gt;   5:&lt;/span&gt;     $webConfigTemplate = $webConfigTemplate -replace(&lt;span style="color: #006080"&gt;&amp;quot;#ConnectionString#&amp;quot;&lt;/span&gt;, $Server );    &lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum6"&gt;   6:&lt;/span&gt;     Set-Content -Path ($path_targetDeployment + &lt;span style="color: #006080"&gt;&amp;quot;/web.config&amp;quot;&lt;/span&gt;) -Encoding UTF8 -Value $webConfigTemplate;    &lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum7"&gt;   7:&lt;/span&gt; }&lt;/pre&gt;
+&lt;!--CRLF--&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Lesen, ersetzen, zurückschreiben und leicht zu erweitern.&lt;/p&gt;
+
+&lt;p&gt;:-) &lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2009-05-08 21:07:21</pubDate>
+  <lastModified>2009-05-08 21:10:35</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Deployment-mit-Powershell-e28093-Schritt-3-Werte-in-der-WebConfig-uber-Variablen-setzen</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>2a71a125-24e3-4583-806c-7c8bead507be</category>
+  </categories>
+  <notifications />
+</post>

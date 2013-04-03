@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>oliver</author>
+  <title>TinyGet für Stress-Tests</title>
+  <description />
+  <content>&lt;p&gt;Im &lt;a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=56fc92ee-a71a-4c73-b628-ade629c89499&amp;amp;displaylang=en" target="_blank"&gt;IIS Resource Toolkit 6.0&lt;/a&gt; (auch auf Win 2008 R2 installierbar) findet man &lt;font face="Courier New"&gt;TinyGet&lt;/font&gt;, ein Commandline-Tool zum einfachen Absetzen von (potenziell vielen) HTTP-Requests. Die Syntax lautet einfach:&lt;/p&gt;  &lt;div style="border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px" id="codeSnippetWrapper"&gt;   &lt;div style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px" id="codeSnippet"&gt;     &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum1"&gt;   1:&lt;/span&gt; tinyget -srv:www.camp.info -uri:/campingplaetze -threads:10 -loop:10&lt;/pre&gt;
+&lt;!--CRLF--&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Einen ausführlichen Überblick gibt &lt;a title="http://code.google.com/p/toolsdotnet/wiki/TinyGet" href="http://code.google.com/p/toolsdotnet/wiki/TinyGet"&gt;http://code.google.com/p/toolsdotnet/wiki/TinyGet&lt;/a&gt;, mit vielen Beispielen z.B. auch “to measure execution time with Powershell's Measure-Command cmdlet”! Sehr spannend.&lt;/p&gt;
+
+&lt;p&gt;Oliver&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2010-04-15 17:26:15</pubDate>
+  <lastModified>2010-04-15 17:26:15</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>TinyGet-fur-Stress-Tests</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>robert</author>
+  <title>Pfad der aktuellen Assembly</title>
+  <description />
+  <content>&lt;p&gt;In welchem Pfad befindet sich die aktuell verwendete Assembly? Bisher dachte ich immer &lt;strong&gt;AppDomain.CurrentDomain.BaseDirectory&lt;/strong&gt; wäre ein verlässlicher Weg dies herauszufinden. Stimmt aber nicht, den dieser Pfad kann natürlich auch gesetzt werden, was zu unerwarteten Ergebnissen mit unterschiedlichen Test-Runnern führte (&amp;quot;R#&amp;quot; und der &amp;quot;Nunit GUI&amp;quot;). &lt;/p&gt;  &lt;p&gt;Der richtige Weg: &lt;strong&gt;Assembly.GetExecutingAssembly().CodeBase&lt;/strong&gt;, das den ursprünglichen Speicherort der Assembly zurück gibt. &lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2009-12-23 02:59:55</pubDate>
+  <lastModified>2009-12-23 03:00:42</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Pfad-der-aktuellen-Assembly</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>6cb56168-2015-4599-a1c1-8db9c9fae433</category>
+  </categories>
+  <notifications />
+</post>

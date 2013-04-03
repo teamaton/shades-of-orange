@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>robert</author>
+  <title>Projekt Versionierung und Buildmanagement</title>
+  <description />
+  <content>&lt;p&gt;Für &lt;a href="http://www.camping.info"&gt;unsere&lt;/a&gt; Projekte verwenden wir eine Versionierungsstrategie, in der es darum geht die Versionskontrolsystem-Revision (in unserem Fall SVN) zuzuordnen: &lt;/p&gt;  &lt;p&gt;Beispiel &lt;a href="http://www.camping.info"&gt;www.camping.info&lt;/a&gt;: &lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=CampingInfoRevision.png"&gt;&lt;img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="Camping-Info-Revision" border="0" alt="Camping-Info-Revision" src="http://shades-of-orange.com/image.axd?picture=CampingInfoRevision_thumb.png" width="219" height="47" /&gt;&lt;/a&gt;&lt;/p&gt;  &lt;p&gt;Interessant für uns, ist nur der hintere Teil: 2013.214. &lt;/p&gt;  &lt;ul&gt;   &lt;li&gt;2013: ist die SVN Revision von &lt;a href="http://www.camping.info"&gt;www.camping.info&lt;/a&gt;&lt;/li&gt;    &lt;li&gt;214: ist die SVN Revision von &lt;a href="http://code.google.com/p/speak-lib/source/browse/#svn/trunk/SpeakLib.Utilities"&gt;Speak-Lib&lt;/a&gt;, einer Hilfs-Bibliothek&lt;/li&gt; &lt;/ul&gt;  &lt;p&gt;&lt;font size="2"&gt;Die Version wird vor jedem deployment in die Assembly.Info.cs geschrieben, noch händisch, und so wieder ausgelesen: &lt;/font&gt;&lt;/p&gt;  &lt;div id="codeSnippetWrapper"&gt;   &lt;div style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px" id="codeSnippet"&gt;     &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"&gt;Assembly assembly = Assembly.GetExecutingAssembly();&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"&gt;ltVersion.Text = assembly.GetName().Version.ToString();&lt;/pre&gt;
+&lt;!--CRLF--&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&amp;#160;&lt;/p&gt;
+
+&lt;p&gt;Für das Build-Mangement verwenden wir &lt;a href="http://www.targetprocess.com/"&gt;Target-Process&lt;/a&gt;, wobei der Buildname auch die Revision beinhaltet:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=Buildbersicht.png"&gt;&lt;img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="Build-Übersicht" border="0" alt="Build-Übersicht" src="http://shades-of-orange.com/image.axd?picture=Buildbersicht_thumb.png" width="648" height="182" /&gt;&lt;/a&gt; &lt;/p&gt;
+
+&lt;p&gt;Hier lässt sich sehen, dass die aktuelle Camping.Info Version (x.x.2013.214) am 30 Juil deployed wurde und zur Iteration 4.7 gehört. &lt;/p&gt;
+
+&lt;p&gt;Noch mehr Informationen finden sich den Build-Details: &lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=BuildDetails.png"&gt;&lt;img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="Build-Details" border="0" alt="Build-Details" src="http://shades-of-orange.com/image.axd?picture=BuildDetails_thumb.png" width="667" height="341" /&gt;&lt;/a&gt; &lt;/p&gt;
+
+&lt;p&gt;Die Build-Details beinhalten alle in der Version durchgeführten Änderungen. Diese Informationen können als Info an den Kunden direkt weitergegeben werden. Mit Erwin Oberascher von &lt;a href="http://www.camping.Info"&gt;www.camping.Info&lt;/a&gt; haben wir jedoch den Ideal-Fall, in dem der Kunde Zugriff und Interesse an solchen Projekt-Artefakten hat. &lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2009-08-01 13:54:37</pubDate>
+  <lastModified>2009-08-01 13:56:17</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Projekt-Versionierung-und-Buildmanagement</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>678a9d57-c1ea-487a-8fd3-4d08dc0be9c4</category>
+    <category>15499fc6-bd8f-48a6-904e-72a5e35eea7f</category>
+    <category>127092f2-44aa-4021-a268-49fce3fc0aa1</category>
+  </categories>
+  <notifications />
+</post>

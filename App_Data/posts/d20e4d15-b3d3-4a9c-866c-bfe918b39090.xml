@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>oliver</author>
+  <title>Warum komprimiert mein IIS nicht? Oder: Fiddler richtig nutzen!</title>
+  <description />
+  <content>&lt;p&gt;Lange habe ich mich gewundert, warum &lt;a href="http://www.fiddler2.com/fiddler2/" target="_blank"&gt;Fiddler&lt;/a&gt; (großartiger HTTP-Proxy) mir anzeigt, dass der Content unserer Webanwendung nicht gezippt ausgeliefert wird:&lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=fidd-no-gzip.png"&gt;&lt;img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="fidd-no-gzip" border="0" alt="fidd-no-gzip" src="http://shades-of-orange.com/image.axd?picture=fidd-no-gzip_thumb.png" width="968" height="251" /&gt;&lt;/a&gt; &lt;/p&gt;  &lt;p&gt;Heute bin ich dann zufällig und zum Glück endlich über die Lösung gestolpert:&lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=fidd-rem-all-comp.png"&gt;&lt;img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="fidd-rem-all-comp" border="0" alt="fidd-rem-all-comp" src="http://shades-of-orange.com/image.axd?picture=fidd-rem-all-comp_thumb.png" width="330" height="342" /&gt;&lt;/a&gt; &lt;/p&gt;  &lt;p&gt;Wenn man Fiddler sagt, dass er jedwede Komprimierung entfernen soll, tut er dies auch! Heureka. Also die gezeigte Option abwählen und schon sieht man, was man sehen sollte:&lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=fidd-gzip.png"&gt;&lt;img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="fidd-gzip" border="0" alt="fidd-gzip" src="http://shades-of-orange.com/image.axd?picture=fidd-gzip_thumb.png" width="1033" height="256" /&gt;&lt;/a&gt; &lt;/p&gt;  &lt;p&gt;Gruß, Oliver&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2010-05-19 23:37:53</pubDate>
+  <lastModified>2010-05-19 23:38:58</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Warum-komprimiert-mein-IIS-nicht-Oder-Fiddler-richtig-nutzen!</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

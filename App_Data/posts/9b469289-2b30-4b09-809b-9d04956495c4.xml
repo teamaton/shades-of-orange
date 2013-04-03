@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>oliver</author>
+  <title>From batch string replacement to date time formatting – a list of often used web resources</title>
+  <description />
+  <content>&lt;p&gt;This is only the beginning…&lt;/p&gt;  &lt;h2&gt;Batch&lt;/h2&gt;  &lt;ul&gt;   &lt;li&gt;String replacement: &lt;a href="http://ss64.com/nt/syntax-replace.html"&gt;http://ss64.com/nt/syntax-replace.html&lt;/a&gt; &lt;/li&gt; &lt;/ul&gt;  &lt;h2&gt;Date formatting&lt;/h2&gt;  &lt;ul&gt;   &lt;li&gt;T-SQL, using CONVERT or CAST: &lt;a href="http://msdn.microsoft.com/en-us/library/ms187928.aspx"&gt;http://msdn.microsoft.com/en-us/library/ms187928.aspx&lt;/a&gt; &lt;/li&gt;    &lt;li&gt;.NET: &lt;a href="http://msdn.microsoft.com/en-us/library/8kb3ddd4.aspx" target="_blank"&gt;&lt;strong&gt;&lt;em&gt;Custom&lt;/em&gt;&lt;/strong&gt; Date and Time Format Strings&lt;/a&gt;, &lt;a href="http://msdn.microsoft.com/en-us/library/az4se3k1.aspx" target="_blank"&gt;&lt;strong&gt;&lt;em&gt;Standard&lt;/em&gt;&lt;/strong&gt; Date and Time Format Strings&lt;/a&gt; &lt;/li&gt; &lt;/ul&gt;  &lt;h2&gt;Windows&lt;/h2&gt;  &lt;ul&gt;   &lt;li&gt;Open recent window from taskbar when clicking on icon instead of showing list of open windows: &lt;a href="http://www.howtogeek.com/howto/16334/make-the-taskbar-buttons-switch-to-the-last-active-window-in-windows-7/"&gt;http://www.howtogeek.com/howto/16334/make-the-taskbar-buttons-switch-to-the-last-active-window-in-windows-7/&lt;/a&gt; &lt;/li&gt; &lt;/ul&gt;  &lt;h2&gt;Logging&lt;/h2&gt;  &lt;ul&gt;   &lt;li&gt;Filters for log4net: &lt;a href="http://www.claassen.net/geek/blog/2009/06/log4net-filtering-by-logger.html"&gt;http://www.claassen.net/geek/blog/2009/06/log4net-filtering-by-logger.html&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2012-06-27 14:40:32</pubDate>
+  <lastModified>2012-08-20 18:53:27</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>From-batch-string-replacement-to-date-time-formatting-a-list-of-often-used-web-resources</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>4a6eca6b-10d9-4a5f-ab67-40144ba581d9</category>
+    <category>678a9d57-c1ea-487a-8fd3-4d08dc0be9c4</category>
+    <category>b9df7adf-328a-4e8c-9401-f5adf7e10cd6</category>
+  </categories>
+  <notifications />
+</post>

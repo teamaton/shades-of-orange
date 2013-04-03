@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>robert</author>
+  <title>“NEUE” ASP.NET AJAX Version (seit September)</title>
+  <description />
+  <content>&lt;p&gt;Hatte das gar nicht mitbekommen, seit September gibt es eine neue ASP.NET AJAX Version. Änderungen lassen sich hier nachlesen: &lt;a href="http://www.asp.net/AJAX/AjaxControlToolkit/Samples/Default.aspx"&gt;http://www.asp.net/AJAX/AjaxControlToolkit/Samples/Default.aspx&lt;/a&gt;. Auch interessant, das ASP.NET AJAX Toolkit ist jetzt Teil der ASP.NET AJAX Library.&lt;/p&gt;  &lt;p&gt;Es wurden 20 Bugs gefixed und es gibt ein neues VS Projekt Template für Visual Studio. @Stefan, hätte Dir das geholfen?&lt;/p&gt;  &lt;p&gt;&lt;strong&gt;Neu:&lt;/strong&gt; &lt;a href="http://www.asp.net/AJAX/AjaxControlToolkit/Samples/Seadragon/Seadragon.aspx"&gt;Seadragon&lt;/a&gt; ist wirklich spannend. Wir könnten das sowohl für Produkt-Bilder als auch für Stellplatzkarten einsetzen. &lt;/p&gt;  &lt;p&gt;&lt;a href="http://www.seadragon.com/developer/ajax/"&gt;&lt;img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="Seadragon-Ajax" border="0" alt="Seadragon-Ajax" src="http://shades-of-orange.com/image.axd?picture=SeadragonAjax.png" width="561" height="418" /&gt;&lt;/a&gt; &lt;/p&gt;  &lt;p&gt;&lt;strong&gt;Neu: &lt;/strong&gt;&lt;a href="http://www.asp.net/AJAX/AjaxControlToolkit/Samples/AsyncFileUpload/AsyncFileUpload.aspx"&gt;AsynFileUpload&lt;/a&gt;, vielleicht lohnt es bei Gelegenheit mal mit unserer Lösung zu vergleichen. Wobei in Opera der Upload-Button schon nicht funktionierte – gleich ein schlechtes Zeichen. Insgesamt würde ich mal vermuten, dass unsere Lösung in &lt;a href="http://code.google.com/p/speak-lib/source/browse/#svn/trunk/SpeakLib.FileUpload"&gt;Speak-Lib&lt;/a&gt; deutlich besser ist :-) &lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2009-12-02 03:16:38</pubDate>
+  <lastModified>2009-12-02 03:16:38</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>e2809cNEUEe2809d-ASPNET-AJAX-Version-(seit-September)</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>bc3db496-f484-41a0-860c-c2e57e829fa0</category>
+  </categories>
+  <notifications />
+</post>

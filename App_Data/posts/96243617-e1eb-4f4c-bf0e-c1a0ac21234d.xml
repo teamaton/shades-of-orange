@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>admin</author>
+  <title>Gemischte Gefühle - ASP.NET AJAX</title>
+  <description />
+  <content>&lt;p&gt;Manchmal macht da macht &lt;a href="http://asp.net/ajax/"&gt;ASP.NET AJAX&lt;/a&gt; wirklich glücklich. Da ist mit wenig Zeit und deklarativem Code ein Update Panel platziert, ein &lt;a href="http://www.asp.net/AJAX/Control-Toolkit/Live/Calendar/Calendar.aspx"&gt;Calendar Control&lt;/a&gt; poppt auf und &lt;a href="http://asp.net/AJAX/Documentation/Live/overview/UpdateProgressOverview.aspx"&gt;während des partiellen Updates&lt;/a&gt; dreht sich fröhlich ein Fortschritts Symbol. &lt;/p&gt;
+&lt;p&gt;Dann gibt es wieder Momente da wünsche ich mich weit weg von dieser monströsen Abstraktion. Da träume ich vom Arbeiten auf dem vorhandenen DOM. Da wünsche ich mir dass ich mich für die &lt;a href="http://www.prototypejs.org/"&gt;Prototype&lt;/a&gt; &lt;a href="http://script.aculo.us/"&gt;script.aculo.us&lt;/a&gt; Kombi oder die &lt;a href="http://developer.yahoo.com/yui/"&gt;YUI&lt;/a&gt; entschieden hätte. Wo die Abstraktion, der Abstraktion eines von der Sache her trivialen Models mir nicht im Wege steht. Klar mir fehlt gerade nichts weiter als Wissen. Doch wenn der Erwerb zu lange dauert, dann kann ich auch mit der Besten Technologie auf meiner Seite nicht Zeitnah die Aufgaben erreichen die mir gestellt sind. &lt;/p&gt;
+&lt;p&gt;Ähnlich ging es mir auch mit dem ASP.NET Page Lifecycle. Vorher hatte ich 2 Jahre PHP auf dem Buckel, dann 1 Jahr (Notgedrungen) ASP (mit VB Script) und war mir eigentlich recht sicher, das ich weiß wie man so einen Webanwendung schnell bauen kann. Dann kam der ASP.NET 1.0 Schock mit CodeBehind und ViewState, verheißungsvoll, schön und an vielen Ecken einfach nur komplex. Selbst in der .NET Communnity ist ASP.NET nicht für &lt;a href="http://ayende.com/Blog/archive/2007/08/25/In-Defense-of-WebForms-Well-maybe-not.aspx"&gt;alle&lt;/a&gt; der Heilsgral. Eine Gegenkonzept ist u.a &lt;a href="http://www.castleproject.org/monorail/index.html"&gt;MonoRail&lt;/a&gt;. Ich für meinen Teil genieße vieles was mir ASP.NET heute bietet, angefangen von der Möglichkeit Web-Designern mit dynamischen Inhalten zu lassen bis hin zu MasterPages. &lt;/p&gt;
+&lt;p&gt;Noch ist ASP.NET AJAX jung und ich habe sicherlich noch zu wenig Erfahrung. Vielleicht ermöglicht das etwas überzogene Abstraktionsmodel auch eine schnellere Entwicklung der Bibliothek? Ich bin neugierig, wobei ich gerade nur den Kopf schütteln kann, warum mir einfaches document.getElementById(&amp;lt;%control.ClientId%&amp;gt;) ein Element zurück gibt in dem der setter für das Style Attribut geschützt ist. (Eigentlich cool das man JavaScript so aufbohren kann :-)&lt;/p&gt;
+&lt;p&gt;&lt;a atomicselection="true" href="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/GemischteGefhleASP.NETAJAX_5BB2/CropperCapture%5B3%5D.jpg"&gt;&lt;img style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" height="331" alt="CropperCapture[3]" width="430" border="0" src="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/GemischteGefhleASP.NETAJAX_5BB2/CropperCapture%5B3%5D_thumb.jpg" /&gt;&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;(&lt;em&gt;der Anlass, sollte eigentlich nur ein paar Minuten dauern.. u. jetzt browse ich in den asp.net ajax sourcen&lt;/em&gt; ;)&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2007-08-30 05:31:17</pubDate>
+  <lastModified>0001-01-01 06:00:00</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Gemischte-Gefuhle-ASPNET-AJAX</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>bc3db496-f484-41a0-860c-c2e57e829fa0</category>
+  </categories>
+  <notifications />
+</post>

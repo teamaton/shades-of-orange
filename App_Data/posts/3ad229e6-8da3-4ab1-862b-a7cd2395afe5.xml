@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>Oliver</author>
+  <title>Javascript in UserControl in UpdatePanel</title>
+  <description />
+  <content>&lt;p&gt;Wenn man wei&amp;szlig;, wie es geht, ist alles einfach. Aber JavaScript in UserControls innerhalb eines UpdatePanels funktionst&amp;uuml;chtig zu bekommen hatte f&amp;uuml;r mich - bis heute! - immer etwas mit Magie zu tun... Hinzu kam heute, dass ich noch Sys.UI.DomElement-Methoden nutzen wollte (aus der AJAX-Bibliothek). Folgende Versuche habe ich gemacht:&lt;/p&gt;
+&lt;pre&gt;1. Page.ClientScript.RegisterClientScriptBlock(GetType(), "helpful_css_" + ClientID, script, true);&lt;br /&gt;2. ScriptManager.RegisterClientScriptBlock(this, GetType(), "helpful_" + ClientID, script, true);&lt;br /&gt;3. Page.ClientScript.RegisterStartupScript(GetType(), "helpful_css_" + ClientID, script, true);&lt;br /&gt;4. ScriptManager.RegisterStartupScript(this, GetType(), "helpful_css_" + ClientID, script, true); // &amp;lt;-- this is it!&lt;br /&gt;&lt;/pre&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;Zu 1. und 3. ist zu sagen, dass sie innerhalb einen UpdatePanels nur nach dem urspr&amp;uuml;nglichen PageLoad funktionieren, nicht nach einem asynchronen Postback. Also fallen sie raus. Au&amp;szlig;erdem fallen 1. und 2. weg, weil an der Stelle, an der der hier &amp;uuml;bergebene JavaScript-Code in die Seite generiert wird, der $Sys-Namespace noch nicht definiert ist (&amp;auml;hnlich wie hier: http://encosia.com/2007/08/16/updated-your-webconfig-but-sys-is-still-undefined/).&lt;/p&gt;
+&lt;p&gt;Bleibt nur 4. Und 4. funktioniert sowohl nach dem initialen PageLoad als auch nach einem async Postback und man kann $Sys verwenden. Wunderbar!&lt;/p&gt;
+&lt;p&gt;1. oder 2. bleiben allerdings n&amp;uuml;tzlich, wenn man Custom Javascript in die Seite einf&amp;uuml;gen will, um es weiter unten auf der Seite zu nutzen. Wahlweise kann man nat&amp;uuml;rlich auch die Methode &lt;span style="font-family: courier new,courier;"&gt;RegisterClientScriptInclude &lt;/span&gt;nutzen, um das Javascript in eine eigene Datei auszulagern. Soviel dazu.&lt;/p&gt;
+&lt;p&gt;Oliver&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2009-11-28 15:17:00</pubDate>
+  <lastModified>2009-11-28 15:34:45</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Javascript-in-UserControl-in-UpdatePanel</slug>
+  <tags>
+    <tag>updatepanel</tag>
+    <tag>ajax</tag>
+    <tag>javascript</tag>
+  </tags>
+  <comments />
+  <categories>
+    <category>bc3db496-f484-41a0-860c-c2e57e829fa0</category>
+    <category>b9df7adf-328a-4e8c-9401-f5adf7e10cd6</category>
+    <category>76e50725-5164-45fe-a885-98420d16f152</category>
+    <category>3b5447eb-ff3b-4481-9287-0508fce6262b</category>
+  </categories>
+  <notifications />
+</post>

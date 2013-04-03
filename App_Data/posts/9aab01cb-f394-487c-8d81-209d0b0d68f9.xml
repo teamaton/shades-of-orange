@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>Oliver</author>
+  <title>Enum / Flags einfach und sicher definieren</title>
+  <description />
+  <content>&lt;p&gt;
+Hier (http://blogs.msdn.com/kcwalina/archive/2004/05/18/134208.aspx#5943757) habe ich eine Methode gefunden, wie man einfach und ohne Mathekenntnisse (für einige von uns ;-)) Flag-Enums definiert:
+&lt;/p&gt;
+&lt;p&gt;
+&lt;!-- code formatted by http://manoli.net/csharpformat/ --&gt;
+&lt;style type="text/css"&gt;
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: Consolas, "Courier New", Courier, Monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+
+.csharpcode pre { margin: 0em; }
+
+.csharpcode .rem { color: #008000; }
+
+.csharpcode .kwrd { color: #0000ff; }
+
+.csharpcode .str { color: #006080; }
+
+.csharpcode .op { color: #0000c0; }
+
+.csharpcode .preproc { color: #cc6633; }
+
+.csharpcode .asp { background-color: #ffff00; }
+
+.csharpcode .html { color: #800000; }
+
+.csharpcode .attr { color: #ff0000; }
+
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+
+.csharpcode .lnum { color: #606060; }
+&lt;/style&gt;
+&lt;div class="csharpcode"&gt;
+&lt;pre class="alt"&gt;&lt;span class="kwrd"&gt;enum&lt;/span&gt; Color&lt;/pre&gt;
+&lt;pre&gt;{&lt;/pre&gt;
+&lt;pre class="alt"&gt;    None   = 0,&lt;/pre&gt;
+&lt;pre&gt;    Blue   = 1 &amp;lt;&amp;lt; 0,&lt;/pre&gt;
+&lt;pre class="alt"&gt;    Red    = 1 &amp;lt;&amp;lt; 1,&lt;/pre&gt;
+&lt;pre&gt;    Yellow = 1 &amp;lt;&amp;lt; 2,&lt;/pre&gt;
+&lt;pre class="alt"&gt;    &lt;/pre&gt;
+&lt;pre&gt;    Purple = Blue | Red,&lt;/pre&gt;
+&lt;pre class="alt"&gt;    Orange = Red | Yellow,&lt;/pre&gt;
+&lt;pre&gt;}&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;Oliver&lt;/p&gt;
+</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2009-11-13 22:33:00</pubDate>
+  <lastModified>2009-11-13 22:42:11</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Enum-Flags-einfach-und-sicher-definieren</slug>
+  <tags>
+    <tag>enum flags bit shifting</tag>
+  </tags>
+  <comments />
+  <categories>
+    <category>6cb56168-2015-4599-a1c1-8db9c9fae433</category>
+    <category>ca0b8243-9da6-4e51-a0a5-4e603e68bbc9</category>
+    <category>b9df7adf-328a-4e8c-9401-f5adf7e10cd6</category>
+  </categories>
+  <notifications />
+</post>

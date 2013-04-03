@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>oliver</author>
+  <title>Using a single/the same AssemblyInfo.cs across projects</title>
+  <description />
+  <content>&lt;p&gt;Recently, while skimming my RSS feeds for a short read, I stumbled upon Phil Haack’s blog and his post &lt;a href="http://haacked.com/archive/2011/01/30/introducing-routemagic.aspx"&gt;Introducing RouteMagic&lt;/a&gt;. I’m not going into the details of that post right now (although to me it seems he’s written some interesting stuff about MVC and lately on Routing). I was just curious about his source code, so I went over to his Route Magic Codeplex site and looked at a commit with the interesting commit message &lt;a href="http://routemagic.codeplex.com/SourceControl/changeset/changes/6fbe233865d7"&gt;Consolidated assembly info into a SolutionInfo.cs file and linked it to the two projects&lt;/a&gt;.&lt;/p&gt;  &lt;p&gt;The above link leads to a page with diffs of a few files. The &lt;a href="http://routemagic.codeplex.com/SourceControl/changeset/view/6fbe233865d7#src%2fSolutionInfo.cs"&gt;SolutionInfo.cs&lt;/a&gt; keeps the assembly information that is the same for all projects in a single file that we only need to link into every project (or at least every one that needs it). This is done by adding an existing item (Shift + Alt + A in Visual Studio 2010) with the option Add as Link (open the dropdown to see):&lt;/p&gt;  &lt;p&gt;&lt;a href="http://code.teamaton.com/image.axd?picture=add-as-link.png"&gt;&lt;img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="add-as-link" border="0" alt="add-as-link" src="http://code.teamaton.com/image.axd?picture=add-as-link_thumb.png" width="727" height="112" /&gt;&lt;/a&gt; &lt;/p&gt;  &lt;p&gt;Now the SolutionInfo.cs will be compiled into the project. Of course, you should remove the entries that you put into the SolutionInfo.cs from the AssemblyInfo.cs in the same project.&lt;/p&gt;  &lt;p&gt;We used to have two AssemblyInfo.cs files whose version numbers always needed to be in sync – now there’s only one file we have to edit: the SolutionInfo.cs.&lt;/p&gt;  &lt;p&gt;Thanks, Phil Haack, and Happy Coding!&lt;/p&gt;  &lt;p&gt;Oliver&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2011-02-12 11:17:13</pubDate>
+  <lastModified>2011-06-28 01:09:06</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Using-a-singlethe-same-AssemblyInfocs-across-projects</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

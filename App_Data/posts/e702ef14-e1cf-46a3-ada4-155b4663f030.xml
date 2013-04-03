@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>Robert</author>
+  <title>jQuery wird zukünftig offiziell von Microsoft supported</title>
+  <description />
+  <content>&lt;p&gt;
+&lt;a href="http://weblogs.asp.net/scottgu/archive/2008/09/28/jquery-and-microsoft.aspx"&gt;Scott Guthrie k&amp;uuml;ndigt&lt;/a&gt; den offiziellen Support von &lt;a href="http://jquery.com/"&gt;jQuery&lt;/a&gt; in seinem Blog an. 
+&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;
+	jQuery wird offiziell ausgeliefter Teil von ASP.NET &lt;br /&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+	jQuery wird von Visual Studio unterst&amp;uuml;tzt, mit erweiterter/annotierte Intellisense.&amp;nbsp;&lt;/li&gt;
+	&lt;li&gt;Mircosoft wird jQuery offiziell supporten&lt;/li&gt;
+	&lt;li&gt;Komponenten von ASP.NET AJAX sollen auf jQuery Syntax basieren. 
+	&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+Die MIT (open source) Lizenz von jQuery wird dabei &amp;uuml;bernommen. 
+&lt;/p&gt;
+&lt;p&gt;
+Ein gro&amp;szlig;artiger Schritt :-) der mich wieder eine Schritt weiter in Richtung Microsoft Fanboy bringt. Diabolisch! Danke Scott Guthrie!
+&lt;/p&gt;
+&lt;p&gt;
+Resourcen:
+&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;&lt;a href="http://weblogs.asp.net/scottgu/archive/2008/09/28/jquery-and-microsoft.aspx"&gt;Ank&amp;uuml;ndigung von Scott Gutheries &lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="http://jquery.com/blog/2008/09/28/jquery-microsoft-nokia/"&gt;Ank&amp;uuml;ndigung auf jQueries Team Blog&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="http://www.hanselman.com/blog/jQuerytoshipwithASPNETMVCandVisualStudio.aspx"&gt;Scott Hanselmann Tutorial &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2008-09-30 00:39:00</pubDate>
+  <lastModified>2008-09-30 09:41:10</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>jQuery-wird-zukunftig-offiziell-von-Microsoft-supported</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>bc3db496-f484-41a0-860c-c2e57e829fa0</category>
+    <category>3b5447eb-ff3b-4481-9287-0508fce6262b</category>
+  </categories>
+  <notifications />
+</post>

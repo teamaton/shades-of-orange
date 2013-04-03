@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>oliver</author>
+  <title>HTTP Error 500.19 - Internal Server Error: 0x8007007b Cannot read configuration file</title>
+  <description />
+  <content>&lt;p&gt;While setting up a specification tests project for our new &lt;a href="https://github.com/teamaton/teamreview" target="_blank"&gt;TeamReview&lt;/a&gt; tool, I was facing an &lt;strong&gt;HTTP 500.19 error&lt;/strong&gt; when hosting our site in &lt;strong&gt;IIS Express&lt;/strong&gt;. &lt;a href="http://stackoverflow.com/questions/4416068/http-500-internal-error-iis-websites" target="_blank"&gt;There&lt;/a&gt; &lt;a href="http://stackoverflow.com/questions/1808680/web-application-problems-web-config-errors-http-500-19-with-iis7-5-and-asp-net" target="_blank"&gt;are&lt;/a&gt; &lt;a href="http://stackoverflow.com/questions/13038241/iisexpress-7-5-has-internal-server-error-whereas-iis-7-5-works" target="_blank"&gt;lots&lt;/a&gt; &lt;a href="http://stackoverflow.com/questions/10801340/http-error-500-19-internal-server-error" target="_blank"&gt;of&lt;/a&gt; &lt;a href="http://stackoverflow.com/questions/3765768/unable-to-start-debugging-iis-7-5-detailed-error-500-19" target="_blank"&gt;questions&lt;/a&gt; &lt;a href="http://stackoverflow.com/questions/6624740/http-error-500-19-internal-server-error" target="_blank"&gt;on&lt;/a&gt; stackoverflow concerning this error, &lt;a href="http://support.microsoft.com/kb/942055/en-us" target="_blank"&gt;Microsoft has a whole page on it&lt;/a&gt;, but there is a whole bunch of suberrors that this error addresses.&lt;/p&gt;  &lt;h2&gt;Error 0x8007007b: Cannot read configuration file&lt;/h2&gt;  &lt;p&gt;Unfortunately, none of the above mentioned links contained or solved the specific error code I was seeing:&lt;/p&gt;  &lt;p&gt;&lt;strong&gt;Error Code&lt;/strong&gt;     &lt;br /&gt;&amp;#160;&amp;#160; 0x8007007b&lt;/p&gt;  &lt;p&gt;&lt;strong&gt;Config Error&lt;/strong&gt;     &lt;br /&gt;&amp;#160;&amp;#160; Cannot read configuration file &lt;/p&gt;  &lt;p&gt;&lt;strong&gt;Config File      &lt;br /&gt;&lt;/strong&gt;&amp;#160;&amp;#160; \\?\C:\Projects\_teamaton\teamreview\TeamReview.Specs\bin\Debug\..\..\..\TeamReview.Web\web.config&lt;/p&gt;  &lt;p&gt;After some reading, trying, fiddling, it appeared to me that maybe the path to the config file somehow messed up IIS Express. I admit that it was at least a bit unusual to use the parent directory dots. But it came from my test harness code where I wanted to use relative paths and used &lt;font face="Courier New"&gt;Path.Combine()&lt;/font&gt; to do that:&lt;/p&gt;  &lt;div style="border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px" id="codeSnippetWrapper"&gt;   &lt;div style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px" id="codeSnippet"&gt;     &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;var webPath = Path.Combine(Environment.CurrentDirectory, &lt;span style="color: #006080"&gt;&amp;quot;..&amp;quot;&lt;/span&gt;, &lt;span style="color: #006080"&gt;&amp;quot;..&amp;quot;&lt;/span&gt;, &lt;span style="color: #006080"&gt;&amp;quot;..&amp;quot;&lt;/span&gt;, &lt;span style="color: #006080"&gt;&amp;quot;TeamReview.Web&amp;quot;&lt;/span&gt;);&lt;/pre&gt;
+&lt;!--CRLF--&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2&gt;Pitfall: .. in path&lt;/h2&gt;
+
+&lt;pre&gt;&lt;font face="Calibri"&gt;Well, it turns out IIS Express didn't like it. Once I called it with a cleaned up path string, everything just worked:&lt;/font&gt;&lt;/pre&gt;
+
+&lt;div style="border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px" id="codeSnippetWrapper"&gt;
+  &lt;div style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px" id="codeSnippet"&gt;
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #006080"&gt;&amp;quot;C:\Program Files (x86)\IIS Express\iisexpress.exe&amp;quot;&lt;/span&gt; /path:&lt;span style="color: #006080"&gt;&amp;quot;C:\Projects\_teamaton\teamreview\TeamReview.Web&amp;quot;&lt;/span&gt; /port:12345 /systray:false&lt;/pre&gt;
+&lt;!--CRLF--&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;So, watch out for your physical path values when using IIS Express!&lt;/p&gt;
+
+&lt;h2&gt;Use DirectoryInfo to navigate up your directory tree&lt;/h2&gt;
+
+&lt;p&gt;To get the correct path without using absolute paths but also avoiding the .. I used the &lt;font face="Courier New"&gt;DirectoryInfo&lt;/font&gt; class:&lt;/p&gt;
+
+&lt;div style="border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px" id="codeSnippetWrapper"&gt;
+  &lt;div style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px" id="codeSnippet"&gt;
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;var webPath = Path.Combine(&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;    new DirectoryInfo(Environment.CurrentDirectory).Parent.Parent.Parent.FullName, &lt;span style="color: #006080"&gt;&amp;quot;TeamReview.Web&amp;quot;&lt;/span&gt;);&lt;/pre&gt;
+&lt;!--CRLF--&gt;&lt;/div&gt;
+&lt;/div&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2013-03-20 15:24:02</pubDate>
+  <lastModified>2013-03-20 15:25:12</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>HTTP-Error-50019-Internal-Server-Error-0x8007007b-Cannot-read-configuration-file</slug>
+  <tags>
+    <tag>iis-express</tag>
+  </tags>
+  <comments />
+  <categories>
+    <category>bc3db496-f484-41a0-860c-c2e57e829fa0</category>
+    <category>7d017c9a-cbb6-4c57-82d0-083052427cda</category>
+    <category>94b034d9-a1c3-4b5f-9b37-d39930d673ba</category>
+    <category>3b5447eb-ff3b-4481-9287-0508fce6262b</category>
+    <category>678a9d57-c1ea-487a-8fd3-4d08dc0be9c4</category>
+    <category>e7922560-6aa6-4393-9597-1b8507bb6379</category>
+  </categories>
+  <notifications />
+</post>

@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>Stefan</author>
+  <title>Code Contracts</title>
+  <description />
+  <content>&lt;p&gt;Das .NET-Framework 4 enthaelt einen neuen Namespace:&lt;strong&gt; System.Diagnostics.Contracts&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Die noetige Integration in Visual Studio muss aber erst heruntergeladen werden:&amp;nbsp;&lt;a href="http://msdn.microsoft.com/en-us/devlabs/dd491992.aspx"&gt;http://msdn.microsoft.com/en-us/devlabs/dd491992.aspx&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Nach der installation hat man in den Projekt-Eigenschaften eine neue Option, wo man Code Contracts aktivieren kann:&lt;/p&gt;
+&lt;p&gt;&lt;img src="/image.axd?picture=2010%2f5%2fCropperCapture%5b1%5d.png" alt="" /&gt;&lt;/p&gt;
+&lt;p&gt;Zum herumspielen mit Code Contracts habe ich ein kleines Projekt gemacht. Die Idee: Auf einer 2D-Karte, die aus Pixeln besteht, laufen "Bugs" herum. Dabei kann jeder Pixel nur ein einziges mal besucht werden. Spannend wird es, wenn man verschiedene Bug-Implementierungen ausprobiert oder gegeneinander antreten laesst. Um dafuer zu sorgen, dass sich jeder Bug an die Spielregeln haelt, ist Code Contracts bestens geeignet.&lt;/p&gt;
+&lt;p&gt;Zunaechst aber erstmal ein paar einfache Beispiele, wie Code Contracts dabei hilft, die grundlegenden Rahmenbedingungen "abzusichern". Code Contracts funktioniert auf 2 Ebenen: Laufzeitpruefung und statische Pruefung. Bei der Laufzeitpruefung werden, wie der name schon sagt, die vorgegebenen Bedingungen zur Laufzeit geprueft. Interessanter ist jedoch die statische Analyse. Man braucht das Programm nicht einmal auszufuehren um moegliche Probleme zu erkennen. Ich haette nicht gedacht, wieviel ich bei der ersten Implementierung uebersehen hatte, bis mich Code Contracts darauf hinwies.&lt;/p&gt;
+&lt;p&gt;Fangen wir an mit Object Invariants. Dazu schreiben wir eine Methode, die mit dem &lt;strong&gt;[ContractInvariantMethod]&lt;/strong&gt;-Attribut markiert wird und geben dann Bedingungen an, die immer gelten sollen. Diese werden am ende jeder Public Method getestet (es sei denn, der Aufruf kam aus der Klasse selbst):&lt;/p&gt;
+&lt;pre&gt;    public class Map
+    {
+        [ContractInvariantMethod]
+        private void ObjectInvariant()
+        {
+            Contract.Invariant(Width &amp;gt; 0);
+            Contract.Invariant(Height &amp;gt; 0);
+            Contract.Invariant(_pixels != null);
+        }
+
+        private readonly Pixel[,] _pixels;
+
+        public int Width { get; private set; }
+        public int Height { get; private set; }
+&lt;/pre&gt;
+&lt;p&gt;
+Wenn wir nun einen Konstruktor anlegen wuerden, ohne darin Width und Height zu setzen, wuerde Code Contracts bereits meckern. Deshalb schreiben wir den Konstruktor so:&lt;/p&gt;
+&lt;pre&gt;        public Map(int width, int height)
+        {
+            Contract.Requires(width &amp;gt; 0);
+            Contract.Requires(height &amp;gt; 0);
+            
+            _pixels = new Pixel[width,height];
+
+            Width = width;
+            Height = height;
+        }
+&lt;/pre&gt;
+&lt;p&gt;
+Wichtig ist hier die aufrufe an &lt;strong&gt;Contract.Requires()&lt;/strong&gt;. Zur Laufzeit werden hier die Werte getestet. Findet Code Contracts bei der statischen Pruefung Code, bei den nicht sichergestellt ist, dass er gueltige Parameter uebergibt, so gibt es bereits da eine Warnung.&lt;/p&gt;
+&lt;p&gt;
+Vertraege funktionieren in beide Richtungen. Hier zum Beispiel verspricht der Aufruf, dass er nicht &lt;strong&gt;null &lt;/strong&gt;zurueckgibt, dafuer verlangt auch er ordentliche Werte:&amp;nbsp;&lt;/p&gt;
+&lt;pre&gt;        public Pixel this[int locationX, int locationY]
+        {
+            get
+            {
+                Contract.Requires(locationX &amp;gt;= 0);
+                Contract.Requires(locationY &amp;gt;= 0);
+                Contract.Requires(locationX &amp;lt; Width);
+                Contract.Requires(locationY &amp;lt; Height);
+
+                &lt;strong&gt;Contract.Ensures(Contract.Result&amp;lt;Pixel&amp;gt;() != null);&lt;/strong&gt;
+
+                return _pixels[locationX, locationY] ?? (_pixels[locationX, locationY] = new Pixel());
+            }
+        }
+    }
+&lt;/pre&gt;
+&lt;p&gt;So viel erstmal dazu. Demnachst gibt es noch mehr. Dann beschreibe ich wie man die Anforderung "Jedes Feld darf nur einmal besucht werden" umsetzt. Es ist erstaunlich wie weit da bereits die statische Pruefung einen Einblick in die Logik verschafft und Denkfehler aufzeigt, die einem sonst nicht aufgefallen waeren.&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2010-05-18 14:29:00</pubDate>
+  <lastModified>2010-05-18 15:07:41</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Code-Contracts</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

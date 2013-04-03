@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>robert</author>
+  <title>LC.exe wurde mit Code -1 beendet</title>
+  <description />
+  <content>&lt;p&gt;“LC.exe wurde mit Code -1 beendet” lacht mich in VS2008 als Fehlermeldung an. Schlimm genug das Die Meldung in Deutsch ist, es sind auch keine weiteren Informationen enthalten. Doppelklick führt zu “Microsoft.Common.targets” dem riesigen .NET default MSBUILD File. &lt;/p&gt;  &lt;p&gt;Alle gefundenen Probleme verweisen auf kommerzielle Komponenten. Logisch, denn&amp;#160; “LC.exe” steht für Licence Compiler. Der Licence Compiler liest eine Textdatei in der Namespace und Assemblynamen aufgeführt werden und erzeugt .licence Files. Bei Gelegenheit hoffe ich noch tiefer in das Thema einsteigen zu können :-)&lt;/p&gt;  &lt;p&gt;&lt;strong&gt;Lösung des Problems:&lt;/strong&gt; Alle *.licx Files aus der Solution entfernen. Die Ursache scheinen Inkonsistenzen durch das Versionskontrollsystem gewesen zu sein.&lt;/p&gt;  &lt;p&gt;Zwischenstand: Die Anwendung läst sich nun bauen und starten. Auf die schnelle sind keine Nebeneffekte auszumachen. &lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2009-10-22 00:39:55</pubDate>
+  <lastModified>2009-10-22 00:39:55</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>LCexe-wurde-mit-Code-1-beendet</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>robert</author>
+  <title>Memory-Leak vs. Memory Waste</title>
+  <description />
+  <content>&lt;p&gt;kurzer Nachtrag &lt;a href="http://code.speak-friend.com/post/ASPNET-Memory-Leak.aspx"&gt;zum vorherigen Post&lt;/a&gt;. Eigentlich kann management Code für sich keine Memory-Leak haben. Es ist lediglich möglich Speicher schlecht zu nutzen, in dem er zum Beispiel zu lange gehalten wird. Technisch ist das kein Memory-Leak. Nur unmanaged Code kann nicht mehr verwalteten Speicher zurück lassen. Deswegen suchen wir streng genommen vermutlich eher nach &amp;quot;Memory-Waste&amp;quot;!&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2010-04-15 14:55:01</pubDate>
+  <lastModified>2010-04-15 14:55:40</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Memory-Leak-vs-Memory-Waste</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>e6958fde-3fd4-4447-a072-81640d201ea1</category>
+    <category>678a9d57-c1ea-487a-8fd3-4d08dc0be9c4</category>
+    <category>6cb56168-2015-4599-a1c1-8db9c9fae433</category>
+  </categories>
+  <notifications />
+</post>

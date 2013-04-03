@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>oliver</author>
+  <title>Orchard and Lucene: getting started with custom search – problems with booleans</title>
+  <description />
+  <content>&lt;p&gt;&lt;strong&gt;Update: &lt;/strong&gt;I &lt;a href="http://orchard.codeplex.com/workitem/18120" target="_blank"&gt;filed a bug&lt;/a&gt; in the Orchard issue tracker and it’s already been fixed. Nice work!&lt;/p&gt;  &lt;hr /&gt;  &lt;p&gt;We’ve just started to build our own customized search module. The goal is to have checkboxes for all searchable boolean properties of a given ContentPart and search by checking or unchecking them.&lt;/p&gt;  &lt;p&gt;In &lt;a title="The Orchard Project" href="http://www.orchardproject.net/" target="_blank"&gt;Orchard&lt;/a&gt;, one can add contents to the search index using the following code (this is an example for adding a boolean):&lt;/p&gt;  &lt;div style="border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 76.98%; padding-right: 4px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; height: 179px; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px" id="codeSnippetWrapper"&gt;   &lt;div style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px" id="codeSnippet"&gt;     &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum1"&gt;   1:&lt;/span&gt; &lt;span style="color: #0000ff"&gt;public&lt;/span&gt; &lt;span style="color: #0000ff"&gt;class&lt;/span&gt; MyPartHandler : ContentHandler&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum2"&gt;   2:&lt;/span&gt; {&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum3"&gt;   3:&lt;/span&gt;     &lt;span style="color: #0000ff"&gt;public&lt;/span&gt; MyPartHandler(IRepository&amp;lt;MyPartRecord&amp;gt; repository)&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum4"&gt;   4:&lt;/span&gt;     {&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum5"&gt;   5:&lt;/span&gt;         Filters.Add(StorageFilter.For(repository));&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum6"&gt;   6:&lt;/span&gt;&amp;#160; &lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum7"&gt;   7:&lt;/span&gt;         OnIndexing&amp;lt;MyPart&amp;gt;(&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum8"&gt;   8:&lt;/span&gt;             (context, myPart) =&amp;gt; context.DocumentIndex&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum9"&gt;   9:&lt;/span&gt;                                      .Add(&lt;span style="color: #006080"&gt;&amp;quot;DogsAllowed&amp;quot;&lt;/span&gt;, myPart.DogsAllowed == &lt;span style="color: #0000ff"&gt;true&lt;/span&gt; ? &lt;span style="color: #006080"&gt;&amp;quot;true&amp;quot;&lt;/span&gt; : &lt;span style="color: #006080"&gt;&amp;quot;false&amp;quot;&lt;/span&gt;).Store());&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum10"&gt;  10:&lt;/span&gt;     }&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum11"&gt;  11:&lt;/span&gt; }&lt;/pre&gt;
+&lt;!--CRLF--&gt;&lt;/div&gt;
+&lt;/div&gt;
+Now, when a user checks the checkbox for “DogsAllowed” we want to ask the search index for all documents (Lucene term for what I would call an entity) with the DogsAllowed property set to true. The way we would do that is something along the following lines: 
+
+&lt;div style="border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 76.64%; padding-right: 4px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; height: 68px; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px" id="codeSnippetWrapper"&gt;
+  &lt;div style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px" id="codeSnippet"&gt;
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum1"&gt;   1:&lt;/span&gt; ...&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum2"&gt;   2:&lt;/span&gt; var searchBuilder = _indexProvider().CreateSearchBuilder(&lt;span style="color: #006080"&gt;&amp;quot;Search&amp;quot;&lt;/span&gt;)&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum3"&gt;   3:&lt;/span&gt; searchBuilder.WithField(&lt;span style="color: #006080"&gt;&amp;quot;DogsAllowed&amp;quot;&lt;/span&gt;, &lt;span style="color: #0000ff"&gt;true&lt;/span&gt;);&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum4"&gt;   4:&lt;/span&gt; ...&lt;/pre&gt;
+&lt;!--CRLF--&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The problem with this is: it gives me &lt;em&gt;zero results&lt;/em&gt;! Of course, to get something into the index you have to go and save some document/entity for the &lt;font face="Courier New"&gt;OnIndexing&lt;/font&gt; handler to run, but I’d done that. Somehow I had the feeling that my search was not doing what it was supposed to…&lt;/p&gt;
+
+&lt;p&gt;So I wanted to know more about the index Lucene had generated so far. Searching for &lt;a href="http://www.google.com/search?q=lucene+index+visualizer" target="_blank"&gt;lucene index visualizer&lt;/a&gt; lead me to &lt;a href="http://code.google.com/p/luke/" target="_blank"&gt;Luke, the Lucene index toolbox&lt;/a&gt; which I downloaded v 0.9.9.1 of because it was built against Lucene 2.9.1 and in Orchard the Lucene.NET version is only 2.9.2. Maybe a newer version would have also worked but I got what I wanted anyways.&lt;/p&gt;
+
+&lt;p&gt;After providing the path to the index files, Luke showed me some interesting stuff, among other things that the boolean was stored as string “True” (mind the upper case!):&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=image_20.png"&gt;&lt;img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://shades-of-orange.com/image.axd?picture=image_thumb_20.png" width="419" height="520" /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This behavior is actually no surprise when we look at the source code for the &lt;font face="Courier New"&gt;Add(string name, bool value)&lt;/font&gt; method, it just calls the &lt;font face="Courier New"&gt;Add(string name, string value)&lt;/font&gt; method with the bool converted to a string:&lt;/p&gt;
+
+&lt;div style="border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 73.28%; padding-right: 4px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; height: 51px; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px" id="codeSnippetWrapper"&gt;
+  &lt;div style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px" id="codeSnippet"&gt;
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum1"&gt;   1:&lt;/span&gt; &lt;span style="color: #0000ff"&gt;public&lt;/span&gt; IDocumentIndex Add(&lt;span style="color: #0000ff"&gt;string&lt;/span&gt; name, &lt;span style="color: #0000ff"&gt;bool&lt;/span&gt; &lt;span style="color: #0000ff"&gt;value&lt;/span&gt;) {&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum2"&gt;   2:&lt;/span&gt;     &lt;span style="color: #0000ff"&gt;return&lt;/span&gt; Add(name, &lt;span style="color: #0000ff"&gt;value&lt;/span&gt;.ToString());&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum3"&gt;   3:&lt;/span&gt; }&lt;/pre&gt;
+&lt;!--CRLF--&gt;&lt;/div&gt;
+&lt;/div&gt;
+It’s good to know that &lt;font face="Courier New"&gt;true.ToString() == “True”&lt;/font&gt; btw. 
+
+&lt;p&gt;So, now when I search inside Luke using the query &lt;strong&gt;DogsAllowed:True&lt;/strong&gt; I do get a result – but using &lt;strong&gt;DogsAllowed:true&lt;/strong&gt; I don’t! (The syntax for searches is &lt;font face="Courier New"&gt;field:value&lt;/font&gt;.)&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=image_21.png"&gt;&lt;img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://shades-of-orange.com/image.axd?picture=image_thumb_21.png" width="484" height="394" /&gt;&lt;/a&gt;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; &lt;a href="http://shades-of-orange.com/image.axd?picture=image_22.png"&gt;&lt;img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://shades-of-orange.com/image.axd?picture=image_thumb_22.png" width="496" height="391" /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;So now, why does my search (in Orchard) for all documents that have the DogsAllowed property set to true return no results when there obviously is a document in the index with exactly that?&lt;/p&gt;
+
+&lt;p&gt;Well, let’s look at the implementation of .WithField():&lt;/p&gt;
+
+&lt;div style="border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 73.2%; padding-right: 4px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; height: 84px; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px" id="codeSnippetWrapper"&gt;
+  &lt;div style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px" id="codeSnippet"&gt;
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum1"&gt;   1:&lt;/span&gt; &lt;span style="color: #0000ff"&gt;public&lt;/span&gt; ISearchBuilder WithField(&lt;span style="color: #0000ff"&gt;string&lt;/span&gt; field, &lt;span style="color: #0000ff"&gt;bool&lt;/span&gt; &lt;span style="color: #0000ff"&gt;value&lt;/span&gt;) {&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum2"&gt;   2:&lt;/span&gt;     CreatePendingClause();&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum3"&gt;   3:&lt;/span&gt;     _query = &lt;span style="color: #0000ff"&gt;new&lt;/span&gt; TermQuery(&lt;span style="color: #0000ff"&gt;new&lt;/span&gt; Term(field, &lt;span style="color: #0000ff"&gt;value&lt;/span&gt;.ToString().&lt;font color="#ff0000"&gt;ToLower&lt;/font&gt;()));&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum4"&gt;   4:&lt;/span&gt;     &lt;span style="color: #0000ff"&gt;return&lt;/span&gt; &lt;span style="color: #0000ff"&gt;this&lt;/span&gt;;&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum5"&gt;   5:&lt;/span&gt; }&lt;/pre&gt;
+&lt;!--CRLF--&gt;&lt;/div&gt;
+&lt;/div&gt;
+When I debugged through the search I saw that all of a sudden we were searching for &lt;strong&gt;DogsAllowed==true&lt;/strong&gt; instead of &lt;strong&gt;True&lt;/strong&gt; which to Lucene are two completely different things (at least in this scenario). Actually, turning on logging for the &lt;font face="Courier New"&gt;Lucene.Services&lt;/font&gt; namespace, we get some debug logging telling us what the search is currently looking for: 
+
+&lt;div style="border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 73.12%; padding-right: 4px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; height: 21px; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px" id="codeSnippetWrapper"&gt;
+  &lt;div style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px" id="codeSnippet"&gt;
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum1"&gt;   1:&lt;/span&gt; 2011-09-10 00:44:33,026 [6] Lucene.Services.LuceneIndexProvider - Searching: DogsAllowed:true* &lt;/pre&gt;
+&lt;!--CRLF--&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now I’m not surprised anymore that I’m not getting any results!&lt;/p&gt;
+
+&lt;p&gt;This is obviously a bug in Orchard’s Lucene module, but for now I can easily get around it using simply passing the lower case strings to the Add() method myself like this:&lt;/p&gt;
+
+&lt;div style="border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 73.03%; padding-right: 4px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; height: 61px; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px" id="codeSnippetWrapper"&gt;
+  &lt;div style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px" id="codeSnippet"&gt;
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum1"&gt;   1:&lt;/span&gt; OnIndexing&amp;lt;MyPart&amp;gt;(&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum2"&gt;   2:&lt;/span&gt;     (context, myPart) =&amp;gt; context.DocumentIndex&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum3"&gt;   3:&lt;/span&gt;                             .Add(&lt;span style="color: #006080"&gt;&amp;quot;DogsAllowed&amp;quot;&lt;/span&gt;, myPart.DogsAllowed == &lt;span style="color: #0000ff"&gt;true&lt;/span&gt; ? &lt;span style="color: #006080"&gt;&amp;quot;true&amp;quot;&lt;/span&gt; : &lt;span style="color: #006080"&gt;&amp;quot;false&amp;quot;&lt;/span&gt;).Store());&lt;/pre&gt;
+&lt;!--CRLF--&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Happy coding!&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2011-09-12 01:46:00</pubDate>
+  <lastModified>2011-09-15 17:10:00</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Orchard-and-Lucene-getting-started-with-custom-search-problems-with-booleans</slug>
+  <tags>
+    <tag>lucene</tag>
+    <tag>boolean</tag>
+  </tags>
+  <comments />
+  <categories>
+    <category>9a51c62d-53b8-4328-abb5-590aabe1f3a6</category>
+    <category>3b5447eb-ff3b-4481-9287-0508fce6262b</category>
+  </categories>
+  <notifications />
+</post>

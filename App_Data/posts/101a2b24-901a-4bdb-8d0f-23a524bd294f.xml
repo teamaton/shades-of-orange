@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>Oliver</author>
+  <title>32-bit DLL in 64-bit WebApp: An attempt was made to load a program with an incorrect format</title>
+  <description />
+  <content>&lt;p&gt;
+Die folgende Fehlermeldung erhielt ich heute von unserem IIS7, als ich Camping.Info starten wollte:
+&lt;/p&gt;
+&lt;h1&gt;Server Error in &amp;#39;/&amp;#39; Application.
+&lt;hr width="100%" size="1" /&gt;
+&lt;/h1&gt;
+&lt;h2&gt; &lt;em&gt;Could not load file or assembly &amp;#39;Microsoft.Cci&amp;#39; or one of its dependencies. An attempt was made to load a program with an incorrect format.&lt;/em&gt; &lt;/h2&gt;
+&lt;font face="Arial, Helvetica, Geneva, SunSans-Regular, sans-serif "&gt;
+&lt;strong&gt; Description: &lt;/strong&gt;An unhandled exception occurred during the execution of the current web request. Please review the stack trace for more information about the error and where it originated in the code.
+&lt;br /&gt;
+&lt;br /&gt;
+&lt;strong&gt; Exception Details: &lt;/strong&gt;System.BadImageFormatException: Could not load file or assembly &amp;#39;Microsoft.Cci&amp;#39; or one of its dependencies. An attempt was made to load a program with an incorrect format.&lt;br /&gt;
+&lt;br /&gt;
+&lt;/font&gt;
+&lt;p&gt;
+Also das Orakel gefragt und u.a. das hier gefunden: &lt;a href="http://forums.asp.net/t/1358032.aspx " title="http://forums.asp.net/t/1358032.aspx "&gt;http://forums.asp.net/t/1358032.aspx
+&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+Standardm&amp;auml;&amp;szlig;ig unterst&amp;uuml;tzt ein 64-bittiger IIS 7 keine 32-bit-Module (u.a. DLLs). Man kann es ihm aber einfach beibringen :-)
+&lt;/p&gt;
+&lt;p&gt;
+Im IIS-Manager den gew&amp;uuml;nschten ApplicationPool ausw&amp;auml;hlen und in den Advanced Settings die folgende Einstellung vornehmen: 
+&lt;/p&gt;
+&lt;p&gt;
+&lt;img src="/image.axd?picture=2009%2f10%2fEnable32bit_true.png" alt="" /&gt;&lt;br /&gt;
+&lt;br /&gt;
+Der Vollst&amp;auml;ndigkeit halber hier noch ein Link zur Anleitung f&amp;uuml;r den IIS6 auf Windows 2003 Server: &lt;a href="http://www.microsoft.com/technet/prodtechnol/WindowsServer2003/Library/IIS/405f5bb5-87a3-43d2-8138-54b75db73aa1.mspx?mfr=true" title="http://www.microsoft.com/technet/prodtechnol/WindowsServer2003/Library/IIS/405f5bb5-87a3-43d2-8138-54b75db73aa1.mspx?mfr=true"&gt;http://www.microsoft.com/technet/prodtechnol/WindowsServer2003/Library/IIS/405f5bb5-87a3-43d2-8138-54b75db73aa1.mspx?mfr=true&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+Happy Coding!
+&lt;/p&gt;
+&lt;p&gt;
+Oliver 
+&lt;/p&gt;
+</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2009-10-30 16:36:00</pubDate>
+  <lastModified>2009-10-30 16:50:41</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>32-bit-DLL-in-64-bit-WebApp-An-attempt-was-made-to-load-a-program-with-an-incorrect-format</slug>
+  <tags>
+    <tag>iis7 32bit</tag>
+  </tags>
+  <comments />
+  <categories>
+    <category>6cb56168-2015-4599-a1c1-8db9c9fae433</category>
+    <category>bc3db496-f484-41a0-860c-c2e57e829fa0</category>
+    <category>678a9d57-c1ea-487a-8fd3-4d08dc0be9c4</category>
+    <category>3b5447eb-ff3b-4481-9287-0508fce6262b</category>
+  </categories>
+  <notifications />
+</post>

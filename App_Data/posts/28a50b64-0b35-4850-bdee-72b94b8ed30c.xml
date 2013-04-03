@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>admin</author>
+  <title>Scary NHibernate und Danke Google :-)</title>
+  <description />
+  <content>&lt;p&gt;Manchmal ist ein Nhibernate wirklich verblüffend. Hier ein Beispiel: Eine in einem einfachen Test Szenario abgesetzte Abfrage bringt das gewünschte Ergebnis. Wird die gleiche Abfrage zum zweiten Mal ausgeführt gibt es folgendes:&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;SqlTypeException for a SqlDateTime overflow.  SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.&lt;/p&gt;&lt;/blockquote&gt; &lt;p&gt;Hmm – eine neuer Stern am Himmel der Programmiertechniken nennt sich „Google based programming“. Diesem Prinzip folgend wurde zur Lösung folgende Suchabfrage formuliert: &lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;multiple nhibernate queries result in SqlDateTime overflow&lt;/p&gt;&lt;/blockquote&gt; &lt;p&gt;Bingo,  der erste Treffer, ein Blogpost von „&lt;a href="http://blog.jagregory.com/"&gt;James Gregory&lt;/a&gt;“  mit dem Titel „&lt;a href="http://blog.jagregory.com/2007/12/18/nhibernate-and-the-sqltypeexception/"&gt;NHibernate and the SqlTypeException&lt;/a&gt;“, erklärt das Problem Haargenau: &lt;/p&gt; &lt;p&gt;Nach der ersten Abfrage bekommt NHibernate die Werte aus der Tabelle, die sich nicht mit den Werten des gerade abgeholten Objekts decken. Statt einem Null, hat die DateTime Property als Default den MinValue. Ergo muss ein Fehler vorliegen, den es gerade zu rücken gilt. &lt;/p&gt; &lt;p&gt;NHibernate setzt also eine update Statement ab, um die Datenbank abzugleichen. Dagegen sträubt sich der SQL-Server, der ein anderes Verständnis von einem Minimum Wert für eine DateTime Feld hat, nämlich „01/01/1753 00:00“ im Gegensatz zum .NET DateTime.MinValue von  „00:00:00.0000000, January 1, 0001“. Boom ein Fehler. &lt;/p&gt; &lt;p&gt;Die Korrektur ist, die gemappte DateTime Property Nullable zu setzen (DateTime? ..), das korrekte Mapping not-null="false" reicht nicht.  &lt;/p&gt; &lt;p&gt;Danke &lt;a href="http://blog.jagregory.com/"&gt;James Gregory&lt;/a&gt; :-)&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2008-01-23 08:13:52</pubDate>
+  <lastModified>0001-01-01 06:00:00</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Scary-NHibernate-und-Danke-Google-)</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

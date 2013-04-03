@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>admin</author>
+  <title>ASP.NET Kommentare im HTML</title>
+  <description />
+  <content>&lt;p&gt;Kommentare sind ein wichtiges Kommunikationsmittel. Nicht das Offensichtliche soll erklärt werden, sondern das was schwierig oder nur schwer zu erschliessen ist. &lt;/p&gt; &lt;p&gt;Für Web-Designer, die mit ASP.NET arbeiten, ist &lt;strike&gt;manchmal&lt;/strike&gt;  oft nicht ersichtlich woher die Daten auf einer dynamischen Seite eigentlich herkommen, bzw. manchmal fehlt sogar die Information, das Daten gesetzt werden.&lt;/p&gt; &lt;p&gt;&lt;a href="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/ASP.NETKommentareimHTML_12B94/image.png" atomicselection="true"&gt;&lt;img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" height="19" alt="image" src="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/ASP.NETKommentareimHTML_12B94/image_thumb.png" width="283" border="0" /&gt;&lt;/a&gt; &lt;/p&gt; &lt;p&gt;In HTML läßt sich ein Kommentar mit dieser Syntax setzen:  &amp;lt;!--mein Kommatar --&amp;gt;. &lt;/p&gt; &lt;p&gt;Doch auch ASP.NET kennt Kommentare: &amp;lt;%-- mein Kommentar --%&amp;gt; - der Vorteil ist, dass der Kommentar nicht zum Server gesendet wird. Also weniger Daten übers Netz gehen.  &lt;/p&gt; &lt;p&gt;&lt;a href="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/ASP.NETKommentareimHTML_12B94/image_4.png" atomicselection="true"&gt;&lt;/a&gt;&lt;a href="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/ASP.NETKommentareimHTML_12B94/image_5.png" atomicselection="true"&gt;&lt;img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" height="26" alt="image" src="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/ASP.NETKommentareimHTML_12B94/image_thumb_5.png" width="530" border="0" /&gt;&lt;/a&gt;&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2008-02-09 21:18:17</pubDate>
+  <lastModified>0001-01-01 06:00:00</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>ASPNET-Kommentare-im-HTML</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

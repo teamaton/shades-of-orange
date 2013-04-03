@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>admin</author>
+  <title>Google MapKey für localhost</title>
+  <description />
+  <content>&lt;p&gt;Irgendwie hatte ich nicht erwartet das es so einfach ist: &lt;a title="http://code.google.com/apis/maps/signup.html" href="http://code.google.com/apis/maps/signup.html"&gt;http://code.google.com/apis/maps/signup.html&lt;/a&gt; besuchen und &lt;a href="http://localhost"&gt;http://localhost&lt;/a&gt; eingeben. Das ganze funktioniert auch für Ports, also zum Beispiel: &lt;a href="http://localhost:4441"&gt;http://localhost:4441&lt;/a&gt;. &lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2008-01-10 02:50:02</pubDate>
+  <lastModified>0001-01-01 06:00:00</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Google-MapKey-fur-localhost</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

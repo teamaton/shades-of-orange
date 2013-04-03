@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>Stefan</author>
+  <title>VS2008 Code Snippet zum Repeater-Befuellen</title>
+  <description />
+  <content>&lt;p&gt;
+Wir befuellen ja haeufig im Frontend einen Repeater. Das einfaedeln der DataSource und das Erstellen und Verknuepfen des EventHandlers fuer ItemDataBound bekommt man mit IntelliSense innerhalb weniger Sekunden hin. Aber wenn man dann den Befuell-Code schreibt, geht es immer wieder los: Wie waren gleich nochmal die ersten 3 Zeilen? Damit ist jetzt Schluss. Einfach die Datei &amp;quot;repeater.snippet&amp;quot; in &amp;quot;Documents/Visual Studio 2008/Code Snippets/Visual C#/My Code Snippets&amp;quot; des Nutzers mit dem man VS ausfuehrt kopieren. Leider zeigt die ReSharper-IntelliSense den Shortcut nicht an, funktionieren tut es trotzdem. Man tippe: &lt;strong&gt;rpt [ESC] [TAB]&lt;/strong&gt;
+&lt;/p&gt;
+&lt;p&gt;
+Der Rest versteht sich von selbst: 
+&lt;/p&gt;
+&lt;img src="/image.axd?picture=2009%2f9%2frpt_snippet.png" alt="" /&gt;
+&lt;p&gt;
+&lt;a href="/file.axd?file=2009%2f9%2frepeater.snippet"&gt;repeater.snippet (1,03 kb)&lt;/a&gt;
+&lt;/p&gt;
+</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2009-09-14 18:26:00</pubDate>
+  <lastModified>2009-09-14 18:39:34</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>VS2008-Code-Snippet-zum-Repeater-Befuellen</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>4a6eca6b-10d9-4a5f-ab67-40144ba581d9</category>
+    <category>b9df7adf-328a-4e8c-9401-f5adf7e10cd6</category>
+    <category>228e6e84-7e6e-4fae-8433-185118731b1d</category>
+  </categories>
+  <notifications />
+</post>

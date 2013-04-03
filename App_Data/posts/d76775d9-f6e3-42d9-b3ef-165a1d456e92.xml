@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>robert</author>
+  <title>ASP.NET Debugging und .NET Debugging</title>
+  <description />
+  <content>&lt;p&gt;um vern&amp;#252;nftig debuggen zu k&amp;#246;nnen, ist es n&amp;#246;tig das Exception in Visual Studio, unter &amp;quot;Debug&amp;quot;-&amp;gt;&amp;quot;Exceptions&amp;quot; &amp;quot;Common Language Runtime Exception&amp;quot; zu aktivieren. Ist jedoch &amp;quot;Enable Just My Code&amp;quot; (unter &amp;quot;Tools&amp;quot;-&amp;gt;&amp;quot;Options&amp;quot; und dann im Bereich Debugging) nicht angew&amp;#228;hlt...&lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=WindowsLiveWriter/ASP.NETDebuggingund.NETDebugging_120DF/enable%20just%20my%20code_2.png"&gt;&lt;img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" border="0" alt="enable just my code" src="http://shades-of-orange.com/image.axd?picture=WindowsLiveWriter/ASP.NETDebuggingund.NETDebugging_120DF/enable%20just%20my%20code_thumb.png" width="644" height="376" /&gt;&lt;/a&gt;&amp;#160; &lt;/p&gt;  &lt;p&gt;... dann fehlt im Exeptions Windows ...&lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=WindowsLiveWriter/ASP.NETDebuggingund.NETDebugging_120DF/exceptions-dialog_4.png"&gt;&lt;img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" border="0" alt="exceptions-dialog" src="http://shades-of-orange.com/image.axd?picture=WindowsLiveWriter/ASP.NETDebuggingund.NETDebugging_120DF/exceptions-dialog_thumb_1.png" width="644" height="328" /&gt;&lt;/a&gt;&amp;#160;&lt;/p&gt;  &lt;p&gt;... die &amp;quot;User-unhandeld&amp;quot; Spalte. &lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=WindowsLiveWriter/ASP.NETDebuggingund.NETDebugging_120DF/exceptions-dialog%202_2.png"&gt;&lt;img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" border="0" alt="exceptions-dialog 2" src="http://shades-of-orange.com/image.axd?picture=WindowsLiveWriter/ASP.NETDebuggingund.NETDebugging_120DF/exceptions-dialog%202_thumb.png" width="644" height="329" /&gt;&lt;/a&gt;&amp;#160;&lt;/p&gt;  &lt;p&gt;etwas unerkl&amp;#228;rlich, aber per Default war bei uns (Oliver und mir) anscheinend&lt;/p&gt;  &lt;ul&gt;   &lt;li&gt;&amp;quot;Thrown&amp;quot; f&amp;#252;r Common Language Runtime Exceptions nicht ausgew&amp;#228;hlt&lt;/li&gt;    &lt;li&gt;Nachdem &amp;quot;Thrown&amp;quot; expliziet aktiviert wurde, sprang der Debugger in alle Exceptions auch &amp;quot;User handled&amp;quot; Exceptions. Also auch in evil &amp;quot;Try Catch&amp;quot; Bl&amp;#246;cke.&lt;/li&gt; &lt;/ul&gt;  &lt;p&gt;Die L&amp;#246;sung ist es nun &amp;quot;Enable Just My Code&amp;quot; zu aktivieren: &lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=WindowsLiveWriter/ASP.NETDebuggingund.NETDebugging_120DF/enable%20just%20my%20code%20checked_8.png"&gt;&lt;img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" border="0" alt="enable just my code checked" src="http://shades-of-orange.com/image.axd?picture=WindowsLiveWriter/ASP.NETDebuggingund.NETDebugging_120DF/enable%20just%20my%20code%20checked_thumb_3.png" width="644" height="375" /&gt;&lt;/a&gt; &lt;/p&gt;  &lt;p&gt;Vielleicht hilft es :-)&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2008-10-02 19:32:20</pubDate>
+  <lastModified>2008-10-02 19:33:01</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>ASPNET-Debugging-und-NET-Debugging</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>228e6e84-7e6e-4fae-8433-185118731b1d</category>
+  </categories>
+  <notifications />
+</post>

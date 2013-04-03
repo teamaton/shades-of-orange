@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>admin</author>
+  <title>Paging von Ergebnissen</title>
+  <description />
+  <content>&lt;p&gt;Die üblichen 10 Ergebnisse auf Ergebnisseiten sind für mich meist unbefriedigend. Ich möchte mehr :-)&lt;/p&gt;
+&lt;p&gt;Bei google lässt sich zum Beispiel unter Settings die Default Ergebnissmenge auf 100 setzen: &lt;/p&gt;
+&lt;p&gt;&lt;a atomicselection="true" href="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/PagingvonErgebnissen_10A23/image_1.png"&gt;&lt;img width="438" height="59" border="0" src="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/PagingvonErgebnissen_10A23/image_thumb_1.png" alt="image" style="border: 0px none ;" /&gt;&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;&lt;a atomicselection="true" href="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/PagingvonErgebnissen_10A23/image_2.png"&gt;&lt;img width="443" height="55" border="0" src="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/PagingvonErgebnissen_10A23/image_thumb_2.png" alt="image" style="border: 0px none ;" /&gt;&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;Auch sehr schön: &lt;/p&gt;
+&lt;p&gt;&lt;a atomicselection="true" href="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/PagingvonErgebnissen_10A23/image.png"&gt;&lt;img width="312" height="135" border="0" src="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/PagingvonErgebnissen_10A23/image_thumb.png" alt="image" style="border: 0px none ;" /&gt;&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;&lt;a href="http://simplespark.com/catalog/?PHPSESSID=b8d6780308f14b6b17b8dc928559aab9&amp;amp;search=CRM"&gt;[aus: Simple Spark]&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Wobei bei mehr als 500 Ergebnissen, ist das sicher nicht mehr optimal. In diesem Fall wäre ein schnelle Auswahl sehr schön: &lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Zeige 100 Ergebnisse&lt;/li&gt;
+    &lt;li&gt;Zeige 100 Ergebnisse nach (Kriterium, zum Beispiel: Bewertung)&lt;/li&gt;
+    &lt;li&gt;Zeige [DropDownList] Ergebnisse&lt;/li&gt;
+    &lt;li&gt;Wenn weniger als 250, [Zeige alle Ergebnisse]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Es wäre praktisch, wenn sich diese Einstellung auf allen Seiten schnell finden lassen würde. &lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2008-02-22 18:55:37</pubDate>
+  <lastModified>0001-01-01 06:00:00</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Paging-von-Ergebnissen</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>29f0d9fc-f1cb-447e-9a07-b2e11137e0dc</category>
+  </categories>
+  <notifications />
+</post>

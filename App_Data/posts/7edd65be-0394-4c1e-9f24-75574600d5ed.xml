@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>oliver</author>
+  <title>Install the following IIS components…</title>
+  <description />
+  <content>&lt;p&gt;Bei der Neuinstallation eines unserer Entwicklerrechner wollte eines unserer Web-Application-Projekte, das wir im IIS hosten, sich nicht laden lassen. Es kam die folgende Fehlermeldung:&lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=iis-install.png"&gt;&lt;img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="iis-install" border="0" alt="iis-install" src="http://shades-of-orange.com/image.axd?picture=iis-install_thumb.png" width="473" height="252" /&gt;&lt;/a&gt; &lt;/p&gt;  &lt;p&gt;Was Visual Studio 2010 uns hier sagen wollte war, dass wir den IIS Management Service installieren sollen:&lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=iis-mgmt.png"&gt;&lt;img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="iis-mgmt" border="0" alt="iis-mgmt" src="http://shades-of-orange.com/image.axd?picture=iis-mgmt_thumb.png" width="471" height="384" /&gt;&lt;/a&gt; &lt;/p&gt;  &lt;p&gt;Danach lässt sich das Projekt ohne Problem laden. :-D&lt;/p&gt;  &lt;p&gt;Oliver&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2010-05-14 17:23:28</pubDate>
+  <lastModified>2010-05-14 17:23:28</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Install-the-following-IIS-componentse280a6</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

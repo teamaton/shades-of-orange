@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>admin</author>
+  <title>"It's not fluent man"</title>
+  <description />
+  <content>&lt;p&gt;In einem online verfügbaren &lt;a href="http://langnetsymposium.com/talks/1-01%20-%20CSharp3%20-%20Anders%20Hejlsberg.html"&gt;Talk&lt;/a&gt;, spricht &lt;a href="http://en.wikipedia.org/wiki/Anders_Hejlsberg"&gt;Anders Hejlsberg&lt;/a&gt; kurz über die Geschichte von C# und dann ausführlich über die neuen Features von C# 3.0. Er zeigt die Entwicklung Anhand von Code Beispielen, zum Beispiel die C# Evolution von Generics, Lambda Expressions, Extension Methods zu LINQ. &lt;/p&gt;&lt;p&gt;Automatic Properties und Expression Trees werden kurz angerissen und einiges mehr.  &lt;/p&gt;&lt;p&gt;Interessant ist auch der Blick von Anders auf die Zukunft von C#.  &lt;/p&gt;&lt;p&gt;Wie &lt;a href="http://channel9.msdn.com/showpost.aspx?postid=114680"&gt;immer&lt;/a&gt; ist es eine &lt;a href="http://msdn.microsoft.com/msdntv/episode.aspx?xml=episodes/en/20040624csharpah/manifest.xml"&gt;Freude&lt;/a&gt; den &lt;a href="http://channel9.msdn.com/ShowPost.aspx?PostID=10804"&gt;Architekten&lt;/a&gt; von c# über Code &lt;a href="http://channel9.msdn.com/showpost.aspx?postid=159952"&gt;sprechen&lt;/a&gt; zu hören. Ein hervorragendes Schulungsvideo, sehr sehenswert:-) &lt;a href="http://silverlight.net/"&gt;Silverlight&lt;/a&gt; wird benötigt und zeigt seine Streaming Qualitäten.  &lt;/p&gt;&lt;p&gt;[&lt;a href="http://langnetsymposium.com/talks.asp"&gt;Lang.NET Symposium Videos&lt;/a&gt;]&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2008-02-28 03:55:26</pubDate>
+  <lastModified>0001-01-01 06:00:00</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Its-not-fluent-man</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>6cb56168-2015-4599-a1c1-8db9c9fae433</category>
+  </categories>
+  <notifications />
+</post>

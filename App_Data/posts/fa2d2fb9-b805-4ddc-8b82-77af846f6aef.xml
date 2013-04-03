@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>admin</author>
+  <title>Wicked ASP.NET Image Button event</title>
+  <description />
+  <content>&lt;p&gt;Ein Image Button in ASP.NET feuert keinen onClick event - wenn das in "ImageUrl" spezifizierte Bild nicht exisitiert. Wicked. &lt;/p&gt; &lt;p&gt;Wobei die Rahmenkonditionen wahrscheinlich nicht Standard sind. Es handelt sich um eine ASP.NET 2.0 Web Application und keine Web Site. Web Applications waren zunächst eine &lt;a href="http://msdn2.microsoft.com/en-us/asp.net/aa336618.aspx"&gt;Standalone Erweiterung&lt;/a&gt; von Visual Studio und sind nun Teil des  &lt;a href="http://weblogs.asp.net/scottgu/archive/2006/12/15/visual-studio-2005-service-pack-1-sp1-released.aspx"&gt;Visual Studio Service Packs (SP 1)&lt;/a&gt;. (robert)&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2007-04-20 16:57:41</pubDate>
+  <lastModified>0001-01-01 06:00:00</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Wicked-ASPNET-Image-Button-event</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>bc3db496-f484-41a0-860c-c2e57e829fa0</category>
+    <category>dd2e5407-6036-41c2-b7b4-541bcbf209a2</category>
+  </categories>
+  <notifications />
+</post>

@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>oliver</author>
+  <title>Dokumente sprachabhängig ausliefern mit URL-Rewriting</title>
+  <description />
+  <content>&lt;p&gt;Für das noch relativ neue &lt;a title="Informationen zu Premium auf Camping.Info" href="http://www.camping.info/premium" target="_blank"&gt;Premium&lt;/a&gt;-Feature auf &lt;a title="Europäischer Campingführer" href="http://www.camping.info" target="_blank"&gt;Camping.Info&lt;/a&gt; hat unser Designer und UX-Experte Andrej, der unter &lt;a title="Andrej&amp;#39;s Blog" href="http://friendly-fox.com" target="_blank"&gt;friendly-fox.com&lt;/a&gt; bloggt, eine Broschüre entworfen, die wir unter &lt;a href="http://www.camping.info/docs/premium-brochure.pdf"&gt;www.camping.info/docs/premium-brochure.pdf&lt;/a&gt; für Interessenten zum Download anbieten. Da Camping.Info ein vielsprachiges Portal ist, wird auch die Broschüre Schritt für Schritt in andere Sprachen übersetzt. Natürlich wollen wir, dass französischsprachige Nutzer dann die französische Version der Broschüre zu Gesicht bekommen und Spanier die spanische.&lt;/p&gt;  &lt;p&gt;Die Lösung, die ich schnell zusammengestellt hatte, um diesen beiden Zielgruppen ihre eigene Version anzubieten, war einfach aber praktisch:&lt;/p&gt;  &lt;div style="border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px" id="codeSnippetWrapper"&gt;   &lt;div style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px" id="codeSnippet"&gt;     &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum1"&gt;   1:&lt;/span&gt;&amp;#160; &amp;lt;% var lang = new List&lt;span style="color: #0000ff"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #800000"&gt;string&lt;/span&gt;&lt;span style="color: #0000ff"&gt;&amp;gt;&lt;/span&gt; {&amp;quot;ES&amp;quot;, &amp;quot;FR&amp;quot;}.Contains(SessionGlobal.LangIso2)&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum2"&gt;   2:&lt;/span&gt;                     ? &amp;quot;-&amp;quot; + SessionGlobal.LangIso2&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum3"&gt;   3:&lt;/span&gt;                     : &amp;quot;&amp;quot;; %&amp;gt;&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum4"&gt;   4:&lt;/span&gt;  &lt;span style="color: #0000ff"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #800000"&gt;a&lt;/span&gt; &lt;span style="color: #ff0000"&gt;href&lt;/span&gt;&lt;span style="color: #0000ff"&gt;=&amp;quot;/docs/premium-brochure&amp;lt;%= lang %&amp;gt;.pdf&amp;quot;&lt;/span&gt; &lt;span style="color: #ff0000"&gt;target&lt;/span&gt;&lt;span style="color: #0000ff"&gt;=&amp;quot;_blank&amp;quot;&lt;/span&gt; &lt;span style="color: #ff0000"&gt;class&lt;/span&gt;&lt;span style="color: #0000ff"&gt;=&amp;quot;pdf&amp;quot;&lt;/span&gt;&lt;span style="color: #0000ff"&gt;&amp;gt;&lt;/span&gt;&lt;/pre&gt;
+&lt;!--CRLF--&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Ein bisschen Inline-Serverside-Script und wenn wir auf der spanischen oder französischen Version sind, wird statt &lt;font face="Courier New"&gt;/docs/premium-brochure.pdf&lt;font face="Verdana"&gt; dann &lt;/font&gt;&lt;font face="Courier New"&gt;/docs/premium-brochure-es.pdf&lt;font face="Verdana"&gt; bzw. &lt;/font&gt;&lt;font face="Courier New"&gt;/docs/premium-brochure-fr.pdf&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;font face="Verdana"&gt; angezeigt (&lt;font face="Courier New"&gt;SessionGlobal.LangIso2&lt;/font&gt; enthält einen zweibuchstabigen Sprachcode).&lt;/font&gt;&lt;/p&gt;
+
+&lt;p&gt;Wenn wir nur einen solchen Link auf der ganzen Plattform hätten, würde ich diesen Blogpost wohl nicht schreiben – aber wir haben zwei und es sollen noch ein paar mehr werden. Da solcher Code, wenn er auch nur einmal kopiert wird, nach &lt;a title="Don&amp;#39;t repeat yourself" href="http://http://en.wikipedia.org/wiki/Don%27t_repeat_yourself" target="_blank"&gt;DRY&lt;/a&gt; schreit, habe ich mich im Hinblick auf die nächsten Vorkommen und auch die nächsten Sprachen entschieden, eine generische Lösung zu bauen, die die Code-Duplizierung verhindert und gleichzeitig auch noch für weitere Dokumente genutzt werden kann.&lt;/p&gt;
+
+&lt;p&gt;Was sollte diese Lösung können?&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;die händische Anpassung der Liste unterstützer Sprachen überflüssig machen &lt;/li&gt;
+
+  &lt;li&gt;Code-Duplizierung entfernen &lt;/li&gt;
+
+  &lt;li&gt;neue Sprachversionen eines Dokumentes automatisch ausliefern, also nichts weiter tun müssen, als neue PDFs mit weiteren Sprach-Kürzeln im &lt;font face="Courier New"&gt;/docs&lt;/font&gt;-Ordner abzulegen. &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&amp;#160;&lt;/p&gt;
+
+&lt;p&gt;&lt;font size="2"&gt;Eine Option wäre gewesen, den einfachen HTML-Link in einen &amp;lt;asp:HyperLink /&amp;gt; umzuwandeln und ihm serverseitig ein bisschen Logik zu spendieren, die ungefähr so aussehen würde:&lt;/font&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Im Dateisystem nachschauen, ob das verlinkte Dokument in der aktuell genutzten Sprache vorhanden ist. &lt;/li&gt;
+
+  &lt;li&gt;Wenn ja, dann den Link auf dieses Dokument zeigen lassen. &lt;/li&gt;
+
+  &lt;li&gt;Ansonsten die Standardversion verlinken. &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&amp;#160;&lt;/p&gt;
+
+&lt;p&gt;&lt;font size="2"&gt;Diese Lösung hätte aber wieder Logik in das Code-Behind einer Seite verlegt, die an allen Stellen, an denen ein solcher Link eingebunden werden soll, wiederholt werden müsste. Der Weg aus dieser neuen Redundanz wäre wohl ein kleines UserControl gewesen, dass man dann an beliebiger Stelle hätte einsetzen können. Ich fand aber ein UserControl für einen sprachabhängigen Link irgendwie Overkill, zumal wir es beim nächsten sprachabhängigen PDF hätten genauso machen müssen – neuer Link, neues UserControl. Ganz zu schweigen, von der Logik, die dann dort wieder dupliziert wäre…&lt;/font&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;font size="2"&gt;Einfacher schien da der Weg über URL-Rewriting zu sein. Wir nutzen das &lt;a title="www.urlrewriting.net/" href="http://www.urlrewriting.net/" target="_blank"&gt;URL-Rewriting-Modul von Albert Weinert und Thomas Bandt&lt;/a&gt; mit leichten Modifikationen und einigen selbstgeschriebenen Regeln, und da schien es natürlich, einfach eine weitere für die anstehende Aufgabe zu schreiben. Im Endeffekt sind es 20 Zeilen Code geworden und wir sind gerüstet für die nächsten sprachabhängigen Dokumenten-Links, die völlig transparent vorhandene Sprachversionen ausliefern und für alle anderen Sprachen das Dokument in einer frei konfigurierbaren Sprache zurückliefern.&lt;/font&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;font size="2"&gt;Die neue Regel macht denn auch nichts anderes:&lt;/font&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Sie prüft für die aktuelle Sprache (== Subdomain), ob eine Version des gewünschten Dokuments in dieser vorliegt. &lt;/li&gt;
+
+  &lt;li&gt;Wenn ja, leitet sie auf diese Datei um. &lt;/li&gt;
+
+  &lt;li&gt;Wenn nein, wird die Datei in der Default-Sprache, die über die Konfigurationseigenschaft &lt;font face="Courier New"&gt;defaultLanguage&lt;/font&gt; festgelegt werden kann, ausgeliefert. &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&amp;#160;&lt;/p&gt;
+
+&lt;p&gt;&lt;font size="2"&gt;Die RewriteRule sieht wie folgt aus:&lt;/font&gt;&lt;/p&gt;
+
+&lt;script src="https://gist.github.com/743540.js?file=LanguageSpecificFileRule.cs"&gt;&lt;/script&gt;
+
+&lt;p&gt;&amp;#160;&lt;/p&gt;
+
+&lt;p&gt;Und hier die dazu gehörige Konfiguration:&lt;/p&gt;
+
+&lt;div style="border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px" id="codeSnippetWrapper"&gt;
+  &lt;div style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px" id="codeSnippet"&gt;
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum1"&gt;   1:&lt;/span&gt; &lt;span style="color: #0000ff"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #800000"&gt;add&lt;/span&gt; &lt;span style="color: #ff0000"&gt;name&lt;/span&gt;&lt;span style="color: #0000ff"&gt;=&amp;quot;LanguageSpecificFiles&amp;quot;&lt;/span&gt; &lt;span style="color: #ff0000"&gt;provider&lt;/span&gt;&lt;span style="color: #0000ff"&gt;=&amp;quot;ProvLanguageSpecificFile&amp;quot;&lt;/span&gt;&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum2"&gt;   2:&lt;/span&gt;      &lt;span style="color: #ff0000"&gt;rewrite&lt;/span&gt;&lt;span style="color: #0000ff"&gt;=&amp;quot;Domain&amp;quot;&lt;/span&gt;&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum3"&gt;   3:&lt;/span&gt;      &lt;span style="color: #ff0000"&gt;virtualUrl&lt;/span&gt;&lt;span style="color: #0000ff"&gt;=&amp;quot;^/docs/.*pdf$&amp;quot;&lt;/span&gt; &lt;span style="color: #ff0000"&gt;destinationUrl&lt;/span&gt;&lt;span style="color: #0000ff"&gt;=&amp;quot;&amp;quot;&lt;/span&gt;&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum4"&gt;   4:&lt;/span&gt;      &lt;span style="color: #ff0000"&gt;defaultLanguage&lt;/span&gt;&lt;span style="color: #0000ff"&gt;=&amp;quot;de&amp;quot;&lt;/span&gt;&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum5"&gt;   5:&lt;/span&gt;      &lt;span style="color: #ff0000"&gt;ignoreCase&lt;/span&gt;&lt;span style="color: #0000ff"&gt;=&amp;quot;true&amp;quot;&lt;/span&gt; &lt;span style="color: #ff0000"&gt;rewriteUrlParameter&lt;/span&gt;&lt;span style="color: #0000ff"&gt;=&amp;quot;ExcludeFromClientQueryString&amp;quot;&lt;/span&gt; &lt;span style="color: #0000ff"&gt;/&amp;gt;&lt;/span&gt;&lt;/pre&gt;
+&lt;!--CRLF--&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Einen Kompromiss musste ich bei dieser Lösung eingehen: die Default-Dateiversion muss auch einen Sprach-Suffix bekommen, da wir in der globalen URL-Rewriting-Konfiguration &lt;font face="courier new"&gt;rewriteOnlyVirtualUrls=&amp;quot;true&amp;quot;&lt;/font&gt; gesetzt haben und so der verwendete Link auf /docs/premium-brochure.pdf überhaupt nicht umgeschrieben würde. Aber das scheint verschmerzbar zu sein.&lt;/p&gt;
+
+&lt;p&gt;Wir haben damit jetzt eine Lösung für sprachabhängige Dokumente, die keiner weiteren Pflege bedarf:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;einfach Link setzen wie z.B. &lt;font face="Courier New"&gt;&amp;lt;a href=&amp;quot;/docs/premium-brochure.pdf&amp;quot;&amp;gt;Herunterladen&amp;lt;/a&amp;gt; &lt;/font&gt;&lt;/li&gt;
+
+  &lt;li&gt;sicherstellen, dass die Datei von der neuen URW-Regel gematcht wird&lt;/li&gt;
+
+  &lt;li&gt;sprachabhängige Version unter &lt;font face="Courier New"&gt;/docs&lt;/font&gt; als &lt;font face="Courier New"&gt;premium-brochure-de.pdf, premium-brochure-fr.pdf, premium-brochure-it.pdf&lt;/font&gt; usw. ablegen &lt;/li&gt;
+
+  &lt;li&gt;jetzt werden für die Subdomains die jeweiligen Versionen ausgeliefert oder die Defaultversion&lt;/li&gt;
+
+  &lt;li&gt;die Defaultsprache ist konfigurierbar&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;Happy Coding,&lt;/p&gt;
+
+&lt;p&gt;Oliver&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2010-12-16 16:52:39</pubDate>
+  <lastModified>2010-12-16 17:04:46</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Dokumente-sprachabhangig-ausliefern-mit-URL-Rewriting</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

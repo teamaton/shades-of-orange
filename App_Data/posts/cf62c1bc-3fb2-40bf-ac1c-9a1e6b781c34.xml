@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>robert</author>
+  <title>NHibernate Tooling</title>
+  <description />
+  <content>&lt;p&gt;Die Tools um NHiberante herum werden besser und mehr. Nachdem im letzten Jahr mit &lt;a href="http://nhprof.com/"&gt;NHProf&lt;/a&gt; ein hervorragender Profiler erschien der uns schon manches mal sehr hilfreich war, kommt mit “&lt;a href="http://www.slyce.com/"&gt;Visual NHibernate&lt;/a&gt;” ein Code-Generator der sowohl von der Datenbankseite, als auch von der Modelseite her funktioniert. &lt;/p&gt;  &lt;p&gt;&lt;a href="http://www.slyce.com/"&gt;&lt;img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="Visual-NHibernate" border="0" alt="Visual-NHibernate" src="http://shades-of-orange.com/image.axd?picture=Visual-NHibernate.png" width="493" height="328" /&gt;&lt;/a&gt;&lt;/p&gt;  &lt;p&gt;Aus meiner Sicht ist für uns ist NHProf jedoch zunächst wenig interessant, da wir zukünftig für neue Projekte mit Fluent-NHibnerate auf Mapping per Konvention setzen wollen und bestehende Projekte ja Ihre Mapping schon haben. &lt;/p&gt;  &lt;p&gt;Um bestehenden Legacy-Projekte den Wechsel auf ORM zu erleichtern, scheint Visual NHibernate bestens geeignet zu sein. &lt;/p&gt;  &lt;p&gt;Links:&lt;/p&gt;  &lt;ul&gt;   &lt;li&gt;&lt;a title="http://www.slyce.com/" href="http://www.slyce.com/"&gt;Visual NHibernate&lt;/a&gt;&lt;/li&gt;    &lt;li&gt;&lt;a href="http://nhprof.com/"&gt;NHibernate Profiler&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt;  &lt;p&gt;&lt;font size="2"&gt;(Robert)&lt;/font&gt;&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2010-05-31 15:08:34</pubDate>
+  <lastModified>2010-05-31 15:08:34</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>NHibernate-Tooling</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>f8bafae5-b874-4cd1-bc83-6b822e1c2e83</category>
+  </categories>
+  <notifications />
+</post>

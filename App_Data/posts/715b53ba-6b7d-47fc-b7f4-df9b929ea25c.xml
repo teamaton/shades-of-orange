@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>oliver</author>
+  <title>Migration auf .NET Framework 4.0: Tipps und Tricks</title>
+  <description />
+  <content>&lt;p&gt;Wenn nach dem Konvertieren einer Solution folgender Fehler auftritt:&lt;/p&gt;  &lt;div style="border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px" id="codeSnippetWrapper"&gt;   &lt;div style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px" id="codeSnippet"&gt;     &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum1"&gt;   1:&lt;/span&gt; Error    86    The type or namespace name 'PortalBuilder' could not be found (are you missing a using directive or an assembly reference?)    C:\Projects\Camping.info\Tool.PortalBuildRunner\Program.cs    8    7    Tool.PortalBuildRunner&lt;/pre&gt;
+&lt;!--CRLF--&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;dann liegt es daran, dass das referenzierte Projekt als Target Framework schon .NET 4.0 ausgewählt hat, während das referenzierende Projekt noch auf eine ältere Version zielt. Zu sehen ist auch schön im Solution-Explorer, dass es hier ein Problem gibt:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=missing-_assembly.png"&gt;&lt;img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="missing-#assembly" border="0" alt="missing-#assembly" src="http://shades-of-orange.com/image.axd?picture=missing-_assembly_thumb.png" width="239" height="166" /&gt;&lt;/a&gt; &lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://xinyustudio.wordpress.com/2010/03/12/vs2010-type-or-namespace-name-could-not-be-found-problem/" target="_blank"&gt;Hier&lt;/a&gt; habe ich die Lösung gefunden: per Rechtsklick in die Projekteigenschaften gehen und dort das Framework 4.0 auswählen:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=choose-4.0.png"&gt;&lt;img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="choose-4.0" border="0" alt="choose-4.0" src="http://shades-of-orange.com/image.axd?picture=choose-4.0_thumb.png" width="411" height="360" /&gt;&lt;/a&gt; &lt;/p&gt;
+
+&lt;p&gt;Mal schauen, was noch auf uns wartet!&lt;/p&gt;
+
+&lt;p&gt;Oliver&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2010-05-12 15:14:05</pubDate>
+  <lastModified>2010-05-13 16:02:19</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Migration-auf-NET-Framework-40-Tipps-und-Tricks</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

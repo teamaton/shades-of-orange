@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>Oliver</author>
+  <title>The type or namespace name 'Generic' could not be found (are you missing a using directive or an assembly reference?)</title>
+  <description />
+  <content>&lt;p&gt;Als ich heute eine kleine Windows-Forms-Anwendung bauen wollte, die ein paar Datenbank-Daten-Migrations-Aufgaben unabh&amp;auml;ngig von unserer Web-Anwendung ausf&amp;uuml;hren soll, stie&amp;szlig; ich beim Versuch, die zuvor per TDD entwickelte und in einer zentralen Assembly (&amp;ldquo;Generic.Core&amp;rdquo;) enthaltene Kernmethode f&amp;uuml;r die Migration aufzurufen, auf den im Titel genannten Fehler. VisualStudio 2010 zeigte als Hilfe nur ein Popup an, welches implizierte, dass die Referenz auf die Assembly an dieser Stelle tats&amp;auml;chlich nicht ber&amp;uuml;cksichtigt wird (siehe Screenshot).&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=Namespace-ignore.png"&gt;&lt;img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="Namespace-ignore" src="http://shades-of-orange.com/image.axd?picture=Namespace-ignore_thumb.png" border="0" alt="Namespace-ignore" width="864" height="385" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;Ein wenig verzweifelt habe ich dann den referenzierenden Code erstmal auskommentiert und nochmal versucht zu bauen, und siehe da, ich bekam eine deutlich hilfreicherere Fehlermeldung zu sehen (genauer gesagt 8 St&amp;uuml;ck):&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-family: Courier New;"&gt;&lt;strong&gt;c:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.targets(1360,9): warning MSB3253: The referenced assembly "C:\Projects\Camping.info\Generic.Core\bin\Debug\Generic.Core.dll" could not be resolved because it has a dependency on &lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;span style="font-family: Courier New;"&gt;"System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" which is not in the &lt;span style="text-decoration: underline;"&gt;currently targeted framework&lt;/span&gt; &lt;span style="color: #f01c1c;"&gt;".NETFramework,Version=v4.0,Profile=Client&lt;/span&gt;".&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-family: Courier New;"&gt;&lt;strong&gt;Please remove references to assemblies not in the targeted framework or consider retargeting your project.&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=Project-Properties.png"&gt;&lt;/a&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Die anderen 7 Warnungen beschweren sich ebenso &amp;uuml;ber vermeintlich referenzierte 4.0-er Versionen verschiedener System.*-Assemblies.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=Project-Properties.png"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Tats&amp;auml;chlich war in dem neuen Projekt das Target-Framework auf v4.0 Client Profile gesetzt, wessen ich gar nicht bewusst war, allerdings stimmt ein anderer Teil der Fehlermeldung nicht, n&amp;auml;mlich der, dass Generic.Core.dll eine Referenz auf &amp;ldquo;System.Web, Version=4.0.0.0&amp;rdquo; h&amp;auml;tte. Generic.Core ist auf .NET Framework 3.5 getargetted. Wie dem auch sei, der Wechsel des Target-Frameworks auf entweder 3.5 oder 4.0 - jedoch ohne das Client Profile &amp;ndash; behob den Fehler und das Projekt kompiliert nun erfolgreich.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=Project-Properties_1.png"&gt;&lt;img style="border-bottom: 0px; border-left: 0px; margin: 0px; display: inline; border-top: 0px; border-right: 0px" title="Project-Properties" src="http://shades-of-orange.com/image.axd?picture=Project-Properties_thumb.png" border="0" alt="Project-Properties" width="656" height="266" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=Project-Properties_2.png"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Happy Coding,&lt;/p&gt;
+&lt;p&gt;Oliver&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;img src="/image.axd?picture=2010%2f10%2favatar-337.jpg" alt="" /&gt;&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2010-10-05 21:43:00</pubDate>
+  <lastModified>2010-10-07 19:01:23</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>The-type-or-namespace-name-Generic-could-not-be-found-(are-you-missing-a-using-directive-or-an-assembly-reference)</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

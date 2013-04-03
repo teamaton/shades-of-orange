@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>oliver</author>
+  <title>Get all target names from an MsBuild script – with Powershell</title>
+  <description />
+  <content>&lt;p&gt;Developing our web application &lt;a href="http://www.marinas.info"&gt;www.marinas.info&lt;/a&gt; using &lt;a title="The Orchard Project" href="http://www.orchardproject.net/" target="_blank"&gt;Orchard&lt;/a&gt; CMS, I often find myself at the command prompt to run different sets of build actions:&lt;/p&gt;  &lt;ul&gt;   &lt;li&gt;in place compilation &lt;/li&gt;    &lt;li&gt;packaging for stage &lt;/li&gt;    &lt;li&gt;deploying to a local app instance &lt;/li&gt;    &lt;li&gt;running spec tests &lt;/li&gt;    &lt;li&gt;… &lt;/li&gt; &lt;/ul&gt;  &lt;p&gt;Sometimes I have trouble remembering the correct target name, so today I set out to attack this simple problem (displaying the names of all target defined in our build script) using Powershell. I’ve long waited for a good occasion to get my hands on it – today was finally the day.&lt;/p&gt;  &lt;p&gt;Following &lt;a title="Use PowerShell to Parse an XML File and Sort the Data" href="http://blogs.technet.com/b/heyscriptingguy/archive/2012/03/26/use-powershell-to-parse-an-xml-file-and-sort-the-data.aspx" target="_blank"&gt;this inspiring walk-through by the Windows Scripting guy to parse an XML file&lt;/a&gt;, I made my first firm steps in Powershell, and after some guesswork I came up with this one-liner that omits the definition of a variable:&lt;/p&gt;  &lt;div style="border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 88.66%; padding-right: 4px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; height: 17px; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px" id="codeSnippetWrapper"&gt;   &lt;div style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px" id="codeSnippet"&gt;     &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;[xml](Get-Content C:\Projects\discoverize\Discoverize.proj) | Foreach-Object {$_.project.target} | % {$_.Name} | sort&lt;/pre&gt;
+&lt;!--CRLF--&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;It might help to know that &lt;font face="Courier New"&gt;&lt;strong&gt;%&lt;/strong&gt;&lt;/font&gt; is an alias for the &lt;font face="Courier New"&gt;&lt;strong&gt;Foreach-Object&lt;/strong&gt;&lt;/font&gt; cmdlet, and &lt;font face="Courier New"&gt;&lt;strong&gt;$_&lt;/strong&gt;&lt;/font&gt; references the item currently piped in.&lt;/p&gt;
+
+&lt;p&gt;I saved this into a file that from now on I can simply call to get an up-to-date list of build target names.&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2012-07-31 17:27:11</pubDate>
+  <lastModified>2012-07-31 17:27:11</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Get-all-target-names-from-an-MsBuild-script-with-Powershell</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>2a71a125-24e3-4583-806c-7c8bead507be</category>
+    <category>4a6eca6b-10d9-4a5f-ab67-40144ba581d9</category>
+    <category>b9df7adf-328a-4e8c-9401-f5adf7e10cd6</category>
+  </categories>
+  <notifications />
+</post>

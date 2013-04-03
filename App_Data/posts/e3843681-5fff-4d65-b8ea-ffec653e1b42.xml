@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>oliver</author>
+  <title>SQL Server Compact timed out waiting for a lock</title>
+  <description />
+  <content>&lt;p&gt;Today, I faced the exception mentioned in the post title: &lt;strong&gt;SQL Server Compact timed out waiting for a lock. The default lock time is 2000ms for devices and 5000ms for desktops. The default lock timeout can be increased in the connection string using the ssce: default lock timeout property.&lt;/strong&gt; (Plus some session details).&lt;/p&gt;  &lt;h3&gt;Circumstances&lt;/h3&gt;  &lt;p&gt;The exception was thrown in my local dev environment while working on our &lt;a title="The Orchard Project" href="http://www.orchardproject.net/" target="_blank"&gt;Orchard&lt;/a&gt; CMS based portal software &lt;a href="http://www.discoverize.com" target="_blank"&gt;discoverize&lt;/a&gt;, calling any page in the portal. Obviously, something was wrong not with a single page but rather with a piece of infrastructure. Interestingly enough, only a few moments before trying to open the web site I had done some database manipulation using &lt;a href="http://sqlcecmd.codeplex.com/" target="_blank"&gt;SqlCeCmd&lt;/a&gt; deleting some unneeded columns from one of our tables. It seems that after that the site broke.&lt;/p&gt;  &lt;h3&gt;Solutions tried&lt;/h3&gt;  &lt;p&gt;I tried to get hold of the DB like this:&lt;/p&gt;  &lt;ul&gt;   &lt;li&gt;stop and start the web site in IIS (using &lt;font face="Courier New"&gt;appcmd stop site &amp;quot;discoverize&amp;quot; &lt;/font&gt;and &lt;font face="Courier New"&gt;appcmd stop site &amp;quot;discoverize&amp;quot;&lt;/font&gt;) – no change&lt;/li&gt;    &lt;li&gt;take DB offline by renaming the file – waited a few moments, renamed it back – no change! Here I started wondering where the lock is saved – is it inside the DB?&lt;/li&gt;    &lt;li&gt;took the whole application pool offline and restarted it – bang! That helped.&lt;/li&gt; &lt;/ul&gt;  &lt;p&gt;I now have my site back up and running and can continue develepment.&lt;/p&gt;  &lt;h3&gt;Conclusion&lt;/h3&gt;  &lt;p&gt;If you encounter the SQL CE timeout error during development inside a web application, restarting the app's app pool will probably get you back to work.&lt;/p&gt;  &lt;p&gt;Happy coding!&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2013-01-28 14:26:56</pubDate>
+  <lastModified>2013-01-28 14:26:56</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>SQL-Server-Compact-timed-out-waiting-for-a-lock</slug>
+  <tags>
+    <tag>timout</tag>
+  </tags>
+  <comments />
+  <categories>
+    <category>6cb56168-2015-4599-a1c1-8db9c9fae433</category>
+    <category>3b5447eb-ff3b-4481-9287-0508fce6262b</category>
+    <category>b9df7adf-328a-4e8c-9401-f5adf7e10cd6</category>
+    <category>678a9d57-c1ea-487a-8fd3-4d08dc0be9c4</category>
+    <category>0766f0ed-9936-4fb5-b1b3-17ab3e1baa65</category>
+  </categories>
+  <notifications />
+</post>

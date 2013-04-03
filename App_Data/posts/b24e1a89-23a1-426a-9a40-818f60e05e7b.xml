@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>andrej</author>
+  <title>Embed Facebook Like Button – Right Align with css and Settings</title>
+  <description />
+  <content>&lt;p&gt;If you want to embed a Facebook Like button and you want it to align to the right here is a fix with css only:&lt;/p&gt;  &lt;p&gt;First, get the embed code from facebook: &lt;a title="http://developers.facebook.com/docs/reference/plugins/like" href="http://developers.facebook.com/docs/reference/plugins/like"&gt;http://developers.facebook.com/docs/reference/plugins/like&lt;/a&gt;&lt;/p&gt;  &lt;p&gt;If you embed the XFBML code and the button is smaller than the size you specified, the button will always align to the left. There is nothing you really can do about it due to the iframe structure of the embed code.&lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=ci%20fb%20left.png"&gt;&lt;img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="facebook like button embed left align" border="0" alt="facebook like button embed left align" src="http://shades-of-orange.com/image.axd?picture=ci%20fb%20left_thumb.png" width="287" height="257" /&gt;&lt;/a&gt; &lt;/p&gt;  &lt;p&gt;However, if you specify the width of the like button to be 0, the iframe will always be almost the size of the button, which means you can align it whichever way you want.&lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=ci%20fb%20set%20width.png"&gt;&lt;img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="facebook like button right align set with to zero" border="0" alt="facebook like button right align set with to zero" src="http://shades-of-orange.com/image.axd?picture=ci%20fb%20set%20width_thumb.png" width="387" height="497" /&gt;&lt;/a&gt; &lt;/p&gt;  &lt;p&gt;There in the settings make sure to select width to equal 0. This leads to the facebook like button element always being the size it actually is. Which allows you to position whichever way you want, to the right for example.&lt;/p&gt;  &lt;p&gt;However there is one little trick, you still have to pull: There is a 15 pixel margin to the right of the element. You can align the button exactly to the right by giving your parent html element following css style: position:relative; right:-15px;&lt;/p&gt;  &lt;p&gt;The result looks like this:&lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=ci%20fb%20right.png"&gt;&lt;img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="facebook like button right align" border="0" alt="facebook like button right align" src="http://shades-of-orange.com/image.axd?picture=ci%20fb%20right_thumb.png" width="303" height="256" /&gt;&lt;/a&gt;&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2011-01-09 18:28:49</pubDate>
+  <lastModified>2011-01-09 18:28:49</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Embed-Facebook-Like-Button-e28093-Right-Align-with-css-and-Settings</slug>
+  <tags>
+    <tag>facebook embed css trick</tag>
+  </tags>
+  <comments />
+  <categories>
+    <category>b9df7adf-328a-4e8c-9401-f5adf7e10cd6</category>
+    <category>05acb92b-a993-4f87-b93a-56ee3089918d</category>
+    <category>dfbab2d9-ff53-4483-87b6-621bf30d65f0</category>
+  </categories>
+  <notifications />
+</post>

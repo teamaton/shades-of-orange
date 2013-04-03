@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>robert</author>
+  <title>Arten von Branches, Branch per Refactoring</title>
+  <description />
+  <content>&lt;p&gt;Wir hatten gerade eine Diskussion zum Nutzen von “Feature-Branches”, “Long-Running Branches” und “Topic Branches”. Das Gespräch bezog sich auf die Nutzung mit GIT. Zunächst eine kurze Klärung der Begriffe: &lt;/p&gt;  &lt;blockquote&gt;   &lt;ul&gt;     &lt;li&gt;&lt;strong&gt;“Feature-Branches”&lt;/strong&gt;, für ein Feature wird eine neuer Entwicklungszweig genutzt &lt;/li&gt;      &lt;li&gt;&lt;strong&gt;“Branch-per-Configuration”&lt;/strong&gt;, es wird kein physischer branch erzeugt, sondern die Entwicklung erfolgt im Hauptzweig. Ein entwickeltes Feature läst sich per Konfiguration ein und ausschalten. &lt;/li&gt;      &lt;li&gt;&lt;strong&gt;“Long-Running Branches”, &lt;/strong&gt;Ein Branch der länger als ein paar Tage genutzt wird &lt;/li&gt;      &lt;li&gt;&lt;strong&gt;“Topic Branch”&lt;/strong&gt;, Ein Branch der kurzlebig ist. Kurzlebig sind ein paar Minuten oder Stunden. &lt;/li&gt;   &lt;/ul&gt;    &lt;p&gt;Aus meiner Perspektive sind Feature-Branches und Long-Running-Branches - wenn möglich - zu vermeiden. Ideal ist sind “Branches per Configuration”, die bei der Entwicklung ein modulares Arbeiten und damit eine gute Architektur erzwingen. Aufwände für das mergen werden vermieden. “Topic Branches“ sind durchweg positiv, wenn sie lokal bleiben und nicht zu entfernten Repositories gepushed werden. &lt;/p&gt;    &lt;h3&gt;Branch per Refactoring&lt;/h3&gt;    &lt;p&gt;Es kam auch kurz das Gespräch auf das Thema “Branch per Refactoring” bzw. eine Refaktorisierung wurde als “Feature Branch” bezeichnet. Aus meiner Sicht deutet das auf einen &lt;strike&gt;Code&lt;/strike&gt;Process-Smell hin. Die Refaktorisierung ist zu groß.&amp;#160; Refaktorisierungsschritte sollten klein sein und ein Arbeitsschritt direkt wieder in den Hauptentwicklungszweig einfließen können. &lt;/p&gt;&lt;/blockquote&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2009-12-08 15:42:43</pubDate>
+  <lastModified>2009-12-08 21:30:29</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Arten-von-Branches-Branch-per-Refactoring</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>562ee0c0-023d-4985-bc8e-19dc601e5934</category>
+    <category>678a9d57-c1ea-487a-8fd3-4d08dc0be9c4</category>
+  </categories>
+  <notifications />
+</post>

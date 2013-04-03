@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>Oliver</author>
+  <title>NHibernate: wundersame automatische Updates</title>
+  <description />
+  <content>&lt;p&gt;
+Kurze Suche, etwas &amp;uuml;berzogener Artikel (&lt;a href="http://graysmatter.codivation.com/CommentView,guid,6fe1a7c3-1245-45b8-98f1-e4b369dcded9.aspx" target="_blank"&gt;hier&lt;/a&gt;), aber die Kerninformation ist wichtig:
+&lt;/p&gt;
+&lt;p&gt;
+Eigene Enumerationen sollten im Mapping-File &lt;strong&gt;nicht&lt;/strong&gt; auf Int gemappt werden, denn ansonsten muss NHibernate die casten und das entsprechende Objekt wird &amp;quot;dirty&amp;quot;, was zu dem wundersamen UPDATE f&amp;uuml;hrt.
+&lt;/p&gt;
+&lt;p&gt;
+Bei uns z.B. in der Translation-Klasse der Fall:
+&lt;/p&gt;
+&lt;pre&gt;
+...
+&amp;lt;property name=&amp;quot;Type&amp;quot; column=&amp;quot;Type&amp;quot; type=&amp;quot;&lt;strong&gt;int&lt;/strong&gt;&amp;quot; not-null=&amp;quot;true&amp;quot; /&amp;gt;
+...
+&amp;lt;property name=&amp;quot;MetaType&amp;quot; column=&amp;quot;MetaType&amp;quot; type=&amp;quot;&lt;strong&gt;int&lt;/strong&gt;&amp;quot; not-null=&amp;quot;true&amp;quot; /&amp;gt;
+...
+&lt;/pre&gt;
+&lt;p&gt;
+&amp;nbsp;
+&lt;/p&gt;
+&lt;p&gt;
+Stattdessen also immer die Enumeration-Klasse angeben: 
+&lt;/p&gt;
+&lt;pre&gt;
+...
+&amp;lt;property name=&amp;quot;Type&amp;quot; column=&amp;quot;Type&amp;quot; type=&amp;quot;&lt;strong&gt;TranslationType&lt;/strong&gt;&amp;quot; not-null=&amp;quot;true&amp;quot; /&amp;gt;
+...
+&amp;lt;property name=&amp;quot;MetaType&amp;quot; column=&amp;quot;MetaType&amp;quot; type=&amp;quot;&lt;strong&gt;MetaType&lt;/strong&gt;&amp;quot; not-null=&amp;quot;true&amp;quot; /&amp;gt;
+...
+&lt;/pre&gt;
+&lt;p&gt;
+Jetzt gibt&amp;#39;s keine ungewollten UPDATEs mehr. Sch&amp;ouml;n. 
+&lt;/p&gt;
+</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2009-02-27 16:48:00</pubDate>
+  <lastModified>2009-02-27 17:04:57</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>NHibernate-wundersame-automatische-Updates</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>f8bafae5-b874-4cd1-bc83-6b822e1c2e83</category>
+  </categories>
+  <notifications />
+</post>

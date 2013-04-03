@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>oliver</author>
+  <title>Updating the Sass gem to a new alpha version from the GitHub source</title>
+  <description />
+  <content>&lt;p&gt;We use &lt;a href="http://sass-lang.com/" target="_blank"&gt;SASS&lt;/a&gt; for more productive CSS and the &lt;a href="https://github.com/nex3/sass" target="_blank"&gt;Ruby gem Sass&lt;/a&gt; to automatically convert our development .scss files into valid .css files.&lt;/p&gt;  &lt;p&gt;Recently, an important bug fix appeared in the project’s master branch on GitHub and we wanted to update our local environments to use that new version for the translation from SASS to CSS.&lt;/p&gt;  &lt;p&gt;This post is about how to do just that.&lt;/p&gt;  &lt;h2&gt;What we need&lt;/h2&gt;  &lt;p align="left"&gt;Of course, we need the project source from GitHub. You can either &lt;a href="https://github.com/nex3/sass/zipball/master" target="_blank"&gt;download a zip file&lt;/a&gt; and unpack it to a local folder or clone the repo (git clone &amp;quot;&lt;a title="https://github.com/nex3/sass.git" href="https://github.com/nex3/sass.git"&gt;https://github.com/nex3/sass.git&lt;/a&gt;&amp;quot; &amp;quot;c:/projects/sass&amp;quot;).&lt;/p&gt;  &lt;p align="left"&gt;Now we need a Ruby command line. There’s a shortcut that’s already installed called “Start Command Prompt with Ruby” but running it returns an error: &lt;/p&gt;  &lt;blockquote&gt;   &lt;p&gt;&lt;font face="Courier New"&gt;'C:\Program' is not recognized as an internal or external command, operable program or batch file.&lt;/font&gt;&lt;/p&gt; &lt;/blockquote&gt;  &lt;p align="left"&gt;You need to fix the command used in that shortcut: in the Windows start menu right-click on the above mentioned entry, choose Properties and add double quotes to the last argument so that the command reads:&lt;/p&gt;  &lt;div style="border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px" id="codeSnippetWrapper"&gt;   &lt;div style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px" id="codeSnippet"&gt;     &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;C:\Windows\System32\cmd.exe /E:ON /K &lt;span style="color: #006080"&gt;&amp;quot;C:\Program Files (x86)\Ruby192\bin\setrbvars.bat&amp;quot;&lt;/span&gt;&lt;/pre&gt;
+&lt;!--CRLF--&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now start the command as Administrator and it returns on the first line:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;font face="Courier New"&gt;ruby 1.9.2p290 (2011-07-09) [i386-mingw32]&lt;/font&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2&gt;Compile the source and install the new gem&lt;/h2&gt;
+
+&lt;p&gt;From the command line we can now execute Ruby programs, e.g. &lt;font face="Courier New"&gt;gem&lt;/font&gt;. Navigate to the Sass source code directory, build the gem and then update the already installed version with the new one from the local gem file. Finally, install a new gem called &lt;font face="Courier New"&gt;fssm&lt;/font&gt; which seems to be needed by this new version but forgotten to be added to the &lt;font face="Courier New"&gt;sass.gemspec&lt;/font&gt; file:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;font face="Courier New"&gt;cd c:\Projects\sass&lt;/font&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;font face="Courier New"&gt;gem build sass.gemspec&lt;/font&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;font face="Courier New"&gt;gem update sass -–prerelease&lt;/font&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;font face="Courier New"&gt;gem install fssm&lt;/font&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This should output something like:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;font face="Courier New"&gt;NOTE: Gem::Specification#has_rdoc= is deprecated with no replacement. It will be removed on or after 2011-10-01. 
+      &lt;br /&gt;Gem::Specification#has_rdoc= called from sass.gemspec:31 
+
+      &lt;br /&gt;. 
+
+      &lt;br /&gt;&amp;#160; Successfully built RubyGem 
+
+      &lt;br /&gt;&amp;#160; Name: sass 
+
+      &lt;br /&gt;&amp;#160; Version: 3.2.0.alpha.0 
+
+      &lt;br /&gt;&amp;#160; File: sass-3.2.0.alpha.0.gem&lt;/font&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;and&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;font face="Courier New"&gt;Updating installed gems 
+      &lt;br /&gt;Updating sass 
+
+      &lt;br /&gt;Successfully installed sass-3.2.0.alpha.0 
+
+      &lt;br /&gt;Gems updated: sass 
+
+      &lt;br /&gt;Installing ri documentation for sass-3.2.0.alpha.0... 
+
+      &lt;br /&gt;Installing RDoc documentation for sass-3.2.0.alpha.0...&lt;/font&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;font face="Courier New"&gt;Fetching: fssm-0.2.8.1.gem (100%) 
+      &lt;br /&gt;Successfully installed fssm-0.2.8.1 
+
+      &lt;br /&gt;1 gem installed 
+
+      &lt;br /&gt;Installing ri documentation for fssm-0.2.8.1... 
+
+      &lt;br /&gt;Installing RDoc documentation for fssm-0.2.8.1...&lt;/font&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;That’s it, you’re ready to use the newest version of Sass!&lt;/p&gt;
+
+&lt;h2&gt;&lt;/h2&gt;
+
+&lt;p&gt;Happy coding!&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2012-02-18 23:52:11</pubDate>
+  <lastModified>2012-02-18 23:53:15</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Updating-the-Sass-gem-to-a-new-alpha-version-from-the-GitHub-source</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

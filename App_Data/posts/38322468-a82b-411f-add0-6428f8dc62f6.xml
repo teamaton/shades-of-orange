@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>oliver</author>
+  <title>Mocking for the first time – a short overview of a few .NET mocking frameworks</title>
+  <description />
+  <content>&lt;p&gt;In my recent post &lt;a href="http://shades-of-orange.com/post/2011/02/09/Testing-trying-to-get-it-right.aspx"&gt;Testing: trying to get it right&lt;/a&gt; I mentioned that a lot of our tests are of the dirty hybrid kind, somewhere between real Unit tests and real Integration tests. Focusing on the Unit test part, we’re looking into using a mocking framework right now to change the way we write tests – most of all to decouple the different components that we use in the application under test.&lt;/p&gt;  &lt;p&gt;Wanting to use the fresh and hype &lt;a title="Go and get it now! It&amp;#39;s a great tool :-)" href="http://nuget.codeplex.com/"&gt;NuGet&lt;/a&gt; package manager to install the mocking frameworks, I chose among the ones that were both available there and also looked promising:&lt;/p&gt;  &lt;ul&gt;   &lt;li&gt;&lt;a href="http://www.ayende.com/projects/rhino-mocks.aspx"&gt;RhinoMocks&lt;/a&gt;: the sample found in the &lt;a href="http://www.ayende.com/wiki/Rhino+Mocks+Introduction.ashx"&gt;introduction&lt;/a&gt; did not look at all inviting to me so I dropped this one &lt;/li&gt;    &lt;li&gt;&lt;a href="http://www.telerik.com/products/mocking/free.aspx"&gt;Telerik JustMock (Free Edition)&lt;/a&gt; &lt;/li&gt;    &lt;li&gt;&lt;a href="http://code.google.com/p/moq/"&gt;Moq&lt;/a&gt; &lt;/li&gt;    &lt;li&gt;&lt;a href="http://code.google.com/p/fakeiteasy/"&gt;FakeItEasy&lt;/a&gt; &lt;/li&gt; &lt;/ul&gt;  &lt;p&gt;Really, it could not have been easier to get all these libraries into the project than using NuGet!&lt;/p&gt;  &lt;h2&gt;Sample code&lt;/h2&gt;  &lt;h3&gt;&lt;/h3&gt;  &lt;p&gt;So I went ahead and wrote a short and simple test just to get a feel of the syntax they offer. At first I wanted to mock a simple Repository using its interface. Here is what I ended up with:&lt;/p&gt;  &lt;li&gt;&lt;a href="http://www.telerik.com/help/justmock/introduction.html"&gt;Telerik JustMock&lt;/a&gt;: using syntax from their &lt;a href="http://www.telerik.com/help/justmock/getting-started-quick-start.html"&gt;quick start manual&lt;/a&gt;     &lt;ul&gt;     &lt;pre style="border-bottom: #cecece 1px solid; border-left: #cecece 1px solid; padding-bottom: 5px; background-color: #fbfbfb; min-height: 40px; padding-left: 5px; width: 650px; padding-right: 5px; overflow: auto; border-top: #cecece 1px solid; border-right: #cecece 1px solid; padding-top: 5px"&gt;&lt;pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 11px"&gt;  1: &lt;span style="color: #0000ff"&gt;public&lt;/span&gt; &lt;span style="color: #0000ff"&gt;void&lt;/span&gt; MockRepositoryInterfaceTest()
+&lt;/pre&gt;&lt;pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 11px"&gt;  2: {
+&lt;/pre&gt;&lt;pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 11px"&gt;  3: 	&lt;span style="color: #008000"&gt;// Arrange&lt;/span&gt;
+&lt;/pre&gt;&lt;pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 11px"&gt;  4: 	var repo = Mock.Create&amp;lt;ITodoRepository&amp;gt;();
+&lt;/pre&gt;&lt;pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 11px"&gt;  5: 	Mock.Arrange(() =&amp;gt; repo.Todos)
+&lt;/pre&gt;&lt;pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 11px"&gt;  6: 		.Returns(&lt;span style="color: #0000ff"&gt;new&lt;/span&gt; List&amp;lt;Todo&amp;gt; {&lt;span style="color: #0000ff"&gt;new&lt;/span&gt; Todo {Description = &amp;quot;&lt;span style="color: #8b0000"&gt;my todo&lt;/span&gt;&amp;quot;}}.AsQueryable);
+&lt;/pre&gt;&lt;pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 11px"&gt;  7: 
+&lt;/pre&gt;&lt;pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 11px"&gt;  8: 	&lt;span style="color: #008000"&gt;// Act + Assert&lt;/span&gt;
+&lt;/pre&gt;&lt;pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 11px"&gt;  9: 	repo.Todos.ToList().Count.Should().Be.EqualTo(1);
+&lt;/pre&gt;&lt;pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 11px"&gt; 10: }&lt;/pre&gt;&lt;/pre&gt;
+  &lt;/ul&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a href="http://code.google.com/p/moq/"&gt;Moq&lt;/a&gt;: just visit the project homepage 
+
+  &lt;ul&gt;
+    &lt;pre style="border-bottom: #cecece 1px solid; border-left: #cecece 1px solid; padding-bottom: 5px; background-color: #fbfbfb; min-height: 40px; padding-left: 5px; width: 650px; padding-right: 5px; overflow: auto; border-top: #cecece 1px solid; border-right: #cecece 1px solid; padding-top: 5px"&gt;&lt;pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 11px"&gt;  1: &lt;span style="color: #0000ff"&gt;public&lt;/span&gt; &lt;span style="color: #0000ff"&gt;void&lt;/span&gt; MockRepositoryInterfaceTest()
+&lt;/pre&gt;&lt;pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 11px"&gt;  2: {
+&lt;/pre&gt;&lt;pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 11px"&gt;  3: 	&lt;span style="color: #008000"&gt;// Arrange&lt;/span&gt;
+&lt;/pre&gt;&lt;pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 11px"&gt;  4: 	var repo = &lt;span style="color: #0000ff"&gt;new&lt;/span&gt; Mock&amp;lt;ITodoRepository&amp;gt;();
+&lt;/pre&gt;&lt;pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 11px"&gt;  5: 	repo.SetupGet(rep =&amp;gt; rep.Todos)
+&lt;/pre&gt;&lt;pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 11px"&gt;  6: 		.Returns(() =&amp;gt; &lt;span style="color: #0000ff"&gt;new&lt;/span&gt; List&amp;lt;Todo&amp;gt; {&lt;span style="color: #0000ff"&gt;new&lt;/span&gt; Todo {Description = &amp;quot;&lt;span style="color: #8b0000"&gt;my todo&lt;/span&gt;&amp;quot;}}.AsQueryable());
+&lt;/pre&gt;&lt;pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 11px"&gt;  7: 
+&lt;/pre&gt;&lt;pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 11px"&gt;  8: 	&lt;span style="color: #008000"&gt;// Act + Assert&lt;/span&gt;
+&lt;/pre&gt;&lt;pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 11px"&gt;  9: 	repo.Object.Todos.ToList().Count.Should().Be.EqualTo(1);
+&lt;/pre&gt;&lt;pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 11px"&gt; 10: }&lt;/pre&gt;&lt;/pre&gt;
+  &lt;/ul&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a href="http://code.google.com/p/fakeiteasy/"&gt;FakeItEasy&lt;/a&gt;: just visit the project homepage 
+
+  &lt;ul&gt;
+    &lt;pre style="border-bottom: #cecece 1px solid; border-left: #cecece 1px solid; padding-bottom: 5px; background-color: #fbfbfb; min-height: 40px; padding-left: 5px; width: 650px; padding-right: 5px; overflow: auto; border-top: #cecece 1px solid; border-right: #cecece 1px solid; padding-top: 5px"&gt;&lt;pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 11px"&gt;  1: &lt;span style="color: #0000ff"&gt;public&lt;/span&gt; &lt;span style="color: #0000ff"&gt;void&lt;/span&gt; MockRepositoryInterfaceTest()
+&lt;/pre&gt;&lt;pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 11px"&gt;  2: {
+&lt;/pre&gt;&lt;pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 11px"&gt;  3: 	&lt;span style="color: #008000"&gt;// Arrange&lt;/span&gt;
+&lt;/pre&gt;&lt;pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 11px"&gt;  4: 	var repo = A.Fake&amp;lt;ITodoRepository&amp;gt;();
+&lt;/pre&gt;&lt;pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 11px"&gt;  5: 	A.CallTo(() =&amp;gt; repo.Todos)
+&lt;/pre&gt;&lt;pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 11px"&gt;  6: 		.Returns(&lt;span style="color: #0000ff"&gt;new&lt;/span&gt; List&amp;lt;Todo&amp;gt; {&lt;span style="color: #0000ff"&gt;new&lt;/span&gt; Todo {Description = &amp;quot;&lt;span style="color: #8b0000"&gt;my todo&lt;/span&gt;&amp;quot;}}.AsQueryable());
+&lt;/pre&gt;&lt;pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 11px"&gt;  7: 
+&lt;/pre&gt;&lt;pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 11px"&gt;  8: 	&lt;span style="color: #008000"&gt;// Act + Assert&lt;/span&gt;
+&lt;/pre&gt;&lt;pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 11px"&gt;  9: 	repo.Todos.ToList().Count.Should().Be.EqualTo(1);
+&lt;/pre&gt;&lt;pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 11px"&gt; 10: }&lt;/pre&gt;&lt;/pre&gt;
+  &lt;/ul&gt;
+
+  &lt;p&gt;In the first test-ride FakeItEasy and JustMock look pretty much identical, whereas the syntax Moq offers is a bit awkward with the SetupGet() method name and the need to call repo.Object to get the instance. I hope to examinate further differences in use as the project moves on.&lt;/p&gt;
+
+  &lt;h2&gt;Mocking concrete classes&lt;/h2&gt;
+
+  &lt;p&gt;Since we’re working with a large application that still has a lot of services and classes not implementing any interface I also wanted to make sure we’ll be able to mock concrete types. Well, this didn’t go so well:&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=different-mocking-frameworks-all-fail-on-concrete-classes.png"&gt;&lt;img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="different-mocking-frameworks-all-fail-on-concrete-classes" border="0" alt="different-mocking-frameworks-all-fail-on-concrete-classes" src="http://shades-of-orange.com/image.axd?picture=different-mocking-frameworks-all-fail-on-concrete-classes_thumb.png" width="961" height="283" /&gt;&lt;/a&gt;&lt;/p&gt;
+
+  &lt;p&gt;JustMock and FakeItEasy simply returned an instance of the concrete class I gave them, Moq complains that it can’t override the Todos member. So I added the virtual modifier to it and the test is now green. Still, I got the impression that I was trying to do something that I shouldn’t. The following blog post motivates further not to mock concrete classes: &lt;a href="http://www.mockobjects.com/2007/04/test-smell-mocking-concrete-classes.html" target="_blank"&gt;Test Smell: Mocking concrete classes&lt;/a&gt;. So I guess introducing interfaces as a kind of contract between classes is the way to go, but in the meantime and where we can’t avoid mocking concrete types we’ll be left using Moq.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;p&gt;That’s it for now, happy coding!&lt;/p&gt;
+
+&lt;p&gt;Oliver&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2011-03-25 15:50:21</pubDate>
+  <lastModified>2011-03-25 15:50:21</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Mocking-for-the-first-time-a-short-overview-of-a-few-NET-mocking-frameworks</slug>
+  <tags>
+    <tag>mocking moq fakeiteasy justmock</tag>
+  </tags>
+  <comments />
+  <categories>
+    <category>cb82911b-137b-402e-be57-2fe9fe9fae2e</category>
+    <category>678a9d57-c1ea-487a-8fd3-4d08dc0be9c4</category>
+    <category>ca0b8243-9da6-4e51-a0a5-4e603e68bbc9</category>
+    <category>6cb56168-2015-4599-a1c1-8db9c9fae433</category>
+    <category>94b034d9-a1c3-4b5f-9b37-d39930d673ba</category>
+  </categories>
+  <notifications />
+</post>

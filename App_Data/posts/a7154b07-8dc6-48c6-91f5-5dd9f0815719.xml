@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>Oliver</author>
+  <title>NHibernate: spannende Fehlermeldung für ein NULL-DateTime</title>
+  <description>DateTime-NULLs versteckte Fehlerquelle</description>
+  <content>&lt;p&gt;
+Heute war mal wieder NHibernate-Prime-Time: der Bildupload und das L&amp;ouml;schen im Adminbereich funktionierten f&amp;uuml;r einige Campingpl&amp;auml;tze problemlos, f&amp;uuml;r andere gab es beim Aufruf von &lt;font face="courier new,courier"&gt;Session.Flush()&lt;/font&gt; bzw. jetzt &lt;font face="courier new,courier"&gt;Transaction.Commit()&lt;/font&gt; folgenden Fehler:
+&lt;/p&gt;
+&lt;p&gt;
+&amp;nbsp; 
+&lt;img src="/image.axd?picture=2009%2f3%2fCropperCapture%5b25%5d.jpg" alt="" /&gt;
+&lt;/p&gt;
+&lt;p&gt;
+Hm, was mag das wohl f&amp;uuml;r ein Fehler sein?
+&lt;/p&gt;
+&lt;p&gt;
+Ein Blick in die InnerException sollte uns mehr verraten:
+&lt;/p&gt;
+&lt;p&gt;
+&lt;img src="/image.axd?picture=2009%2f3%2fCropperCapture%5b29%5d.jpg" alt="" /&gt;
+&lt;/p&gt;
+&lt;p&gt;
+Google anschmei&amp;szlig;en und nach &amp;quot;Connection has been closed by peer&amp;quot; suchen... ein paar Seiten lesen... aber eine Antwort fehlt. Aus Verlegenheit noch ein paarmal probieren - und siehe da, irgendwie habe ich eine neue innere Ausnahme bekommen, die mir mehr sagt:
+&lt;/p&gt;
+&lt;p&gt;
+&lt;img src="/image.axd?picture=2009%2f3%2fCropperCapture%5b26%5d.png" alt="" /&gt;
+&lt;/p&gt;
+&lt;p&gt;
+Wir haben es mit einem nicht initialisierten, not-nullable DateTime-Wert zu tun. Nur wo finden wir ihn? Das zu l&amp;ouml;scchen Image-Objekt zeigt keine Auff&amp;auml;lligkeiten.
+&lt;/p&gt;
+&lt;p&gt;
+Der Profiler bringt&amp;#39;s dann an&amp;#39;s Licht: es ist der zugeh&amp;ouml;rige Campingplatz, der aus bisher unerfindlichen Gr&amp;uuml;nden in der DB ein NULL als DateModified zu stehen hat. Wie das dorthin gekommen ist, muss an dieser Stelle leider unbeantwortet bleiben. Aber ein beherztes SQL-Skriptlein
+&lt;/p&gt;
+&lt;p&gt;
+&lt;font face="courier new,courier"&gt;UPDATE Campsites SET DateModified = DateCreated WHERE DateModified IS NULL&lt;/font&gt; 
+&lt;/p&gt;
+&lt;p&gt;
+macht alles wieder ganz. Jetzt gibt&amp;#39;s auch keine Exception in unseren Batch-Queries mehr &lt;img src="/editors/tiny_mce/plugins/emotions/images/smiley-laughing.gif" border="0" alt="Laughing" title="Laughing" /&gt;
+&lt;/p&gt;
+&lt;p&gt;
+Oli 
+&lt;/p&gt;
+</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2009-03-21 22:13:00</pubDate>
+  <lastModified>2009-03-21 23:01:06</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>NHibernate-spannende-Fehlermeldung-fur-ein-NULL-DateTime</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>f8bafae5-b874-4cd1-bc83-6b822e1c2e83</category>
+    <category>3b5447eb-ff3b-4481-9287-0508fce6262b</category>
+  </categories>
+  <notifications />
+</post>

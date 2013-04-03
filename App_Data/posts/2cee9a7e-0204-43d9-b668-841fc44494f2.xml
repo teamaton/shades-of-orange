@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>robert</author>
+  <title>WPF – Fenster öffnet sich im Hintergrund?</title>
+  <description />
+  <content>&lt;p&gt;Öffnet man ein WPF-Window über Quelltext aus einem UserControl heraus, dann landet das neue Fenster hinter dem zu öffnenden Fenster. Die Problemlösung ist das Zuweisen des Window Owners. &lt;/p&gt;  &lt;div id="codeSnippetWrapper"&gt;   &lt;div style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px" id="codeSnippet"&gt;     &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"&gt;var logItemDetail = &lt;span style="color: #0000ff"&gt;new&lt;/span&gt; frmLogItemDetail(logDisplayItem);&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"&gt;logItemDetail.Owner = &lt;span style="color: #0000ff"&gt;this&lt;/span&gt;.FindLogicalAncestorByType&amp;lt;Window&amp;gt;();&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"&gt;logItemDetail.Show()&lt;/pre&gt;
+&lt;!--CRLF--&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;“FindLogicalAncestor” ist ein Extension Method für DependencyObjects und stammt aus dem &lt;a href="http://wpfcontrib.codeplex.com/"&gt;WPF-Contrib Projekt&lt;/a&gt; und ist nun auch aus Bequemlichkeitsgründen in &lt;a href="http://code.google.com/p/speak-lib/source/browse/"&gt;Speak-Lib&lt;/a&gt; zu finden. &lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2009-06-12 00:59:08</pubDate>
+  <lastModified>2009-06-12 01:07:47</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>WPF-e28093-Fenster-offnet-sich-im-Hintergrund</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>42d4f356-df8f-4ef8-8334-2186a5f68a26</category>
+  </categories>
+  <notifications />
+</post>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>oliver</author>
+  <title>ASP.NET MVC Quick Reference</title>
+  <description />
+  <content>&lt;ol&gt;   &lt;li&gt;&lt;font face="Courier New"&gt;_ViewStart.cshtml&lt;/font&gt;: applies hierarchically to all views in the same folder and all subfolders, can be nested; for more info see &lt;a href="http://jittuu.com/2011/10/28/ViewStart-in-MVC-3/"&gt;http://jittuu.com/2011/10/28/ViewStart-in-MVC-3/&lt;/a&gt;&lt;/li&gt;    &lt;li&gt;&lt;font face="Courier New"&gt;RenderBody, RenderPage, RenderSection&lt;/font&gt;:&amp;#160; &lt;a href="http://www.dotnetcurry.com/ShowArticle.aspx?ID=636"&gt;http://www.dotnetcurry.com/ShowArticle.aspx?ID=636&lt;/a&gt;&lt;/li&gt;    &lt;li&gt;&lt;a href="http://haacked.com/archive/2011/01/06/razor-syntax-quick-reference.aspx"&gt;C# Razor Syntax Quick Reference&lt;/a&gt;&lt;/li&gt; &lt;/ol&gt;  &lt;p&gt;Happy MVCing!&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2012-10-05 22:14:07</pubDate>
+  <lastModified>2012-10-05 22:14:07</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>ASPNET-MVC-Quick-Reference</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

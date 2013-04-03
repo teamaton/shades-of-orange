@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>robert</author>
+  <title>ASP.NET Toolkit HTML Editor ohne Bild-Insert</title>
+  <description />
+  <content>&lt;p&gt;Der neue ASP.NET Toolkit HTML Editor macht einen guten Eindruck. &lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=5202009123055PM.png"&gt;&lt;img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="5-20-2009 12-30-55 PM" border="0" alt="5-20-2009 12-30-55 PM" src="http://shades-of-orange.com/image.axd?picture=5202009123055PM_thumb.png" width="244" height="208" /&gt;&lt;/a&gt;&lt;/p&gt;  &lt;p&gt;Auf den zweiten Blick fehlt jedoch die Möglichkeit Bilder einzufügen. Sucht man ein wenig weiter, findet man im Release Note eine Danksagung an die Firma &lt;a href="http://www.obout.com/editor_new/sample_ImageBrowse.aspx"&gt;Obout&lt;/a&gt; die &lt;strike&gt;anscheinend&lt;/strike&gt; offensichtlich den HTML Editor beigesteuert hat. Die kommerzielle Version des Editors unterstützt das Einsetzen von Bildern und Bilduploads. Der &lt;a href="http://www.obout.com/editor_new/"&gt;Obout-Editor&lt;/a&gt; kostet zwischen $99 und $289. Kostenlose Alternativen bleiben TineMCE, FCKEditor &lt;/p&gt;  &lt;p&gt;Editor Alternativen&lt;/p&gt;  &lt;ul&gt;   &lt;li&gt;&lt;a title="http://jiffycms.codeplex.com/" href="http://jiffycms.codeplex.com/"&gt;Jiffy&lt;/a&gt; (auf Codplex)&lt;/li&gt;    &lt;li&gt;&lt;a href="http://tinymce.moxiecode.com/"&gt;TinyMce&lt;/a&gt;&lt;/li&gt;    &lt;li&gt;&lt;a href="http://www.fckeditor.net/"&gt;FCKEditor&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt;  &lt;p&gt;Weitere Links: &lt;/p&gt;  &lt;ul&gt;   &lt;li&gt;&lt;a href="http://dotnet-forum.de/blogs/thorstenhans/archive/2009/05/19/ajax-control-toolkit-release-may-2009-ver-3-0-30512.aspx"&gt;(Deutsche) Übersicht über die anderen, neuen Toolkit Features&lt;/a&gt;&lt;/li&gt;    &lt;li&gt;&lt;a href="http://www.asp.net/AJAX/AjaxControlToolkit/Samples/HTMLEditor/HTMLEditor.aspx"&gt;ASP.NET AJAX Toolkit HTML Editor&lt;/a&gt;&lt;/li&gt;    &lt;li&gt;&lt;a href="http://ajaxcontroltoolkit.codeplex.com/Wiki/View.aspx?title=30512"&gt;ASP.NET AJAX Toolkit Release Note&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2009-05-20 12:31:53</pubDate>
+  <lastModified>2009-05-20 12:31:53</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>ASPNET-Toolkit-HTML-Editor-ohne-Bild-Insert</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

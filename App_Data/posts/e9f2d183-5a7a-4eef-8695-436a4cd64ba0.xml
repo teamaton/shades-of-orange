@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>admin</author>
+  <title>Backup und Systemrettung</title>
+  <description />
+  <content>&lt;p&gt;Werkzeuge für die Systemreperatur gehören in den Werkzeugkasten eines jeden nicht anonymen professionellen Anwenders. Nicht zwingend Aufgrund eigener Probleme, den die eigenen Backups sind gut gepflegt und das System schon immer stabil. Eher rufen Probleme von Familien-Mitgliedern oder Freunden. Menschen also, denen man Hilfe nicht abschlagen mag.  &lt;/p&gt;&lt;p&gt;&lt;a href="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/BackupundSystemrettung_14376/knoppix-cd-button.gif" atomicselection="true"&gt;&lt;img style="margin: 0px 10px 0px 0px" height="152" alt="knoppix-cd-button" src="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/BackupundSystemrettung_14376/knoppix-cd-button_thumb.gif" width="157" align="left" /&gt;&lt;/a&gt; Schon seit Jahren beeindruckt mich in solchen Momenten "&lt;a href="http://www.knoppix.org/"&gt;Knoppix&lt;/a&gt;". Diese Linux Distribution startet Anstandslos von CD und erkannte bisher jegliche verbaute Hardware anstandslos. Zugriff auf Fat32 und NTSF Partitionen ist auch problemfrei und auch in Windows Netzwerken findet sich das freundliche Helferlein sofort zurecht.  &lt;/p&gt;&lt;p&gt;Neu für mich ist &lt;a href="http://www.ubcd4win.com/"&gt;"Ultimate Boot CD for Windows"&lt;/a&gt;. Es ist nicht ganz so fügsam, ist  es doch eine Windowsdistribution, die sich wie Knoppix von CD Booten lässt. &lt;a href="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/BackupundSystemrettung_14376/sitebanner.jpg" atomicselection="true"&gt;&lt;img style="border-right: 0px; border-top: 0px; margin: 10px 0px 0px 10px; border-left: 0px; border-bottom: 0px" height="130" alt="sitebanner" src="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/BackupundSystemrettung_14376/sitebanner_thumb.jpg" width="173" align="right" border="0" /&gt;&lt;/a&gt;Neben Standarttools wie MS-Explorer, sowie Windows Kommandozeilentools findet sich allerlei Vertrautes auf der CD, zum Beispiel Antivir oder Deepburner. &lt;a href="http://www.ubcd4win.com/"&gt;"Ultimate Boot CD for Windows"&lt;/a&gt; hatte bei mir Problemchen im Netzwerk. Trotzdessen ein interessantes Projekt und ab heute in meiner "Erste Hilfe Box".  &lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2007-07-25 22:04:13</pubDate>
+  <lastModified>0001-01-01 06:00:00</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Backup-und-Systemrettung</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>oliver</author>
+  <title>ASP.NET WebForms Application Event Life Cycle</title>
+  <description />
+  <content>&lt;p&gt;For a long time, I kept looking at the possible application events here: &lt;a href="http://www.techrepublic.com/article/working-with-the-aspnet-globalasax-file/5771721"&gt;http://www.techrepublic.com/article/working-with-the-aspnet-globalasax-file/5771721&lt;/a&gt;. It’s been a valuable resource many times, but today I wanted to figure out in which order events are fired. The post actually contains an ordered list but at least for ASP.NET 4 it seems to be a bit incorrect. Here is what I came up with using a small HttpModule and a really simple page to log the events. I’ve also marked inside which event handlers you can access Session state:&lt;/p&gt;  &lt;p&gt;BeginRequest: Session null&lt;/p&gt;  &lt;p&gt;AuthenticateRequest: Session null&lt;/p&gt;  &lt;p&gt;PostAuthenticateRequest: Session null&lt;/p&gt;  &lt;p&gt;AuthorizeRequest: Session null&lt;/p&gt;  &lt;p&gt;PostAuthorizeRequest: Session null&lt;/p&gt;  &lt;p&gt;ResolveRequestCache: Session null&lt;/p&gt;  &lt;p&gt;PostResolveRequestCache: Session null&lt;/p&gt;  &lt;p&gt;MapRequestHandler: Session null&lt;/p&gt;  &lt;p&gt;PostMapRequestHandler: Session null&lt;/p&gt;  &lt;p&gt;AcquireRequestState: Session &lt;strong&gt;not&lt;/strong&gt; null&lt;/p&gt;  &lt;p&gt;PostAcquireRequestState: Session &lt;strong&gt;not&lt;/strong&gt; null&lt;/p&gt;  &lt;p&gt;PreRequestHandlerExecute: Session &lt;strong&gt;not&lt;/strong&gt; null&lt;/p&gt;  &lt;p&gt;PostRequestHandlerExecute: Session &lt;strong&gt;not&lt;/strong&gt; null&lt;/p&gt;  &lt;p&gt;ReleaseRequestState: Session null&lt;/p&gt;  &lt;p&gt;PostReleaseRequestState: Session null&lt;/p&gt;  &lt;p&gt;UpdateRequestCache: Session null&lt;/p&gt;  &lt;p&gt;PostUpdateRequestCache: Session null&lt;/p&gt;  &lt;p&gt;LogRequest: Session null&lt;/p&gt;  &lt;p&gt;PostLogRequest: Session null&lt;/p&gt;  &lt;p&gt;EndRequest: Session null&lt;/p&gt;  &lt;p&gt;PreSendRequestContent: Session null&lt;/p&gt;  &lt;p&gt;PreSendRequestHeaders: Session null&lt;/p&gt;  &lt;p&gt;&amp;#160;&lt;/p&gt;  &lt;p&gt;Happy eventing!&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2012-10-08 23:56:08</pubDate>
+  <lastModified>2012-10-08 23:56:08</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>ASPNET-WebForms-Application-Event-Life-Cycle</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

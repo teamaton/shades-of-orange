@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>admin</author>
+  <title>VS 2008, Partial Class, Gruppieren</title>
+  <description />
+  <content>&lt;p&gt;&lt;a href="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/VS2008PartialClassGruppieren_4EAB/image_1.png" atomicselection="true"&gt;&lt;img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" height="67" alt="image" src="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/VS2008PartialClassGruppieren_4EAB/image_thumb_1.png" width="328" border="0" /&gt;&lt;/a&gt; &lt;/p&gt; &lt;p&gt;Damit &lt;a href="http://msdn2.microsoft.com/en-us/library/wa80x488(VS.80).aspx"&gt;partielle Klassen&lt;/a&gt; im Solution Explorer gruppiert dargestellt werden, bedarf es einer kleinen Anpassung in der Projektdatei. &lt;/p&gt; &lt;p&gt;&lt;a href="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/VS2008PartialClassGruppieren_4EAB/image_2.png" atomicselection="true"&gt;&lt;img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" height="76" alt="image" src="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/VS2008PartialClassGruppieren_4EAB/image_thumb_2.png" width="382" border="0" /&gt;&lt;/a&gt; &lt;/p&gt; &lt;p&gt;Hinzugefügt werden muß das Element "DependentUpon" und schon fügt sich zueinander, was sich fügen soll :-)&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2008-02-21 05:35:47</pubDate>
+  <lastModified>0001-01-01 06:00:00</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>VS-2008-Partial-Class-Gruppieren</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>678a9d57-c1ea-487a-8fd3-4d08dc0be9c4</category>
+    <category>b9df7adf-328a-4e8c-9401-f5adf7e10cd6</category>
+  </categories>
+  <notifications />
+</post>

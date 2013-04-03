@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>robert</author>
+  <title>Dependency Injection in Legacy Projekt</title>
+  <description />
+  <content>&lt;p&gt;Mit Legacy Projekt ist ein Projekt gemeint, das keine automatisierten Tests besitzt und nicht trivial ist. Es scheint unmöglich DI in einem Entwicklungsschritt einzuführen. Es scheint nicht sinnvoll im ersten Schritt die Anwendungsschicht von der Abhängigkeit auf das Container Framework zu befreien. &lt;/p&gt;  &lt;p&gt;Meine aktuelle Strategie: &lt;/p&gt;  &lt;ul&gt;   &lt;li&gt;In kleinen Schritten vorgehen&lt;/li&gt;    &lt;li&gt;Viele kleine Service-Locator einsetzten&lt;/li&gt;    &lt;li&gt;Die Service-Locator arbeiten alle mit der gleichen Singelton Instanz des Containers&lt;/li&gt;    &lt;li&gt;Im Muster denken: &amp;quot;Refaktorisierung in Richtung&amp;quot; wobei die endgültige Refaktorisierung auch Wochen/Monate auf sich warten kann. &lt;/li&gt; &lt;/ul&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2009-10-31 22:24:20</pubDate>
+  <lastModified>2009-10-31 22:24:58</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Dependency-Injection-in-Legacy-Projekt</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>ca0b8243-9da6-4e51-a0a5-4e603e68bbc9</category>
+  </categories>
+  <notifications />
+</post>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>robert</author>
+  <title>ASP.NET Memory-Leak</title>
+  <description />
+  <content>&lt;p&gt;Wir sind auf der Suche nach einem Memory-Leak für &lt;a href="http://camping.info"&gt;Camping.Info&lt;/a&gt;. &lt;/p&gt;  &lt;p&gt;Es ist jetzt Donnerstag, 11:56Uhr. Der Web-Server läuft jetzt erst seit 16 Stunden. &lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=Memory-Leak.png"&gt;&lt;img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="Memory-Leak" border="0" alt="Memory-Leak" src="http://shades-of-orange.com/image.axd?picture=Memory-Leak_thumb.png" width="567" height="526" /&gt;&lt;/a&gt;&amp;#160;&lt;/p&gt;  &lt;p&gt;Die aktuelle Session-Zahl liegt bei 652. Den Session Timeout von 20min rausgerechnet, bei einer Verweildauer von 7 Minuten, entspricht das ungefähr 70 tatsächlich aktiven, parallelen Besuchern zu diesem Zeitpunkt. (Im laufen des Tages, werden das deutlich mehr.)&lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=Session-Zahl.png"&gt;&lt;img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="Session-Zahl" border="0" alt="Session-Zahl" src="http://shades-of-orange.com/image.axd?picture=Session-Zahl_thumb.png" width="730" height="511" /&gt;&lt;/a&gt;&lt;/p&gt;  &lt;p&gt;Der Speicherverbrauch ist für die aktuelle Session-Zahl zu hoch und steigt anscheinend stetig über mehrere Tage hinweg.&lt;/p&gt;  &lt;p&gt;Es gibt 2 Möglichkeiten für Memory-Leaks in Managed-Code. &lt;/p&gt;  &lt;ul&gt;   &lt;li&gt;Referenzen auf Objekte werde nicht wieder frei gegeben, in dem Sie Beispielsweise im ASP.NET Cache gehalten werden. &lt;/li&gt;    &lt;li&gt;NET Code verwendet unmanaged Resourcen wie FileSystem oder &amp;quot;Datenbank-Connections und diese Resourcen werden nicht wieder explizit frei gegeben. Auch “System.Drawing&amp;quot; stellt ein Problem dar, da es auf unmanagement Resourcen verweist. &lt;/li&gt; &lt;/ul&gt;  &lt;p&gt;&lt;font size="2"&gt;Oliver hat einen Dump erstellt der wie folgt aussieht: &lt;/font&gt;&lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=Speicher-Dump.png"&gt;&lt;img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="Speicher-Dump" border="0" alt="Speicher-Dump" src="http://shades-of-orange.com/image.axd?picture=Speicher-Dump_thumb.png" width="421" height="347" /&gt;&lt;/a&gt;&amp;#160;&lt;/p&gt;  &lt;p&gt;Wir sind auf der Suche, über die Lösung des Problems werden wir berichten. &lt;/p&gt;  &lt;p&gt;&lt;font size="2"&gt;&lt;/font&gt;&lt;/p&gt;  &lt;p&gt;&lt;font size="2"&gt;&lt;/font&gt;&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2010-04-15 14:38:54</pubDate>
+  <lastModified>2010-04-15 14:45:14</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>ASPNET-Memory-Leak</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>678a9d57-c1ea-487a-8fd3-4d08dc0be9c4</category>
+    <category>6cb56168-2015-4599-a1c1-8db9c9fae433</category>
+  </categories>
+  <notifications />
+</post>

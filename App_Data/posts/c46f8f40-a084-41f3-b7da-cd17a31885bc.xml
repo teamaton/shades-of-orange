@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>oliver</author>
+  <title>Mocking revisited – mocking a method and passing a parameter using FakeItEasy and Moq</title>
+  <description />
+  <content>&lt;p&gt;Finally, I’ve started mocking things in our kind of legacy project while building new functionality. Now, I wanted to replace some DAL service with a mock that would would just serve me some results instead of ramping up NHibernate, going to the DB and assembling all the entities for this test. At first I tried to use FakeItEasy as I liked the syntax more than that of Moq:&lt;/p&gt;  &lt;pre style="border-bottom: #cecece 1px solid; border-left: #cecece 1px solid; padding-bottom: 5px; background-color: #fbfbfb; min-height: 40px; padding-left: 5px; width: 700px; padding-right: 5px; overflow: auto; border-top: #cecece 1px solid; border-right: #cecece 1px solid; padding-top: 5px"&gt;&lt;pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"&gt;  1: var _geoObjectServiceMock = A.Fake&amp;lt;IGeoObjectService&amp;gt;();
+&lt;/pre&gt;&lt;pre style="background-color: #f0f0f0; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"&gt;  2: var results = &lt;span style="color: #0000ff"&gt;new&lt;/span&gt; List&amp;lt;&lt;span style="color: #0000ff"&gt;int&lt;/span&gt;&amp;gt;{ 1, 2, 3, ... };
+&lt;/pre&gt;&lt;pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"&gt;  3: A.CallTo(() =&amp;gt; _geoObjectServiceMock.GetSearchResultIds(A&amp;lt;GeoObjectSearchDesc&amp;gt;.Ignored))
+&lt;/pre&gt;&lt;pre style="background-color: #f0f0f0; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"&gt;  4:     .Returns(results);&lt;/pre&gt;&lt;/pre&gt;
+
+&lt;p&gt;This was easy. Just fix up the result you want the method to return and set it up. Well – I needed more. I needed to return my results list dependent on the GeoObjectSearchDesc parameter passed to the method. In short: I did not find a way to do this. I searched &lt;a title="Google results for: fakeiteasy pass argument to method" href="http://www.google.com/search?q=fakeiteasy+pass+argument+to+method" target="_blank"&gt;Google&lt;/a&gt; and &lt;a title="Stackoverflow results for: fakeiteasy" href="http://stackoverflow.com/search?q=fakeiteasy" target="_blank"&gt;Stackoverflow&lt;/a&gt; but to no avail. What I did find was an example using Moq showing exactly what I wanted to do. From &lt;a href="http://code.google.com/p/moq/wiki/QuickStart#Methods" target="_blank"&gt;Moq’s QuickStart&lt;/a&gt; wiki page:&lt;/p&gt;
+
+&lt;pre style="border-bottom: #cecece 1px solid; border-left: #cecece 1px solid; padding-bottom: 5px; background-color: #fbfbfb; min-height: 40px; padding-left: 5px; width: 700px; padding-right: 5px; overflow: auto; border-top: #cecece 1px solid; border-right: #cecece 1px solid; padding-top: 5px"&gt;&lt;pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"&gt;  1: &lt;span style="color: #008000"&gt;// access invocation arguments when returning a value&lt;/span&gt;
+&lt;/pre&gt;&lt;pre style="background-color: #f0f0f0; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"&gt;  2: mock.Setup(x =&amp;gt; x.DoSomething(It.IsAny&amp;lt;&lt;span style="color: #0000ff"&gt;string&lt;/span&gt;&amp;gt;()))
+&lt;/pre&gt;&lt;pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"&gt;  3:     .Returns((&lt;span style="color: #0000ff"&gt;string&lt;/span&gt; s) =&amp;gt; s.ToLower());
+&lt;/pre&gt;&lt;pre style="background-color: #f0f0f0; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"&gt;  4: &lt;span style="color: #008000"&gt;// Multiple parameters overloads available&lt;/span&gt;&lt;/pre&gt;&lt;/pre&gt;
+
+&lt;p&gt;So I quickly installed Moq using NuGet, e.g. from the Package Manager Console:&lt;/p&gt;
+
+&lt;pre style="border-bottom: #cecece 1px solid; border-left: #cecece 1px solid; padding-bottom: 5px; background-color: #fbfbfb; min-height: 40px; padding-left: 5px; width: 700px; padding-right: 5px; overflow: auto; border-top: #cecece 1px solid; border-right: #cecece 1px solid; padding-top: 5px"&gt;&lt;pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"&gt;  1: Install-Package Moq -project Tests&lt;/pre&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now I have something like this which is exactly what I was looking to do:&lt;/p&gt;
+
+&lt;pre style="border-bottom: #cecece 1px solid; border-left: #cecece 1px solid; padding-bottom: 5px; background-color: #fbfbfb; min-height: 40px; padding-left: 5px; width: 700px; padding-right: 5px; overflow: auto; border-top: #cecece 1px solid; border-right: #cecece 1px solid; padding-top: 5px"&gt;&lt;pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"&gt;  1: &lt;span style="color: #0000ff"&gt;var&lt;/span&gt; _geoObjectServiceMock = &lt;span style="color: #0000ff"&gt;new&lt;/span&gt; Mock&amp;lt;IGeoObjectService&amp;gt;();
+&lt;/pre&gt;&lt;pre style="background-color: #f0f0f0; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"&gt;  2: &lt;span style="color: #0000ff"&gt;var&lt;/span&gt; results = &lt;span style="color: #0000ff"&gt;new&lt;/span&gt; List&amp;lt;&lt;span style="color: #0000ff"&gt;int&lt;/span&gt;&amp;gt;{ 1, 2, 3, ... };
+&lt;/pre&gt;&lt;pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"&gt;  3: _geoObjectServiceMock.Setup(svc =&amp;gt; svc.GetSearchResultIds(It.IsAny&amp;lt;GeoObjectSearchDesc&amp;gt;()))
+&lt;/pre&gt;&lt;pre style="background-color: #f0f0f0; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"&gt;  4:                      .Returns&amp;lt;GeoObjectSearchDesc&amp;gt;(gosd =&amp;gt; results.Take(gosd.PageSize).ToList());&lt;/pre&gt;&lt;/pre&gt;
+
+&lt;p&gt;That’s what I expected – to get control over the method parameter(s) inside the mock. Great! Thank you Moq.&lt;/p&gt;
+
+&lt;p&gt;Happy Coding,&lt;/p&gt;
+
+&lt;p&gt;Oliver&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2011-06-21 23:35:08</pubDate>
+  <lastModified>2011-07-15 07:44:57</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Mocking-revisited-mocking-a-method-and-passing-a-parameter-using-FakeItEasy-and-Moq</slug>
+  <tags>
+    <tag>moq fakeiteasy</tag>
+  </tags>
+  <comments />
+  <categories>
+    <category>6cb56168-2015-4599-a1c1-8db9c9fae433</category>
+    <category>94b034d9-a1c3-4b5f-9b37-d39930d673ba</category>
+    <category>cb82911b-137b-402e-be57-2fe9fe9fae2e</category>
+  </categories>
+  <notifications />
+</post>

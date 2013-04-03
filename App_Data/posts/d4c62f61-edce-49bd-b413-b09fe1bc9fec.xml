@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>robert</author>
+  <title>Zu viel Konstruktor-Injizierung!?</title>
+  <description />
+  <content>&lt;p&gt;Ist zu viel Konstruktor-Injizierung ein Anti-Pattern? In &lt;a href="http://jeffreypalermo.com/blog/constructor-over-injection-anti-pattern/"&gt;einem Blog-Post&lt;/a&gt; konstruiert Jeff Palermo ein Beispiel, in dem eine injizierte Komponente eine wirklich langsame Initialisierung hat. Da die Komponente nur von einer Methode der Klasse benötigt wird, leitet er ab, dass statt der Konstruktor-Injizierung von Komponenten eine Lazy-Factory die bessere Alternative ist. &lt;/p&gt;  &lt;p&gt;Die Kommentare lehnen diesen Schluss fast fast einhellig&amp;#160; ab, denn:&lt;/p&gt;  &lt;p&gt;1) Eine Verzögerung der Initialiszierung ist auch über den Container und mit .NET 4 auch über System.Lazy&amp;lt;&amp;gt; zu erreichen.&lt;/p&gt;  &lt;p&gt;2) Gegen eine Schnittstelle zu programmieren bedeutet gerade, dass man Implementierungsdetails nicht in der Hand hat. &lt;/p&gt;  &lt;p&gt;3) Langwierige Initialisierung in der Komponente bedeutet, dass die Komponente minderer Qualität ist, hier muss dann nachgebessert werden. Es sollten keine aufwändigen Operationen in der Konstruktor-Implementierung durchgeführt werden.&lt;/p&gt;  &lt;p&gt;4) Ein Abstrakte Fabrik erzeugt ein Abhängigkeit gegenüber dieser, was die Menge der Abhängigkeiten steigert und die Vorteile des IoC reduziert. Jedes „new“ ist bad „news“. &lt;/p&gt;  &lt;p&gt;5) Um häufige Initialiserung zu umgehen, könnten Services als Singelton konfiguriert werden, wobei globale Konfiguration ein Problem sein kann, weil sie schwer zu Debuggen und auf Anwendungsebene auch schwer nachzuvollziehen sein kann.&lt;/p&gt;  &lt;p&gt;Danke an &lt;a href="http://jeffreypalermo.com/"&gt;Jeff Palermo&lt;/a&gt; für seinen sehr lesenwerten Post!&lt;/p&gt;  &lt;p&gt;Links: &lt;/p&gt;  &lt;ul&gt;   &lt;li&gt;&lt;a title="http://jeffreypalermo.com/blog/constructor-over-injection-anti-pattern/" href="http://jeffreypalermo.com/blog/constructor-over-injection-anti-pattern/"&gt;http://jeffreypalermo.com/blog/constructor-over-injection-anti-pattern/&lt;/a&gt; &lt;/li&gt; &lt;/ul&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2010-06-10 10:02:04</pubDate>
+  <lastModified>2010-06-10 10:02:04</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Zu-viel-Konstruktor-Injizierung!</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>678a9d57-c1ea-487a-8fd3-4d08dc0be9c4</category>
+    <category>ca0b8243-9da6-4e51-a0a5-4e603e68bbc9</category>
+  </categories>
+  <notifications />
+</post>

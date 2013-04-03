@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>admin</author>
+  <title>Windsor - Tutorial Serie</title>
+  <description />
+  <content>&lt;p&gt;&lt;a href="http://blog.bittercoder.com/default.aspx"&gt;Alex Henderson&lt;/a&gt; hat eine sehr interessante Serie von Anwendungsbeispielen für den Windsor &lt;a href="http://en.wikipedia.org/wiki/Inversion_of_control"&gt;IoC&lt;/a&gt; (Inversion of Control) Container veröffentlicht. Für Freunde der Abstraktion und des Austauschs der Implementation zur Laufzeit: &lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;a title="http://blog.bittercoder.com/PermaLink,guid,bc382e38-a6c6-4e98-840e-ea00d635fc5e.aspx" href="http://blog.bittercoder.com/PermaLink,guid,bc382e38-a6c6-4e98-840e-ea00d635fc5e.aspx"&gt;Simple configuration&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href="http://blog.bittercoder.com/PermaLink,guid,3233bd70-4885-4292-8aac-c94bf9910401.aspx"&gt;Array configuration&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a title="http://blog.bittercoder.com/PermaLink,guid,01697ea5-3175-455b-8e7c-b81436e67235.aspx" href="http://blog.bittercoder.com/PermaLink,guid,01697ea5-3175-455b-8e7c-b81436e67235.aspx"&gt;Dictonary configuration&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a title="http://blog.bittercoder.com/PermaLink,guid,d577122f-f5eb-4d8e-a446-ec81e9e5a661.aspx" href="http://blog.bittercoder.com/PermaLink,guid,d577122f-f5eb-4d8e-a446-ec81e9e5a661.aspx"&gt;Switching configurations&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a title="http://blog.bittercoder.com/PermaLink,guid,4b0c6c3c-4280-4fae-bf22-b3218b1ee59d.aspx" href="http://blog.bittercoder.com/PermaLink,guid,4b0c6c3c-4280-4fae-bf22-b3218b1ee59d.aspx"&gt;Configuration Parameters&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a title="http://blog.bittercoder.com/PermaLink,guid,dfebb0b5-c5e8-4de1-8551-b7e7fe1f14ce.aspx" href="http://blog.bittercoder.com/PermaLink,guid,dfebb0b5-c5e8-4de1-8551-b7e7fe1f14ce.aspx"&gt;Switching Lifestyles&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a title="http://blog.bittercoder.com/PermaLink,guid,ff608602-ad65-48b8-9e03-0049eb6c6cd6.aspx" href="http://blog.bittercoder.com/PermaLink,guid,ff608602-ad65-48b8-9e03-0049eb6c6cd6.aspx"&gt;Switching Implementations&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a title="http://blog.bittercoder.com/PermaLink,guid,02f909e1-b680-4401-b8ff-a2fa98a0aea4.aspx" href="http://blog.bittercoder.com/PermaLink,guid,02f909e1-b680-4401-b8ff-a2fa98a0aea4.aspx"&gt;Referencing implementations by key&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href="http://blog.bittercoder.com/PermaLink,guid,6ce3f22e-763e-445c-9b96-1ca8e6116c34.aspx"&gt;Constructor Injection&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a title="http://blog.bittercoder.com/PermaLink,guid,99c8d05e-8050-4a38-bfa0-50b69b64bff0.aspx" href="http://blog.bittercoder.com/PermaLink,guid,99c8d05e-8050-4a38-bfa0-50b69b64bff0.aspx"&gt;Setter Injection&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a title="http://blog.bittercoder.com/PermaLink,guid,07925133-ae33-41dd-bc50-2b49a5434e19.aspx" href="http://blog.bittercoder.com/PermaLink,guid,07925133-ae33-41dd-bc50-2b49a5434e19.aspx"&gt;Factories&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a title="http://blog.bittercoder.com/PermaLink,guid,4863e460-2985-475c-9266-80b4895e80de.aspx" href="http://blog.bittercoder.com/PermaLink,guid,4863e460-2985-475c-9266-80b4895e80de.aspx"&gt;Decorators&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href="http://blog.bittercoder.com/PermaLink,guid,3e8c3c7f-169e-4f2c-8e1d-b702ece1f63c.aspx"&gt;Injecting Service Arrays&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href="http://blog.bittercoder.com/PermaLink,guid,a621ddda-acb5-4afd-84ff-faafb96a2fa1.aspx"&gt;Startable Facility&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2007-05-08 19:50:23</pubDate>
+  <lastModified>0001-01-01 06:00:00</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Windsor-Tutorial-Serie</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>571773d0-d007-4a88-bc08-6c1b7374d3f1</category>
+  </categories>
+  <notifications />
+</post>

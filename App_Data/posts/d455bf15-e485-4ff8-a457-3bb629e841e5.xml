@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>admin</author>
+  <title>ASP.NET Session zwischen Subdomains</title>
+  <description />
+  <content>&lt;p&gt;Für die Umsetzung einer ,mehrsprachigen Seite, möchten wir für jede Sprache eine eigene Subdomain verwenden. &lt;/p&gt;  &lt;p&gt;Also: &lt;/p&gt;  &lt;ul&gt;   &lt;li&gt;&lt;a href="http://www.domain.org"&gt;www.domain.org&lt;/a&gt; (default Sprache)&lt;/li&gt;    &lt;li&gt;en.domain.org &lt;/li&gt;    &lt;li&gt;es.domain.org &lt;/li&gt;    &lt;li&gt;und noch 30 weitere :-)&lt;/li&gt; &lt;/ul&gt;  &lt;p&gt;Beim Wechsel der Sprache erfolgt eine Redirect auf die entsprechende Subdomain. &lt;/p&gt;  &lt;p&gt;&lt;a href="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/ASP.NETSessionzwischenSubdomains_312A/clip_image002_2.jpg"&gt;&lt;img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" border="0" alt="clip_image002" src="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/ASP.NETSessionzwischenSubdomains_312A/clip_image002_thumb.jpg" width="394" height="32" /&gt;&lt;/a&gt;&lt;/p&gt;  &lt;p&gt;Beim Rederict auf eine andere Domain, geht in ASP.NET die aktuelle Session verloren. &lt;/p&gt;  &lt;p&gt;Grund, die aktuelle SessionId wird von ASP.NET, sofern nicht "Cookieless", in einem Cookie gespeichert. Per default wird als Cookie Domain, die aktuelle Domain, inklusive der Subdomains definiert. &lt;/p&gt;  &lt;p&gt;Also für www.domain.org, ist auch die Domain des Cookies: "domain=www.domain.org"&lt;/p&gt;  &lt;p&gt;Navigiert man also von einer Subdomain zu einer anderen, wird nun ein neues Session-Cookie mit einer neuen SessionId gesetzt. &lt;/p&gt;  &lt;p&gt;Möchte man dieses verhindern hilft folgender Code: &lt;/p&gt;  &lt;p&gt;&lt;a href="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/ASP.NETSessionzwischenSubdomains_312A/clip_image004_2.jpg"&gt;&lt;img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" border="0" alt="clip_image004" src="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/ASP.NETSessionzwischenSubdomains_312A/clip_image004_thumb.jpg" width="394" height="102" /&gt;&lt;/a&gt;&lt;/p&gt;  &lt;p&gt;Der Event lässt sich so registrieren: &lt;/p&gt;  &lt;p&gt;&lt;a href="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/ASP.NETSessionzwischenSubdomains_312A/clip_image006_2.jpg"&gt;&lt;img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" border="0" alt="clip_image006" src="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/ASP.NETSessionzwischenSubdomains_312A/clip_image006_thumb.jpg" width="394" height="61" /&gt;&lt;/a&gt;&lt;/p&gt;  &lt;p&gt;Hier wird die Domain des gesetzten Cookies im Unload Event der Masterpage angepasst. Wichtig ist, das der "Domain" Teil des Cookies auf allen Seiten der Anwendungen korrigiert wird.&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2008-03-18 03:29:51</pubDate>
+  <lastModified>0001-01-01 06:00:00</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>ASPNET-Session-zwischen-Subdomains</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>bc3db496-f484-41a0-860c-c2e57e829fa0</category>
+  </categories>
+  <notifications />
+</post>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>robert</author>
+  <title>"Was lernen?",</title>
+  <description />
+  <content>&lt;p&gt;fragt Ralph Westphal in seinem sehr lesenswerten Post : &lt;a href="http://ralfw.blogspot.com/2008/08/die-aschenputtel-strategie-ein-8020.html"&gt;"Die Aschenputtel-Strategie - Ein 80:20-Kriterium für neue Technologien und Konzepte"&lt;/a&gt;.) &lt;p&gt;Unsere Antwort auf "Was lernen?" - "Kontinuierlich, alles was begeistert, " :-)&lt;/p&gt; &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=WindowsLiveWriter/Waslernen_3F56/chaos-books_2.png"&gt;&lt;img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" border="0" alt="chaos-books" src="http://shades-of-orange.com/image.axd?picture=WindowsLiveWriter/Waslernen_3F56/chaos-books_thumb.png" width="418" height="504"&gt;&lt;/a&gt; &lt;/p&gt; &lt;p&gt;&lt;a href="http://flickr.com/photos/gadl/252757784/"&gt;[quelle]&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Lernen und Entwicklung ist bei uns einfach Teil der Arbeit. Ca 20% widmen wir der Optimierung unserer Arbeits- und Vorgehensweisen. Verbessert wird was am meisten drückt oder vielleicht einfach nur Spaß macht ist.  &lt;p&gt;Neues können auch unbekannte Design Patterns sein oder eine alternative Projektstrutktur, ein neues Werkzeug oder das Einrichten von Mailinglisten für Projekte - alles was hilft!  &lt;p&gt;Bei uns gerade spannend:  &lt;ul&gt; &lt;li&gt;automatische Deployment für Endbenutzer (per NANT)&lt;/li&gt; &lt;li&gt;Continous Integration (zum Teil damit Verbunden)&lt;/li&gt; &lt;li&gt;Code generation (immer wieder :-)&lt;/li&gt; &lt;li&gt;bessere utility und Basisklassen &lt;/li&gt;&lt;/ul&gt; &lt;p&gt;Davor war es IoC, davor ORM, davor MVC (was wir dann auch wieder verworfen haben), davor Design Patterns und Unit Testing, davor ... &lt;p&gt;... und die Auswahl der Themen ist hoffentlich immer pragmatisch, da nur laufenden Software glücklich macht, hat aber auch deswegen viel mit Geschmack und Vorlieben zu tun. Einen Kernteil der Strategie könnte man so zusammenfassen: Wir lassen uns davon leiten was uns begeistert und gehen davon aus, das das was uns begeistert und auch das Beste für unsere Kunden ist. &lt;p&gt;Es ist großer Luxus nur das zu machen was Spaß macht oder es ist großartig daran Spaß zu haben was wir machen müssen, ..., ich freue mich jedenfalls auf das arbeiten mit nDepend, Boo, auf CodeGeneration, c# 4., die erste eigene LINQ enabled API zu schreiben und soviel mehr :-) &lt;p&gt;Anwendungs-Entwicklung rockt!&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2008-10-08 03:30:40</pubDate>
+  <lastModified>2008-10-08 03:30:40</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Was-lernen</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>678a9d57-c1ea-487a-8fd3-4d08dc0be9c4</category>
+  </categories>
+  <notifications />
+</post>

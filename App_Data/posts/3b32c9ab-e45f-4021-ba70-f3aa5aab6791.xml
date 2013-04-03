@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>admin</author>
+  <title>MS-SQL Server 2005, Instanz Alias</title>
+  <description />
+  <content>&lt;p&gt;Bei der Installation eines SQL-Servers bekommt die installierte Instanz einen eindeutigen Name, über den die Datenbank zu erreichen ist. Der Grund für den Instanz-Namen ist, das mehrere SQL-Server parallel betrieben werden können. Bei mir laufen zum Beispiel SQL-Server 2005, eine Express Edition und vor noch ein paar Wochen auch ein SQL Server 2000. &lt;/p&gt; &lt;p&gt;Wenn nun mehrere Entwickler an einem Projekt arbeiten, ergeben sich hieraus Probleme. Jeder trägt in seiner Konfiguration für die Datenbankverbindung seinen Instanz Namen, in der Form &amp;lt;rechnername&amp;gt;\&amp;lt;instanz-name&amp;gt;, ein. Ein weg damit umzugehen ist es hiefür eine seperate Konfigurationsdatei anzulegen und diese nicht in das Vesionkontrollsystem aufzunehmen.&lt;/p&gt; &lt;p&gt;Alternativ lässt sich aber für eine Instanz auch eine Instanz-Alias einrichten. &lt;/p&gt; &lt;p&gt;Der einfachste Weg dorthin: &lt;/p&gt; &lt;p&gt;1:) "Windows Taste" -&amp;gt; "Run" und dann "compmgmt.msc" eingeben.&lt;/p&gt; &lt;p&gt;&lt;a href="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/MSSQLServer2005InstanzAlias_4AD/image.png" atomicselection="true"&gt;&lt;img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" height="128" alt="image" src="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/MSSQLServer2005InstanzAlias_4AD/image_thumb.png" width="240" border="0" /&gt;&lt;/a&gt; &lt;/p&gt; &lt;p&gt;2:) Dann im Computer Management Aliase auswählen ..&lt;/p&gt; &lt;p&gt;&lt;a href="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/MSSQLServer2005InstanzAlias_4AD/image_3.png" atomicselection="true"&gt;&lt;img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" height="294" alt="image" src="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/MSSQLServer2005InstanzAlias_4AD/image_thumb_3.png" width="352" border="0" /&gt;&lt;/a&gt; &lt;/p&gt; &lt;p&gt;3:) .. und schließlich den Alias erstellen ..&lt;/p&gt; &lt;p&gt;&lt;a href="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/MSSQLServer2005InstanzAlias_4AD/image_4.png" atomicselection="true"&gt;&lt;img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" height="240" alt="image" src="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/MSSQLServer2005InstanzAlias_4AD/image_thumb_4.png" width="214" border="0" /&gt;&lt;/a&gt; &lt;/p&gt; &lt;p&gt;.. und die Arbeit ist getan. &lt;/p&gt; &lt;p&gt;Der connection string kann dann so aussehen. &lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;Server=LocalMssql;Database=foo;uid=bar;pwd=whatever;&lt;/p&gt;&lt;/blockquote&gt; &lt;p&gt;Jetzt müssen sich noch alle Entwickler auf den gleichen Datenbankbenutzer und Passwort einigen und vielen commits der veränderten Konfigurationsdatei steht nichts mehr im Wege.&lt;/p&gt; &lt;p&gt;(Bei der Installation eines einzigen Server ist es möglich im connection string statt des Instanz-Namens "(local)" zu verwenden, aber das fällt bei mehreren Instanzen weg.)&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2008-02-06 00:20:08</pubDate>
+  <lastModified>0001-01-01 06:00:00</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>MS-SQL-Server-2005-Instanz-Alias</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>4c741f81-0ac2-4ab0-9a49-bd8ecbbff502</category>
+  </categories>
+  <notifications />
+</post>

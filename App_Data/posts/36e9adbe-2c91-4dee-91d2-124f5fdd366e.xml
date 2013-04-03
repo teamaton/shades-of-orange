@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>admin</author>
+  <title>Log4Net Konfiguration</title>
+  <description />
+  <content>&lt;p&gt;Nun habe ich schon x- Mal vergessen, dass &lt;a href="http://logging.apache.org/log4net/index.html"&gt;log4net&lt;/a&gt; die Konfiguration aus einer „app.config“ oder „web.config“ nur dann liest, wenn die Assembly das entsprechende Attribut bekommt:&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;[assembly: log4net.Config.XmlConfigurator(Watch = true)]&lt;/p&gt;&lt;/blockquote&gt; &lt;p&gt;Und bei einer schnellen Suche in der Dokumentation habe ich &lt;a href="http://logging.apache.org/log4net/release/manual/configuration.html#attr"&gt;diesen Teil&lt;/a&gt;, auch schon des öfteren überlesen. &lt;/p&gt; &lt;p&gt;Hier nochmal in bunt :-) &lt;/p&gt; &lt;p&gt;&lt;a href="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/Log4NetKonfiguration_ABCD/image.png" atomicselection="true"&gt;&lt;img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" height="130" alt="image" src="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/Log4NetKonfiguration_ABCD/image_thumb.png" width="268" border="0" /&gt;&lt;/a&gt; &lt;/p&gt; &lt;p&gt;&lt;a href="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/Log4NetKonfiguration_ABCD/image_1.png" atomicselection="true"&gt;&lt;img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" height="118" alt="image" src="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/Log4NetKonfiguration_ABCD/image_thumb_1.png" width="274" border="0" /&gt;&lt;/a&gt; &lt;/p&gt; &lt;p&gt;(Hoffentlich ist es nun in die grauen Zellen eingebrannt :-)&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2008-02-17 12:13:02</pubDate>
+  <lastModified>0001-01-01 06:00:00</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Log4Net-Konfiguration</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>678a9d57-c1ea-487a-8fd3-4d08dc0be9c4</category>
+    <category>b9df7adf-328a-4e8c-9401-f5adf7e10cd6</category>
+  </categories>
+  <notifications />
+</post>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>robert</author>
+  <title>Dependency Injection in Legacy Projekt 2</title>
+  <description />
+  <content>&lt;p&gt;Das Digram soll die tatsächlich Architektur für den _ersten_ Schritt des Einbaus zeigen. &lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=DIDiagram.png"&gt;&lt;img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="DI-Diagram" border="0" alt="DI-Diagram" src="http://shades-of-orange.com/image.axd?picture=DIDiagram_thumb.png" width="600" height="494" /&gt;&lt;/a&gt; &lt;/p&gt;  &lt;p&gt;Die physischen Abhängigkeiten sehen nochmal anders aus, da die GUI direkt mit Typen aus der Applikation arbeitet. &lt;/p&gt;  &lt;p&gt;Die architektonische &amp;quot;Schichtung&amp;quot; ergibt sich aus der Notwendigkeit &amp;quot;zirkuläre&amp;quot; Referenzen zu verhindern. Aus diesem Grund sind Container und Service-Locater auch physisch getrennt. &lt;/p&gt;  &lt;p&gt;Ein volle Entkopplung macht im tatsächlichen Anwendungsfall aus jetziger Perspektive auch keinen Sinn und ließe sich auch leicht nachträglich einziehen. &lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2009-11-01 16:36:45</pubDate>
+  <lastModified>2009-11-01 16:36:53</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Dependency-Injection-in-Legacy-Projekt-2</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>ca0b8243-9da6-4e51-a0a5-4e603e68bbc9</category>
+  </categories>
+  <notifications />
+</post>

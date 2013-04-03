@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>oliver</author>
+  <title>Request format is unrecognized for URL unexpectedly ending in /MethodName</title>
+  <description />
+  <content>&lt;p&gt;Eine wirklich interessante Erklärung für diese InvalidOperationException findet sich hier: &lt;a title="Omar AL Zabir blog on ASP.NET Ajax and .NET 3.5" href="http://msmvps.com/blogs/omar/archive/2007/09/19/request-format-is-unrecognized-for-url-unexpectedly-ending-in-somewebservicemethod.aspx" target="_blank"&gt;Request format is unrecognized for URL unexpectedly ending in /SomeWebServiceMethod&lt;/a&gt;.&lt;/p&gt;  &lt;p&gt;Das Problem bei uns besteht darin, dass wir eine URL mit dem Querystring “campsiteId=12091&amp;amp;source=%22SearchPage%22” erwarten, aber in diesem Falle den Querystring “campsiteId=12091&amp;amp;source=217.xxx.yyy.35SearchPage217.xxx.yyy.35” (also statt “%22” die IP-Adresse des Clients) erhalten. Interessanterweise sieht man diesen Fehler so nur im Windows-EventLog, nicht aber in unserem &lt;a href="http://http://code.google.com/p/elmah/" target="_blank"&gt;Elmah&lt;/a&gt;-ErrorLog.&lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=invalidop-asmx.png"&gt;&lt;img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="invalidop-asmx" border="0" alt="invalidop-asmx" src="http://shades-of-orange.com/image.axd?picture=invalidop-asmx_thumb.png" width="852" height="170" /&gt;&lt;/a&gt; &lt;/p&gt;  &lt;p&gt;Offen ist derzeit die Frage, warum “%22” &lt;a href="http://blogs.msdn.com/alejacma/archive/2008/07/18/How-to-use-Windbg-to-debug-a-dump-of-a-32bit-.NET-app-running-on-a-x64-machine.aspx" target="_blank"&gt;hier&lt;/a&gt; ersetzt wird – ob dies etwas mit den im o.g. Blog-Post erwähnten Proxyserver zu tun hat?&lt;/p&gt;  &lt;p&gt;Oliver&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2010-05-27 16:34:04</pubDate>
+  <lastModified>2010-05-27 16:35:26</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Request-format-is-unrecognized-for-URL-unexpectedly-ending-in-MethodName</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

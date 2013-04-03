@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<categories>
+    <category id="6cb56168-2015-4599-a1c1-8db9c9fae433" description="" parent="">.NET</category>
+    <category id="ca0b8243-9da6-4e51-a0a5-4e603e68bbc9" description="" parent="">Architecture</category>
+    <category id="bc3db496-f484-41a0-860c-c2e57e829fa0" description="" parent="">ASP.NET</category>
+    <category id="5fef49e2-2727-46c7-94a7-9816011a72c2" description="" parent="">Automation</category>
+    <category id="7d017c9a-cbb6-4c57-82d0-083052427cda" description="" parent="">BDD</category>
+    <category id="c77e1a10-45e2-4774-9719-a52098803b0e" description="" parent="">Berlin</category>
+    <category id="c223353c-1aef-4a46-afd1-cb61ab1a792d" description="" parent="">Blog</category>
+    <category id="19770e74-9ec9-4cde-b2ab-e5051aaaf348" description="Posts about my adventures with BlogEngine.NET" parent="">BlogEngine.NET</category>
+    <category id="e4b1e92f-27c2-450e-9253-fdb0e36875c3" description="" parent="">Build</category>
+    <category id="94b034d9-a1c3-4b5f-9b37-d39930d673ba" description="" parent="">C#</category>
+    <category id="127092f2-44aa-4021-a268-49fce3fc0aa1" description="" parent="">Camping.Info</category>
+    <category id="571773d0-d007-4a88-bc08-6c1b7374d3f1" description="" parent="">Castle </category>
+    <category id="1d2ed75a-80ba-45c1-9d90-1f2c136089df" description="" parent="">Collaboration</category>
+    <category id="ad65c6bb-57f6-458e-b8a9-92294bbde7a3" description="" parent="">Cuyahoga</category>
+    <category id="e6958fde-3fd4-4447-a072-81640d201ea1" description="" parent="">Debugging</category>
+    <category id="05acb92b-a993-4f87-b93a-56ee3089918d" description="" parent="">Design</category>
+    <category id="9c2910dd-8a70-451f-b9d5-0ec47609aedb" description="" parent="">developer</category>
+    <category id="dfbab2d9-ff53-4483-87b6-621bf30d65f0" description="" parent="">html + css</category>
+    <category id="e7922560-6aa6-4393-9597-1b8507bb6379" description="" parent="">IIS</category>
+    <category id="5887fc9f-4863-444a-8597-435a21657166" description="" parent="">jQuery</category>
+    <category id="de370761-a8ae-4347-9c95-9d383dfb032d" description="" parent="">JSON</category>
+    <category id="7b5fa930-7cdc-45f4-ac93-457130caf32b" description="" parent="">Monitoring</category>
+    <category id="4c741f81-0ac2-4ab0-9a49-bd8ecbbff502" description="" parent="">MS-SQL Server</category>
+    <category id="99279585-2eac-4220-a050-a70d17812bf8" description="" parent="">MVC</category>
+    <category id="ff8d67fd-106d-4d08-ac65-70565cffce44" description="" parent="">Nachrichten</category>
+    <category id="f8bafae5-b874-4cd1-bc83-6b822e1c2e83" description="" parent="">NHibernate</category>
+    <category id="9a51c62d-53b8-4328-abb5-590aabe1f3a6" description="" parent="">Orchard</category>
+    <category id="2a71a125-24e3-4583-806c-7c8bead507be" description="" parent="">Powershell</category>
+    <category id="4a6eca6b-10d9-4a5f-ab67-40144ba581d9" description="" parent="">Productivity</category>
+    <category id="15499fc6-bd8f-48a6-904e-72a5e35eea7f" description="" parent="">Projektmanagement</category>
+    <category id="562ee0c0-023d-4985-bc8e-19dc601e5934" description="" parent="">SCM (SVN, GIT, ..)</category>
+    <category id="678a9d57-c1ea-487a-8fd3-4d08dc0be9c4" description="" parent="">Software development</category>
+    <category id="0766f0ed-9936-4fb5-b1b3-17ab3e1baa65" description="" parent="">SQL CE</category>
+    <category id="dd2e5407-6036-41c2-b7b4-541bcbf209a2" description="" parent="">Subtext</category>
+    <category id="cb82911b-137b-402e-be57-2fe9fe9fae2e" description="" parent="">Test Driven Development (TDD)</category>
+    <category id="da405bb3-bccc-4d29-bd8c-cbbcb36a4bc7" description="" parent="">Testen</category>
+    <category id="b9df7adf-328a-4e8c-9401-f5adf7e10cd6" description="" parent="">Tips &amp; Tricks</category>
+    <category id="08fc581b-2716-4c6a-a856-2c279bebff11" description="" parent="">Unterhaltung</category>
+    <category id="29f0d9fc-f1cb-447e-9a07-b2e11137e0dc" description="" parent="">Usability</category>
+    <category id="eb57129f-0862-424b-b2f2-58e707738852" description="" parent="">VB.NET</category>
+    <category id="228e6e84-7e6e-4fae-8433-185118731b1d" description="" parent="">Visual Studio</category>
+    <category id="76e50725-5164-45fe-a885-98420d16f152" description="" parent="">WEB 2.0</category>
+    <category id="3b5447eb-ff3b-4481-9287-0508fce6262b" description="" parent="">Web Applikationen</category>
+    <category id="42d4f356-df8f-4ef8-8334-2186a5f68a26" description="" parent="">WPF</category>
+</categories>

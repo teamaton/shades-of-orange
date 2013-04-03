@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>admin</author>
+  <title>Debugging von First Chance Exceptions</title>
+  <description />
+  <content>&lt;p&gt;Beim Debuggen finden sich von Zeit zu Zeit sogenannte "First chance exceptions" im Output Window. Das sind Exceptions die von der Anwendung gehandelt wurden. &lt;/p&gt;  &lt;p&gt;Oft ist es gewollt oder normal, das eine Exeption erwartet wird und von der Anwendung bearbeitet wird. Beispiel: Ein fehlgeschlagenen Datenbankzugriff. (Ob das grundsätzlich guter Stil ist, ist wie so vieles eine Geschmackfrage.)&lt;/p&gt;  &lt;p&gt;&lt;a href="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/DebuggingvonFirstChanceExceptions_1FE7/clip_image002_2.jpg"&gt;&lt;img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" border="0" alt="clip_image002" src="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/DebuggingvonFirstChanceExceptions_1FE7/clip_image002_thumb.jpg" width="418" height="127" /&gt;&lt;/a&gt;&lt;/p&gt;  &lt;p&gt;Der Name kommt daher das der Debugger die Exception 2 Mal sieht. Das erste Mal vor der Anwendung (first chance exception) und das zweite Mal, wenn die Anwendung die Exception nicht verarbeitet hat - also das Programm normalerweise abstürzen würde (second chance excpetion). &lt;/p&gt;  &lt;p&gt;Weil Exeption Handling Performance intensiv ist oder einfach weil einem die im Output Fenster angezeigten Fehlermeldungen komischem vorkommen, kann es wünschenswert sein schon beim Auftreten einer "first chance exception" in den Code zu springen. &lt;/p&gt;  &lt;p&gt;Das ist einfach erreichen, in dem unter Debug-&amp;gt;Exceptions-&amp;gt;CLR -Exceptions antickt.&lt;/p&gt;  &lt;p&gt;&lt;a href="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/DebuggingvonFirstChanceExceptions_1FE7/clip_image004_2.jpg"&gt;&lt;img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" border="0" alt="clip_image004" src="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/DebuggingvonFirstChanceExceptions_1FE7/clip_image004_thumb.jpg" width="271" height="408" /&gt;&lt;/a&gt;&lt;/p&gt;  &lt;p&gt;&lt;a href="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/DebuggingvonFirstChanceExceptions_1FE7/clip_image006_2.jpg"&gt;&lt;img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" border="0" alt="clip_image006" src="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/DebuggingvonFirstChanceExceptions_1FE7/clip_image006_thumb.jpg" width="426" height="193" /&gt;&lt;/a&gt;&lt;/p&gt;  &lt;p&gt;Genug von Ausnahmen, happy coding!&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2008-04-23 01:16:25</pubDate>
+  <lastModified>0001-01-01 06:00:00</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Debugging-von-First-Chance-Exceptions</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>6cb56168-2015-4599-a1c1-8db9c9fae433</category>
+  </categories>
+  <notifications />
+</post>

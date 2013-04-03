@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>oliver</author>
+  <title>ToDebugString() – give me some debug info about my object, e.g. Request.Url</title>
+  <description />
+  <content>&lt;p&gt;Lately, I was having trouble debugging certain parts of my code in Visual Studio, and all I wanted to know was the value of some variable at some point in time. Well, I’d use some logging if I could just get at that value easily. But for some objects I don’t really know what I’m looking for or where I should be looking for it. So just give me the values of all the members of that object, will ya? And could you recurse that? But no deeper than 3 levels, alright? Or let’s say… 5?&lt;/p&gt;  &lt;div id="codeSnippetWrapper" class="csharpcode-wrapper"&gt;   &lt;div style="border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 70.63%; padding-right: 4px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; height: 598px; max-height: 800px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px" id="codeSnippetWrapper"&gt;     &lt;div style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px" id="codeSnippet"&gt;       &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #0000ff"&gt;public&lt;/span&gt; &lt;span style="color: #0000ff"&gt;static&lt;/span&gt; &lt;span style="color: #0000ff"&gt;string&lt;/span&gt; ToDebugString(&lt;span style="color: #0000ff"&gt;this&lt;/span&gt; &lt;span style="color: #0000ff"&gt;object&lt;/span&gt; obj, &lt;span style="color: #0000ff"&gt;int&lt;/span&gt; maxdepth, &lt;span style="color: #0000ff"&gt;int&lt;/span&gt; depth=0)&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+      &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;{&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+      &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;    &lt;span style="color: #0000ff"&gt;if&lt;/span&gt; (obj == &lt;span style="color: #0000ff"&gt;null&lt;/span&gt;)&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+      &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;        &lt;span style="color: #0000ff"&gt;return&lt;/span&gt; &lt;span style="color: #006080"&gt;&amp;quot;null&amp;quot;&lt;/span&gt;;&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+      &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&amp;#160;&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+      &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;    &lt;span style="color: #0000ff"&gt;if&lt;/span&gt; (obj &lt;span style="color: #0000ff"&gt;is&lt;/span&gt; IConvertible)&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+      &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;        &lt;span style="color: #0000ff"&gt;return&lt;/span&gt; obj.ToString();&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+      &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&amp;#160;&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+      &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;    &lt;span style="color: #0000ff"&gt;if&lt;/span&gt; (depth &amp;gt;= maxdepth)&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+      &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;        &lt;span style="color: #0000ff"&gt;return&lt;/span&gt; &lt;span style="color: #006080"&gt;&amp;quot;...&amp;quot;&lt;/span&gt;;&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+      &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&amp;#160;&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+      &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;    var sb = &lt;span style="color: #0000ff"&gt;new&lt;/span&gt; StringBuilder();&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+      &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&amp;#160;&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+      &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;    &lt;span style="color: #0000ff"&gt;if&lt;/span&gt; (depth &amp;gt; 0)&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+      &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;        sb.AppendLine();&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+      &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&amp;#160;&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+      &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;    &lt;span style="color: #0000ff"&gt;foreach&lt;/span&gt; (var propertyInfo &lt;span style="color: #0000ff"&gt;in&lt;/span&gt; obj.GetType().GetProperties(BindingFlags.Public|BindingFlags.Instance))&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+      &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;    {&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+      &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;        sb.Append(&lt;span style="color: #0000ff"&gt;new&lt;/span&gt; &lt;span style="color: #0000ff"&gt;string&lt;/span&gt;(&lt;span style="color: #006080"&gt;' '&lt;/span&gt;, 2*depth)).Append(propertyInfo.Name).Append(&lt;span style="color: #006080"&gt;&amp;quot;: &amp;quot;&lt;/span&gt;);&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+      &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;        &lt;span style="color: #0000ff"&gt;try&lt;/span&gt;&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+      &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;        {&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+      &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;            var &lt;span style="color: #0000ff"&gt;value&lt;/span&gt; = propertyInfo.GetValue(obj, &lt;span style="color: #0000ff"&gt;new&lt;/span&gt; &lt;span style="color: #0000ff"&gt;object&lt;/span&gt;[0]);&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+      &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;            sb.AppendLine(ToDebugString(&lt;span style="color: #0000ff"&gt;value&lt;/span&gt;, maxdepth, depth + 1));&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+      &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;        }&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+      &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;        &lt;span style="color: #0000ff"&gt;catch&lt;/span&gt; (Exception ex)&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+      &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;        {&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+      &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;            sb.AppendLine(&lt;span style="color: #0000ff"&gt;string&lt;/span&gt;.Format(&lt;span style="color: #006080"&gt;&amp;quot;[{0}]&amp;quot;&lt;/span&gt;, ex.Message));&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+      &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;        }&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+      &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;    }&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+      &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&amp;#160;&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+      &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;    &lt;span style="color: #008000"&gt;// remove newline from end of string&lt;/span&gt;&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+      &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;    var newLine = Environment.NewLine;&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+      &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;    &lt;span style="color: #0000ff"&gt;if&lt;/span&gt; (sb.Length &amp;gt;= newLine.Length)&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+      &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;        sb.Replace(newLine, &lt;span style="color: #006080"&gt;&amp;quot;&amp;quot;&lt;/span&gt;, sb.Length - newLine.Length, newLine.Length);&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+      &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&amp;#160;&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+      &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;    &lt;span style="color: #0000ff"&gt;return&lt;/span&gt; sb.ToString();&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+      &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;}&lt;/pre&gt;
+&lt;!--CRLF--&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="csharpcode-wrapper"&gt;With this little helper I can now simply call &lt;font face="Courier New"&gt;&lt;strong&gt;anyobject.ToDebugString(4&lt;/strong&gt; /* maxdepth */&lt;strong&gt;)&lt;/strong&gt;&lt;/font&gt; and I get a nicely formatted debug view of that object; e.g. &lt;font face="Courier New"&gt;&lt;strong&gt;Request.Url.ToDebugString(3)&lt;/strong&gt;&lt;/font&gt; gives me:&lt;/div&gt;
+
+&lt;div style="border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 70.63%; padding-right: 4px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; height: 193px; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px" id="codeSnippetWrapper"&gt;
+  &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px" id="codeSnippet"&gt;AbsolutePath: /logg.aspx&lt;br /&gt;AbsoluteUri: http:&lt;span style="color: #008000"&gt;//localhost:55235/logg.aspx&lt;/span&gt;&lt;br /&gt;Authority: localhost:55235&lt;br /&gt;Host: localhost&lt;br /&gt;HostNameType: Dns&lt;br /&gt;IsDefaultPort: False&lt;br /&gt;IsFile: False&lt;br /&gt;IsLoopback: True&lt;br /&gt;IsUnc: False&lt;br /&gt;LocalPath: /logg.aspx&lt;br /&gt;PathAndQuery: /logg.aspx&lt;br /&gt;Port: 55235&lt;br /&gt;Query: &lt;br /&gt;Fragment: &lt;br /&gt;Scheme: http&lt;br /&gt;OriginalString: http:&lt;span style="color: #008000"&gt;//localhost:55235/logg.aspx&lt;/span&gt;&lt;br /&gt;DnsSafeHost: localhost&lt;br /&gt;IsAbsoluteUri: True&lt;br /&gt;Segments: &lt;br /&gt;  Length: 2&lt;br /&gt;  LongLength: 2&lt;br /&gt;  Rank: 1&lt;br /&gt;  SyncRoot: &lt;br /&gt;    Length: 2&lt;br /&gt;    LongLength: 2&lt;br /&gt;    Rank: 1&lt;br /&gt;    SyncRoot: ...&lt;br /&gt;    IsReadOnly: False&lt;br /&gt;    IsFixedSize: True&lt;br /&gt;    IsSynchronized: False&lt;br /&gt;  IsReadOnly: False&lt;br /&gt;  IsFixedSize: True&lt;br /&gt;  IsSynchronized: False&lt;br /&gt;UserEscaped: False&lt;br /&gt;UserInfo:&lt;/pre&gt;
+
+  &lt;br /&gt;&lt;/div&gt;
+Nice &lt;img style="border-bottom-style: none; border-left-style: none; border-top-style: none; border-right-style: none" class="wlEmoticon wlEmoticon-smile" alt="Smile" src="http://shades-of-orange.com/image.axd?picture=wlEmoticon-smile_1.png" /&gt; 
+
+&lt;p&gt;Right now this method chokes on indexed properties but once I’ll need it I’ll go and look for a way to include them. It also chokes any exceptions on the way to just get the job done.&lt;/p&gt;
+
+&lt;p&gt;Happy coding!&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2011-09-16 20:06:00</pubDate>
+  <lastModified>2011-09-15 20:08:10</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>ToDebugString()-give-me-some-debug-info-about-my-object-eg-RequestUrl</slug>
+  <tags>
+    <tag>debug</tag>
+  </tags>
+  <comments />
+  <categories>
+    <category>6cb56168-2015-4599-a1c1-8db9c9fae433</category>
+    <category>94b034d9-a1c3-4b5f-9b37-d39930d673ba</category>
+    <category>e6958fde-3fd4-4447-a072-81640d201ea1</category>
+    <category>678a9d57-c1ea-487a-8fd3-4d08dc0be9c4</category>
+    <category>b9df7adf-328a-4e8c-9401-f5adf7e10cd6</category>
+    <category>228e6e84-7e6e-4fae-8433-185118731b1d</category>
+    <category>9c2910dd-8a70-451f-b9d5-0ec47609aedb</category>
+  </categories>
+  <notifications />
+</post>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>admin</author>
+  <title>Visual Studio - "Code Definition Window"</title>
+  <description />
+  <content>&lt;p&gt;Da arbeitet man Tag ein Tag aus mit Visual Studio 2005 und trotzdem lässt sich hier und da noch etwas Neues entdecken. Heute ist mir das "Code Definition Window" über den Weg gelaufen. Steht der Cursor für kurze Zeit über einem Typ, zeigt das Fenster den dazugehörigen Quelltext. &lt;/p&gt;
+&lt;p&gt;&lt;a atomicselection="true" href="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/VisualStudioCodeDefinitionWindow_D809/09_08_2007%2003_11%20PM.png"&gt;&lt;img width="484" height="341" border="0" src="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/VisualStudioCodeDefinitionWindow_D809/09_08_2007%2003_11%20PM_thumb.png" alt="09_08_2007 03_11 PM" style="border: 0px none ;" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Im "Code Definition Window" ist das Schreiben von Code nicht möglich. Steht der Quelltext nicht zur Verfügung, wird die öffentlich Schnittstelle mit Kommentaren angezeigt. Das Bild unten zeigt "Object".  Jetzt weiß ich endlich wofür ich den dritten Monitor brauche :-)  &lt;/p&gt;
+&lt;p&gt;&lt;a atomicselection="true" href="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/VisualStudioCodeDefinitionWindow_D809/09_08_2007%2003_16%20PM.png"&gt;&lt;img width="482" height="157" border="0" src="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/VisualStudioCodeDefinitionWindow_D809/09_08_2007%2003_16%20PM_thumb.png" alt="09_08_2007 03_16 PM" style="border: 0px none ;" /&gt;&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;Ob das beim Arbeiten einen wirklichen Mehrwert hat? Schließlich stehen mit CTRL+SPACE, also der IntelliSense alle nötigen Information über einen Typen zur Verfügung. Und in Resharper genügt CTRL B und man springt zur Klassen, Property oder Funktions Definition. &lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2007-09-08 14:21:54</pubDate>
+  <lastModified>0001-01-01 06:00:00</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Visual-Studio-Code-Definition-Window</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>678a9d57-c1ea-487a-8fd3-4d08dc0be9c4</category>
+    <category>b9df7adf-328a-4e8c-9401-f5adf7e10cd6</category>
+  </categories>
+  <notifications />
+</post>

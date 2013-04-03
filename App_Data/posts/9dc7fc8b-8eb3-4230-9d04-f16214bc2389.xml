@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>robert</author>
+  <title>Deployment mit Powershell – Schritt 1: PseudoCode</title>
+  <description />
+  <content>&lt;p&gt;Für das wiederkehrende Einrichten von Webseiten zu vereinfachen, habe ich die Aufgabe eine Deployment-Script mit Powershell zu entwickeln. Um die Aufgaben&amp;#160; zu beschreiben, erstelle ich zunächst eine erste &lt;a href="http://en.wikipedia.org/wiki/Pseudocode"&gt;Pseudocode&lt;/a&gt; Version: &lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=56200974907PM.png"&gt;&lt;img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="5-6-2009 7-49-07 PM" border="0" alt="5-6-2009 7-49-07 PM" src="http://shades-of-orange.com/image.axd?picture=56200974907PM_thumb.png" width="438" height="461" /&gt;&lt;/a&gt; &lt;/p&gt;  &lt;p&gt;Unten (Ab Zeile 18) ist im wesentlich der geplante Programmablauf zu finden. Das automatische Ausschecken aus SVN und das Erstellen des Programms ist zunächst nicht geplannt. Auch automatisierte Tests, Rollbacks etc. sind zukünftigen Versionen vorbehalten. Es geht erst mal darum ein vorbereitetes Webprojekt so zu deployen, das der IIS, die Webseite und Datenbank angelegt, eingerichtet und Konfigurationswerte korrekt gesetzt werden. &lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2009-05-08 20:06:51</pubDate>
+  <lastModified>2009-05-08 20:11:42</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Deployment-mit-Powershell-e28093-Schritt-1-PseudoCode</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>2a71a125-24e3-4583-806c-7c8bead507be</category>
+  </categories>
+  <notifications />
+</post>

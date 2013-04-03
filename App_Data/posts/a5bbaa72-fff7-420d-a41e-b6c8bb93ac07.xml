@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>admin</author>
+  <title>Amazon S3 Ausfall</title>
+  <description />
+  <content>&lt;p&gt;Der &lt;a href="http://www.roughtype.com/archives/2008/02/amazons_s3_util.php"&gt;Ausfall&lt;/a&gt; von Amazon S3 für ca. 3 Stunden am gestrigen Freitag, hat eine Reihe von Web 2.0 Seiten für ein paar Stunden &lt;a href="http://www.smugmug.com/"&gt;total&lt;/a&gt; oder teils &lt;a href="http://twitter.com/"&gt;offline&lt;/a&gt; gebracht. &lt;/p&gt; &lt;p&gt;Ob das Webseiten-Anbieter davon abhalten sollte Teile Ihre Software auf &lt;a href="http://de.wikipedia.org/wiki/Utility_Computing"&gt;Utility Computing&lt;/a&gt; Komponenten aufzusetzen sei dahin gestellt. Als einfache Rechengrundlage lassen sich einfach die Kosten für die Entwicklung eine 99.9999 Ausfallsicheren Inhouse Lösung vs. die Kosten durch eine Ausfall pro Stunden vergleichen. &lt;/p&gt; &lt;p&gt;Vor allen Dingen stellt sich auch die Frage, wie &lt;a href="http://www.techcrunch.com/2008/01/18/37signals-down-looks-like-rackspace-is-to-blame-again/"&gt;ausfallsicher&lt;/a&gt; den die eigene Server Landschaft ist und welche SLA der eigene Webhoster anbietet&lt;/p&gt; &lt;p&gt;Verfügbarkeit pro Jahr erlauben wieviel Ausfall:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;99.9% erlauben 8.76 Stunden Ausfall&lt;/li&gt; &lt;li&gt;99.99% erlauben 52.56 Minuten Ausfall &lt;/li&gt; &lt;li&gt;99.999% erlauben 5.256  Minuten Ausfall  &lt;/li&gt; &lt;li&gt;99.9999% erlauben 31.536 Sekunden Ausfall&lt;/li&gt;&lt;/ul&gt; &lt;p&gt;Amazon S3 liegt in diesem Jahr noch im Bereich von 99.9% Verfügbarkeit. Keine Glanzleistung, aber für die meisten betroffenen Unternehmen, dürften die entstanden Ausfallkosten an Einkommen und Prestige immer noch die Ersparnisse, bei der Entwicklung und Betrieb der entsprechenden Hard und Softwarelösungen nicht ansatzweise überschreiten. &lt;/p&gt;&lt;p&gt;[&lt;a href="http://www.techcrunch.com/2008/02/15/amazon-web-services-goes-down-takes-many-startup-sites-with-it/"&gt;via: TechCrunch&lt;/a&gt;]&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2008-02-16 22:16:18</pubDate>
+  <lastModified>0001-01-01 06:00:00</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Amazon-S3-Ausfall</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>76e50725-5164-45fe-a885-98420d16f152</category>
+  </categories>
+  <notifications />
+</post>

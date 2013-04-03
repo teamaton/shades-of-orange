@@ -1,0 +1,76 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="site.master.cs" Inherits="StandardSite" %>
+<%@ Import Namespace="BlogEngine.Core" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head runat="server" profile="http://gmpg.org/xfn/11">
+    <link rel="shortcut icon" href="~/pics/blogengine.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="style-min.css" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300|Lato:300|Open+Sans:300|Comfortaa:300' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <form runat="Server" class="body">
+    
+  <div id="header">
+    <a class="logo" href="<%=Utils.AbsoluteWebRoot %>">
+        <img src="<%=Utils.ApplicationRelativeWebRoot %>themes/shades-of-orange/img/logo-shades-120-rounded.png" alt="shades-of-orange.com code blog logo" />
+        <span><%=BlogSettings.Instance.Name %></span>
+    </a>
+    <h2 class="tagline"><%=BlogSettings.Instance.Description %></h2>
+  
+    <ul id="menu" class="nav">
+          <%--<li><a href="<%=Utils.AbsoluteWebRoot %>" rel="home"><%=Resources.labels.home %></a></li>--%>
+          <li class="nav3"><a href="<%=Utils.FeedUrl %>" class="feed"><i class="icon-rss"></i> <%=Resources.labels.subscribe %></a></li>
+          <li class="nav1"><a href="<%=Utils.AbsoluteWebRoot %>archive<%= BlogEngine.Core.BlogConfig.FileExtension %>"><i class="icon-list"></i> <%=Resources.labels.archive %></a></li>
+          <li class="nav2"><a href="<%=Utils.AbsoluteWebRoot %>contact<%= BlogEngine.Core.BlogConfig.FileExtension %>"><i class="icon-envelope"></i> <%=Resources.labels.contact %></a></li>
+          <%--<li><a href="javascript:void(BlogEngine.filterByAPML())" class="apmlfilter"><%=Resources.labels.filterByApml %></a></li>--%>
+          <% if (Utils.IsMobile)
+             { %>
+          <li><blog:MobileThemeSwitch ID="MobileThemeSwitch1" runat="server" /></li>
+          <%
+             }
+          %>
+    </ul>
+
+  </div>  
+  
+    <div id="content">
+      <blog:SearchOnSearch runat="server" MaxResults="3" Headline="You searched for" Text="Here are some results for the search term on this website" />
+      <asp:ContentPlaceHolder ID="cphBody" runat="server" />
+      
+      
+    </div>
+
+    <div id="sidepanel">
+        <div class="about widget">
+            <h4>About Oliver</h4>
+            <p>
+                <img src="<%=Utils.ApplicationRelativeWebRoot %>themes/shades-of-orange/img/logo-shades-rounded.png" alt="shades-of-orange.com code blog logo" />
+                nice image some text about the author, his work at <a href="http://teamaton.com">teamaton</a> 
+            </p>
+            <h4>About Anton</h4>
+            <p>
+                <img src="<%=Utils.ApplicationRelativeWebRoot %>themes/shades-of-orange/img/logo-shades-rounded.png" alt="shades-of-orange.com code blog logo" />
+                nice image some text about the author, his work at <a href="http://teamaton.com">teamaton</a> 
+            </p>
+        </div>
+        <div class="products widget">
+            <h4>Our Work</h4>
+            <p><a href="http://discoverize.com/"><strong>discoverize.com</strong> is a web application for individual and customizable portals</a></p>
+            <p><a href="http://camping.info/" class="special"><strong>camping.info</strong> is a web application for about 24.000 campsites in Europe</a></p>
+            <p><a href="http://teamreview.teamaton.com/" class="special"><strong>team review</strong> is a simple and straight-forward peer and stack review tool for small teams</a></p>
+        </div>
+        <blog:WidgetZone runat="server" ZoneName="be_WIDGET_ZONE" />
+    </div>
+
+    <footer>
+        <p id="footer">
+            Powered by <a href="http://www.dotnetblogengine.net">BlogEngine.NET</a> <%=BlogSettings.Instance.Version() %><br />
+            Theme by <a href="http://teamaton.com">teamaton.com</a>
+            <span runat="server" id="aUser"></span><a runat="server" id="aLogin" />
+        </p>
+    </footer>
+  </form>
+  
+</body>
+</html>

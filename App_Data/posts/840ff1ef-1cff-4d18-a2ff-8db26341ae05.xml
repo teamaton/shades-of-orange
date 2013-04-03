@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>robert</author>
+  <title>GIT GUI in englisch</title>
+  <description />
+  <content>&lt;p&gt; Die GIT GUI in deutsch macht oft nicht sonderlich viel Sinn: &lt;/p&gt;  &lt;p&gt;&lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=git-gui-deutsch.png"&gt;&lt;img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="git-gui-deutsch" border="0" alt="git-gui-deutsch" src="http://shades-of-orange.com/image.axd?picture=git-gui-deutsch_thumb.png" width="151" height="208" /&gt;&lt;/a&gt; &lt;/p&gt;  &lt;p&gt;Am einfachsten bekommt man eine englische Version, in dem man die Sprachdatei löscht oder umbenennt. Die Sprachdateien der GIT-GUI befinden sich bei mir unter: C:\Program Files (x86)\Git\share\git-gui\lib\msgs&lt;/p&gt;  &lt;p&gt;&lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=gui-gui-rename.png"&gt;&lt;img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="gui-gui-rename" border="0" alt="gui-gui-rename" src="http://shades-of-orange.com/image.axd?picture=gui-gui-rename_thumb.png" width="532" height="201" /&gt;&lt;/a&gt; &lt;/p&gt;  &lt;p&gt;Danach machen die Begriffe auch wieder Sinn :-)&lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=git-gui-english.png"&gt;&lt;img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="git-gui-english" border="0" alt="git-gui-english" src="http://shades-of-orange.com/image.axd?picture=git-gui-english_thumb.png" width="138" height="222" /&gt;&lt;/a&gt;&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2010-01-03 19:53:03</pubDate>
+  <lastModified>2010-01-03 19:53:03</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>GIT-GUI-in-englisch</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>562ee0c0-023d-4985-bc8e-19dc601e5934</category>
+  </categories>
+  <notifications />
+</post>

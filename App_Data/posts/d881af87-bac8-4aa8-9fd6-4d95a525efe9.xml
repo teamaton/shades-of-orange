@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>robert</author>
+  <title>NUnit von 2.4.x auf 2.5.0.9</title>
+  <description />
+  <content>&lt;p&gt;In unseren Projekten haben wir bisher mit fast &lt;a href="http://nunit.org/index.php?p=releaseNotes&amp;amp;r=2.4.8"&gt;historischen NUnit Versionen gearbeitet&lt;/a&gt;. Hier eine paar Beispiele:&lt;/p&gt;  &lt;ul&gt;   &lt;li&gt;&lt;a href="http://camping.info"&gt;camping.info&lt;/a&gt; NUnit Version: 2.4.3 (Released August 2007) &lt;/li&gt;    &lt;li&gt;concept-web NUnit Version: 2.4.6 (Released December 2007) &lt;/li&gt;    &lt;li&gt;speak-lib NUnit Version, wie bei concept-web: 2.4.6 &lt;/li&gt; &lt;/ul&gt;  &lt;p&gt;&lt;font size="2"&gt;Heute habe ich alle unsere Projekte auf 2.5.0.9 aktualisiert. Die Liste der neuen Features lädt ein zum Experimentieren: &lt;a href="http://nunit.com/blogs/?p=66"&gt;Ten Reasons to Try NUnit 2,5&lt;/a&gt;.&lt;/font&gt;&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2009-05-14 13:20:05</pubDate>
+  <lastModified>2009-05-14 14:23:48</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>NUnit-von-24x-auf-2509</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

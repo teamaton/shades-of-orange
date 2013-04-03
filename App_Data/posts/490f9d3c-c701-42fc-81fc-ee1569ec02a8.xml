@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>robert</author>
+  <title>TDD != Unit-Test getrieben</title>
+  <description />
+  <content>&lt;p&gt;Wer Testgetriebene-Entwicklung betreibt, muss nicht zwingend auch Unit-Test getrieben entwickeln. &lt;/p&gt;  &lt;p&gt;Testgetrieben, sowohl in Greenfield also auch in Brownfield Projekten, ist für mich zunehmend Integrations oder &lt;a href="http://c2.com/cgi/wiki?ProgrammerTest"&gt;Programmer-Test&lt;/a&gt; getrieben. Tatsächliche Unit-Tests (&lt;a href="http://de.wikipedia.org/wiki/Modultest"&gt;Testen von ageschlossenen Modulen&lt;/a&gt;) geraten zunehmend und nach Anwendungscharakter immer mehr in die Mindertheit. &lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2010-03-27 20:08:08</pubDate>
+  <lastModified>2010-03-27 20:09:02</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>TDD-!3d-Unit-Test-getrieben</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>cb82911b-137b-402e-be57-2fe9fe9fae2e</category>
+  </categories>
+  <notifications />
+</post>

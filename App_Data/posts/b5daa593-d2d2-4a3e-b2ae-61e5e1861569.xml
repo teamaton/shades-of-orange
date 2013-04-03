@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>robert</author>
+  <title>Mscorcfg.msc beziehen</title>
+  <description />
+  <content>&lt;p&gt;Das .NET Framework-Konfigurationstool (Mscorcfg.msc) ist seit .NET 2.0 nicht mehr Teil des .NET &amp;quot;Redistributable&amp;quot;, sondern nur noch Teil des .NET SKDs. 354MB SDK für ein kleines Tool dass Sicherheitseinstellungen grafisch bearbeiten lässt scheint ein wenig viel. &lt;a href="http://blogs.msdn.com/astebner/archive/2006/01/23/516671.aspx"&gt;Hier&lt;/a&gt; findet sich eine alternative in Form eines &lt;a href="http://blogs.msdn.com/astebner/archive/2006/01/23/516671.aspx"&gt;inoffiziellen Installers&lt;/a&gt;. &lt;/p&gt;  &lt;p&gt;Auf Kommandozeilenebenen hilft caspol.exe (CAS-Policies), das in C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727 zu finden ist. &lt;/p&gt;  &lt;p&gt;Links: &lt;/p&gt;  &lt;ul&gt;   &lt;li&gt;Über &lt;a href="http://msdn.microsoft.com/de-de/library/bb979179.aspx"&gt;caspool.exe&lt;/a&gt; auf der deutschen MSDN&lt;/li&gt;    &lt;li&gt;&lt;a href="http://msdn.microsoft.com/en-us/library/2bc0cxhc.aspx"&gt;Über Mscorcfg.msc auf der englischen MSDN&lt;/a&gt;&lt;/li&gt;    &lt;li&gt;&lt;a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=fe6f2099-b7b4-4f47-a244-c96d69c35dec&amp;amp;DisplayLang=en"&gt;Download .NET SDK 2.0&lt;/a&gt;&lt;/li&gt;    &lt;li&gt;Schnelle Installation 1: &lt;a href="http://blogs.msdn.com/astebner/archive/2006/01/23/516671.aspx"&gt;Installer für “configuration tools”.&lt;/a&gt;&lt;/li&gt;    &lt;li&gt;Schnelle Installation 2: &lt;a href="http://www.emmet-gray.com/Articles/CodeAccessSecurity.htm"&gt;Installation von MSCORCFG.MSC auf einem normalen PC&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2009-09-22 00:29:14</pubDate>
+  <lastModified>2009-09-22 00:31:46</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Mscorcfgmsc-beziehen</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>6cb56168-2015-4599-a1c1-8db9c9fae433</category>
+  </categories>
+  <notifications />
+</post>

@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>Anton</author>
+  <title>Updating Orchard after a long time</title>
+  <description />
+  <content>&lt;p&gt;Until today we used the CMS Orchard for our homepage. Two years ago we used Orchard version 1.2. Since than we did not update once. Today we updated to version 1.6.&lt;/p&gt;  &lt;p&gt;It is not that difficult:&lt;/p&gt;  &lt;ol&gt;   &lt;li&gt;I updated my local version of our site (pulling from our git repository).&lt;/li&gt;    &lt;li&gt;I used the “&lt;a href="http://docs.orchardproject.net/Documentation/Upgrading-a-site-to-a-new-version-of-Orchard#UpgradingAnOrchardSiteInPlace" target="_blank"&gt;Upgrade Site In-Place&lt;/a&gt;” instructions on that local copy.&lt;/li&gt;    &lt;li&gt;After that the site was not accessable. Also not the admin dashboard. Here is the bug I got:      &lt;br /&gt;      &lt;div id="codeSnippetWrapper"&gt;       &lt;pre id="codeSnippet" style="border-top-style: none; overflow: visible; font-size: 8pt; border-left-style: none; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; border-bottom-style: none; color: black; padding-bottom: 0px; direction: ltr; text-align: left; padding-top: 0px; border-right-style: none; padding-left: 0px; margin: 0em; line-height: 12pt; padding-right: 0px; width: 100%; background-color: #f4f4f4"&gt;Orchard.OrchardException: Error &lt;span style="color: #0000ff"&gt;while&lt;/span&gt; loading extension &lt;span style="color: #006080"&gt;'Orchard.Lists'&lt;/span&gt;. ---&amp;gt; System.TypeLoadException: Inheritance security rules violated &lt;span style="color: #0000ff"&gt;while&lt;/span&gt; overriding member: &lt;span style="color: #006080"&gt;'Orchard.Core.Dashboard.AdminMenu.get_MenuName()'&lt;/span&gt;. Security accessibility of the overriding method must match the security accessibility of the method being overriden.&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;div id="codeSnippetWrapper"&gt;I could not fix the bug other than deleting the module &lt;font face="Courier New"&gt;Orchard.Lists&lt;/font&gt; (simply by removing the folder in the &lt;font face="Courier New"&gt;Modules&lt;/font&gt; directory).&lt;/div&gt;
+  &lt;/li&gt;
+
+  &lt;li&gt;
+    &lt;div&gt;After that only the admin panel works, but that is expected because Orchard 1.4 introduced breaking changes, which can easily be fixed with this &lt;a href="http://docs.orchardproject.net/Documentation/Orchard-1-6-Release-Notes#UpgradingfromOrchardandearlier" target="_blank"&gt;instruction&lt;/a&gt;.&lt;/div&gt;
+  &lt;/li&gt;
+
+  &lt;li&gt;
+    &lt;div&gt;Then I pushed all the changes to the repository.&lt;/div&gt;
+  &lt;/li&gt;
+
+  &lt;li&gt;
+    &lt;div&gt;I cleared the bin and dependecies folders in the live site.&lt;/div&gt;
+  &lt;/li&gt;
+
+  &lt;li&gt;
+    &lt;div&gt;Our TeamCity configuration then took the changes from the repository and applied them live.&lt;/div&gt;
+  &lt;/li&gt;
+
+  &lt;li&gt;
+    &lt;div&gt;Again there was the bug from step 3. Again I deleted the &lt;font face="Courier New"&gt;Orchard.Lists&lt;/font&gt; module. But then I got the same bug for &lt;font face="Courier New"&gt;Orchard.CodeGeneration&lt;/font&gt;. I fixed that by adding the following line to the &lt;font face="Courier New"&gt;Assembly.Info&lt;/font&gt; of the &lt;font face="Courier New"&gt;Orchard.CodeGeneration&lt;/font&gt; Project: 
+
+      &lt;div id="codeSnippetWrapper"&gt;
+        &lt;div id="codeSnippet" style="border-top-style: none; overflow: visible; font-size: 8pt; border-left-style: none; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; border-bottom-style: none; color: black; padding-bottom: 0px; direction: ltr; text-align: left; padding-top: 0px; border-right-style: none; padding-left: 0px; line-height: 12pt; padding-right: 0px; width: 100%; background-color: #f4f4f4"&gt;
+          &lt;pre style="border-top-style: none; overflow: visible; font-size: 8pt; border-left-style: none; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; border-bottom-style: none; color: black; padding-bottom: 0px; direction: ltr; text-align: left; padding-top: 0px; border-right-style: none; padding-left: 0px; margin: 0em; line-height: 12pt; padding-right: 0px; width: 100%; background-color: white"&gt;[SecurityRules(SecurityRuleSet.Level2)]&lt;/pre&gt;
+&lt;!--CRLF--&gt;&lt;/div&gt;
+See this discussion: &lt;a title="http://orchard.codeplex.com/discussions/394726" href="http://orchard.codeplex.com/discussions/394726"&gt;http://orchard.codeplex.com/discussions/394726&lt;/a&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+
+  &lt;li&gt;
+    &lt;div&gt;
+      &lt;div&gt;Then I fixed the breaking changes again with step 4.&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;
+  &lt;div&gt;It took me some trial and error to fix the bug, because at first I did not want to remove the module. But you should not be afraid to remove a module. You can always download it afterwards and install its newest version.
+    &lt;br /&gt;&lt;/div&gt;&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2013-03-22 19:18:07</pubDate>
+  <lastModified>2013-03-22 19:22:19</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Updating-Orchard-after-a-long-time</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

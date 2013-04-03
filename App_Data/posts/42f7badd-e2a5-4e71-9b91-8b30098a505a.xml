@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>oliver</author>
+  <title>My Visual Studio 2010 Extensions and Favorite Commands</title>
+  <description />
+  <content>&lt;h3&gt;Highlight all occurrences of selected word – by an extension by the same name (“Highlight all occurrences of selected word”)&lt;/h3&gt;  &lt;p&gt;How to use: double-click on a word and see on the left margin where and how often the same word occurs in the current document.&lt;/p&gt;  &lt;p&gt;Usage frequency: often.&lt;/p&gt;  &lt;h3&gt;Collapse all projects – by &lt;a href="http://visualstudiogallery.msdn.microsoft.com/e5f41ad9-4edc-4912-bca3-91147db95b99/" target="_blank"&gt;PowerCommands for Visual Studio 2010&lt;/a&gt;&lt;/h3&gt;  &lt;p&gt;How to use: right click on any node in an open solution and choose “Collapse Projects”.&lt;/p&gt;  &lt;p&gt;Usage frequency: often.&lt;/p&gt;  &lt;p&gt;&amp;#160;&lt;/p&gt;  &lt;p&gt;More to come!&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2013-01-10 08:58:00</pubDate>
+  <lastModified>2013-01-10 08:58:00</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>My-Visual-Studio-2010-Extensions-and-Favorite-Commands</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

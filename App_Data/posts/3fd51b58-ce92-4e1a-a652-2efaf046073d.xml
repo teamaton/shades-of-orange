@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>admin</author>
+  <title>ÜberUtils - Strings</title>
+  <description />
+  <content>&lt;p&gt;Schade, dass wir noch kein .NET 3.0 einsetzen. (Aber aus Zeitgründen, sind die Zeiten wo jede Beta sofort installiert werden musste leider Passe. Aber noch &lt;a href="http://timheuer.com/blog/archive/2007/11/05/visual-studio-2008-orcas-released-in-november-2007-net-framework.aspx"&gt;drei Wochen&lt;/a&gt;, dann können wir migrieren :-) &lt;a href="http://weblogs.asp.net/bradvincent"&gt;Brad Vincent&lt;/a&gt; baut gerade eine Utility Klassen Sammlung auf, die viele schönes hat, aber Extension Methods erfordert. &lt;br /&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;a atomicselection="true" href="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/berUtilsStrings_148D4/CropperCapture%5B5%5D.png"&gt;&lt;img width="255" height="577" border="0" src="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/berUtilsStrings_148D4/CropperCapture%5B5%5D_thumb.png" alt="CropperCapture[5]" style="border: 0px none ; margin: 5px 5px 0px 0px;" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Links: &lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;&lt;a href="http://www.codeplex.com/UberUtils" title="http://www.codeplex.com/UberUtils"&gt;UberUtils auf CodePlex&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="http://weblogs.asp.net/bradvincent/archive/2007/10/02/uber-utils-part-1-cryptography.aspx" title="http://weblogs.asp.net/bradvincent/archive/2007/10/02/uber-utils-part-1-cryptography.aspx"&gt;Blog Post von Brad Vincent&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2007-11-11 23:23:04</pubDate>
+  <lastModified>0001-01-01 06:00:00</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>UberUtils-Strings</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>6cb56168-2015-4599-a1c1-8db9c9fae433</category>
+  </categories>
+  <notifications />
+</post>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>oliver</author>
+  <title>C# access modifiers: protected internal vs. protected vs. internal</title>
+  <description />
+  <content>&lt;p&gt;As I just read &lt;a href="http://social.msdn.microsoft.com/forums/en-US/csharplanguage/thread/44378546-d4f3-4f28-966c-c98c631329b6/" target="_blank"&gt;here on msdn&lt;/a&gt;, the modifiers &lt;font face="Courier New"&gt;protected&lt;/font&gt; and &lt;font face="Courier New"&gt;internal&lt;/font&gt; are orthogonal as in that they can be specified in all combinations and are combined with a logical OR. This means:&lt;/p&gt;  &lt;ul&gt;   &lt;li&gt;&lt;font face="Courier New"&gt;protected&lt;/font&gt; members are accessible from inheriting classes&lt;/li&gt;    &lt;li&gt;&lt;font face="Courier New"&gt;internal&lt;/font&gt; members are accessible from classes within the same assembly&lt;/li&gt;    &lt;li&gt;&lt;font face="Courier New"&gt;protected&lt;/font&gt; &lt;font face="Courier New"&gt;internal&lt;/font&gt; classes are accessible from inheriting classes and all classes from the same assembly&lt;/li&gt; &lt;/ul&gt;  &lt;p&gt;The last option is maybe the most unclear – but just imagine a subclass defined in a different assembly and you’ll see what this might be good for :-)&lt;/p&gt;  &lt;p&gt;Happy Coding, Oliver&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2011-01-27 22:50:00</pubDate>
+  <lastModified>2011-01-26 22:51:38</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>C-access-modifiers-protected-internal-vs-protected-vs-internal</slug>
+  <tags>
+    <tag>protected internal</tag>
+  </tags>
+  <comments />
+  <categories>
+    <category>6cb56168-2015-4599-a1c1-8db9c9fae433</category>
+    <category>94b034d9-a1c3-4b5f-9b37-d39930d673ba</category>
+  </categories>
+  <notifications />
+</post>

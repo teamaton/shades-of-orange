@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>admin</author>
+  <title>Fluent Interface vs. Method Chaining vs. DSL</title>
+  <description />
+  <content>&lt;p&gt;Wo der der Unterschied zwischen "Method Chaining" und einem "Fluent Interface" liegt, ist sicher eine Ermessensfrage. Hier ein Beispiel für Method Chaining: &lt;/p&gt;
+&lt;div class="wlWriterEditableSmartContent" id="F2210F5F-69EB-4d4c-AFF7-B8A050E9CC72:6010b449-aad9-4549-ba87-e0201315b3fa" contenteditable="false" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px"&gt;&lt;pre style=""&gt;&lt;div&gt;&lt;!--
+
+Code highlighting produced by Actipro CodeHighlighter (freeware)
+http://www.CodeHighlighter.com/
+
+--&gt;&lt;span style="color: #999999"&gt;1&lt;/span&gt; &lt;span style="color: #000000"&gt;StringBuilder stringBuilder &lt;/span&gt;&lt;span style="color: #000000"&gt;=&lt;/span&gt;&lt;span style="color: #000000"&gt; &lt;/span&gt;&lt;span style="color: #0000ff"&gt;new&lt;/span&gt;&lt;span style="color: #000000"&gt; StringBuilder();
+&lt;/span&gt;&lt;span style="color: #999999"&gt;2&lt;/span&gt; &lt;span style="color: #000000"&gt;stringBuilder
+&lt;/span&gt;&lt;span style="color: #999999"&gt;3&lt;/span&gt; &lt;span style="color: #000000"&gt;    .Append(&lt;/span&gt;&lt;span style="color: #800000"&gt;"&lt;/span&gt;&lt;span style="color: #800000"&gt;Method Chaining -&lt;/span&gt;&lt;span style="color: #800000"&gt;"&lt;/span&gt;&lt;span style="color: #000000"&gt;)
+&lt;/span&gt;&lt;span style="color: #999999"&gt;4&lt;/span&gt; &lt;span style="color: #000000"&gt;    .Append(&lt;/span&gt;&lt;span style="color: #800000"&gt;"&lt;/span&gt;&lt;span style="color: #800000"&gt;die wohl älteste Methode&lt;/span&gt;&lt;span style="color: #800000"&gt;"&lt;/span&gt;&lt;span style="color: #000000"&gt;)
+&lt;/span&gt;&lt;span style="color: #999999"&gt;5&lt;/span&gt; &lt;span style="color: #000000"&gt;    .AppendLine(&lt;/span&gt;&lt;span style="color: #800000"&gt;"&lt;/span&gt;&lt;span style="color: #800000"&gt;der Welt&lt;/span&gt;&lt;span style="color: #800000"&gt;"&lt;/span&gt;&lt;span style="color: #000000"&gt;)
+&lt;/span&gt;&lt;span style="color: #999999"&gt;6&lt;/span&gt; &lt;span style="color: #000000"&gt;    .AppendLine(&lt;/span&gt;&lt;span style="color: #800000"&gt;"&lt;/span&gt;&lt;span style="color: #800000"&gt;:-)&lt;/span&gt;&lt;span style="color: #800000"&gt;"&lt;/span&gt;&lt;span style="color: #000000"&gt;);&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;Ein Fluent Interface liefert hingegen Kontext, nehmen wir diesen Code:&lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;div class="wlWriterEditableSmartContent" id="F2210F5F-69EB-4d4c-AFF7-B8A050E9CC72:1743603b-4976-4b83-9eb5-83fd52b6f85d" contenteditable="false" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px"&gt;&lt;pre style=""&gt;&lt;div&gt;&lt;!--
+
+Code highlighting produced by Actipro CodeHighlighter (freeware)
+http://www.CodeHighlighter.com/
+
+--&gt;&lt;span style="color: #999999"&gt;1&lt;/span&gt; &lt;span style="color: #000000"&gt;PlaceOrder
+&lt;/span&gt;&lt;span style="color: #999999"&gt;2&lt;/span&gt; &lt;span style="color: #000000"&gt; .CreateNew(PremiumOrder.With(&lt;/span&gt;&lt;span style="color: #800080"&gt;22&lt;/span&gt;&lt;span style="color: #000000"&gt;).Items)
+&lt;/span&gt;&lt;span style="color: #999999"&gt;3&lt;/span&gt; &lt;span style="color: #000000"&gt; .For.User(&lt;/span&gt;&lt;span style="color: #800000"&gt;"&lt;/span&gt;&lt;span style="color: #800000"&gt;MR-T&lt;/span&gt;&lt;span style="color: #800000"&gt;"&lt;/span&gt;&lt;span style="color: #000000"&gt;)
+&lt;/span&gt;&lt;span style="color: #999999"&gt;4&lt;/span&gt; &lt;span style="color: #000000"&gt; .InCase(
+&lt;/span&gt;&lt;span style="color: #999999"&gt;5&lt;/span&gt; &lt;span style="color: #000000"&gt;   User.IsFriendlyLevel &lt;/span&gt;&lt;span style="color: #000000"&gt;==&lt;/span&gt;&lt;span style="color: #000000"&gt; AboveAverage &lt;/span&gt;&lt;span style="color: #000000"&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span style="color: #000000"&gt;
+&lt;/span&gt;&lt;span style="color: #999999"&gt;6&lt;/span&gt; &lt;span style="color: #000000"&gt;   User.Age &lt;/span&gt;&lt;span style="color: #000000"&gt;&amp;gt;&lt;/span&gt;&lt;span style="color: #000000"&gt; &lt;/span&gt;&lt;span style="color: #800080"&gt;18&lt;/span&gt;&lt;span style="color: #000000"&gt;
+&lt;/span&gt;&lt;span style="color: #999999"&gt;7&lt;/span&gt; &lt;span style="color: #000000"&gt;).Commit()&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;Die Implementierung für obigen Code ist deutlich &lt;s&gt;interessanter&lt;/s&gt; aufwändiger. Wenn bis zum Ende durch exerziert, ist nach jedem Methodenauswahl nur eine sinnvolle Menge von Methoden, also Kontext Abhängiges Interface nach außen gelegt.  &lt;/p&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;div class="wlWriterEditableSmartContent" id="F2210F5F-69EB-4d4c-AFF7-B8A050E9CC72:0bd674b1-1f42-42c6-b933-08d01d29c17f" contenteditable="false" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px"&gt;&lt;pre style=""&gt;&lt;div&gt;&lt;!--
+
+Code highlighting produced by Actipro CodeHighlighter (freeware)
+http://www.CodeHighlighter.com/
+
+--&gt;&lt;span style="color: #999999"&gt; 1&lt;/span&gt; &lt;span style="color: #0000ff"&gt;public&lt;/span&gt;&lt;span style="color: #000000"&gt; &lt;/span&gt;&lt;span style="color: #0000ff"&gt;class&lt;/span&gt;&lt;span style="color: #000000"&gt; PlaceOrder
+&lt;/span&gt;&lt;span style="color: #999999"&gt; 2&lt;/span&gt; &lt;span style="color: #000000"&gt;{
+&lt;/span&gt;&lt;span style="color: #999999"&gt; 3&lt;/span&gt; &lt;span style="color: #000000"&gt;  &lt;/span&gt;&lt;span style="color: #0000ff"&gt;public&lt;/span&gt;&lt;span style="color: #000000"&gt; &lt;/span&gt;&lt;span style="color: #0000ff"&gt;static&lt;/span&gt;&lt;span style="color: #000000"&gt; IOrderPrepared CreateNew(OrderDescriber orderDesc){
+&lt;/span&gt;&lt;span style="color: #999999"&gt; 4&lt;/span&gt; &lt;span style="color: #000000"&gt;     &lt;/span&gt;&lt;span style="color: #0000ff"&gt;return&lt;/span&gt;&lt;span style="color: #000000"&gt; GetPreparedOrderBy(orderDesc); 
+&lt;/span&gt;&lt;span style="color: #999999"&gt; 5&lt;/span&gt; &lt;span style="color: #000000"&gt;  }
+&lt;/span&gt;&lt;span style="color: #999999"&gt; 6&lt;/span&gt; &lt;span style="color: #000000"&gt;
+&lt;/span&gt;&lt;span style="color: #999999"&gt; 7&lt;/span&gt; &lt;span style="color: #000000"&gt;  &lt;/span&gt;&lt;span style="color: #0000ff"&gt;public&lt;/span&gt;&lt;span style="color: #000000"&gt; &lt;/span&gt;&lt;span style="color: #0000ff"&gt;static&lt;/span&gt;&lt;span style="color: #000000"&gt; Order GetPreparedOrderBy(OrderDescriber orderDesc){
+&lt;/span&gt;&lt;span style="color: #999999"&gt; 8&lt;/span&gt; &lt;span style="color: #000000"&gt;    Order order &lt;/span&gt;&lt;span style="color: #000000"&gt;=&lt;/span&gt;&lt;span style="color: #000000"&gt; &lt;/span&gt;&lt;span style="color: #0000ff"&gt;new&lt;/span&gt;&lt;span style="color: #000000"&gt; Order(orderDesc.itemCount);
+&lt;/span&gt;&lt;span style="color: #999999"&gt; 9&lt;/span&gt; &lt;span style="color: #000000"&gt;    &lt;/span&gt;&lt;span style="color: #0000ff"&gt;return&lt;/span&gt;&lt;span style="color: #000000"&gt; order.ServiceLevel &lt;/span&gt;&lt;span style="color: #000000"&gt;=&lt;/span&gt;&lt;span style="color: #000000"&gt; orderDesc.ServiceLevel;
+&lt;/span&gt;&lt;span style="color: #999999"&gt;10&lt;/span&gt; &lt;span style="color: #000000"&gt;  }
+&lt;/span&gt;&lt;span style="color: #999999"&gt;11&lt;/span&gt; &lt;span style="color: #000000"&gt;
+&lt;/span&gt;&lt;span style="color: #999999"&gt;12&lt;/span&gt; &lt;span style="color: #000000"&gt;}
+&lt;/span&gt;&lt;span style="color: #999999"&gt;13&lt;/span&gt; &lt;span style="color: #000000"&gt;
+&lt;/span&gt;&lt;span style="color: #999999"&gt;14&lt;/span&gt; &lt;span style="color: #000000"&gt;&lt;/span&gt;&lt;span style="color: #0000ff"&gt;public&lt;/span&gt;&lt;span style="color: #000000"&gt; &lt;/span&gt;&lt;span style="color: #0000ff"&gt;class&lt;/span&gt;&lt;span style="color: #000000"&gt; OrderDescriber
+&lt;/span&gt;&lt;span style="color: #999999"&gt;15&lt;/span&gt; &lt;span style="color: #000000"&gt;{
+&lt;/span&gt;&lt;span style="color: #999999"&gt;16&lt;/span&gt; &lt;span style="color: #000000"&gt;   &lt;/span&gt;&lt;span style="color: #0000ff"&gt;public&lt;/span&gt;&lt;span style="color: #000000"&gt; OrderDescriber Items{
+&lt;/span&gt;&lt;span style="color: #999999"&gt;17&lt;/span&gt; &lt;span style="color: #000000"&gt;     &lt;/span&gt;&lt;span style="color: #0000ff"&gt;get&lt;/span&gt;&lt;span style="color: #000000"&gt;{
+&lt;/span&gt;&lt;span style="color: #999999"&gt;18&lt;/span&gt; &lt;span style="color: #000000"&gt;       AmountType &lt;/span&gt;&lt;span style="color: #000000"&gt;=&lt;/span&gt;&lt;span style="color: #000000"&gt; OrderAmountType.Items; 
+&lt;/span&gt;&lt;span style="color: #999999"&gt;19&lt;/span&gt; &lt;span style="color: #000000"&gt;       &lt;/span&gt;&lt;span style="color: #0000ff"&gt;return&lt;/span&gt;&lt;span style="color: #000000"&gt; &lt;/span&gt;&lt;span style="color: #0000ff"&gt;this&lt;/span&gt;&lt;span style="color: #000000"&gt;;
+&lt;/span&gt;&lt;span style="color: #999999"&gt;20&lt;/span&gt; &lt;span style="color: #000000"&gt;     }
+&lt;/span&gt;&lt;span style="color: #999999"&gt;21&lt;/span&gt; &lt;span style="color: #000000"&gt;   }
+&lt;/span&gt;&lt;span style="color: #999999"&gt;22&lt;/span&gt; &lt;span style="color: #000000"&gt;
+&lt;/span&gt;&lt;span style="color: #999999"&gt;23&lt;/span&gt; &lt;span style="color: #000000"&gt;   &lt;/span&gt;&lt;span style="color: #0000ff"&gt;public&lt;/span&gt;&lt;span style="color: #000000"&gt; OrderAmountType AmountType &lt;/span&gt;&lt;span style="color: #000000"&gt;=&lt;/span&gt;&lt;span style="color: #000000"&gt; OrderAmountType.Boxes;
+&lt;/span&gt;&lt;span style="color: #999999"&gt;24&lt;/span&gt; &lt;span style="color: #000000"&gt;
+&lt;/span&gt;&lt;span style="color: #999999"&gt;25&lt;/span&gt; &lt;span style="color: #000000"&gt;   &lt;/span&gt;&lt;span style="color: #0000ff"&gt;public&lt;/span&gt;&lt;span style="color: #000000"&gt; OrderDescriber(&lt;/span&gt;&lt;span style="color: #0000ff"&gt;int&lt;/span&gt;&lt;span style="color: #000000"&gt; itemCount){...}
+&lt;/span&gt;&lt;span style="color: #999999"&gt;26&lt;/span&gt; &lt;span style="color: #000000"&gt;
+&lt;/span&gt;&lt;span style="color: #999999"&gt;27&lt;/span&gt; &lt;span style="color: #000000"&gt;   &lt;/span&gt;&lt;span style="color: #0000ff"&gt;public&lt;/span&gt;&lt;span style="color: #000000"&gt; &lt;/span&gt;&lt;span style="color: #0000ff"&gt;static&lt;/span&gt;&lt;span style="color: #000000"&gt; OrderDescriber With(itemCount){
+&lt;/span&gt;&lt;span style="color: #999999"&gt;28&lt;/span&gt; &lt;span style="color: #000000"&gt;      &lt;/span&gt;&lt;span style="color: #0000ff"&gt;return&lt;/span&gt;&lt;span style="color: #000000"&gt; &lt;/span&gt;&lt;span style="color: #0000ff"&gt;new&lt;/span&gt;&lt;span style="color: #000000"&gt; OrderDescriber(itemCount)
+&lt;/span&gt;&lt;span style="color: #999999"&gt;29&lt;/span&gt; &lt;span style="color: #000000"&gt;   }
+&lt;/span&gt;&lt;span style="color: #999999"&gt;30&lt;/span&gt; &lt;span style="color: #000000"&gt;}
+&lt;/span&gt;&lt;span style="color: #999999"&gt;31&lt;/span&gt; &lt;span style="color: #000000"&gt;
+&lt;/span&gt;&lt;span style="color: #999999"&gt;32&lt;/span&gt; &lt;span style="color: #000000"&gt;&lt;/span&gt;&lt;span style="color: #0000ff"&gt;public&lt;/span&gt;&lt;span style="color: #000000"&gt; &lt;/span&gt;&lt;span style="color: #0000ff"&gt;interface&lt;/span&gt;&lt;span style="color: #000000"&gt; IOrderPrepared{...}
+&lt;/span&gt;&lt;span style="color: #999999"&gt;33&lt;/span&gt; &lt;span style="color: #000000"&gt;...&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt; &lt;/p&gt;
+&lt;p&gt;Der Obige (Pseudo) Code erstellt eine Schnittstelle, die sich per IntelliSense bedienen lässt. &lt;/p&gt;
+&lt;p&gt;Es lohnt sich wohl nur soviel Arbeit zu investieren, wenn der Kontext schwierig ist und sich so Fehler vermeiden lassen. Interessant es auch die Zeit zu investieren, wenn vorrausichtlich viele Entwickler den Code verwenden werden. Alternativ kann man vereinfachen und den Kontext weitestgehend weglassen, also ein Arsenal möglicher Methoden nach außen legen. &lt;/p&gt;
+&lt;p&gt;Ein  Fluent Interface ist aus meiner Perspektive auch "Domain Specific Language" für die gilt: je einfacher die nach Außen gelegte Schnittstelle, desto zeitraubender ist die Implementierung. &lt;/p&gt;
+&lt;p&gt;Wobei die Schnittstelle, das Fluent Interface nur eine Facade für die eigentlichen Domain Objekte sein sollte und nicht die Business Logik komplizierter machen sollte. &lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2007-09-12 21:53:22</pubDate>
+  <lastModified>0001-01-01 06:00:00</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Fluent-Interface-vs-Method-Chaining-vs-DSL</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>6cb56168-2015-4599-a1c1-8db9c9fae433</category>
+    <category>678a9d57-c1ea-487a-8fd3-4d08dc0be9c4</category>
+  </categories>
+  <notifications />
+</post>

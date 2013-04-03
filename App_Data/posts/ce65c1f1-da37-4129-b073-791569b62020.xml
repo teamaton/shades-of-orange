@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>oliver</author>
+  <title>The Teamaton tool belt: a collection of small but useful tools for every day development and administration</title>
+  <description />
+  <content>&lt;h2&gt;&lt;/h2&gt;  &lt;h1&gt;&lt;/h1&gt;  &lt;h3&gt;Today: a simple hosts file editor&lt;/h3&gt;  &lt;p&gt;Today I set up a new project on GitHub: the &lt;a href="https://github.com/teamaton/toolbelt" target="_blank"&gt;Teamaton tool belt&lt;/a&gt;! It shall serve us as a central store for small tools, probably mostly command-line, built for a single purpose. The first tool in our new tool belt is: &lt;a href="https://github.com/teamaton/toolbelt/tree/master/HostsEditor" target="_blank"&gt;HostsEditor&lt;/a&gt;.&lt;/p&gt;  &lt;p&gt;I wrote this small command line utility after reading this blog post: &lt;a href="http://apdubey.blogspot.com/2008/09/edit-host-file-by-batch-file.html"&gt;http://apdubey.blogspot.com/2008/09/edit-host-file-by-batch-file.html&lt;/a&gt;. We were looking for an easy way to edit the Windows &lt;font face="Courier New"&gt;hosts&lt;/font&gt; file from a script for a larger development environment setup that we wanted to fully automate including IIS website, bindings and new entries in the said &lt;font face="Courier New"&gt;hosts&lt;/font&gt; file. Of course, for a one-timer &lt;font face="Courier New"&gt;echo&lt;/font&gt; does the job, but don’t try to run the setup script twice on the same maching – you’ll get duplicate entries very quickly.&lt;/p&gt;  &lt;p&gt;Reading about how other people are asking the author of the above post how to avoid the duplicates or how to erase entries from the hosts file, I set out to simply write such a utility myself and share it with the rest of the world. If there is one other person out there to whom it will be useful I will be happy.&lt;/p&gt;  &lt;p&gt;So, &lt;a href="https://github.com/teamaton/toolbelt/tree/master/HostsEditor" target="_blank"&gt;HostsEditor&lt;/a&gt; does the following:&lt;/p&gt;  &lt;ul&gt;   &lt;li&gt;Adds and removes entries to and from the Windows &lt;font face="Courier New"&gt;hosts&lt;/font&gt; file. &lt;/li&gt;    &lt;li&gt;Automatically backs up the original &lt;font face="Courier New"&gt;hosts&lt;/font&gt; file to &lt;font face="Courier New"&gt;hosts.bck&lt;/font&gt;. &lt;/li&gt;    &lt;li&gt;Does not add duplicate entries; instead prints a warning. &lt;/li&gt;    &lt;li&gt;For usage in automation scripts there is /q switch to suppress all info messages. &lt;/li&gt; &lt;/ul&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=hostseditor-usage.png"&gt;&lt;img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="hostseditor-usage" border="0" alt="hostseditor-usage" src="http://shades-of-orange.com/image.axd?picture=hostseditor-usage_thumb.png" width="719" height="275" /&gt;&lt;/a&gt; &lt;/p&gt;  &lt;p&gt;That’s all there is to it for now. But there’s more to come!&lt;/p&gt;  &lt;p&gt;Stay tuned, Oliver&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2011-01-26 20:30:45</pubDate>
+  <lastModified>2011-01-26 22:53:06</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>The-Teamaton-tool-belt-a-collection-of-small-but-useful-tools-for-every-day-development-and-administration</slug>
+  <tags>
+    <tag>tool-belt hostseditor</tag>
+  </tags>
+  <comments />
+  <categories>
+    <category>e4b1e92f-27c2-450e-9253-fdb0e36875c3</category>
+    <category>4a6eca6b-10d9-4a5f-ab67-40144ba581d9</category>
+    <category>5fef49e2-2727-46c7-94a7-9816011a72c2</category>
+  </categories>
+  <notifications />
+</post>

@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>Robert</author>
+  <title>Speak-Lib, Open Source &amp; Demokratie</title>
+  <description />
+  <content>&lt;p&gt;
+Wie viele Entwickler-Teams haben auch wir bei unserer Arbeit eine Bibliothek von Funktionen und Helferwerkzeugen aufgebaut. Urspr&amp;uuml;nglich um rechtliche Komplikationen bei der Verwendung der gleichen Quelltext-Bl&amp;ouml;cke in verschiedenen Projekten zu vermeiden, wurde unsere Bibliothek &lt;a href="http://code.google.com/p/speak-lib/source/browse/#svn/trunk/SpeakLib.Utilities"&gt;&amp;ldquo;Speak-Lib&amp;rdquo;&lt;/a&gt; als Open Source Projekt aufgesetzt.
+&lt;/p&gt;
+&lt;p&gt;
+Durch Zufall, bin ich gestern &amp;uuml;ber einen interessante Talk u.a: zum Thema: &amp;ldquo;Was bringt Open Source f&amp;uuml;r eine Firma&amp;rdquo; gestolpert. Der Tenor ist: 
+&lt;/p&gt;
+&lt;blockquote&gt;
+	&lt;p&gt;
+	Ein hundertprozentiger demokratischer Ansatz ist der beste Weg, f&amp;uuml;r erfolgreiche und langlebige Open Source Projekte, auch wenn die Entwicklung prim&amp;auml;r oder Initial nur von einer einzelnen Firma bezahlt wird. In diesem demokratischen Ansatz haben externe Commiter dieselben Rechte wie bezahlte Entwickler. 
+	&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;
+Pers&amp;ouml;nlich halte ich den 100% demokratischen Weg f&amp;uuml;r richtig, was wir (&amp;ldquo;&lt;a href="http://www.speak-friend.com/"&gt;alle Beteiligten&lt;/a&gt;&amp;rdquo;) erstmal diskutieren m&amp;uuml;ssen, wozu dieser Post einladen soll.
+&lt;/p&gt;
+&lt;object width="425" height="344"&gt;&lt;param name="movie" value="http://www.youtube.com/v/ZtYJoatnHb8&amp;hl=de&amp;fs=1"&gt;&lt;/param&gt;&lt;param name="allowFullScreen" value="true"&gt;&lt;/param&gt;&lt;param name="allowscriptaccess" value="always"&gt;&lt;/param&gt;&lt;embed src="http://www.youtube.com/v/ZtYJoatnHb8&amp;hl=de&amp;fs=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"&gt;&lt;/embed&gt;&lt;/object&gt;
+&lt;p&gt;
+Noch ist &lt;a href="http://code.google.com/p/speak-lib/source/browse/#svn/trunk/SpeakLib.Utilities"&gt;&amp;ldquo;Speak-Lib&amp;rdquo;&lt;/a&gt; vermutlich nur intern n&amp;uuml;tzlich und die Wahrscheinlichkeit das vorbeiziehnde Entwickler sich beteiligen wollen scheint mir f&amp;uuml;r den Moment eher gering.&amp;nbsp; Doch die Dokumentation von Konzepten und Ideen w&amp;auml;chst, wir arbeiten an einer Hilfeseite mit vielen Beispielen (In der Solution: Frontend.Web.Utilities), wir f&amp;uuml;gen regelm&amp;auml;&amp;szlig;ig neue Komponenten hinzu und wer wei&amp;szlig;, vielleicht werden auch andere Teams oder Entwickler Teile der Bibliothek f&amp;uuml;r gut befinden und einsetzen. 
+&lt;/p&gt;
+&lt;p&gt;
+Die n&amp;uuml;tzlichsten Features f&amp;uuml;r uns sind: 
+&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;ein Setting Framework, f&amp;uuml;r das performante und komfortable Speichern von Einstellungen einzelner Entities (Bsp: pro Benutzer) &lt;/li&gt;    
+	&lt;li&gt;ein ASP.NET Upload-Control &lt;/li&gt;    
+	&lt;li&gt;ein ASP.NET Pager-Control &lt;/li&gt;    
+	&lt;li&gt;UI Beispiele und Best-Practice in CSS &lt;/li&gt;    
+	&lt;li&gt;ein Framework f&amp;uuml;r das Taggen von Entities &lt;/li&gt;    
+	&lt;li&gt;ein Vielzahl von Hilfsklassen &lt;/li&gt; 
+&lt;/ul&gt;
+&lt;p&gt;
+Links
+&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;&lt;a href="http://code.google.com/p/speak-lib/source/browse/#svn/trunk/SpeakLib.Utilities"&gt;Speak-Lib&lt;/a&gt; &lt;/li&gt;    
+	&lt;li&gt;Video: &lt;a href="http://www.youtube.com/watch?v=ZtYJoatnHb8"&gt;What&amp;#39;s In It for Me? Benefits from Open Sourcing Code&lt;/a&gt; &lt;/li&gt;    
+	&lt;li&gt;Video: &lt;a href="http://www.youtube.com/watch?v=-F-3E8pyjFo&amp;amp;feature=related"&gt;Open Source Projects and Poisonous People&lt;/a&gt; &lt;/li&gt; 
+&lt;/ul&gt;
+&lt;p&gt;
+Check it out ;-)
+&lt;/p&gt;
+</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2009-04-02 11:32:00</pubDate>
+  <lastModified>2009-04-02 21:49:50</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Speak-Lib-Open-Source-Demokratie</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

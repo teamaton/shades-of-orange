@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>robert</author>
+  <title>Foreign keys that create a cycle :-)</title>
+  <description />
+  <content>&lt;p&gt;Gerade auf meinem Monitor gesehen, bei dem Versuch für eine MS-SQL Datenbank einen dump zu erzeugen…&lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=circulare-f-keys_1.png"&gt;&lt;img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="circulare-f-keys" border="0" alt="circulare-f-keys" src="http://shades-of-orange.com/image.axd?picture=circulare-f-keys_thumb_1.png" width="677" height="430" /&gt;&lt;/a&gt; &lt;/p&gt;  &lt;p&gt;Nach dem Database-Publishing-Wizard gescheitert ist, hat &lt;a href="http://sqldump.sourceforge.net/"&gt;SQLDUMP&lt;/a&gt; die Aufgabe mit Bravour gelöst :-) &lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=SqlDump.png"&gt;&lt;img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="SqlDump" border="0" alt="SqlDump" src="http://shades-of-orange.com/image.axd?picture=SqlDump_thumb.png" width="456" height="280" /&gt;&lt;/a&gt;&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2010-03-09 01:20:06</pubDate>
+  <lastModified>2010-03-09 01:20:53</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Foreign-keys-that-create-a-cycle-)</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

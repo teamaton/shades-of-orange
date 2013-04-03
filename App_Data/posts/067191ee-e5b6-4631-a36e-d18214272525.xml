@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>robert</author>
+  <title>MSBuild output verbosity in VS2008</title>
+  <description />
+  <content>&lt;p&gt; Wie lange dauert die Ausführung eines MS-Build Scripts? &lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=MSBuildVerbosity.png"&gt;&lt;img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="MSBuild-Verbosity" border="0" alt="MSBuild-Verbosity" src="http://shades-of-orange.com/image.axd?picture=MSBuildVerbosity_thumb.png" width="655" height="388" /&gt;&lt;/a&gt;&lt;/p&gt;  &lt;p&gt;Als Ergebnis gibt es einen wirklich sehr, sehr verbosen Build-Output an dessen Ende dann steht: &lt;/p&gt;  &lt;p&gt;&lt;/p&gt;  &lt;p&gt;&lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=BuildOutputDetails.png"&gt;&lt;img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="Build-Output-Details" border="0" alt="Build-Output-Details" src="http://shades-of-orange.com/image.axd?picture=BuildOutputDetails_thumb.png" width="523" height="445" /&gt;&lt;/a&gt;&amp;#160;&lt;/p&gt;  &lt;p&gt;Und jetzt ist auch klar, dass auf die Gesamt-Build-Zeit von ca.: 35sec 0.49 Sekunden auf das BuildScript selbst entfallen. Ähm.. - gut zu wissen :-)&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2009-11-17 19:15:47</pubDate>
+  <lastModified>2009-11-17 19:15:47</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>MSBuild-output-verbosity-in-VS2008</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

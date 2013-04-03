@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>admin</author>
+  <title>Private mit oder ohne _underscore</title>
+  <description />
+  <content>&lt;p&gt;Aus Erfahrung schlau, ist es eine gute Idee vor Projektbeginn den &lt;a href="http://www.csharpfriends.com/Articles/getArticle.aspx?articleID=336"&gt;„style guide“&lt;/a&gt; des letzten Projektes aus der Schublade zu kramen. So lassen sich verspätet Diskusionen vermeiden ob nicht &lt;a href="http://de.wikipedia.org/wiki/Ungarische_Notation"&gt;„ungarische Notation“&lt;/a&gt; nicht doch besser sei als „&lt;a href="http://en.wikipedia.org/wiki/CamelCase"&gt;CamelCase&lt;/a&gt;“. Persönlichkeit ist beim Kodieren ist eh schon einer der &lt;a href="http://alistair.cockburn.us/index.php/Software_development_as_a_cooperative_game"&gt;entscheidenden Faktoren&lt;/a&gt; für das erfolgreiche Ausliefern von Projekten, doch sollte der Besuch einer nicht selbst geschrieben Klasse nicht dazu führen, dass man sich in einer anderen Programmiersprache wähnt. Es gibt genug geistige Arbeit zu tun, um sich damit aufzuhalten zu können ob ein Customer Control nun vielleicht mit „cc“, „die eresten Zwei Buchstaben der Firma“ oder einfach nur gar nicht bepräfixt wurde, oder werden soll. Entscheidend ist es intuitiv und mit IntelliSense bewaffnet, schnell zu finden was man möchte ohne sich darüber Gedanken machen zu müssen, in welcher Form irgendeine Variable benannt werden muss.  &lt;/p&gt;&lt;p&gt;Da ich relativ viel Zeit im „CodeBehind“ von ASP.NET .aspx Seiten verbringe (natürlich _nur_ Frontend-Logik ;) und das Page Objekt ein Arsenal von Privaten und Public Membern hat, habe ich mir angewöhnt selbst geschriebene private Membervariablen mit einem Unterstrich zu versehen:   &lt;/p&gt;&lt;p&gt;&lt;a href="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/Privatemitoderohne_underscore_4721/CropperCapture%5B5%5D.jpg" atomicselection="true"&gt;&lt;img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" height="113" alt="CropperCapture[5]" src="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/Privatemitoderohne_underscore_4721/CropperCapture%5B5%5D_thumb.jpg" width="240" border="0" /&gt;&lt;/a&gt;&lt;/p&gt; &lt;p&gt;Für mich hat das den Vorteil, dass ich an jedem Ort und ohne mein Gedächtnis zu bemühen, die „Privates“ der aktuellen Klasse präsentiert bekomme. Auf diesem Weg finde ich fast immer und schnell was ich gesucht habe. Unterstriche sind sicherlich nicht die ästhetischste Form von Präfixen, aber die aus meiner Sicht erhöhte Produktivität ist den Kompromiss Wert. &lt;/p&gt; &lt;p&gt;&lt;a href="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/Privatemitoderohne_underscore_4721/CropperCapture%5B8%5D.jpg" atomicselection="true"&gt;&lt;img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" height="192" alt="CropperCapture[8]" src="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/Privatemitoderohne_underscore_4721/CropperCapture%5B8%5D_thumb.jpg" width="177" border="0" /&gt;&lt;/a&gt; &lt;/p&gt; &lt;p&gt;(Hier noch eine Screenshoot für das txtPraefix um den Intellisense Faktor besser zu verdeutlichen) &lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2007-09-01 04:03:30</pubDate>
+  <lastModified>0001-01-01 06:00:00</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Private-mit-oder-ohne-_underscore</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

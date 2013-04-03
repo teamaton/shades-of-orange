@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>admin</author>
+  <title>Microsoft MVC</title>
+  <description />
+  <content>&lt;p&gt;Microsoft MVC beschreitet einen alternativen Web Anwendungen mit ASP.NET Webseiten zu entwickeln. Der Name ist Programm, Model, View und Controller werden vollwertige Entitäten. Folgendes Video bietet eine kurze musikalische Einführung :-) &lt;/p&gt;
+&lt;p&gt;&lt;a atomicselection="true" href="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/MicrosoftMVC_1F42/CropperCapture%5B47%5D.png"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div id="VideoPlayback"&gt;&lt;embed width="425" height="355" wmode="transparent" type="application/x-shockwave-flash" src="http://www.youtube.com/v/YYvOGPMLVDo&amp;amp;rel=1"&gt;&lt;/embed&gt;&lt;/div&gt;
+&lt;p&gt;Das WebForm Model soll nicht abgelöst werden, sondern lediglich durch eine eigenständig supportete Lösung ergänzt werden. WebForm und MVC Controls (die erst noch entwickelt werden müssen) werden nicht kompatibel sein. Konzepte wie ViewState und den damit verbunden Zugriff auf die vom Benutzer manipulierten Daten über Controls kennt das MVC Framework nicht. &lt;/p&gt;
+&lt;p&gt;&lt;a atomicselection="true" href="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/MicrosoftMVC_1F42/CropperCapture%5B47%5D.png"&gt;&lt;img width="408" height="426" border="0" src="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/MicrosoftMVC_1F42/CropperCapture%5B47%5D_thumb.png" alt="CropperCapture[47]" style="border: 0px none ;" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Der Einsatz von MS-MVC sollte also nicht Paradigma sein, sondern wohl überlegt. In Szenarien die eine große Anzahl von Benutzerzuständen und unterschiedliche Controls beinhalten ist der klassische WebForms Ansatz, der wahrscheinlich deutlich schnellere Entwicklungsweg. Abzuwarten bleibt auch die Qualität der Visual Studio Integration, bei der Arbeit mit Webdesignern, eines der großen Pluspunkte von ASP.NET.&lt;/p&gt;
+&lt;p&gt;Nicht zu vergessen, das die Trennung von Model, View und Controller auch schon heute mit Webforms zu erreichen ist, wenn auch nur auf logischer Ebene.  &lt;/p&gt;
+&lt;p&gt;&lt;a atomicselection="true" href="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/MicrosoftMVC_1F42/CropperCapture%5B48%5D.png"&gt;&lt;img width="213" height="183" border="0" src="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/MicrosoftMVC_1F42/CropperCapture%5B48%5D_thumb.png" alt="CropperCapture[48]" style="border: 0px none ;" /&gt;&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;Interessant ist, das Microsoft Implementierung ist auf den ersten Blick MonoRail (&lt;a href="http://www.castleproject.org/"&gt;http://www.castleproject.org/&lt;/a&gt;) erstaunlich ähnlich ist. Eine Politik und gänzlich anders als in der Vergangenheit (Beispiel NUnit vs. VS Testcases) ist, das auch die Koexistenz und sogar Integration mit dem MonoRail und Castle Development Stack angedacht ist. &lt;/p&gt;
+&lt;p&gt;Nicht nur das Microsoft nun auch zum ersten Mal im .NET Umfeld einen Entwickler eines Open Source Frameworks (&lt;a href="http://www.subsonicproject.com/"&gt;Subsonic&lt;/a&gt;) auf der Gehaltsliste hat, der auch dafür bezahlt wird, an seinem alten Projekt (mit der gleichen Restriktionsfreien "Mozilla Public License" &lt;a href="http://www.codeplex.com/subsonic/Project/License.aspx"&gt;Lizenz&lt;/a&gt;) weiterzuarbeiten, Microsoft hat auch in letzter Zeit ein Reihe von Community Persönlichkeiten, wie &lt;a href="http://www.hanselman.com/blog/"&gt;Scott Hanselman&lt;/a&gt; und &lt;a href="http://haacked.com/archive/2007/09/17/why-is-microsoft-removing-my-mvp-status.aspx"&gt;Philip Hack&lt;/a&gt; angeworgen. Es verspricht also weiter Spass zu machen mit .NET und insbesondere ASP.NET arbeiten zu dürfen. (Unabhängig davon, dass &lt;a href="http://wpf.netfx3.com/"&gt;WPF&lt;/a&gt; der Hammer ist :-) &lt;/p&gt;
+&lt;p&gt;Mehr Links: &lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;&lt;a href="http://weblogs.asp.net/scottgu/archive/2007/11/13/asp-net-mvc-framework-part-1.aspx"&gt;Scott Gutherie über MVC (Teil 1)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="http://www.hanselman.com/blog/ScottGuMVCPresentationAndScottHaScreencastFromALTNETConference.aspx"&gt;Scott Hanselmann (mit Link auf Screencast)&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="http://blog.codeville.net/2007/11/20/aspnet-mvc-pipeline-lifecycle/"&gt;ASP.NET MVC Pipeline&lt;/a&gt; &lt;/li&gt;
+&lt;/ul&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2007-11-25 02:13:27</pubDate>
+  <lastModified>0001-01-01 06:00:00</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Microsoft-MVC</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>6cb56168-2015-4599-a1c1-8db9c9fae433</category>
+    <category>bc3db496-f484-41a0-860c-c2e57e829fa0</category>
+    <category>08fc581b-2716-4c6a-a856-2c279bebff11</category>
+  </categories>
+  <notifications />
+</post>

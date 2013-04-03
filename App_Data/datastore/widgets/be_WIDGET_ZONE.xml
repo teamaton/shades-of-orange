@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widgets>
+  <widget id="42fcbe7c-2c9c-440a-bad9-65a94472fccc" title="Administration" showTitle="True">Administration</widget>
+  <widget id="a7d968b2-00e1-49d0-8576-2e54fa2e5e29" title="Newsletter" showTitle="True">Newsletter</widget>
+  <widget id="d6dcf8c1-231f-463a-a3b0-49ed326182f5" title="Search" showTitle="True">Search</widget>
+  <widget id="22b48659-1a33-4834-9ff2-efa9a46bb147" title="Category list" showTitle="True">Category list</widget>
+</widgets>

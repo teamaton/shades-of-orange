@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>Anton</author>
+  <title>WebService mit dotTrace Profilen</title>
+  <description />
+  <content>&lt;p&gt;Ich hatte vor ein paar Tagen das Bed&amp;uuml;rfnis zu &amp;uuml;berpr&amp;uuml;fen, warum ein WebService so lange braucht, und welche Operationen das Bottleneck sind. Der WebService l&amp;auml;uft bei mir lokal aufm IIS.&lt;/p&gt;
+&lt;p&gt;Dazu habe ich mir die Software dotTrace von JetBrains runtergeladen (Trial-Version). Ich habe mich ein wenig eingelesen, und im Forum gefragt, dann war der Rest recht einfach. &amp;ldquo;Local Computer&amp;rdquo; im Host-Men&amp;uuml; eingeben. Beim n&amp;auml;chsten &amp;ldquo;Internet Information Service&amp;rdquo; als Profiler kind ausw&amp;auml;hlen, und schon kann es los gehen.&lt;/p&gt;
+&lt;p&gt;Ich habe dann den einen Windowsservice gestartet, der mit dem Webservice kommuniziert, den Profiler gestartet, und einen Snapshot gemacht. Das einzig etwas m&amp;uuml;hselige ist nun herauszufinden, wo sich genau die Aufrufe befinden, die einen selbst betreffen. Aber durch die Suche kann man bequem nach Funktionen und Klassen suchen, und findet schnell die richtigen Stellen.&lt;/p&gt;
+&lt;p&gt;(JetBrains hat es noch nicht geschafft, eine Doku dazu rauszubringen, da die 4.0 Version noch in der Beta ist.)&lt;/p&gt;
+&lt;p&gt;Happy Profiling.&lt;/p&gt;
+&lt;p&gt;Erweiterung: &lt;a href="http://confluence.jetbrains.net/display/NetProf/How+to+profile+a+webservice+with+dotTrace"&gt;Hier&lt;/a&gt; gibt es noch eine Alternative: Direkt aus Visual Studio heraus das Profiling starten - mit dem WebService als Startup-Project.&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2010-03-24 17:57:00</pubDate>
+  <lastModified>2010-04-01 09:29:57</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>WebService-mit-dotTrace-Profilen</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

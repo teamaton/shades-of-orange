@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>admin</author>
+  <title>Skalierbares Windows-Hosting</title>
+  <description />
+  <content>&lt;p&gt;&lt;a atomicselection="true" href="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/SkalierbaresWindowsHosting_4291/CropperCapture%5B43%5D.jpg"&gt;&lt;img width="168" height="83" border="0" align="left" src="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/SkalierbaresWindowsHosting_4291/CropperCapture%5B43%5D_thumb.jpg" alt="windows hosting" style="border: 0px none ; margin: 0px 10px 0px 0px;" /&gt;&lt;/a&gt;  Es geschah an einen Dienstag. Die neue Buzzword-Ready Web 2.0 App war am Freitag zuvor nach 4 Monaten harter Arbeit online gegangen. Zur Feier des Tages wurde abends beim Italiener eine Flasche Wein geordert. Es war der erste freie Abend nach vielen Wochen. Der Wein wirkte sofort, für untrainierte ist ein Rausch preiswerter und preiswert ist gut, wenn man sich darauf einstellt ein junges Produkt langsam am Mark zu etablieren und jeder ausgegebene Euro der Firma gehört, nicht einer Bank oder einem Venture Capitalisten. &lt;/p&gt;
+&lt;p&gt;Die ersten 4 Tage waren ruhig verlaufen. Wie erwartet registrierten sich nur wenige Benutzer, denn trotz automatisierter Test und einer ausführlichen Analyse wie sich das Baby unter Last verhalten würde, sollte sich die Anwendung im Live-Betrieb erstmal bewähren.  &lt;/p&gt;
+&lt;p&gt;Es war tägliche Routine, etwas gelangweilt arbeitete einer der Entwickler die letzten Tage von &lt;a href="http://mashable.com/"&gt;Mashable&lt;/a&gt; und &lt;a href="http://www.techcrunch.com/"&gt;Techcrunch&lt;/a&gt; auf. Keine großen Highlights, das übliche. Die meisten der 275 ungelesenen Posts landeten nach einem kurzen Blick auf den Betreff und Autor im Papierkorb. Genau wie „Special Interest Trading Platform Launches“ … moment … „Special Interest Trading Platform“  ... (??!) ... STRG-Z beförderte den gerade gesehenen Eintrag aus dem Papierkorb wieder zurück in die aktuelle Ansicht. Es war 23:45Uhr. &lt;/p&gt;
+&lt;p&gt;Von den 900 000 Techchruch Lesern hatten 14 325 die junge Seite innerhalb der ersten 30 Minuten aufgerufen und 1500 neue „Special Interest Trading Platforms“ aufgesetzt. Ca. 15-20 davon waren wohl mehr als ein Test. Der Web-Server schnaufte, hielt sich aber mit 25% Prozessorleistung noch ganz gut, der Datenbankserver lief mit 80-90% Auslastung und war am Limit.  &lt;/p&gt;
+&lt;p&gt;Um 1:17 hatte &lt;a href="http://mashable.com/"&gt;Mashable&lt;/a&gt; und wohl 3 Dutzend anderer Blogger das &lt;a href="http://www.techcrunch.com/"&gt;Techcrunch&lt;/a&gt; Post aufgegriffen und Ihrerseits über die neue Handelsplatform berichtet. Ab 1:26 lies sich der Web-Server nicht mehr via http erreichen. Mit sehr viel Geduld gelang es dann letztlich um 3:40 die Anwendung durch eine freundlich Dankesseite ersetzen. Die nächsten Wochen versprachen wunderbar zu werden. &lt;/p&gt;
+&lt;p&gt;...................................................................... &lt;/p&gt;
+&lt;p&gt;Okay genug feuchte Träume.  &lt;/p&gt;
+&lt;p&gt;&lt;a href="http://flexiscale.com/"&gt;Flexiscale&lt;/a&gt; bietet skalierbares Hosting. Das Versprechen ist, das man innerhalb von wenigen Minuten von einem Rechner auf einige tausend Rechner aufrüsten kann. Doch statt wie Amazon EC2/S3 nur Linux zu unterstützen, bietet Flexiscale Windows 2003 Server und Windows SBS an. Windows SBS ist insbesondere interessant, da es eine MS-SQL Server Lizenz bundelt. (Wobei man die sich genaue Lizenz des SBS noch mal genauer anschauen müsste um zu entscheiden ob sich Windows-SBS auch legal für Hosting einsetzen lässt.) Die &lt;a href="http://flexiscale.com/pricing.html"&gt;Preise&lt;/a&gt; sind absolut konkurrenzfähig. Wir werden uns das definitiv genauer anschauen. Ich kann kaum erwarten den Zugang zu erhalten :-)  &lt;/p&gt;
+&lt;p&gt;[via &lt;a href="http://www.techcrunch.com/2007/10/03/on-demand-host-goes-up-against-amazon-s3/"&gt;Techchrunch&lt;/a&gt;]&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2007-10-07 03:44:02</pubDate>
+  <lastModified>0001-01-01 06:00:00</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Skalierbares-Windows-Hosting</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>bc3db496-f484-41a0-860c-c2e57e829fa0</category>
+    <category>4c741f81-0ac2-4ab0-9a49-bd8ecbbff502</category>
+    <category>76e50725-5164-45fe-a885-98420d16f152</category>
+    <category>3b5447eb-ff3b-4481-9287-0508fce6262b</category>
+  </categories>
+  <notifications />
+</post>

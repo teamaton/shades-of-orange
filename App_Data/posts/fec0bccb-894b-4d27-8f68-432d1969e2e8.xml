@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>oliver</author>
+  <title>MSBuild and Visual Studio 2010 generate different DLLs</title>
+  <description />
+  <content>&lt;p&gt;Recently, we encountered a quite surprising behavior of MSBuild – the continuous integration build of our new collaborative &lt;a href="http://todo-management.blogspot.com/" target="_blank"&gt;Todo Management&lt;/a&gt; app (we hope to go into beta soon!) would produce a broken version whereas the local build with VS2010 was all smooth and well. Our admin and tester already posted about this problem over at his blog: &lt;a href="http://www.happy-sharks.com/post/2011/09/07/MSBuild-does-not-build-like-Visual-Studio-2010.aspx" target="_blank"&gt;MSBuild does not build like Visual Studio 2010&lt;/a&gt;.&lt;/p&gt;  &lt;p&gt;The exception message finally led me down the right path:&lt;/p&gt;  &lt;h3&gt;&lt;font color="#ff0000"&gt;Server Error in '/' Application.&lt;/font&gt;     &lt;hr size="1" width="100%" /&gt;&lt;/h3&gt;  &lt;h4&gt;&lt;i&gt;&lt;font color="#9e7c7c"&gt;No constructors on type 'Teamaton.TodoCore.Repositories.TodoRepositoryJson' can be found with 'Public binding flags'.&lt;/font&gt;&lt;/i&gt;&lt;/h4&gt;  &lt;p&gt;&lt;b&gt;Description: &lt;/b&gt;An unhandled exception occurred during the execution of the current web request. Please review the stack trace for more information about the error and where it originated in the code.     &lt;br /&gt;&lt;b&gt;Exception Details: &lt;/b&gt;&lt;font color="#ff0000"&gt;Autofac.Core.DependencyResolutionException&lt;/font&gt;: No constructors on type 'Teamaton.TodoCore.Repositories.TodoRepositoryJson' can be found with 'Public binding flags'. &lt;/p&gt;  &lt;p&gt;The &lt;font face="Courier New"&gt;TodoRepositoryJson&lt;/font&gt; is a type we used at the very beginning of our development to quickly get started using a JSON document as data store. Later we switched to SQLite, so now we have another implementation: &lt;font face="Courier New"&gt;TodoRepositoryDb&lt;/font&gt;. Both implement the same interface &lt;font face="Courier New"&gt;ITodoRepository&lt;/font&gt;.&lt;/p&gt;  &lt;p&gt;Turns out, the Autofac type registering code was the culprit:&lt;/p&gt;  &lt;div style="border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 38.55%; padding-right: 4px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; height: 89px; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px" id="codeSnippetWrapper"&gt;   &lt;div style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px" id="codeSnippet"&gt;     &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum1"&gt;   1:&lt;/span&gt; var builder = &lt;span style="color: #0000ff"&gt;new&lt;/span&gt; ContainerBuilder();&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum2"&gt;   2:&lt;/span&gt; builder.RegisterAssemblyTypes(&lt;span style="color: #0000ff"&gt;typeof&lt;/span&gt; (Todo).Assembly)&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum3"&gt;   3:&lt;/span&gt;     .Where(t =&amp;gt; t.Name.Contains(&lt;span style="color: #006080"&gt;&amp;quot;Repository&amp;quot;&lt;/span&gt;))&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum4"&gt;   4:&lt;/span&gt;     .AsImplementedInterfaces()&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum5"&gt;   5:&lt;/span&gt;     .InstancePerLifetimeScope();&lt;/pre&gt;
+&lt;!--CRLF--&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;What worked with Visual Studio, didn’t work with MSBuild: obviously – well, now it is – both &lt;font face="Courier New"&gt;ITodoRepository&lt;/font&gt; implementations were registered with Autofac, and while Autofac’s assembly scanning delivered them in the order we assumed from the DLL built with VS&amp;#160; – first, &lt;font face="Courier New"&gt;TodoRepositoryJson&lt;/font&gt;, and second, &lt;font face="Courier New"&gt;TodoRepositoryDb&lt;/font&gt;, thus overriding the first registration – MSBuild seems to build a DLL which returns the inverse order! Very strange.&lt;/p&gt;
+
+&lt;p&gt;Honestly, I’m not familiar with the anatomy of DLLs and surprised by this result. But it’s the only explanation I’ve found so far.&lt;/p&gt;
+
+&lt;p&gt;Well, the solution to the problem is, of course, to care more about &lt;strong&gt;what&lt;/strong&gt; we register with Autofac and in &lt;strong&gt;which order&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Happy coding,&lt;/p&gt;
+
+&lt;p&gt;Oliver&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2011-09-06 22:18:00</pubDate>
+  <lastModified>2011-09-20 17:03:24</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>MSBuild-and-Visual-Studio-2010-generate-different-DLLs</slug>
+  <tags>
+    <tag>msbuild</tag>
+    <tag>dll</tag>
+    <tag>autofac</tag>
+    <tag>deployment msbuild teamcity</tag>
+  </tags>
+  <comments />
+  <categories>
+    <category>e4b1e92f-27c2-450e-9253-fdb0e36875c3</category>
+    <category>94b034d9-a1c3-4b5f-9b37-d39930d673ba</category>
+    <category>678a9d57-c1ea-487a-8fd3-4d08dc0be9c4</category>
+    <category>228e6e84-7e6e-4fae-8433-185118731b1d</category>
+  </categories>
+  <notifications />
+</post>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>admin</author>
+  <title>.NET Einstellungsfragen, Bullshit Bingo vs. Skills</title>
+  <description />
+  <content>&lt;p&gt;&lt;a href="http://tirania.org/blog/archive/2007/Sep-05-2.html"&gt;Miguel de Icaza&lt;/a&gt; steuert ein interessantes &lt;a href="http://tirania.org/blog/archive/2007/Sep-05-2.html"&gt;Post&lt;/a&gt; zur "Einstellungstaktiken und Fragen" Debatte bei. Der übliche Prozess ist wohl die Bewerbung durch Vorstellungsgespräche. &lt;a href="http://tirania.org/blog/archive/2007/Sep-05-2.html"&gt;Miguel de Icaza&lt;/a&gt; beschreibt, dass aus seiner Erfahrung Beispiele von bisheriger Arbeit, also Quellcode, zu besseren Ergebnissen führen, als das persönliche Gespräch. Er favorisiert das Email Interview, in dem es eine nicht triviale Aufgabe, innerhalb von zwei Wochen zu lösen gilt. Die Aufgaben sind so gestrickt, das eine Implementierung in ein bis zwei Tagen möglich sein sollte. Der großzügige Zeitrahmen macht es möglich, parallel zu Job oder Studium zu implementieren.  &lt;/p&gt;
+&lt;p&gt;Das klingt für mich wie ein großartiger Ansatz. Alles andere scheint das Potential zu haben, sich Leute ins Team zu holen, die zwar Bullshit Bingo beherrschen (von Design Pattern über Agile bis hin zu Best Practice bei der Speicherverwaltung) aber nicht wirklich Implementieren können. Warum auch immer. Nun ließe sich vielleicht bei einem Bewerbungsgespräch ein einfacher Programmiertest durchführen, aber Software-Entwicklung ist nur zu einem geringen Teil etwas, was man in drei Funktionen sehen kann. Viel spannender ist Struktur, Organisation und die Anwendung von Objekt Orientierten Prinzipien. &lt;/p&gt;
+&lt;p&gt;Ich habe zurzeit nur einen kleinen Eindruck vom Job Markt für .NET Entwickler (speziell ASP.NET) wobei ich die vage Vermutung habe, dass mein Lieblingsszenario „sehr viele großartige Entwickler, wenig offene Positionen" nicht wirklich zutreffen dürfte.  &lt;/p&gt;
+&lt;p&gt;Einstellungsfragen für .NET  &lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;&lt;a href="http://speak-friend.com/Scott%20Hanselmann%20%22.NET%20Interview%20Questions%22"&gt;Scott Hanselmann ".NET Interview Questions"&lt;/a&gt; und hier einige Antworten &lt;/li&gt;
+    &lt;li&gt;Einige Interview Fragen von Ayende &lt;a href="http://www.ayende.com/Blog/archive/2006/12/10/7038.aspx"&gt;hier&lt;/a&gt;, &lt;a href="http://www.ayende.com/Blog/archive/2006/12/12/7032.aspx"&gt;hier&lt;/a&gt; und &lt;a href="http://www.google.com/search?hl=en&amp;amp;client=opera&amp;amp;rls=en&amp;amp;q=site%3Aayende.com+interview&amp;amp;btnG=Search"&gt;hier&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;Ein paar (sehr spezifische) ASP.NET &lt;a href="http://blogs.crsw.com/mark/articles/254.aspx"&gt;Fragen&lt;/a&gt; von Mark Wagner&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ressourcen für Die Jobsuche (neben google) &lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;&lt;a href="http://www.dotnetjob.de/"&gt;http://www.dotnetjob.de/&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="http://entwickler.com/jobs/"&gt;http://entwickler.com/jobs/&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="http://gulp.de/"&gt;http://gulp.de/&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="http://www.heise.de/jobs"&gt;http://www.heise.de/jobs&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="http://www.xing.com/"&gt;http://www.xing.com/&lt;/a&gt; (?)&lt;/li&gt;
+    &lt;li&gt;&lt;a href="http://www.aspnetzone.de/forums/default.aspx?GroupID=10"&gt;aspnetzone (forum)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2007-09-06 03:17:30</pubDate>
+  <lastModified>0001-01-01 06:00:00</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>NET-Einstellungsfragen-Bullshit-Bingo-vs-Skills</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>678a9d57-c1ea-487a-8fd3-4d08dc0be9c4</category>
+  </categories>
+  <notifications />
+</post>

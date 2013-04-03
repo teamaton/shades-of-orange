@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>Oliver</author>
+  <title>Cache, Autofac und Tests</title>
+  <description>häufige Probleme bei Tests</description>
+  <content>&lt;p&gt;
+Gestern ging wieder etwas Zeit drauf, als ich unsere Tests ganz machen wollte und die Tests f&amp;uuml;r das UrlRewriting partout nicht in der Testsuite durchlaufen wollten. Einzeln ausgef&amp;uuml;hrt funktionierte hingegen alles wunderbar. 
+&lt;/p&gt;
+&lt;p&gt;
+Dieses Ph&amp;auml;nomen tritt immer mal wieder auf, und es liegt (nat&amp;uuml;rlich ;-)) an den unterschiedlichen Ausgangssituationen, in denen der betroffene Test startet. 
+&lt;/p&gt;
+&lt;p&gt;
+Ohne gro&amp;szlig;e Umschweife hier also drei potenzielle Fallen: 
+&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;&lt;strong&gt;Der Cache ist gef&amp;uuml;llt oder unsere RepositoryDb-Basisklasse hat nach GetAll() eine Liste aller Elemente zwischengespeichert (siehe auch 2.) &lt;/strong&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;Einige Services haben einen Zustand und dieser ist anders, als im Test angenommen --&amp;gt; Autofac-Container recyclen&lt;/strong&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;Die DB wird durch Custom-SQL manipuliert (bspw. zur Vorbereitung eines Tests) und alle Businesslogik wird umgangen.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br /&gt;
+Wenn also Fehler mit Tests auftreten, bitte diese drei Punkte &amp;uuml;berpr&amp;uuml;fen. F&amp;uuml;r Punkt eins und zwei gibt es in der &lt;strong&gt;BaseTest&lt;/strong&gt;-Klasse die Methode &lt;strong&gt;RecycleServiceContainerAndClearCache()&lt;/strong&gt;. 
+&lt;p&gt;
+&amp;nbsp;
+&lt;/p&gt;
+</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2009-06-10 10:33:00</pubDate>
+  <lastModified>2009-06-12 01:02:25</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Cache-Autofac-und-Tests</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>cb82911b-137b-402e-be57-2fe9fe9fae2e</category>
+    <category>b9df7adf-328a-4e8c-9401-f5adf7e10cd6</category>
+  </categories>
+  <notifications />
+</post>

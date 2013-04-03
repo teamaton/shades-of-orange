@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>oliver</author>
+  <title>NHibernate Save – System.ArgumentNullException: Collection cannot be null</title>
+  <description />
+  <content>&lt;p&gt;Today I hit a quite subtle bug setting up persistence for our soon-to-appear &lt;a href="http://todo-management.blogspot.com/" target="_blank"&gt;new todo management tool&lt;/a&gt;. Since we’re building on ASP.NET 4 I simply used the ISet&amp;lt;T&amp;gt; and HashSet&amp;lt;T&amp;gt; types in the System.Collections.Generic namespace for all entity collections, e.g.&lt;/p&gt;  &lt;pre style="border-bottom: #cecece 1px solid; border-left: #cecece 1px solid; padding-bottom: 5px; background-color: #fbfbfb; min-height: 40px; padding-left: 5px; width: 430px; padding-right: 5px; overflow: auto; border-top: #cecece 1px solid; border-right: #cecece 1px solid; padding-top: 5px"&gt;&lt;pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 11px"&gt;  1: &lt;span style="color: #0000ff"&gt;using&lt;/span&gt; System.Collections.Generic;
+&lt;/pre&gt;&lt;pre style="background-color: #f0f0f0; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 11px"&gt;  2: &lt;span style="color: #0000ff"&gt;namespace&lt;/span&gt; Teamaton.TodoCore.Entities
+&lt;/pre&gt;&lt;pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 11px"&gt;  3: {
+&lt;/pre&gt;&lt;pre style="background-color: #f0f0f0; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 11px"&gt;  4:     &lt;span style="color: #0000ff"&gt;public&lt;/span&gt; &lt;span style="color: #0000ff"&gt;class&lt;/span&gt; Group
+&lt;/pre&gt;&lt;pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 11px"&gt;  5:     {
+&lt;/pre&gt;&lt;pre style="background-color: #f0f0f0; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 11px"&gt;  6:         &lt;span style="color: #0000ff"&gt;public&lt;/span&gt; ISet&amp;lt;Person&amp;gt; Members { &lt;span style="color: #0000ff"&gt;get&lt;/span&gt;; &lt;span style="color: #0000ff"&gt;set&lt;/span&gt;; }
+&lt;/pre&gt;&lt;pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 11px"&gt;  7:         &lt;span style="color: #0000ff"&gt;public&lt;/span&gt; &lt;span style="color: #0000ff"&gt;string&lt;/span&gt; Name { &lt;span style="color: #0000ff"&gt;get&lt;/span&gt;; &lt;span style="color: #0000ff"&gt;set&lt;/span&gt;; }
+&lt;/pre&gt;&lt;pre style="background-color: #f0f0f0; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 11px"&gt;  8:     }
+&lt;/pre&gt;&lt;pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 11px"&gt;  9: }&lt;/pre&gt;&lt;/pre&gt;
+
+&lt;p&gt;But when I called &lt;font face="Courier New"&gt;&lt;strong&gt;_session.Save(entity)&lt;/strong&gt;&lt;/font&gt; I got the following error:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=image_9.png"&gt;&lt;img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://shades-of-orange.com/image.axd?picture=image_thumb_9.png" width="970" height="523" /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;At first I thought: oh, yeah, of course! I didn’t initialize my &lt;font face="Courier New"&gt;&lt;strong&gt;Members&lt;/strong&gt;&lt;/font&gt; property! No problem.&lt;/p&gt;
+
+&lt;p&gt;So I added a simple constructor to initialize all my ISet&amp;lt;T&amp;gt; properties like this:&lt;/p&gt;
+
+&lt;pre style="border-bottom: #cecece 1px solid; border-left: #cecece 1px solid; padding-bottom: 5px; background-color: #fbfbfb; min-height: 30px; padding-left: 5px; width: 430px; padding-right: 5px; overflow: auto; border-top: #cecece 1px solid; border-right: #cecece 1px solid; padding-top: 5px"&gt;&lt;pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 11px"&gt;  1: &lt;span style="color: #0000ff"&gt;public&lt;/span&gt; Group()
+&lt;/pre&gt;&lt;pre style="background-color: #f0f0f0; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 11px"&gt;  2: {
+&lt;/pre&gt;&lt;pre style="background-color: #ffffff; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 11px"&gt;  3:     Members = &lt;span style="color: #0000ff"&gt;new&lt;/span&gt; HashSet&amp;lt;Person&amp;gt;();
+&lt;/pre&gt;&lt;pre style="background-color: #f0f0f0; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 11px"&gt;  4: }&lt;/pre&gt;&lt;/pre&gt;
+
+&lt;p&gt;I still go the same error. Well, there were quite a few of these collections and I went and added constructors of the same kind &lt;strong&gt;everywhere&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Ran the code again – still the same ol’ error! Arrrrg!&lt;/p&gt;
+
+&lt;p&gt;Ok, Google to the rescue: &lt;a title="http://www.google.com/search?q=nhibernate+System.ArgumentNullException%3A+Collection+cannot+be+null" href="http://www.google.com/search?q=nhibernate+System.ArgumentNullException%3A+Collection+cannot+be+null"&gt;http://www.google.com/search?q=nhibernate+System.ArgumentNullException%3A+Collection+cannot+be+null&lt;/a&gt; lead me to &lt;a href="http://handcraftsman.wordpress.com/2011/01/05/nhibernate-custom-collection-options/" target="_blank"&gt;NHibernate custom collection options&lt;/a&gt;, an interesting read although not really to the point. But wait: there, towards the end, I finally found the essential piece of information I was missing:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;font color="#646b86"&gt;Note: the custom collection also has to implement ICollection because ICollection&amp;lt;T&amp;gt; &lt;strong&gt;doesn’t implement ICollection&lt;/strong&gt;&lt;/font&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;font color="#646b86"&gt;&lt;img alt="" src="http://lh5.ggpht.com/__xncRdVIBNE/TSTGs1h11lI/AAAAAAAAXEE/M6SVxLiL6DM/s800/custom_collections_2.png" /&gt;&lt;/font&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;font color="#646b86"&gt;so you get an exception like the following when you try to save.&lt;/font&gt;&lt;/p&gt;
+
+  &lt;pre&gt;&lt;font color="#646b86"&gt;[ArgumentNullException: Collection cannot be null.
+Parameter name: c]
+   System.Collections.ArrayList..ctor(ICollection c) +10067700&lt;/font&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Well, the same is true for ISet&amp;lt;T&amp;gt;: it does not implement ICollection! So when NHibernate performs its internal collection magic and is passed a reference to a collection of type HashSet&amp;lt;T&amp;gt; which implements ISet&amp;lt;T&amp;gt; and even ICollection&amp;lt;T&amp;gt; it throws an error because it really expects an ICollection. And then I remembered, that I’ve tried using the System.Collections.Generic classes with NHibernate before and it didn’t work because it internally uses the Iesi.Collections.&lt;/p&gt;
+
+&lt;p&gt;So I had to change my HashSet&amp;lt;T&amp;gt; to &lt;strong&gt;&lt;font face="Courier New"&gt;HashedSet&amp;lt;T&amp;gt;&lt;/font&gt;&lt;/strong&gt;, reference the &lt;font face="Courier New"&gt;&lt;strong&gt;Iesi.Collections.dll&lt;/strong&gt;&lt;/font&gt; and all was well! ISet&amp;lt;T&amp;gt; is defined in Iesi.Collections as well, so I didn’t have to change that.&lt;/p&gt;
+
+&lt;p&gt;Happy Coding!&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2011-07-22 18:45:54</pubDate>
+  <lastModified>2011-07-25 10:57:10</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>NHibernate-Save-SystemArgumentNullException-Collection-cannot-be-null</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

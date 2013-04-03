@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>Oliver</author>
+  <title>NHibernate.MappingException: Association references unmapped class</title>
+  <description />
+  <content>&lt;p&gt;
+Gestern Abend kamen die CustomLinks dazu: neue Klasse, neue DB-Tabelle, neues Mapping. NHibernate-Mappings kopiere ich immer und passe sie dann an. Alles lief super.
+&lt;/p&gt;
+&lt;p&gt;
+Die Tests liefen super.
+&lt;/p&gt;
+&lt;p&gt;
+Heute morgen fiel mir auf, dass meine Klasse ja noch ein Type-Feld braucht. Ok, kein Ding.
+&lt;/p&gt;
+&lt;p&gt;
+Feld hinzugef&amp;uuml;gt, Zeile im Mapping-File hinzugef&amp;uuml;gt, Eigenschaft in den Tests gesetzt (not-null hatte ich auf &amp;quot;true&amp;quot;) und los.
+&lt;/p&gt;
+&lt;p&gt;
+Und dann bekam ich obige Exception:&lt;strong&gt; NHibernate.MappingException: Association references unmapped class: CustomLink.&lt;/strong&gt;
+&lt;/p&gt;
+&lt;p&gt;
+Kann ja nicht sein!
+&lt;/p&gt;
+&lt;p&gt;
+Hin und her probiert, schlie&amp;szlig;lich das Orakel gefragt und siehe da: Man muss in den &lt;strong&gt;Properties &lt;/strong&gt;des Mapping-Files die &lt;strong&gt;Build Action &lt;/strong&gt;auf &lt;strong&gt;Embedded Resource&lt;/strong&gt; setzen. Das war noch nicht der Fall. Danach klappte es.
+&lt;/p&gt;
+&lt;p&gt;
+Nur warum hat es gestern funktioniert?! 
+&lt;/p&gt;
+</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2008-10-02 09:43:00</pubDate>
+  <lastModified>2008-10-02 09:50:53</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>NHibernateMappingException-Association-references-unmapped-class</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

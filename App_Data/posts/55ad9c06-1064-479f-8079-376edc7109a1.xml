@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>admin</author>
+  <title>NHibernate Criteria API zum Knutschen</title>
+  <description />
+  <content>&lt;p&gt; &lt;/p&gt;
+&lt;div style="margin: 0px; padding: 0px; display: inline; float: none;" contenteditable="false" id="F2210F5F-69EB-4d4c-AFF7-B8A050E9CC72:daa7144f-622e-4727-b2de-33b42627ae70" class="wlWriterSmartContent"&gt;
+&lt;pre&gt;&lt;div&gt;&lt;!--
+
+Code highlighting produced by Actipro CodeHighlighter (freeware)
+http://www.CodeHighlighter.com/
+
+--&gt;&lt;span style="color: rgb(0, 0, 255);"&gt;public&lt;/span&gt;&lt;span style="color: rgb(0, 0, 0);"&gt; RequestVisitedList GetBy(&lt;/span&gt;&lt;span style="color: rgb(0, 0, 255);"&gt;int&lt;/span&gt;&lt;span style="color: rgb(0, 0, 0);"&gt; userId, List&lt;/span&gt;&lt;span style="color: rgb(0, 0, 0);"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: rgb(0, 0, 255);"&gt;int&lt;/span&gt;&lt;span style="color: rgb(0, 0, 0);"&gt;&amp;gt;&lt;/span&gt;&lt;span style="color: rgb(0, 0, 0);"&gt; requestIds)&lt;br /&gt;{&lt;br /&gt;    Disjunction disjunctionRequests &lt;/span&gt;&lt;span style="color: rgb(0, 0, 0);"&gt;=&lt;/span&gt;&lt;span style="color: rgb(0, 0, 0);"&gt; &lt;/span&gt;&lt;span style="color: rgb(0, 0, 255);"&gt;new&lt;/span&gt;&lt;span style="color: rgb(0, 0, 0);"&gt; Disjunction();&lt;br /&gt;        &lt;/span&gt;&lt;span style="color: rgb(0, 0, 255);"&gt;foreach&lt;/span&gt;&lt;span style="color: rgb(0, 0, 0);"&gt; (&lt;/span&gt;&lt;span style="color: rgb(0, 0, 255);"&gt;int&lt;/span&gt;&lt;span style="color: rgb(0, 0, 0);"&gt; requestId &lt;/span&gt;&lt;span style="color: rgb(0, 0, 255);"&gt;in&lt;/span&gt;&lt;span style="color: rgb(0, 0, 0);"&gt; requestIds)&lt;br /&gt;            disjunctionRequests.Add(&lt;br /&gt;                Expression.Eq(&lt;/span&gt;&lt;span style="color: rgb(128, 0, 0);"&gt;"&lt;/span&gt;&lt;span style="color: rgb(128, 0, 0);"&gt;RequestId&lt;/span&gt;&lt;span style="color: rgb(128, 0, 0);"&gt;"&lt;/span&gt;&lt;span style="color: rgb(0, 0, 0);"&gt;, requestId)); &lt;br /&gt;    &lt;br /&gt;    &lt;/span&gt;&lt;span style="color: rgb(0, 0, 255);"&gt;return&lt;/span&gt;&lt;span style="color: rgb(0, 0, 0);"&gt; &lt;/span&gt;&lt;span style="color: rgb(0, 0, 255);"&gt;new&lt;/span&gt;&lt;span style="color: rgb(0, 0, 0);"&gt; RequestVisitedList(&lt;br /&gt;        _session.CreateCriteria(&lt;/span&gt;&lt;span style="color: rgb(0, 0, 255);"&gt;typeof&lt;/span&gt;&lt;span style="color: rgb(0, 0, 0);"&gt;(RequestVisited))&lt;br /&gt;            .Add(Expression.Eq(&lt;/span&gt;&lt;span style="color: rgb(128, 0, 0);"&gt;"&lt;/span&gt;&lt;span style="color: rgb(128, 0, 0);"&gt;UserId&lt;/span&gt;&lt;span style="color: rgb(128, 0, 0);"&gt;"&lt;/span&gt;&lt;span style="color: rgb(0, 0, 0);"&gt;, userId))&lt;br /&gt;            .Add(disjunctionRequests)&lt;br /&gt;            .List&lt;/span&gt;&lt;span style="color: rgb(0, 0, 0);"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: rgb(0, 0, 0);"&gt;RequestVisited&lt;/span&gt;&lt;span style="color: rgb(0, 0, 0);"&gt;&amp;gt;&lt;/span&gt;&lt;span style="color: rgb(0, 0, 0);"&gt;()&lt;br /&gt;    );&lt;br /&gt;}&lt;br /&gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Der Code oben gibt eine Liste von allen Aufrufen einer Anfrage für eine bestimmten Benutzer zurück, eigentlich nichts Besonderes. Das großartige ist, das das Ganze in 3 min geschrieben war. Keine Stored Procedures, keine Strings zusammen bauen, einfach nur mit IntelliSense bewaffnet einen Abfrage Wunsch beschreiben und fertig ist das Ganze.  &lt;/p&gt;
+&lt;p&gt;Ein hübscher Nebeneffekt, der Code ist Datenbank unabhängig.  &lt;/p&gt;
+&lt;p&gt;Noch schöner wäre das Ganze wenn es für &lt;a href="http://www.hookedonlinq.com/Default.aspx?Page=LINQToNHibernate&amp;amp;AspxAutoDetectCookieSupport=1"&gt;NHibernate schon einen LINQ Provider&lt;/a&gt; gäbe, denn soweit ich das Überblicke ist nur MS-SQL zurzeit voll unterstützt, alle anderen LINQ Provider stecken wohl noch in den &lt;a href="http://code2code.net/DB_Linq/"&gt;Kinderschuhen&lt;/a&gt;.  &lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2007-09-25 14:26:17</pubDate>
+  <lastModified>0001-01-01 06:00:00</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>NHibernate-Criteria-API-zum-Knutschen</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>f8bafae5-b874-4cd1-bc83-6b822e1c2e83</category>
+  </categories>
+  <notifications />
+</post>

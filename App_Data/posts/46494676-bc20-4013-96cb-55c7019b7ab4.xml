@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>oliver</author>
+  <title>NHibernate: count(…) will return a long, even if it is 0</title>
+  <description />
+  <content>&lt;p&gt;Today, I was doing some HQL with NHibernate trying to retrieve some object count from the database. Running the following piece of code, unfortunately, would throw an exception:&lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=image_40.png"&gt;&lt;img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://shades-of-orange.com/image.axd?picture=image_thumb_40.png" width="618" height="50" /&gt;&lt;/a&gt;&lt;/p&gt;  &lt;p&gt;&lt;font style="background-color: #ffc000" face="Courier New"&gt;&lt;strong&gt;System.ArgumentException : The value &amp;quot;0&amp;quot; is not of type &amp;quot;System.Int32&amp;quot; and cannot be used in this generic collection.       &lt;br /&gt;Parameter name: value&lt;/strong&gt;&lt;/font&gt;&lt;/p&gt;  &lt;p&gt;&lt;font style="background-color: #ffc000" face="Courier New"&gt;&lt;/font&gt;&lt;font style="style"&gt;This was quite confusing for me and I tried a few different things which all did not work. Then I went to debug this line and it turns out that the “0” we’re getting back here is of type &lt;font face="Courier New"&gt;&lt;strong&gt;long&lt;/strong&gt;&lt;/font&gt;! So the correct version of the above code reads:&lt;/font&gt;&lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=image_41.png"&gt;&lt;img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://shades-of-orange.com/image.axd?picture=image_thumb_41.png" width="614" height="55" /&gt;&lt;/a&gt;&lt;/p&gt;  &lt;p&gt;Easy, once you know :-)&lt;/p&gt;  &lt;p&gt;Alternatively, with newer versions of NHibernate ( &amp;gt; 3.0 but I’m not sure exactly) you can use &lt;font face="Courier New"&gt;QueryOver&lt;/font&gt; and &lt;font face="Courier New"&gt;ToRowCountQuery&lt;/font&gt; to get an &lt;font face="Courier New"&gt;int&lt;/font&gt; count:&lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=image_42.png"&gt;&lt;img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://shades-of-orange.com/image.axd?picture=image_thumb_42.png" width="398" height="85" /&gt;&lt;/a&gt;&lt;/p&gt;  &lt;p&gt;&lt;font face="Courier New"&gt;ToRowCountInt64Query()&lt;/font&gt; on the other hand would return a &lt;font face="Courier New"&gt;long&lt;/font&gt;.&lt;/p&gt;  &lt;p&gt;Happy coding!&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2012-05-17 12:48:32</pubDate>
+  <lastModified>2012-05-17 13:04:56</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>NHibernate-count(…)-will-return-a-long-even-if-it-is-0</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>Oliver</author>
+  <title>Configuration mit configSource auslagern - Copy always</title>
+  <description />
+  <content>&lt;p&gt;
+Eine kleine Notiz f&amp;uuml;r die Zukunft:
+&lt;/p&gt;
+&lt;p&gt;
+Wenn man eine Configuration-Section aus einer *.config-Datei in eine eigene Datei auslagert, so wie neulich geschehen f&amp;uuml;r die NHibernate-Konfiguration, dann sollte man die &amp;quot;&lt;strong&gt;Copy to Output Directory&lt;/strong&gt;&amp;quot;-Option auf &amp;quot;&lt;strong&gt;Copy Always&lt;/strong&gt;&amp;quot; setzen:
+&lt;/p&gt;
+&lt;pre&gt;
+&amp;lt;!-- Lokal eine passende NH.config anlegen --&amp;gt;
+&amp;lt;hibernate-configuration configSource=&amp;quot;&lt;strong&gt;NH.config&lt;/strong&gt;&amp;quot; /&amp;gt;
+&lt;/pre&gt;
+&lt;p&gt;
+&lt;img src="/image.axd?picture=2009%2f9%2fnhconfig.png" alt="" /&gt;&lt;br /&gt;
+&lt;br /&gt;
+Ansonsten bekommt man n&amp;auml;mlich eine der folgenden &amp;auml;hnliche Fehlermeldung:
+&lt;/p&gt;
+&lt;pre&gt;
+System.Configuration.ConfigurationErrorsException: Die configSource-Datei &amp;quot;NH.config&amp;quot; kann nicht ge&amp;ouml;ffnet werden.
+(G:\Projects\Camping.Info\Tests\bin\Debug\Tests.dll.config line 12)
+&lt;/pre&gt;
+&lt;p&gt;
+Oliver 
+&lt;/p&gt;
+</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2009-09-05 10:01:00</pubDate>
+  <lastModified>2009-09-05 10:13:26</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Configuration-mit-configSource-auslagern-Copy-always</slug>
+  <tags>
+    <tag>config</tag>
+  </tags>
+  <comments />
+  <categories>
+    <category>678a9d57-c1ea-487a-8fd3-4d08dc0be9c4</category>
+    <category>b9df7adf-328a-4e8c-9401-f5adf7e10cd6</category>
+    <category>228e6e84-7e6e-4fae-8433-185118731b1d</category>
+  </categories>
+  <notifications />
+</post>

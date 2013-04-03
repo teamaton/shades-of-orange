@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>oliver</author>
+  <title>dotnetpro 10/2010 – some notes on useful links and further reading</title>
+  <description />
+  <content>&lt;h2&gt;Parallel Programming in C#&lt;/h2&gt;  &lt;ol&gt;   &lt;li&gt;Free eBook: &lt;a href="http://www.dotnetpro.de/SL1010News3"&gt;www.dotnetpro.de/SL1010News3&lt;/a&gt; &lt;/li&gt;    &lt;li&gt;The Task class: use like      &lt;div style="border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px" id="codeSnippetWrapper"&gt;       &lt;div style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px" id="codeSnippet"&gt;         &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum1"&gt;   1:&lt;/span&gt; Task.Factory&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+        &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum2"&gt;   2:&lt;/span&gt;     .StartNew(() =&amp;gt; {&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+        &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum3"&gt;   3:&lt;/span&gt;         var result = &lt;span style="color: #0000ff"&gt;new&lt;/span&gt; MyCustomObject();&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+        &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum4"&gt;   4:&lt;/span&gt;         &lt;span style="color: #008000"&gt;// do something and return something&lt;/span&gt;&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+        &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum5"&gt;   5:&lt;/span&gt;         &lt;span style="color: #0000ff"&gt;return&lt;/span&gt; result;&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+        &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum6"&gt;   6:&lt;/span&gt;     })&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+        &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum7"&gt;   7:&lt;/span&gt;     .ContinueWith(res =&amp;gt; {&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+        &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum8"&gt;   8:&lt;/span&gt;         &lt;span style="color: #008000"&gt;// res is of type MyCustomObject here&lt;/span&gt;&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+        &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum9"&gt;   9:&lt;/span&gt;         res.DoSomethingElse();&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+        &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum10"&gt;  10:&lt;/span&gt;     });&lt;/pre&gt;
+&lt;!--CRLF--&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;blockquote&gt;
+      &lt;div style="border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px" id="codeSnippetWrapper"&gt;
+        &lt;div style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px" id="codeSnippet"&gt;
+          &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum1"&gt;   1:&lt;/span&gt; var someInput = ...&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+          &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum2"&gt;   2:&lt;/span&gt; var task = &lt;span style="color: #0000ff"&gt;new&lt;/span&gt; Task(() =&amp;gt; MyAction(input));&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+          &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum3"&gt;   3:&lt;/span&gt; &lt;span style="color: #008000"&gt;// Changes to someInput will still be reflected within MyAction()!&lt;/span&gt;&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+          &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum4"&gt;   4:&lt;/span&gt; task.Start();&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+          &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: white; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum5"&gt;   5:&lt;/span&gt; Assert.That(myTask.Result.GetType(),       &lt;span style="color: #008000"&gt;/* waits for execution of task */&lt;/span&gt;&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+          &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum6"&gt;   6:&lt;/span&gt;             Is.EqualTo(&lt;span style="color: #0000ff"&gt;typeof&lt;/span&gt;(&lt;span style="color: #0000ff"&gt;double&lt;/span&gt;)));   &lt;span style="color: #008000"&gt;/* returns true */&lt;/span&gt;&lt;/pre&gt;
+&lt;!--CRLF--&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;NHibernate 3.0.0&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href="http://nhforge.org"&gt;http://&lt;/a&gt;&lt;a href="http://nhforge.org" target="_blank"&gt;nhforge&lt;/a&gt;.org&lt;/a&gt; &lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Lazy Loading of columns &lt;/li&gt;
+
+  &lt;li&gt;HQL Language Service for Visual Studio – an Add-In for syntax highlighting of NH HQL query code &lt;/li&gt;
+
+  &lt;li&gt;Type safe querying using the Criteria API – makes the &lt;a title="now obsolete" href="http://code.google.com/p/nhlambdaextensions/" target="_blank"&gt;LambdaExtensions&lt;/a&gt; obsolete &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;FastSharp 2.0&lt;/h2&gt;
+
+&lt;p&gt;Quickly execute pieces of C# code from inside a text editor: &lt;a href="http://www.dotnetpro.de/SL1010News7"&gt;www.dotnetpro.de/SL1010News7&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;HTML5 Canvas&lt;/h2&gt;
+
+&lt;p&gt;easier to use JavaScript API: canto.js&lt;/p&gt;
+
+&lt;h2&gt;ReSharper&lt;/h2&gt;
+
+&lt;p&gt;Live Templates: code generation beyond Visual Studio&lt;/p&gt;
+
+&lt;h2&gt;Windows 7 / Server 2008 R2 Application Development&lt;/h2&gt;
+
+&lt;p&gt;Application Quality Cookbook 1.8: &lt;a href="http://www.dotnetpro.de/SL1010News4"&gt;www.dotnetpro.de/SL1010News4&lt;/a&gt;&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2011-01-19 18:15:03</pubDate>
+  <lastModified>2011-01-19 18:15:03</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>dotnetpro-102010-some-notes-on-useful-links-and-further-reading</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

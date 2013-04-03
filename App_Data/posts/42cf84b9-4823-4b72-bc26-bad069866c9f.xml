@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>robert</author>
+  <title>Build Dauer ermitteln</title>
+  <description />
+  <content>&lt;p&gt;Der schnellste Weg die Builddauer zu ermitteln führt über die Kommandozeile: &lt;strong&gt;msbuild /target:Rebuild SomeSolution.sln&lt;/strong&gt; und am Ende steht dann etwas wie:&amp;#160; &lt;strong&gt;“Time Elapsed 00:00:16.53”&lt;/strong&gt;&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2009-11-17 19:34:40</pubDate>
+  <lastModified>2009-11-17 19:34:40</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Build-Dauer-ermitteln</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

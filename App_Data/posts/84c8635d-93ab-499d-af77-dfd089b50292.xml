@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>admin</author>
+  <title>Dynamic Language Runtime (DLR)</title>
+  <description />
+  <content>&lt;p&gt;Bisher glaubte ich, dass die einzige wirkliche Sprache des .NET frameworks c# sei. VB.NET war für mich bestenfalls eine Pflichtleistung Microsofts für die Unverbesserlichen. Das Konzept der CLR, eine Ausführumgebung für jede beliebige Sprache zu sein, empfand ich als ausserodentlich gutes Marketing. Natürlich ist die CLR technisch schön. Die Idee ist elegant. Aber für die Praxis? Ich meine, wer benötigt denn &lt;a href="http://www.codeplex.com/Wiki/View.aspx?ProjectName=IronPython"&gt;IronPython&lt;/a&gt; oder die PHP-CLR &lt;a href="http://www.php-compiler.net/doku.php?id=core%3Astart"&gt;Phalanger&lt;/a&gt;, die populäreren Vertreter der vielen (hundert?) CLR Sprachen. &lt;/p&gt; &lt;p&gt;In den letzten vier Jahren mit c# habe ich nur wenig die dynamische Typisierung PHPs vermisst. Die immer wiederkehrende Diskussion, statische Typisierung vs. dynamische Typisierung, wurde auch in der x-ten Version nicht spannender. Ruby, Python oder PHP konnten mich nicht neidisch machen. Ich hatte ja mein mein geliebtes c#. Dazu war &lt;a href="http://www.jetbrains.com/resharper/"&gt;Resharper&lt;/a&gt; in meinen Werkzeugkasten, ein Produkt das für dynamische Sprache so nicht denkbar wäre? Auch die wirklich &lt;a href="http://en.wikipedia.org/wiki/Anders_Hejlsberg"&gt;grossartigen&lt;/a&gt; und &lt;a href="http://www.martinfowler.com/"&gt;einflussreichen&lt;/a&gt; Entwickler, &lt;a href="http://weblogs.asp.net/scottgu/"&gt;meine Stars&lt;/a&gt;, waren auf meiner Seite. Ich gebe zu, abundzu hätte ich gerne ein wenig &lt;a href="http://en.wikipedia.org/wiki/Duck_typing"&gt;duck typing&lt;/a&gt; dürfen. Gelegentlich hätte ich auch gerne beherzt down gecasted - ohne zickigen compiler. Aber das waren bestenfals kleine Schäfchenwolken an meinem Programmiererhimmel. Vielleicht hatte für einen kurzen Moment Ruby on Rails mein Herz erweicht, doch da erschien auch schon &lt;a href="http://www.castleproject.org/monorail/index.html"&gt;MonoRails&lt;/a&gt; auf der Bildfläche und die Begehrlichkeiten waren gestillt. &lt;/p&gt; &lt;p&gt;Interessant. Auf der MIX 07 wurde die &lt;a href="http://tirania.org/blog/archive/2007/May-01.html"&gt;DLR vorgestellt.&lt;/a&gt; Eine Erweiterung der CLR die das entwickeln dynamischer Sprachen vereinfacht. Die DLR steht unter der Microsoft Permissive License und ist somit Open Source. Microsoft scheint technologisch nicht nur mitzuschwimmen sondern mit LINQ, Generics der entspannteren Lizenspolitik, IIS 7.0 und vielem, vielem mehr auf der Entwickler Seite alles richtig zu machen.&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2007-05-13 02:41:12</pubDate>
+  <lastModified>0001-01-01 06:00:00</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Dynamic-Language-Runtime-(DLR)</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>6cb56168-2015-4599-a1c1-8db9c9fae433</category>
+    <category>bc3db496-f484-41a0-860c-c2e57e829fa0</category>
+    <category>678a9d57-c1ea-487a-8fd3-4d08dc0be9c4</category>
+  </categories>
+  <notifications />
+</post>

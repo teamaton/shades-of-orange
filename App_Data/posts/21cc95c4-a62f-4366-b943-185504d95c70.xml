@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>admin</author>
+  <title>Trac als Collaboration Tool</title>
+  <description />
+  <content>&lt;p&gt;Seit ein paar Wochen verwenden wir Trac als Collaboration Tool bzw. Ticket-System und Issue-Tracker. Nach dem ich schon Erfahrungen mit &lt;a title="Gemini Issue Tracker" href="http://countersoft.com"&gt;Gemini&lt;/a&gt;, &lt;a href="http://www.basecamphq.com/"&gt;Basecamp&lt;/a&gt; und &lt;a href="http://www.atlassian.com/software/jira/"&gt;Jira&lt;/a&gt; sammeln durfte - bin ich von Trac eher mäßig begeistert. Zumal wir eines der Hauptfeatures - die Subversion Integration - nicht verwenden. Auch das Trac-Wiki ist nicht in Gebrauch - da wir ja unser &lt;a href="http://wiki.speak-friend.com"&gt;eigenes&lt;/a&gt; haben.&lt;/p&gt; &lt;p&gt;Wirklich positiv ist das kostenlose Hosting - das von &lt;a href="http://assembla.com"&gt;Assembla.com&lt;/a&gt; angeboten wird. Mal schauen vielleicht brauche ich einfach noch ein wenig "Gewöhnungszeit". Derweil bleibt mein persönlicher Favorit immer noch &lt;a href="http://www.atlassian.com/software/jira/"&gt;Jira&lt;/a&gt;, welches aber mit $1200 Einstiegspreis allerdings ein wenig zu teuer für &lt;a href="http://www.speak-friend.com/archive/2007/04/18/10.aspx"&gt;unseren Geldbeutel&lt;/a&gt; ist. Beispiele für Jira im echten Einsatz sind bei &lt;a href="http://www.jetbrains.net/jira/browse/RSRP"&gt;Jetbrains&lt;/a&gt;(Reshaper) und &lt;a href="http://jira.nhibernate.org"&gt;NHibernate&lt;/a&gt; zu bewundern. Achso für &lt;a href="http://tijnthuus.demon.nl:8080/jira/secure/BrowseProject.jspa"&gt;Open Source&lt;/a&gt; Entwicklungen ist Jira kostenfrei :-) (robert)&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2007-04-19 20:15:31</pubDate>
+  <lastModified>0001-01-01 06:00:00</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Trac-als-Collaboration-Tool</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>1d2ed75a-80ba-45c1-9d90-1f2c136089df</category>
+    <category>29f0d9fc-f1cb-447e-9a07-b2e11137e0dc</category>
+  </categories>
+  <notifications />
+</post>

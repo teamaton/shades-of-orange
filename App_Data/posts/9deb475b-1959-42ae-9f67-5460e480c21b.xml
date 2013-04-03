@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>robert</author>
+  <title>Von Virtual-PC 2007 über VMware zu Hyper-V</title>
+  <description />
+  <content>&lt;p&gt;Ziel eine Virtual-PC 2007 VM in Hyper-V nutzen. &lt;/p&gt;  &lt;p&gt;Das erste Problem: Die VM die zwar auf Windows 7 problemlos läuft, möchte auf dem Windows 2008 Server R2 nicht starten. Das Ziel is eh Hyper-V. Wir ignorieren das alos. &lt;/p&gt;  &lt;p&gt;Sehr verheißungsvoll &lt;a href="http://technet.microsoft.com/en-us/magazine/2009.03.utilityspotlight.aspx?pr=blog"&gt;VMC2HV&lt;/a&gt;. Führt leider &lt;strong&gt;nicht&lt;/strong&gt; zum gewünschten Erfolg. Der Fehler beim Importieren: “Das System der VHD ist korrupt”.&lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=VMV2HV.png"&gt;&lt;img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="VMV2HV" border="0" alt="VMV2HV" src="http://shades-of-orange.com/image.axd?picture=VMV2HV_thumb.png" width="544" height="450" /&gt;&lt;/a&gt; &lt;/p&gt;  &lt;p&gt;&lt;/p&gt;  &lt;h3&gt;Konvertieren zu VMware&lt;/h3&gt;  &lt;p&gt;Nächster Ansatz: Zunächst zu VMware konvertieren. Hierbei hilft der &lt;a href="http://www.vmware.com/de/products/converter/"&gt;VMWare Konverter&lt;/a&gt;, der Anstandsfrei durchläuft … &lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=VMwareConverter.png"&gt;&lt;img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="VMwareConverter" border="0" alt="VMwareConverter" src="http://shades-of-orange.com/image.axd?picture=VMwareConverter_thumb.png" width="544" height="272" /&gt;&lt;/a&gt; &lt;/p&gt;  &lt;p&gt;… und dann aus den VMware-Virtuellen-Platten wieder Hyper-V fähige Virtuelle-Platten (VHDs) machen: &lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=Vmdk2Vhd.png"&gt;&lt;img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="Vmdk2Vhd" border="0" alt="Vmdk2Vhd" src="http://shades-of-orange.com/image.axd?picture=Vmdk2Vhd_thumb.png" width="477" height="352" /&gt;&lt;/a&gt; &lt;/p&gt;  &lt;p&gt;Hierbei hilft: Vmdk2Vhd, welches nach einer Registrierung auf &lt;a title="http://vmtoolkit.com/" href="http://vmtoolkit.com/"&gt;http://vmtoolkit.com/&lt;/a&gt; kostenlos herunterzuladen ist. &lt;/p&gt;  &lt;p&gt;Nun müssen beim Erstellen einer neuen Hyper-V VM die Platten beim Einrichten angegeben werden: &lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=NeueHyperVVM.png"&gt;&lt;img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="Neue-Hyper-V-VM" border="0" alt="Neue-Hyper-V-VM" src="http://shades-of-orange.com/image.axd?picture=NeueHyperVVM_thumb.png" width="544" height="402" /&gt;&lt;/a&gt; &lt;/p&gt;  &lt;p&gt;Schon kann die “Virtual PC 2007” VM als Hyper-V System genutzt werden :-)&lt;/p&gt;  &lt;p&gt;&lt;strong&gt;Links:&lt;/strong&gt;&lt;/p&gt;  &lt;ul&gt;   &lt;li&gt;&lt;a href="http://technet.microsoft.com/en-us/magazine/2009.03.utilityspotlight.aspx?pr=blog"&gt;VMC2HV&lt;/a&gt; (Artikel und Download von Technet: VPC –&amp;gt; HyperV, brachte nicht den gewünschten Erfolg) &lt;/li&gt;    &lt;li&gt;&lt;a href="http://www.vmware.com/de/products/converter/"&gt;VMWare Konverter&lt;/a&gt; (VPC –&amp;gt; VMware) &lt;/li&gt;    &lt;li&gt;&lt;a href="http://vmtoolkit.com/"&gt;Vmdk2Vhd&lt;/a&gt; (VMware –&amp;gt; HyperV) &lt;/li&gt; &lt;/ul&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2009-09-09 12:24:42</pubDate>
+  <lastModified>2009-09-09 12:24:42</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Von-Virtual-PC-2007-uber-VMware-zu-Hyper-V</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

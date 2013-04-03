@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>robert</author>
+  <title>Nein zu Static/Shared Methoden?</title>
+  <description />
+  <content>&lt;p&gt;Beim letzten &lt;a href="http://www.altnetberlin.de/Termine/coding-dojo/04-05-2010"&gt;Coding-Dojo&lt;/a&gt; der &lt;a href="http://www.altnetberlin.de/"&gt;ALT.NET.BERLIN&lt;/a&gt; gab es unterschiedliche Meinungen zum Thema wann statische Methoden zu verwenden sind. Aus meiner Sicht sollte statischer Methoden behutsam angewendet werden. Wenn Business-Logik über statische Methode abgewickelt wird, dann ist aber vermutlich etwas im Argen!&lt;/p&gt;  &lt;p&gt;Was spricht gegen statische Methoden:&lt;/p&gt;  &lt;ul&gt;   &lt;li&gt;verhindern OO (Schnittstellen, Ableitung/Vererbung,&amp;#160; Überschreibung)&lt;/li&gt;    &lt;li&gt;hart zu Mocken/Stuben, hart zu überschreiben macht das Testen von Verwenden statischer Methoden schwer zu testen&lt;/li&gt;    &lt;li&gt;verhindert Dependency Injection und damit IoC (Frameworks) &lt;/li&gt; &lt;/ul&gt;  &lt;p&gt;Wann statische Methoden gut sind: &lt;/p&gt;  &lt;ul&gt;   &lt;li&gt; Für Utility Klassen. (Beispiel „File“)&lt;/li&gt;    &lt;li&gt; Factory-Methoden&lt;/li&gt;    &lt;li&gt; Private Methode&lt;/li&gt;    &lt;li&gt; Geteilter globaler Datenzugriff (Als Ausnahme (?))&lt;/li&gt; &lt;/ul&gt;  &lt;p&gt;(Robert)&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2010-05-27 17:21:19</pubDate>
+  <lastModified>2010-05-27 17:21:19</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Nein-zu-StaticShared-Methoden</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>6cb56168-2015-4599-a1c1-8db9c9fae433</category>
+  </categories>
+  <notifications />
+</post>

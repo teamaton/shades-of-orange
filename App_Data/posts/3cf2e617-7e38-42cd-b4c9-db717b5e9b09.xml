@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>oliver</author>
+  <title>Orchard CMS: module settings not visible in Admin area? placement.info is the key!</title>
+  <description />
+  <content>&lt;p&gt;Today I went off to create a custom search module for our new &lt;a title="The Orchard Project" href="http://www.orchardproject.net/" target="_blank"&gt;Orchard&lt;/a&gt; based web application. I simply copied the module &lt;font face="Courier New"&gt;Orchard.Search&lt;/font&gt;, renamed all namespaces and such to &lt;font face="Courier New"&gt;Teamaton.Search&lt;/font&gt;, replaced some strings and prepended a prefix of “Teamaton” to a bunch of them. I wanted the new module to be able to run side-by-side with the original &lt;font face="Courier New"&gt;Orchard.Search&lt;/font&gt; module to make sure I had an independent implementation and there wouldn’t be any conflicts in case the &lt;font face="Courier New"&gt;Orchard.Search&lt;/font&gt; module is already installed somewhere.&lt;/p&gt;  &lt;p&gt;A problem I ran into quite quickly was that I wouldn’t see any of the search index’s fields on the Admin page for the new module (to the right you see the settings in the original Search module which is what I expect to see on the left as well):&lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=image_17.png"&gt;&lt;img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://shades-of-orange.com/image.axd?picture=image_thumb_17.png" width="335" height="639" /&gt;&lt;/a&gt;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; &lt;a href="http://shades-of-orange.com/image.axd?picture=image_18.png"&gt;&lt;img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://shades-of-orange.com/image.axd?picture=image_thumb_18.png" width="331" height="636" /&gt;&lt;/a&gt;&lt;/p&gt;  &lt;p&gt;Searching the discussions on &lt;a href="http://orchard.codeplex.com/" target="_blank"&gt;Orchard’s codeplex site&lt;/a&gt;, I found this very helpful post on &lt;a href="http://orchard.codeplex.com/discussions/271222" target="_blank"&gt;Module site settings not showing up&lt;/a&gt; which promised to be the key to my problem. During the initial string replacement orgy, in &lt;font face="Courier New"&gt;SearchSettingsPartDriver&lt;/font&gt; I had changed &lt;/p&gt;  &lt;pre&gt;return ContentShape(…).OnGroup(“&lt;font color="#ff0000"&gt;search&lt;/font&gt;”) &lt;font face="Calibri"&gt;to&lt;/font&gt; &lt;/pre&gt;
+
+&lt;pre&gt;return ContentShape(…).OnGroup(“&lt;font color="#ff0000"&gt;TeamatonSearch&lt;/font&gt;”)&lt;font face="Calibri"&gt;.&lt;/font&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now, this wasn’t in sync anymore with the Group Id specified inside the &lt;/font&gt;SearchSettingsPartHandler,&lt;font face="Calibri"&gt; but it should be (as the mentioned post suggests). So I changed that to match the Group “TeamatonSearch” like so:&lt;/font&gt; &lt;/p&gt;
+
+&lt;div style="border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 75.75%; padding-right: 4px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; height: 126px; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px" id="codeSnippetWrapper"&gt;
+  &lt;div style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px" id="codeSnippet"&gt;
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum1"&gt;   1:&lt;/span&gt; &lt;span style="color: #0000ff"&gt;protected&lt;/span&gt; &lt;span style="color: #0000ff"&gt;override&lt;/span&gt; &lt;span style="color: #0000ff"&gt;void&lt;/span&gt; GetItemMetadata(GetContentItemMetadataContext context) {&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum2"&gt;   2:&lt;/span&gt;     &lt;span style="color: #0000ff"&gt;if&lt;/span&gt; (context.ContentItem.ContentType != &lt;span style="color: #006080"&gt;&amp;quot;Site&amp;quot;&lt;/span&gt;) {&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum3"&gt;   3:&lt;/span&gt;         &lt;span style="color: #0000ff"&gt;return&lt;/span&gt;;&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum4"&gt;   4:&lt;/span&gt;     }&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum5"&gt;   5:&lt;/span&gt;     &lt;span style="color: #0000ff"&gt;base&lt;/span&gt;.GetItemMetadata(context);&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum6"&gt;   6:&lt;/span&gt;     context.Metadata.EditorGroupInfo.Add(&lt;span style="color: #0000ff"&gt;new&lt;/span&gt; GroupInfo(T(&lt;span style="color: #006080"&gt;&amp;quot;&lt;font color="#ff0000"&gt;TeamatonSearch&lt;/font&gt;&amp;quot;&lt;/span&gt;)));&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum7"&gt;   7:&lt;/span&gt; }&lt;/pre&gt;
+&lt;!--CRLF--&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Unfortunately, it &lt;em&gt;still did not work&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Frustration.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://orchard.codeplex.com/discussions/270586" target="_blank"&gt;Another post&lt;/a&gt; on the discussion list led me to believe it was a problem with my Copy’n’Paste. There, &lt;em&gt;piedone&lt;/em&gt; states:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;One remarkable point is a name clashing with content parts: &lt;strong&gt;there can't be content parts with the same name in different modules&lt;/strong&gt; as this leads to problems with schema creation and also when selecting them in them admin menus (because then their displayed name is also the same).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This somehow made sense to me, so I went and prefixed the part type name with Teamaton. When that didn’t work I also prefixed all properties of all ContentParts and Records because I remembered that I’d encountered a similar problem before when building our Google Maps module which, contained the same &lt;font face="Courier New"&gt;Latitude&lt;/font&gt; and &lt;font face="Courier New"&gt;Longitude&lt;/font&gt; property names that another ContentPart had already defined. But still: &lt;em&gt;to no avail&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Desperation.&lt;/p&gt;
+
+&lt;p&gt;In the first post mentioned above, Bertrand Le Roy also states:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;I have been in that exact situation. This is probably an error getting swallowed somewhere. […] In my case, it was the feature not enabling all the classes I needed, in particular the record, and the system couldn't find how to map database records.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;So I went to the Orchard console … &lt;font face="Courier New"&gt;feature disable Teamaton.Search&lt;/font&gt; … &lt;font face="Courier New"&gt;feature enable Teamaton.Search&lt;/font&gt;&lt;font face="Calibri"&gt; … still &lt;strong&gt;&lt;em&gt;nothing&lt;/em&gt;&lt;/strong&gt;.&lt;/font&gt;&lt;/p&gt;
+
+&lt;p&gt;Next it hit me like a sledge hammer – Migrations.cs! I hadn’t taken a single look at the persistence mapping for the SettingPartRecord! Well, turns out there was something wrong in there, but only since after I prefixed both parts and properties because now they wouldn’t match the strings in Migrations.cs anymore (a good example where magic strings break stuff).&lt;/p&gt;
+
+&lt;p&gt;Kind of helpless, I launched &lt;a href="http://nhprof.com/" target="_blank"&gt;NHProf&lt;/a&gt; to look at the database calls that were being made and saw that there weren’t any for the &lt;font face="Courier New"&gt;Teamaton.Search&lt;/font&gt; module – but for the &lt;font face="Courier New"&gt;Orchard.Search&lt;/font&gt; module there were … hm. I scanned through the project files again – and stared at &lt;font face="Courier New"&gt;&lt;strong&gt;placement.info&lt;/strong&gt;&lt;/font&gt;, another file I hadn’t touched since copying the original Search module. Bingo! This was the root of all evil or rather of the search fields not displaying. It looked like this:&lt;/p&gt;
+
+&lt;div style="border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 55.83%; padding-right: 4px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; height: 71px; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px" id="codeSnippetWrapper"&gt;
+  &lt;div style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px" id="codeSnippet"&gt;
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum1"&gt;   1:&lt;/span&gt; &lt;span style="color: #0000ff"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #800000"&gt;Placement&lt;/span&gt;&lt;span style="color: #0000ff"&gt;&amp;gt;&lt;/span&gt;&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum2"&gt;   2:&lt;/span&gt;     &lt;span style="color: #0000ff"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #800000"&gt;Place&lt;/span&gt; &lt;span style="color: #ff0000"&gt;Parts_Search_SiteSettings&lt;/span&gt;&lt;span style="color: #0000ff"&gt;=&amp;quot;Content:1&amp;quot;&lt;/span&gt;&lt;span style="color: #0000ff"&gt;/&amp;gt;&lt;/span&gt;&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum3"&gt;   3:&lt;/span&gt;     &lt;span style="color: #0000ff"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #800000"&gt;Place&lt;/span&gt; &lt;span style="color: #ff0000"&gt;Parts_Search_SearchForm&lt;/span&gt;&lt;span style="color: #0000ff"&gt;=&amp;quot;Content:1&amp;quot;&lt;/span&gt;&lt;span style="color: #0000ff"&gt;/&amp;gt;&lt;/span&gt;&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum4"&gt;   4:&lt;/span&gt; &lt;span style="color: #0000ff"&gt;&amp;lt;/&lt;/span&gt;&lt;span style="color: #800000"&gt;Placement&lt;/span&gt;&lt;span style="color: #0000ff"&gt;&amp;gt;&lt;/span&gt;&lt;/pre&gt;
+&lt;!--CRLF--&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The problem with it was that I had renamed all the view files and prepended a prefix to them! So the correct version should look like this:&lt;/p&gt;
+
+&lt;div style="border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 55.79%; padding-right: 4px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; height: 70px; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px" id="codeSnippetWrapper"&gt;
+  &lt;div style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px" id="codeSnippet"&gt;
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum1"&gt;   1:&lt;/span&gt; &lt;span style="color: #0000ff"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #800000"&gt;Placement&lt;/span&gt;&lt;span style="color: #0000ff"&gt;&amp;gt;&lt;/span&gt;&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum2"&gt;   2:&lt;/span&gt;     &lt;span style="color: #0000ff"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #800000"&gt;Place&lt;/span&gt; &lt;span style="color: #ff0000"&gt;Parts_&lt;em&gt;Teamaton&lt;/em&gt;Search_SiteSettings&lt;/span&gt;&lt;span style="color: #0000ff"&gt;=&amp;quot;Content:1&amp;quot;&lt;/span&gt;&lt;span style="color: #0000ff"&gt;/&amp;gt;&lt;/span&gt;&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum3"&gt;   3:&lt;/span&gt;     &lt;span style="color: #0000ff"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #800000"&gt;Place&lt;/span&gt; &lt;span style="color: #ff0000"&gt;Parts_&lt;em&gt;Teamaton&lt;/em&gt;Search_SearchForm&lt;/span&gt;&lt;span style="color: #0000ff"&gt;=&amp;quot;Content:1&amp;quot;&lt;/span&gt;&lt;span style="color: #0000ff"&gt;/&amp;gt;&lt;/span&gt;&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum4"&gt;   4:&lt;/span&gt; &lt;span style="color: #0000ff"&gt;&amp;lt;/&lt;/span&gt;&lt;span style="color: #800000"&gt;Placement&lt;/span&gt;&lt;span style="color: #0000ff"&gt;&amp;gt;&lt;/span&gt;&lt;/pre&gt;
+&lt;!--CRLF--&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;That’s because the views are named &lt;font face="Courier New"&gt;TeamatonSearch.SiteSettings.cshtml&lt;/font&gt; and &lt;font face="Courier New"&gt;TeamatonSearch.SearchForm.cshtml&lt;/font&gt; and are both placed inside a Parts folder: &lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=image_19.png"&gt;&lt;img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://shades-of-orange.com/image.axd?picture=image_thumb_19.png" width="343" height="131" /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;And now I saw the search fields even for our own new search module.&lt;/p&gt;
+
+&lt;h2&gt;Lesson learned&lt;/h2&gt;
+
+&lt;p&gt;If you can’t see something check the&amp;#160; &lt;font color="#ff0000" size="4" face="Courier New"&gt;&lt;strong&gt;placement.info&lt;/strong&gt;&lt;/font&gt;&amp;#160; if you (accidentally) haven’t forgot to make that something visible &lt;img style="border-bottom-style: none; border-left-style: none; border-top-style: none; border-right-style: none" class="wlEmoticon wlEmoticon-winkingsmile" alt="Winking smile" src="http://shades-of-orange.com/image.axd?picture=wlEmoticon-winkingsmile_1.png" /&gt; And if you still can’t see it – double check!&lt;/p&gt;
+
+&lt;p&gt;Happy coding!&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2011-09-09 22:29:37</pubDate>
+  <lastModified>2011-09-09 22:29:37</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Orchard-CMS-module-settings-not-visible-in-Admin-area-placementinfo-is-the-key!</slug>
+  <tags>
+    <tag>placement.info</tag>
+  </tags>
+  <comments />
+  <categories>
+    <category>bc3db496-f484-41a0-860c-c2e57e829fa0</category>
+    <category>3b5447eb-ff3b-4481-9287-0508fce6262b</category>
+    <category>9a51c62d-53b8-4328-abb5-590aabe1f3a6</category>
+  </categories>
+  <notifications />
+</post>

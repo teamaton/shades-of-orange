@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>oliver</author>
+  <title>Invalid Orchard Gallery URL</title>
+  <description />
+  <content>&lt;p&gt;In older installations of &lt;a title="The Orchard Project" href="http://www.orchardproject.net/" target="_blank"&gt;Orchard&lt;/a&gt; it’s possible that the URL for the Gallery feed is not up-to-date. The &lt;a href="http://blog.krisvandermast.com/OrchardCMSGalleryFeedHasChangedAfterTheMigrationToAzure.aspx" target="_blank"&gt;Orchard project site moved to Windows Azure&lt;/a&gt; at the end of 2011, and the Gallery URL changed in the process. It is now:&lt;/p&gt;  &lt;p&gt;&lt;a href="http://blog.krisvandermast.com/ct.ashx?id=a1ef9c73-615e-4b9e-8dfd-130792dc35c7&amp;amp;url=http%3a%2f%2fpackages.orchardproject.net%2fFeedService.svc%2f"&gt;http://packages.orchardproject.net/FeedService.svc/&lt;/a&gt;&lt;/p&gt;  &lt;p&gt;To change it, go to e.g. &lt;a href="http://www.marinas.info/Packaging/Gallery/Sources"&gt;http://www.marinas.info/Packaging/Gallery/Sources&lt;/a&gt;, add a new feed with the above URL and delete the old one. That’s it! For more details visit the above mentioned post by Kris.&lt;/p&gt;  &lt;p&gt;Happy Coding!&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2012-08-24 21:29:40</pubDate>
+  <lastModified>2012-08-24 21:29:40</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Invalid-Orchard-Gallery-URL</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

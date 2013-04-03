@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>Oliver</author>
+  <title>TranslatableUserControl in Repeater + TranslationPanel</title>
+  <description />
+  <content>&lt;p&gt;
+Nach zwei unabh&amp;auml;ngigen F&amp;auml;llen sieht es nun deutlicher danach aus, dass o.g. Kombination Probleme aufwirft und zwar mit dem EventHandling auf Serverseite.
+&lt;/p&gt;
+&lt;p&gt;
+Genauer: Es werden keine Events f&amp;uuml;r DropDownListen, LinkButtons u.&amp;auml;. gefeuert, obwohl sie sollten. Das macht die Funktionalit&amp;auml;t im TranslationPanel kaputt.
+&lt;/p&gt;
+&lt;p&gt;
+&amp;nbsp;
+&lt;/p&gt;
+&lt;p&gt;
+Spannend ist folgendes Ph&amp;auml;nomen: Auf einer Seite mit der genannten Kombination und ge&amp;ouml;ffnetem TranslationPanel geschieht folgendes:
+&lt;/p&gt;
+&lt;ol&gt;
+	&lt;li&gt;Erstes Mal die DDL benutzen -&amp;gt; nicht (optisch; im Fiddler sieht man aber einen Request)&lt;/li&gt;
+	&lt;li&gt;Zweites Mal die DDL benutzen -&amp;gt; die Seite wird neu geladen (komplett!)&lt;/li&gt;
+	&lt;li&gt;Drittes Mal die DDL benutzen -&amp;gt; funktioniert so, wie es soll&lt;/li&gt;
+	&lt;li&gt;Ab jetzt funzt es so wie es soll. Warum?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;
+Das also als Notiz an mich selbst. Mal schauen, was draus wird.
+&lt;/p&gt;
+&lt;p&gt;
+Oli 
+&lt;/p&gt;
+</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2009-03-24 14:30:00</pubDate>
+  <lastModified>2009-03-24 21:08:09</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>TranslatableUserControl-in-Repeater-2b-TranslationPanel</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>bc3db496-f484-41a0-860c-c2e57e829fa0</category>
+    <category>3b5447eb-ff3b-4481-9287-0508fce6262b</category>
+  </categories>
+  <notifications />
+</post>

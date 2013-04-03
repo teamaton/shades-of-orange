@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>Anton</author>
+  <title>Developer Tools</title>
+  <description />
+  <content>&lt;p&gt;I just started to really learn about MVC. We purchased the TekPub production &lt;a href="http://tekpub.com/productions/mvc3"&gt;http://tekpub.com/productions/mvc3&lt;/a&gt;. After watching the first episode, I would like to summarize the tools, which Rob Conery uses for development.&lt;/p&gt;  &lt;p&gt;Rob starts by mentioning the project management software he uses:&amp;#160; &lt;a href="http://unfuddle.com/" target="_blank"&gt;unfuddle&lt;/a&gt; and &lt;a href="http://www.agilezen.com/" target="_blank"&gt;Agile Zen&lt;/a&gt;. We mostly use the Kanban Board in &lt;a href="http://www.targetprocess.com/" target="_blank"&gt;Target Process&lt;/a&gt; – discussions and meta-thoughts go into Google Docs. We both use git as version control. Rob uses &lt;a href="https://www.dropbox.com" target="_blank"&gt;Dropbox&lt;/a&gt; as a remote repository – we use &lt;a href="https://github.com/" target="_blank"&gt;github&lt;/a&gt;.&lt;/p&gt;  &lt;p&gt;Since it is a .NET MVC application he wants to build, Rob of course uses Visual Studio, which we also use. His framework of choice for IoC is &lt;a href="http://www.ninject.org/" target="_blank"&gt;ninject&lt;/a&gt; – we use &lt;a href="http://code.google.com/p/autofac/" target="_blank"&gt;autofac&lt;/a&gt;. As do we, Rob creates a separate Test-Project for unit testing. We also have a spec project for our &lt;a href="http://www.specflow.org/" target="_blank"&gt;specflow&lt;/a&gt; scenarios, since we try implementing BDD.&lt;/p&gt;  &lt;p&gt;Rob propagates the use of codified build scripts, for instance via &lt;a href="https://github.com/derickbailey/Albacore" target="_blank"&gt;Albacore&lt;/a&gt;. We use msbuild, which we customize to our needs.&lt;/p&gt;  &lt;p&gt;From the very beginning Rob integrates a logger, namely &lt;a href="https://github.com/igo/nlogger" target="_blank"&gt;nlogger&lt;/a&gt;. Up to now we use &lt;a href="http://code.google.com/p/elmah/" target="_blank"&gt;elmah&lt;/a&gt; to log the errors of our running application.&lt;/p&gt;  &lt;p&gt;Also Rob installs &lt;a href="http://getglimpse.com/" target="_blank"&gt;glimpse&lt;/a&gt; via nuget to better see what his code is actually doing.&lt;/p&gt;  &lt;p&gt;We will probably try some of Robs tools out in the near future.&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2012-05-17 13:50:34</pubDate>
+  <lastModified>2012-05-17 13:50:34</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Developer-Tools</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

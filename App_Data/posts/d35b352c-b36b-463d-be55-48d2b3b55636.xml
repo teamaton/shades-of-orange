@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>oliver</author>
+  <title>Unexpected EOF encountered in BCP data-file</title>
+  <description />
+  <content>&lt;p&gt;Today, I tried importing a CSV file like the following into one of our MS SQL Server databases:&lt;/p&gt;  &lt;blockquote&gt;   &lt;p&gt;&lt;font face="Courier New"&gt;&lt;strong&gt;Id;Latitude;Longitude          &lt;br /&gt;&lt;/strong&gt;4610;43.7119;-1.0737         &lt;br /&gt;5502;49.4297;-1.806         &lt;br /&gt;11360;46.9343;-1.8875&lt;/font&gt;&lt;/p&gt; &lt;/blockquote&gt;  &lt;p&gt;I tried it using the following command line:&lt;/p&gt;  &lt;div style="border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 64.22%; padding-right: 4px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; height: 21px; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px" id="codeSnippetWrapper"&gt;   &lt;div style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; height: 21px; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px" id="codeSnippet"&gt;     &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #606060" id="lnum1"&gt;   1:&lt;/span&gt; bcp GeoDataImport &lt;span style="color: #0000ff"&gt;in&lt;/span&gt; geodata.csv -w -t; -T&lt;/pre&gt;
+&lt;!--CRLF--&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;but that threw the mentioned error: &lt;font face="Courier New"&gt;&lt;/font&gt;&lt;/p&gt;
+
+&lt;h3&gt;“Unexpected EOF encountered in BCP data-file”&lt;/h3&gt;
+
+&lt;pre style="border-bottom: #cecece 1px solid; border-left: #cecece 1px solid; padding-bottom: 5px; background-color: #000000; min-height: 40px; padding-left: 5px; width: 679px; padding-right: 5px; height: 205px; color: white; overflow: auto; border-top: #cecece 1px solid; border-right: #cecece 1px solid; padding-top: 5px"&gt;&lt;pre style="background-color: #000000; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"&gt;cmd&amp;gt; bcp GeoDataImport in geodata.csv -w -t; -T&lt;/pre&gt;&lt;pre style="background-color: #000000; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"&gt;&lt;/pre&gt;&lt;pre style="background-color: #000000; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"&gt;Starting copy...
+&lt;/pre&gt;&lt;pre style="background-color: #000000; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"&gt;SQLState = S1000, NativeError = 0
+&lt;/pre&gt;&lt;pre style="background-color: #000000; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"&gt;Error = [Microsoft][SQL Server Native Client 10.0]Unexpected EOF encountered in BCP data-file
+&lt;/pre&gt;&lt;pre style="background-color: #000000; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"&gt;&lt;/pre&gt;&lt;pre style="background-color: #000000; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"&gt;0 rows copied.
+&lt;/pre&gt;&lt;pre style="background-color: #000000; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"&gt;Network packet size (bytes): 4096
+&lt;/pre&gt;&lt;pre style="background-color: #000000; margin: 0em; width: 100%; font-family: consolas,&amp;#39;Courier New&amp;#39;,courier,monospace; font-size: 12px"&gt;Clock Time (ms.) Total     : 1&lt;/pre&gt;&lt;/pre&gt;
+
+&lt;p&gt;I’ve had this problem before and somehow managed to remember that it &lt;em&gt;might&lt;/em&gt; have something to do with the encoding of the file. So I opened it with &lt;a href="http://notepad-plus-plus.org/" target="_blank"&gt;Notepad++&lt;/a&gt; where you can easily check and change the file encoding and found it was ANSI encoded:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=image_23.png"&gt;&lt;img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://shades-of-orange.com/image.axd?picture=image_thumb_23.png" width="366" height="266" /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Well, the UCS-2 Little Endian encoding is what SQL Server expects as default encoding, so I changed the encoding, saved the file and imported it again – with success. UCS-2 might be something you rarely hear about – that’s because it’s been superseded by UTF-16 but in most situations they are pretty much identical (check out &lt;a href="http://en.wikipedia.org/wiki/UTF-16/UCS-2"&gt;http://en.wikipedia.org/wiki/UTF-16/UCS-2&lt;/a&gt; for more info).&lt;/p&gt;
+
+&lt;p&gt;That’s all for now – happy coding!&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2011-09-15 17:05:55</pubDate>
+  <lastModified>2011-09-15 17:05:55</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Unexpected-EOF-encountered-in-BCP-data-file</slug>
+  <tags>
+    <tag>encoding</tag>
+  </tags>
+  <comments />
+  <categories>
+    <category>4c741f81-0ac2-4ab0-9a49-bd8ecbbff502</category>
+    <category>9c2910dd-8a70-451f-b9d5-0ec47609aedb</category>
+    <category>b9df7adf-328a-4e8c-9401-f5adf7e10cd6</category>
+  </categories>
+  <notifications />
+</post>

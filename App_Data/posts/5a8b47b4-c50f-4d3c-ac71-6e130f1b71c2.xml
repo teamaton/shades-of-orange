@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>oliver</author>
+  <title>Externe JavaScript-Dateien in asynchronem Postback laden</title>
+  <description />
+  <content>&lt;p&gt;Wenn man viel UI-Funktionalität haben will, braucht man hin und wieder ein paar Dateien Javascript, die diese enthalten – da kommt auf die Dauer einiges zusammen. Wenn man nun versucht, gleichzeitig die Seitengröße unter Kontrolle zu behalten, kommt man schnell auf die Idee, bestimmte JavaScript-Dateien erst dann zu laden, wenn die enthaltene Funktionalität tatsächlich auch benötigt wird.&lt;/p&gt;  &lt;p&gt;Ein Schlüssel dazu ist die Methode &lt;strong&gt;ScriptManager.RegisterClientScriptInclude&lt;/strong&gt;, aber leider nur einer. Der zweite, entscheidende Schlüssel ist der hier:&lt;/p&gt;  &lt;p&gt;&lt;font face="Courier New"&gt;&lt;strong&gt;if (typeof (Sys) !== 'undefined') Sys.Application.notifyScriptLoaded();&lt;/strong&gt;&lt;/font&gt;&lt;/p&gt;  &lt;p&gt;Diese Zeile muss am Ende jeder auf diesem Wege eingebundenen js-Datei stehen.&lt;/p&gt;  &lt;p&gt;Ein ausführliches Beispiel habe ich &lt;a href="http://stackoverflow.com/questions/1916618/scriptmanager-registerclientscriptinclude-does-not-work-in-updatepanel" target="_blank"&gt;hier&lt;/a&gt; eingestellt, kurz bevor ich dann die Lösung selbst gefunden habe. So ist es manchmal!&lt;/p&gt;  &lt;p&gt;Happy coding!&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2009-12-16 20:01:42</pubDate>
+  <lastModified>2009-12-16 20:01:42</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Externe-JavaScript-Dateien-in-asynchronem-Postback-laden</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>Stefan</author>
+  <title>"NHibernate.MappingException: Association references unmapped class" die Zweite</title>
+  <description />
+  <content>&lt;p&gt;
+Ich bin heute auf ebendiese Exception gestossen als ich folgende zeilen zu einem Mapping-File in CO hinzufuegte:&amp;nbsp;
+&lt;/p&gt;
+&lt;pre&gt;
+&amp;lt;set name=&amp;quot;NHibernateFiles&amp;quot;&amp;gt;
+&amp;lt;key column=&amp;quot;EntityId&amp;quot;/&amp;gt;
+&amp;lt;one-to-many class=&amp;quot;SpeakFriend.Utilities.StoredFile, SpeakFriend.Utilities&amp;quot;/&amp;gt;
+&amp;lt;/set&amp;gt;&lt;br /&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+Per Google-Suche landete ich direkt auf unserem Blog und fand Olivers Beitrag. Ich dachte schon, das Problem waere erledigt. Einfach das Mapping-File auf &amp;quot;Embedded Ressource&amp;quot; setzen und fertig. Aber Pustekuchen, das war ja schon alles richtig eingestellt. Ich konnte auch StoredFile von CO aus persistieren . Ein Blick in die App.config half mit auch nicht weiter:
+&lt;/p&gt;
+&lt;pre&gt;
+&amp;lt;mapping assembly=&amp;quot;SpeakFriend.Utilities&amp;quot; /&amp;gt;
+&amp;lt;mapping assembly=&amp;quot;ConceptOffice.Core&amp;quot; /&amp;gt;
+&amp;lt;mapping assembly=&amp;quot;ConceptOffice.Core.Client&amp;quot; /&amp;gt;&lt;br /&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+Alles war fein referenziert. Und es klappte ja auch alles. Nur beim parsen des Mapping-Files hatte er ein Problem.
+&lt;/p&gt;
+&lt;p&gt;
+Nun die Aufloesung: Ein Durchwuehlen des Stack-Traces fuehrte mich auf folgende Stelle:&amp;nbsp;
+&lt;/p&gt;
+&lt;pre&gt;
+protected NHibernateHelper _nhibernateHelperSqlLite =
+new NHibernateHelper(new Configuration().Configure(&amp;quot;lite-nhibernate.cfg.xml&amp;quot;)
+.BuildSessionFactory().OpenSession());&lt;br /&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+Beim Blick in lite-nhibernate.cfg.xml fiel es mir dann wie Schuppen von den Augen. Die fettgedruckte Zeile fehlte:&amp;nbsp; 
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;strong&gt;&amp;lt;mapping assembly=&amp;quot;SpeakFriend.Utilities&amp;quot; /&amp;gt;&lt;/strong&gt;
+&amp;lt;mapping assembly=&amp;quot;ConceptOffice.Core&amp;quot; /&amp;gt;
+&amp;lt;mapping assembly=&amp;quot;ConceptOffice.Core.Client&amp;quot; /&amp;gt;&lt;br /&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+Fazit: Nur nicht aufgeben, man findet den Fehler immer irgendwann. 
+&lt;/p&gt;
+</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2009-08-13 11:26:00</pubDate>
+  <lastModified>2009-08-13 11:50:10</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>NHibernateMappingException-Association-references-unmapped-class-die-Zweite</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>f8bafae5-b874-4cd1-bc83-6b822e1c2e83</category>
+  </categories>
+  <notifications />
+</post>

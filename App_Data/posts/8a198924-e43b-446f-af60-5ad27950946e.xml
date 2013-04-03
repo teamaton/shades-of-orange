@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>admin</author>
+  <title>Nur die CLR 2.0 und Du</title>
+  <description />
+  <content>&lt;p&gt;&lt;a href="http://www.ayende.com/"&gt;Oren Eini&lt;/a&gt; stellt eine &lt;a href="http://ayende.com/Blog/archive/2007/05/18/You-have-only-the-CLR-2.0-now-go-and-build.aspx"&gt;interessante Frage&lt;/a&gt;."Du hast nur die CLR und must ein komplexe Anwendung bauen. Aus projektpolitischen Gründen ist es nicht erlaubt externe Bibliotheken zu verwenden - egal ob Open Source (OSS) oder von Microsoft. Kannst Du eine Anwendung auf diese Art und Weise bauen?".&lt;/p&gt; &lt;p&gt;Oren verneint die Frage rhetorisch. Die Entwicklung eines einfachen &lt;a href="http://www.martinfowler.com/articles/injection.html"&gt;IoC&lt;/a&gt; schätzt er auf 2 Tage, die Entwicklung einer rudimentären OR/M Schicht auf eine Woche. Ersteres empfinde ich dank Activator.CreateInstance() als einfach. Eine OR/M Schicht dürfte nach einer Woche kritisch zu beurteilen sein. &lt;/p&gt; &lt;p&gt;Ob objektrelationales Mapping zwinged erforderlich ist sei dahin gestellt. ADO.NET ist mächtig. Objekte lassen sich mit eine DataReader händisch befüllen. Mit Hilfe einer trivialen Template Engine ist auch auf diese Art und Weise eine beachtliche Entwicklungsgeschwindigkeit bei hoher Codequalität zu erreichen. &lt;a href="http://msdn2.microsoft.com/en-us/library/aa973811.aspx"&gt;Inversion of Control&lt;/a&gt; sollte nicht für alles verwendet werden. Für mich ist es eher eine mögliche Refaktorisierung, die bei Bedarf durchgeführt werden sollte. Der eigentlich Punkt den Oren heraustellt ist, wie wesentlich Bibliotheken die tägliche Arbeit beeinflussen, verbessern und ermöglichen. Gelobt seien HHibernate, Castle, NUnit, NLog und all die vielen anderen von AJAX.NET bis &lt;a href="http://www.icsharpcode.net/OpenSource/SharpZipLib/"&gt;#ziplib&lt;/a&gt; :-) &lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2007-05-18 17:18:10</pubDate>
+  <lastModified>0001-01-01 06:00:00</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Nur-die-CLR-20-und-Du</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>6cb56168-2015-4599-a1c1-8db9c9fae433</category>
+    <category>571773d0-d007-4a88-bc08-6c1b7374d3f1</category>
+    <category>f8bafae5-b874-4cd1-bc83-6b822e1c2e83</category>
+    <category>678a9d57-c1ea-487a-8fd3-4d08dc0be9c4</category>
+  </categories>
+  <notifications />
+</post>

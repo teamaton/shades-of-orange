@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>admin</author>
+  <title>NHibernate in Deutschland - eine Nische?</title>
+  <description />
+  <content>&lt;p&gt;Wie viele deutsche Entwickler verwenden NHibernate? Google Trends beantwortet die Frage einfach: „Zu wenig Suchende“ um einein Trend zu ermitteln. Schade! Die Suche im deutschsprachigen Netz nach NHibernate ermittelt 17 600 Treffer. Im Vergleich dazu gibt 276 000 Treffer für Hibernate, um den Faktor 15 Mal mehr.&lt;/p&gt;
+&lt;p&gt; 
+&lt;/p&gt;&lt;ol&gt;
+    &lt;li&gt;Linq: 81700 &lt;/li&gt;
+    &lt;li&gt;NHibernate 17600 &lt;/li&gt;
+    &lt;li&gt;iBatis 608 &lt;/li&gt;
+    &lt;li&gt;Objectspaces: 596&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Unten ist der Vergleich zwischen java und c# (.Net sieht nur marginal besser aus.) via &lt;a href="http://www.google.com/trends?q=c%23%2C+java&amp;amp;ctab=0&amp;amp;geo=DE&amp;amp;date=all"&gt;Google Trends&lt;/a&gt; zu sehen. &lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.google.com/trends?q=c%23%2C+java&amp;amp;ctab=0&amp;amp;geo=DE&amp;amp;date=all" atomicselection="true"&gt;&lt;img width="261" height="192" border="0" alt="" style="border: 0px none ;" src="http://speak-friend.com/images/speak-friend_com/andrej/WindowsLiveWriter/NHibernateinDeutschlandeineNische_1036E/CropperCapture%5B35%5D%5B4%5D.jpg" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Im Prinzip kann das nur heißen, das Java Benutzer einen wesentlich höheren Suchbedarf haben :-)&lt;/p&gt;
+&lt;p&gt;(robert)&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2007-04-27 17:26:54</pubDate>
+  <lastModified>0001-01-01 06:00:00</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>NHibernate-in-Deutschland-eine-Nische</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>6cb56168-2015-4599-a1c1-8db9c9fae433</category>
+    <category>f8bafae5-b874-4cd1-bc83-6b822e1c2e83</category>
+    <category>678a9d57-c1ea-487a-8fd3-4d08dc0be9c4</category>
+  </categories>
+  <notifications />
+</post>

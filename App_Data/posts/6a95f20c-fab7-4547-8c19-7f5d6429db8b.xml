@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>Robert</author>
+  <title>.gitignore</title>
+  <description />
+  <content>&lt;p&gt;Unser &amp;ldquo;.gitignore&amp;rdquo; File f&amp;uuml;r die Verwendung mit Visual-Studio und Resharper.&lt;/p&gt;
+&lt;pre class="csharpcode"&gt;_svn/
+.svn/
+obj/
+[Bb]&lt;span class="kwrd"&gt;in&lt;/span&gt;/
+[Dd]ebug/   
+[Rr]elease/   
+_Re[Ss]harper.*
+*.resharper
+*.resharper.user
+*.suo
+*.cache
+*~
+*.swp&lt;/pre&gt;
+&lt;p&gt;&lt;!-- .csharpcode, .csharpcode pre { 	font-size: small; 	color: black; 	font-family: consolas, "Courier New", courier, monospace; 	background-color: #ffffff; 	/*white-space: pre;*/ } .csharpcode pre { margin: 0em; } .csharpcode .rem { color: #008000; } .csharpcode .kwrd { color: #0000ff; } .csharpcode .str { color: #006080; } .csharpcode .op { color: #0000c0; } .csharpcode .preproc { color: #cc6633; } .csharpcode .asp { background-color: #ffff00; } .csharpcode .html { color: #800000; } .csharpcode .attr { color: #ff0000; } .csharpcode .alt  { 	background-color: #f4f4f4; 	width: 100%; 	margin: 0em; } .csharpcode .lnum { color: #606060; } --&gt;&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2009-11-21 00:57:00</pubDate>
+  <lastModified>2009-11-26 15:22:40</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>gitignore</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>562ee0c0-023d-4985-bc8e-19dc601e5934</category>
+  </categories>
+  <notifications />
+</post>

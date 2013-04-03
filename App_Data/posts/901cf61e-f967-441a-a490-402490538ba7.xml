@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>oliver</author>
+  <title>Customize and debug your Google+ button</title>
+  <description />
+  <content>&lt;a href="http://shades-of-orange.com/image.axd?picture=image_33.png"&gt;&lt;img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: right; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="image" border="0" alt="image" align="right" src="http://shades-of-orange.com/image.axd?picture=image_thumb_33.png" width="73" height="32" /&gt;&lt;/a&gt;   &lt;p&gt;This week we added a Google +1 button to &lt;a href="http://www.camping.info" target="_blank"&gt;Camping.Info&lt;/a&gt; – well, actually several of them. Adding a button with a static URL is quite straight-forward and well described on Google’s pages (refer &lt;a href="https://developers.google.com/+/plugins/+1button/" target="_blank"&gt;here for documentation&lt;/a&gt; and the &lt;a href="http://www.google.com/webmasters/+1/button/" target="_blank"&gt;Google+ button configuration tool&lt;/a&gt;).&lt;/p&gt;  &lt;p&gt;As &lt;a href="http://www.google.com/support/webmasters/bin/answer.py?answer=1708844" target="_blank"&gt;Google recommends&lt;/a&gt; (at the bottom of the page), we chose to put two Google +1 buttons on each of our (important) pages: one in the header to +1 the whole portal and one page/context sensitive button to +1 the specific page. &lt;/p&gt;  &lt;h2&gt;Dynamic loading&lt;/h2&gt;  &lt;p&gt;An interesting customization we added was dynamically loading a +1 button when the user changes their location on the &lt;a href="http://en.camping.info/campsites" target="_blank"&gt;search page&lt;/a&gt; using AJAX where the browser URL stays the same (although &lt;a href="http://spoiledmilk.dk/blog/html5-changing-the-browser-url-without-refreshing-page" target="_blank"&gt;this behavior can now be customized with HTML5&lt;/a&gt;!) – there we use the following code snippet to render the +1 button to use the correct (currently searched) URL:&lt;/p&gt;  &lt;div style="border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 51.65%; padding-right: 4px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; height: 101px; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px" id="codeSnippetWrapper"&gt;   &lt;div style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px" id="codeSnippet"&gt;     &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #0000ff"&gt;if&lt;/span&gt; (window.gapi) {&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;    gapi.plusone.render(&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;        &lt;span style="color: #006080"&gt;'g-plusone-search'&lt;/span&gt;,&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;        { size: &lt;span style="color: #006080"&gt;'medium'&lt;/span&gt;, href: $(&lt;span style="color: #006080"&gt;'div#g-plusone-search'&lt;/span&gt;).data(&lt;span style="color: #006080"&gt;'href'&lt;/span&gt;) }&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;    );&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;}&lt;/pre&gt;
+&lt;!--CRLF--&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This code assumes that the div with class “g-plusone-search” contains the attribute “data-href=&amp;lt;URL&amp;gt;” with the URL we wish to +1.&lt;/p&gt;
+
+&lt;h2&gt;Debugging the Google +1 button – tell me the URL!&lt;/h2&gt;
+
+&lt;p&gt;To properly test and debug the scenario for the dynamic +1 button, I ‘ve put together a short piece of jQuery code that shows the URL of the Google +1 button currently under the mouse:&lt;/p&gt;
+
+&lt;div style="border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 76.9%; padding-right: 4px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; height: 148px; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px" id="codeSnippetWrapper"&gt;
+  &lt;div style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px" id="codeSnippet"&gt;
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;&lt;span style="color: #008000"&gt;// debug tooltip for Google+ buttons which contains the targeted URL&lt;/span&gt;&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;$(&lt;span style="color: #006080"&gt;'div.gp1'&lt;/span&gt;).live(&lt;span style="color: #006080"&gt;'hover'&lt;/span&gt;, &lt;span style="color: #0000ff"&gt;function&lt;/span&gt; () {&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;    &lt;span style="color: #0000ff"&gt;var&lt;/span&gt; div = $(&lt;span style="color: #0000ff"&gt;this&lt;/span&gt;);&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;    div.attr(&lt;span style="color: #006080"&gt;'title'&lt;/span&gt;,&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;            decodeURIComponent(decodeURIComponent(&lt;span style="color: #0000ff"&gt;new&lt;/span&gt; RegExp(&lt;span style="color: #006080"&gt;&amp;quot;url=[^&amp;amp;]+&amp;quot;&lt;/span&gt;).exec(div.find(&lt;span style="color: #006080"&gt;'iframe'&lt;/span&gt;).attr(&lt;span style="color: #006080"&gt;'src'&lt;/span&gt;))))&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;                .substring(4) &lt;span style="color: #008000"&gt;// cut off &amp;quot;url=&amp;quot;&lt;/span&gt;&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;                .replace(/\&lt;span style="color: #008000"&gt;//g, '/ ').replace(/\/ \/ /, '//')) // add spaces after / but not in //&lt;/span&gt;&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;        .tooltip({ position: &lt;span style="color: #006080"&gt;&amp;quot;center left&amp;quot;&lt;/span&gt; });&lt;/pre&gt;
+&lt;!--CRLF--&gt;
+
+    &lt;pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: white; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px"&gt;});&lt;/pre&gt;
+&lt;!--CRLF--&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The call to .tooltip() requires the jquery.tools.tooltip.js to be included on the page but you don’t really need it since without it you will see a normal title popup. The double call to decodeURIComponent was necessary for us since our URL contain special characters that are already encoded and Google encodes them a second time to be a safe parameter in their internally used link. The .replace() call simply inserts some whitespace which we needed for long URLs to fit into our custom tooltip.&lt;/p&gt;
+
+&lt;h2&gt;Go and have fun&lt;/h2&gt;
+
+&lt;p&gt;That’s two pieces of code I found useful when integrating Google +1 buttons into our site. Hope you find them useful, too.&lt;/p&gt;
+
+&lt;p&gt;Happy Coding!&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2011-12-03 19:17:16</pubDate>
+  <lastModified>2011-12-03 19:17:16</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Customize-and-debug-your-Google+-button</slug>
+  <tags />
+  <comments />
+  <categories />
+  <notifications />
+</post>

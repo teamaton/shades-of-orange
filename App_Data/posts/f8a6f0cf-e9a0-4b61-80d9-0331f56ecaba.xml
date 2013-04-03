@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>oliver</author>
+  <title>Missing Index: CREATE NONCLUSTERED INDEX</title>
+  <description />
+  <content>&lt;p&gt;Lately, we encountered a problem with the speed of our search on &lt;a href="http://www.camping.info"&gt;www.camping.info&lt;/a&gt; for a certain set of search criteria. It sometimes used to take over a few seconds before the updated results were shown. This most likely seemed to be a problem with the database so I went to investigate the offending queries using the wonderful &lt;a href="http://nhprof.com/About" target="_blank"&gt;NHibernate Profiler&lt;/a&gt;. I found a very slow query:&lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=image_10.png"&gt;&lt;img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://shades-of-orange.com/image.axd?picture=image_thumb_10.png" width="935" height="245" /&gt;&lt;/a&gt;&lt;/p&gt;  &lt;p&gt;So I went and copied the long running query into a new query window in SSMS (SQL Server Management Studio). Since we use MS SQL Express on our production servers we don’t get the advanced database tuning advisor features of the full edition. Still, when you right click on any query window you’ll see the option “Include Actual Execution Plan” …&lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=image_11.png"&gt;&lt;img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://shades-of-orange.com/image.axd?picture=image_thumb_11.png" width="346" height="209" /&gt;&lt;/a&gt; [FULL]&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; &lt;a href="http://shades-of-orange.com/image.axd?picture=image_12.png"&gt;&lt;img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://shades-of-orange.com/image.axd?picture=image_thumb_12.png" width="264" height="184" /&gt;&lt;/a&gt; [EXPRESS]&lt;/p&gt;  &lt;p&gt;… which already offers a lot of detail, as you can see in the following screenshot:&lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=image_13.png"&gt;&lt;img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://shades-of-orange.com/image.axd?picture=image_thumb_13.png" width="976" height="352" /&gt;&lt;/a&gt;&lt;/p&gt;  &lt;p&gt;When you right click on the execution plan you’ll see the option “Missing Index Details…” - there you get a CREATE INDEX statement that is ready to use once you give a name to the new index. I did this for three indexes and now we have this for the same query:&lt;/p&gt;  &lt;p&gt;&lt;a href="http://shades-of-orange.com/image.axd?picture=image_14.png"&gt;&lt;img style="background-image: none; border-right-width: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://shades-of-orange.com/image.axd?picture=image_thumb_14.png" width="915" height="107" /&gt;&lt;/a&gt;&lt;/p&gt;  &lt;p&gt;115 ms instead of 1993 ms – that’s an improvement of 94%! Even if DB queries lasting longer than 50-60 ms are not really fast anymore, we’ve still got quite an improvement here.&lt;/p&gt;  &lt;p&gt;Well, that’s it. Using a well-priced tool like NHibernate Profiler to identify slow queries and the Execution Plan feature of SSMS, we’re able to get quite a performance improvement in a short time.&lt;/p&gt;  &lt;p&gt;Happy Coding and Optimizing,&lt;/p&gt;  &lt;p&gt;Oliver&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2011-08-17 18:28:00</pubDate>
+  <lastModified>2011-08-17 23:17:18</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>Missing-Index-CREATE-NONCLUSTERED-INDEX</slug>
+  <tags>
+    <tag>index</tag>
+  </tags>
+  <comments />
+  <categories>
+    <category>127092f2-44aa-4021-a268-49fce3fc0aa1</category>
+    <category>4c741f81-0ac2-4ab0-9a49-bd8ecbbff502</category>
+    <category>f8bafae5-b874-4cd1-bc83-6b822e1c2e83</category>
+    <category>3b5447eb-ff3b-4481-9287-0508fce6262b</category>
+  </categories>
+  <notifications />
+</post>
