@@ -2,10 +2,10 @@
 body{background:url(img/header-shades.png) repeat-x 0 0; margin:0 auto;position:relative;text-align:center; line-height:1.6; color:#666;}
 html{background:url(img/header-shades.png) repeat-x 0 100%; padding-bottom:48px;}
 form{width:980px;margin-left:auto;margin-right:auto;text-align:left;}
-h1{font-size:2.9em;}
+h1{font-size:2.5em;}
 h2{font-size:2em;}
-h3 {font-size:1.6em;}
-h4 {font-size:1.5em;}
+h3 {font-size:1.5em;}
+h4 {font-size:1.3em;}
 h1, h2, h3, h4, .logo {font-family:open sans; font-weight:100;}
 
 /* alternative link farbe: #0089B2 */
