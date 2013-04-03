@@ -2,8 +2,8 @@
 body{background:url(img/header-shades.png) repeat-x 0 0; margin:0 auto;position:relative;text-align:center; line-height:1.6; color:#666;}
 html{background:url(img/header-shades.png) repeat-x 0 100%; padding-bottom:48px;}
 form{width:980px;margin-left:auto;margin-right:auto;text-align:left;}
-h1{font-size:3.5em;}
-h2{font-size:2.2em;}
+h1{font-size:2.9em;}
+h2{font-size:2em;}
 h3 {font-size:1.6em;}
 h4 {font-size:1.5em;}
 h1, h2, h3, h4, .logo {font-family:open sans; font-weight:100;}
@@ -32,12 +32,13 @@ img{border:none;}
 .loginbox{margin:0 auto;}
 .loginbox td{padding:3px;}
 #postnavigation{margin-bottom:10px;text-align:center;color:Gray;background:white;border:1px solid silver;padding:3px;}
-#footer{font-size:80%;text-align:center}
+footer {clear:both;}
+#footer{font-size:80%;text-align:center; margin:2em 0 0 0;}
 #header {padding:64px 0 24px 0;; position:relative; }
-.logo {font-size:4.4em; line-height:1;}
+.logo {font-size:3.96em; line-height:1;}
 .logo img {margin:0 16px 0 0; display:block; float:left;}
 .logo span {display:block;}
-.tagline {font-size:1.58em; margin-top:6px;}
+.tagline {font-size:1.42em; margin-top:6px;}
 #header a{text-decoration:none;color:#666;}
 .nav {position:absolute; top:72px; right:0; list-style:none;}
 .nav a, .square-button {position:relative; border-left:solid 24px #ff7f00; display:inline-block; height:24px; margin-bottom:8px; padding:0 2px 0 5px;}

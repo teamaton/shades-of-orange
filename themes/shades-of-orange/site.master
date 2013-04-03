@@ -45,13 +45,13 @@
         <div class="about widget">
             <h4>About Oliver</h4>
             <p>
-                <img src="<%=Utils.ApplicationRelativeWebRoot %>themes/shades-of-orange/img/logo-shades-rounded.png" alt="shades-of-orange.com code blog logo" />
-                nice image some text about the author, his work at <a href="http://teamaton.com">teamaton</a> 
+                <img src="<%=Utils.ApplicationRelativeWebRoot %>themes/shades-of-orange/img/oliver.png" alt="shades-of-orange.com code blog logo" />
+                <strong>Oliver</strong> is a c#, mvc and jquery developer at <a href="http://teamaton.com">teamaton</a> 
             </p>
             <h4>About Anton</h4>
             <p>
-                <img src="<%=Utils.ApplicationRelativeWebRoot %>themes/shades-of-orange/img/logo-shades-rounded.png" alt="shades-of-orange.com code blog logo" />
-                nice image some text about the author, his work at <a href="http://teamaton.com">teamaton</a> 
+                <img src="<%=Utils.ApplicationRelativeWebRoot %>themes/shades-of-orange/img/anton.png" alt="shades-of-orange.com code blog logo" />
+                <strong>Anton</strong> is a software developer at <a href="http://teamaton.com">teamaton</a> and head of finances
             </p>
         </div>
         <div class="products widget">
