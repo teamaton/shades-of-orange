@@ -59,7 +59,7 @@ div.widget a.edit, div.widget a.move, div.widget a.delete{font-size:85%;font-wei
 .widgetzone img.rssButton{margin-right:3px;}
 .widgetzone div#moveWidgetToContainer{display:block;margin:5px;}
 .widget.textbox h4 {margin-bottom:16px;}
-.about img {margin:0 8px 8px 0; float:left;}
+.about img {margin:0 8px 4px 0; float:left;}
 .about .last {margin-bottom:0;}
 
 #disqus_thread {margin:24px 0;}

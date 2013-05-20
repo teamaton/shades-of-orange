@@ -45,13 +45,16 @@
         <div class="about widget">
             <h4>About Oliver</h4>
             <p>
-                <img src="<%=Utils.ApplicationRelativeWebRoot %>themes/shades-of-orange/img/oliver.png" alt="shades-of-orange.com code blog logo" />
-                <strong>Oliver</strong> is a c#, mvc and jquery developer at <a href="http://teamaton.com">teamaton</a> 
+                <img src="<%=Utils.ApplicationRelativeWebRoot %>themes/shades-of-orange/img/oliver.png" alt="shades-of-orange.com code blog logo" />                
+                I build web applications using ASP.NET and have a passion for jQuery. 
+                Enjoy MVC 4 and Orchard CMS, and I do TDD whenever I can. 
+                I like clean code. 
+                Love to spend time with my wife and our daughter.
             </p>
             <h4>About Anton</h4>
             <p>
                 <img src="<%=Utils.ApplicationRelativeWebRoot %>themes/shades-of-orange/img/anton.png" alt="shades-of-orange.com code blog logo" />
-                <strong>Anton</strong> is a software developer at <a href="http://teamaton.com">teamaton</a> and head of finances
+                I'm a software developer at teamaton. I code in c# and workes with mvc, orchard, specflow, coypu and nhibernate. I enjoy beach volleyball, board games and Coke.
             </p>
         </div>
         <div class="products widget">
