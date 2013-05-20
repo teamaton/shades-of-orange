@@ -46,22 +46,23 @@
             <h4>About Oliver</h4>
             <p>
                 <img src="<%=Utils.ApplicationRelativeWebRoot %>themes/shades-of-orange/img/oliver.png" alt="shades-of-orange.com code blog logo" />                
-                I build web applications using ASP.NET and have a passion for jQuery. 
-                Enjoy MVC 4 and Orchard CMS, and I do TDD whenever I can. 
-                I like clean code. 
+                I build <a href="http://www.teamaton.com/">web applications</a> using <strong>ASP.NET</strong> and have a passion for <strong>jQuery</strong>. 
+                Enjoy <strong>MVC 4 and Orchard CMS</strong>, and I do <strong>TDD</strong> whenever I can. 
+                I like <strong>clean code</strong>. 
                 Love to spend time with my wife and our daughter.
             </p>
             <h4>About Anton</h4>
             <p>
                 <img src="<%=Utils.ApplicationRelativeWebRoot %>themes/shades-of-orange/img/anton.png" alt="shades-of-orange.com code blog logo" />
-                I'm a software developer at teamaton. I code in c# and workes with mvc, orchard, specflow, coypu and nhibernate. I enjoy beach volleyball, board games and Coke.
+                I'm a <strong>software developer</strong> at <a href="http://www.teamaton.com/">teamaton</a>. I code in <strong>c#</strong> and work with <strong>mvc, orchard, specflow, coypu and nhibernate</strong>. 
+                I enjoy beach volleyball, board games and Coke.
             </p>
         </div>
         <div class="products widget">
             <h4>Our Work</h4>
             <p><a href="http://discoverize.com/"><strong>discoverize.com</strong> is a web application for individual and customizable portals</a></p>
             <p><a href="http://camping.info/" class="special"><strong>camping.info</strong> is a web application for about 24.000 campsites in Europe</a></p>
-            <p><a href="http://teamreview.teamaton.com/" class="special"><strong>team review</strong> is a simple and straight-forward peer and stack review tool for small teams</a></p>
+            <p><a href="http://www.teamreview.net/" class="special"><strong>team review</strong> is a simple and straight-forward peer and stack review tool for small teams</a></p>
         </div>
         <blog:WidgetZone runat="server" ZoneName="be_WIDGET_ZONE" />
     </div>
