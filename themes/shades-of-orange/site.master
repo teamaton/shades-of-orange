@@ -60,8 +60,8 @@
         </div>
         <div class="products widget">
             <h4>Our Work</h4>
-            <p><a href="http://discoverize.com/"><strong>discoverize.com</strong> is a web application for individual and customizable portals</a></p>
-            <p><a href="http://camping.info/" class="special"><strong>camping.info</strong> is a web application for about 24.000 campsites in Europe</a></p>
+            <p><a href="http://discoverize.com/"><strong>discoverize.com</strong> let's you create a individual and customizable search plattform for your niche</a></p>
+            <p><a href="http://camping.info/" class="special"><strong>camping.info</strong> is a search plattform for campsites in Europe with about 24.000 campsites</a></p>
             <p><a href="http://www.teamreview.net/" class="special"><strong>team review</strong> is a simple and straight-forward peer and stack review tool for small teams</a></p>
         </div>
         <blog:WidgetZone runat="server" ZoneName="be_WIDGET_ZONE" />
@@ -69,8 +69,8 @@
 
     <footer>
         <p id="footer">
-            Powered by <a href="http://www.dotnetblogengine.net">BlogEngine.NET</a> <%=BlogSettings.Instance.Version() %><br />
-            Theme by <a href="http://teamaton.com">teamaton.com</a>
+            Powered by the fabulous <a href="http://www.dotnetblogengine.net">BlogEngine.NET</a> <%=BlogSettings.Instance.Version() %><br />
+            Theme by <a href="http://teamaton.com">web application builders at teamaton.com</a>
             <span runat="server" id="aUser"></span><a runat="server" id="aLogin" />
         </p>
     </footer>
