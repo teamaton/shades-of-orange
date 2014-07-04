@@ -31,7 +31,9 @@ public partial class StandardSite : System.Web.UI.MasterPage
             base.Render(htmlwriter);
             string html = htmlwriter.InnerWriter.ToString();
 
-            html = reg.Replace(html, string.Empty).Trim();
+            // Oliver, 2014-07-04: don't remove whitespace from html to keep <pre> elements working
+            // thanks to: http://blogengine.codeplex.com/discussions/406879
+            // html = reg.Replace(html, string.Empty).Trim();
 
             writer.Write(html);
         }
