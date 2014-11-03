@@ -54,14 +54,14 @@
             <h4>About Anton</h4>
             <p>
                 <img src="<%=Utils.ApplicationRelativeWebRoot %>themes/shades-of-orange/img/anton.png" alt="shades-of-orange.com code blog logo" />
-                I'm a <strong>software developer</strong> at <a href="http://www.teamaton.com/">teamaton</a>. I code in <strong>c#</strong> and work with <strong>mvc, orchard, specflow, coypu and nhibernate</strong>. 
+                I'm a <strong>software developer</strong> at <a href="http://www.teamaton.com/">teamaton</a>. I code in <strong>C#</strong> and work with <strong>MVC, Orchard, SpecFlow, Coypu and NHibernate</strong>. 
                 I enjoy beach volleyball, board games and Coke.
             </p>
         </div>
         <div class="products widget">
             <h4>Our Work</h4>
-            <p><a href="http://discoverize.com/"><strong>discoverize.com</strong> let's you create a individual and customizable search plattform for your niche</a></p>
-            <p><a href="http://camping.info/" class="special"><strong>camping.info</strong> is a search plattform for campsites in Europe with about 24.000 campsites</a></p>
+            <p><a href="http://discoverize.com/"><strong>discoverize.com</strong> lets you create an individual and customizable search platform for your niche</a></p>
+            <p><a href="http://camping.info/" class="special"><strong>camping.info</strong> is a search platform for campsites in Europe with about 25 000 campsites</a></p>
             <p><a href="http://www.teamreview.net/" class="special"><strong>team review</strong> is a simple and straight-forward peer and stack review tool for small teams</a></p>
         </div>
         <blog:WidgetZone runat="server" ZoneName="be_WIDGET_ZONE" />
@@ -71,7 +71,7 @@
         <p id="footer">
             Powered by the fabulous <a href="http://www.dotnetblogengine.net">BlogEngine.NET</a> <%=BlogSettings.Instance.Version() %><br />
             Theme by <a href="http://teamaton.com">web application builders at teamaton.com</a>
-            <span runat="server" id="aUser"></span><a runat="server" id="aLogin" />
+            <span runat="server" id="aUser"></span><a runat="server" id="aLogin" ></a>
         </p>
     </footer>
   </form>
