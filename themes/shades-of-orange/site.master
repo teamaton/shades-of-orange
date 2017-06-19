@@ -43,12 +43,6 @@
     </div>
 
     <div id="sidepanel">
-        <div class="widget">
-            <h4>Job Posting <br /> Web Designer</h4>
-            <p>We are currently looking for a <br /> <strong>web designer / frontend developer:</strong></p>
-            <p><a href="http://teamaton.com/web-designer-job-posting">Check out our job posting</a></p>
-            <p>Feel free to share :)</p>
-        </div>
         <div class="about widget">
             <h4>About Oliver</h4>
             <p>
