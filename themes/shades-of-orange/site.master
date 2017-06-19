@@ -77,9 +77,15 @@
 
     <footer>
         <p id="footer">
-            Powered by the fabulous <a href="http://www.dotnetblogengine.net">BlogEngine.NET</a> <%=BlogSettings.Instance.Version() %><br />
+            Powered by the fabulous <a href="http://www.dotnetblogengine.net">BlogEngine.NET</a> <%=BlogSettings.Instance.Version() %>
+            <br />
             Theme by <a href="http://teamaton.com">web application builders at teamaton.com</a>
-            <span runat="server" id="aUser"></span><a runat="server" id="aLogin" ></a>
+            <br />
+            <a href="/page/impressum">Impressum</a>
+            <a href="/page/datenschutz">Datenschutz</a>
+            <br />
+            <span runat="server" id="aUser"></span>
+            <a runat="server" id="aLogin" ></a>
         </p>
     </footer>
   </form>
