@@ -53,10 +53,10 @@
             <h4>About Oliver</h4>
             <p>
                 <img src="<%=Utils.ApplicationRelativeWebRoot %>themes/shades-of-orange/img/oliver.png" alt="shades-of-orange.com code blog logo" />                
-                I build <a href="http://www.teamaton.com/">web applications</a> using <strong>ASP.NET</strong> and have a passion for <strong>jQuery</strong>. 
+                I build <a href="http://www.teamaton.com/">web applications</a> using <strong>ASP.NET</strong> and have a passion for <strong>javascript</strong>. 
                 Enjoy <strong>MVC 4 and Orchard CMS</strong>, and I do <strong>TDD</strong> whenever I can. 
                 I like <strong>clean code</strong>. 
-                Love to spend time with my wife and our daughter.
+                Love to spend time with my wife and our children.
                 <a href="http://stackexchange.com/users/59390/oliver"><img src="http://stackexchange.com/users/flair/59390.png" width="208" height="58" alt="My profile on Stack Exchange, a network of free, community-driven Q&amp;A sites" title="My profile on Stack Exchange, a network of free, community-driven Q&amp;A sites" /></a>
             </p>
             <h4>About Anton</h4>
